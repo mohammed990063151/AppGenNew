@@ -64,7 +64,7 @@ Route::get('/dashboard', function () {
 
 Route::get('/dashboard' , function(){
 return view('dashboard');
-});
+})->name('dashboard');
 
 // Route::view('/table')->name('pac')
 Route::resource('packages', PackageController::class);
@@ -116,6 +116,8 @@ Route::post('get-price' , [PaymentController::class , 'ChosePrice'])->name('Chos
 Route::get('/page' , function(){
     return view('page');
 });
+
+
 
 Route::get('test' , function(){
     // dd('test');

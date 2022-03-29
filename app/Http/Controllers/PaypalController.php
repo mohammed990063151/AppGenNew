@@ -44,6 +44,15 @@ class PaypalController extends Controller
 
     public function postPaymentWithpaypal(Request $request)
     {
+        $Validator = validator($request->all(), [
+            'name' => ['required', 'string', 'max:255'],
+            'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
+            'password' => ['required', 'string', 'min:8', 'confirmed'],
+        ]);
+
+        if(!FacadesSession::has('package_id')) return redirect()->route('getPrice');
+        if($Validator->fails()) return $Validator->errors(); #redirect()->back()->withError($Validator->errors());
+
         $user = User::create([
             'name' => $request->name,
             'email' => $request->email,
@@ -52,11 +61,13 @@ class PaypalController extends Controller
         // dd(Session::get('package_id'));
         $Package = Package::find(FacadesSession::get('package_id'));
         // dd($Package);
+        FacadesSession::forget('package_id');
         Subscription::create([
             'user_id' => $user->id ,
             'package_id' => $Package->id,
             'amount' => $Package->price,
         ]);
+
         // dd('user and Subscribtion Scuccesfuly');
         $payer = new Payer();
         $payer->setPaymentMethod('paypal');
@@ -64,14 +75,14 @@ class PaypalController extends Controller
         $item_1->setName('Product 1')
             ->setCurrency('USD')
             ->setQuantity(1)
-            ->setPrice(10);
+            ->setPrice($Package->price);
 
         $item_list = new ItemList();
         $item_list->setItems(array($item_1));
 
         $amount = new Amount();
         $amount->setCurrency('USD')
-            ->setTotal(10);
+            ->setTotal($Package->price);
 
         $transaction = new Transaction();
         $transaction->setAmount($amount)

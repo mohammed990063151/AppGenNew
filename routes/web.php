@@ -111,7 +111,7 @@ Route::group(['prefix' => 'application'], function () {
 
 
 Route::resource('features' , FeatureController::class);
-Route::get('get-price' , [PaymentController::class , 'getPrice']);
+Route::get('get-price' , [PaymentController::class , 'getPrice'])->name('getPrice');
 Route::post('get-price' , [PaymentController::class , 'ChosePrice'])->name('ChosePrice');
 Route::get('/page' , function(){
     return view('page');

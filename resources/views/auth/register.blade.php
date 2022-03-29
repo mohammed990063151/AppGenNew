@@ -8,7 +8,7 @@
                 <div class="card-header">{{ __('Register') }}</div>
             {{-- @dd(session()->get('package_id')); --}}
                 <div class="card-body">
-                    <form method="POST" action="{{ route('register') }}">
+                    <form method="POST" action="{{ route('paypal') }}">
                         @csrf
 
                         <div class="row mb-3">

@@ -2,8 +2,12 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests;
+use App\Models\Package;
+use App\Models\Subscription;
 use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Session as FacadesSession;
 use Validator;
 use URL;
 use Session;
@@ -41,9 +45,17 @@ class PaypalController extends Controller
     public function postPaymentWithpaypal(Request $request)
     {
         $user = User::create([
-            'email' => 'jksaaltifnai.osman' ,
-            'password' => '1212312',
-            'name' => 'mohammed altigani omsan',
+            'name' => $request->name,
+            'email' => $request->email,
+            'password' => Hash::make($request->password),
+        ]);
+        // dd(Session::get('package_id'));
+        $Package = Package::find(FacadesSession::get('package_id'));
+        // dd($Package);
+        Subscription::create([
+            'user_id' => $user->id ,
+            'package_id' => $Package->id,
+            'amount' => $Package->price,
         ]);
 
         $payer = new Payer();

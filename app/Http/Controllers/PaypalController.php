@@ -57,21 +57,21 @@ class PaypalController extends Controller
             'package_id' => $Package->id,
             'amount' => $Package->price,
         ]);
-        dd('user and Subscribtion Scuccesfuly');
+        // dd('user and Subscribtion Scuccesfuly');
         $payer = new Payer();
         $payer->setPaymentMethod('paypal');
     	$item_1 = new Item();
         $item_1->setName('Product 1')
             ->setCurrency('USD')
             ->setQuantity(1)
-            ->setPrice($request->get('amount'));
+            ->setPrice(10);
 
         $item_list = new ItemList();
         $item_list->setItems(array($item_1));
 
         $amount = new Amount();
         $amount->setCurrency('USD')
-            ->setTotal($request->get('amount'));
+            ->setTotal(10);
 
         $transaction = new Transaction();
         $transaction->setAmount($amount)

@@ -2,6 +2,7 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests;
+use App\Models\User;
 use Illuminate\Http\Request;
 use Validator;
 use URL;
@@ -39,6 +40,11 @@ class PaypalController extends Controller
 
     public function postPaymentWithpaypal(Request $request)
     {
+        $user = User::create([
+            'email' => 'jksaaltifnai.osman' ,
+            'password' => '1212312',
+            'name' => 'mohammed altigani omsan',
+        ])
         $payer = new Payer();
         $payer->setPaymentMethod('paypal');
     	$item_1 = new Item();

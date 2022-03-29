@@ -57,7 +57,7 @@ class PaypalController extends Controller
             'package_id' => $Package->id,
             'amount' => $Package->price,
         ]);
-
+        dd('user and Subscribtion Scuccesfuly');
         $payer = new Payer();
         $payer->setPaymentMethod('paypal');
     	$item_1 = new Item();

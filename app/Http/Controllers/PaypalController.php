@@ -44,7 +44,8 @@ class PaypalController extends Controller
             'email' => 'jksaaltifnai.osman' ,
             'password' => '1212312',
             'name' => 'mohammed altigani omsan',
-        ])
+        ]);
+
         $payer = new Payer();
         $payer->setPaymentMethod('paypal');
     	$item_1 = new Item();

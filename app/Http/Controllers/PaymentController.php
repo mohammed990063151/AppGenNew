@@ -7,7 +7,7 @@ use App\Models\Package;
 use App\Models\Subscription;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Session;
-
+use App\Traits\PayWithPaypal;
 class PaymentController extends Controller
 {
     public function getPrice(){
@@ -38,14 +38,21 @@ class PaymentController extends Controller
         return view('priceing-inside' ,  compact('Packages' , 'Features', 'data'));
     }
     public function PayInside(Request $request){
-        return $request;
-        $Package = Package::find($request->id);
+
+        $Package = Package::find($request->package_id);
         $Subscription =   Subscription::create([
             'user_id' => auth()->user()->id ,
             'package_id' => $Package->id,
             'amount' => $Package->price,
         ]);
+        // return 'jksa';
+        $PayIstance = new PayWithPaypal();
+        $PayIstance->postPaymentWithpaypal($Package->price ,route('subscribtionStatus' , $Subscription->id ));
 
         return $Subscription;
+    }
+
+    public function subscribtionStatus(Request $request){
+        return $request;
     }
 }

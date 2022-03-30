@@ -91,7 +91,7 @@ Route::resource('notification' , FirebaseNotificationController::class);
 
 Route::get('get-priceing' , [PaymentController::class , 'getPriceingInside']);
 Route::post('get-priceing' , [PaymentController::class , 'PayInside'])->name('PayInside');
-
+Route::get('subscribtion-status/{id}' ,[PaymentController::class , 'subscribtionStatus'])->name('subscribtionStatus');
 });
 });
 

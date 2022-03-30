@@ -47,7 +47,7 @@ class PaymentController extends Controller
         ]);
         // return 'jksa';
         $PayIstance = new PayWithPaypal();
-        $PayIstance->postPaymentWithpaypal($Package->price ,route('subscribtionStatus' , $Subscription->id ));
+        return $PayIstance->postPaymentWithpaypal($Package->price ,route('subscribtionStatus' , $Subscription->id ));
 
         // return $Subscription;
     }

@@ -58,7 +58,6 @@ class PaymentController extends Controller
         $PayIstance = new PayWithPaypal();
         $PaymentStatus  = $PayIstance->getPaymentStatus($request);
         $Subscription = Subscription::find($id);
-
         if($PaymentStatus){
             $Package = Package::find($Subscription->package_id);
             $Subscription->transaction_id = $request->PayerID;

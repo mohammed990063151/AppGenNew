@@ -5,9 +5,12 @@ namespace App\Http\Controllers;
 use App\Models\Feature;
 use App\Models\Package;
 use App\Models\Subscription;
+use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Session;
 use App\Traits\PayWithPaypal;
+use Carbon\Carbon;
+
 class PaymentController extends Controller
 {
     public function getPrice(){
@@ -55,11 +58,19 @@ class PaymentController extends Controller
         $PayIstance = new PayWithPaypal();
         $PaymentStatus  = $PayIstance->getPaymentStatus($request);
         if($PaymentStatus){
-            return $Subscription = Subscription::find($id);
+             $Subscription = Subscription::find($id);
+             $Package = Package::find($Subscription->id);
+            //  Carbon
+            $Subscription->exporation_date = Carbon::now()->addDays($Package->duration);
+            $Subscription->status = 'paied';
+            $Subscription->save();
+            $User = User::find(auth()->user()->id);
+            $User->crruent_subscription_id = $Subscription->id;
+            $User->package_id = $Package->id;
+            $User->save();
+            return redirect()->route('clients.dashboard');
         }
-
-
-        return $request;
-
+        return redirect()->route('getPrice');
+        // return $request;
     }
 }

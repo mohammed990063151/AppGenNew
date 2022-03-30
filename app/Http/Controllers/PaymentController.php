@@ -49,7 +49,7 @@ class PaymentController extends Controller
         $PayIstance = new PayWithPaypal();
         $PayIstance->postPaymentWithpaypal($Package->price ,route('subscribtionStatus' , $Subscription->id ));
 
-        return $Subscription;
+        // return $Subscription;
     }
 
     public function subscribtionStatus(Request $request){

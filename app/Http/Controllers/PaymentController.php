@@ -60,16 +60,22 @@ class PaymentController extends Controller
         if($PaymentStatus){
              $Subscription = Subscription::find($id);
              $Package = Package::find($Subscription->id);
-            //  Carbon
-            $Subscription->exporation_date = Carbon::now()->addDays($Package->duration);
+                $Subscription->transaction_id = $request->PayerID;
+                $Subscription->exporation_date = Carbon::now()->addDays($Package->duration);
             $Subscription->status = 'paied';
             $Subscription->save();
             $User = User::find(auth()->user()->id);
             $User->crruent_subscription_id = $Subscription->id;
             $User->package_id = $Package->id;
+            $User->is_subscribed = 1;
             $User->save();
             return redirect()->route('clients.dashboard');
         }
+        $Subscription = Subscription::find($id);
+        $Package = Package::find($Subscription->id);
+        $Subscription->transaction_id = $request->PayerID;
+        $Subscription->status = 'rejected';
+        $Subscription->save();
         return redirect()->route('getPrice');
         // return $request;
     }

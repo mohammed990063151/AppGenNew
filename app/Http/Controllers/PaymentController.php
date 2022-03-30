@@ -57,9 +57,10 @@ class PaymentController extends Controller
         // return $id;
         $PayIstance = new PayWithPaypal();
         $PaymentStatus  = $PayIstance->getPaymentStatus($request);
+        $Subscription = Subscription::find($id);
+
         if($PaymentStatus){
-            return $Subscription = Subscription::find($id);
-            $Package = Package::find($Subscription->id);
+            $Package = Package::find($Subscription->package_id);
             $Subscription->transaction_id = $request->PayerID;
             $Subscription->exporation_date = Carbon::now()->addDays($Package->duration);
             $Subscription->status = 'paied';

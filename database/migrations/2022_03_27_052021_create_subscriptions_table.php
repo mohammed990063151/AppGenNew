@@ -20,6 +20,7 @@ return new class extends Migration
             $table->foreignId('package_id')->references('id')->on('packages')->onDelete('cascade');
             $table->string('exporation_date')->nullable();
             $table->decimal('amount' , 8, 2)->nullable();
+            $table->enum('status' , ['pending' , 'expired' , 'rejected' , 'worinking'])->default('pending');
             $table->string('transaction_id')->nullable();
             $table->timestamps();
         });

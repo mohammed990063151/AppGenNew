@@ -25,7 +25,6 @@ class AdminController extends BaseController
         if(\Auth::guard('admin')->check()){
             \Auth::shouldUse('admin');
         }
-
         $this->baseAuthorize($ability, $arguments);
     }
 

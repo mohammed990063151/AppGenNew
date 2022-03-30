@@ -13,27 +13,6 @@
                 </div>
             </div>
             <ul class="navbar-nav  justify-content-end">
-                <li class="nav-item d-flex align-items-center">
-                    <a href="javascript:;" class="nav-link text-white font-weight-bold px-0">
-                        <i class="fa fa-user me-sm-1"></i>
-                        <span class="d-sm-inline d-none">Sign In</span>
-                    </a>
-                </li>
-                <li class="nav-item d-xl-none ps-3 d-flex align-items-center">
-                    <a href="javascript:;" class="nav-link text-white p-0" id="iconNavbarSidenav">
-                        <div class="sidenav-toggler-inner">
-                            <i class="sidenav-toggler-line bg-white"></i>
-                            <i class="sidenav-toggler-line bg-white"></i>
-                            <i class="sidenav-toggler-line bg-white"></i>
-                        </div>
-                    </a>
-                </li>
-                <li class="nav-item px-3 d-flex align-items-center">
-                    <a href="javascript:;" class="nav-link text-white p-0">
-                        <i class="fa fa-cog fixed-plugin-button-nav cursor-pointer"></i>
-                    </a>
-                </li>
-
                 <li class="nav-item dropdown pe-2 d-flex align-items-center">
                     <a href="javascript:;" class="nav-link text-white p-0" id="dropdownMenuButton"
                         data-bs-toggle="dropdown" aria-expanded="false">
@@ -117,10 +96,10 @@
                         </li>
                     </ul>
                 </li>
-                <li class="nav-item dropdown pe-2 d-flex align-items-center">
+                <li class="nav-item dropdown pe-2 d-flex align-items-center m-2">
                     <a href="javascript:;" class="nav-link text-white p-0" id="dropdownMenuButton"
                         data-bs-toggle="dropdown" aria-expanded="false">
-                        <i class="fa  fa-language"></i>
+                        <i class="fa fa-lg  fa-language"></i>
                     </a>
                     <ul class="dropdown-menu  dropdown-menu-end  px-2 py-3 me-sm-n4">
                         @foreach(LaravelLocalization::getSupportedLocales() as $localeCode => $properties)
@@ -208,6 +187,38 @@
                             </a>
                         </li>
                     </ul> --}}
+                </li>
+
+                <li class="nav-item dropdown pe-2 d-flex align-items-center m-2">
+                    <a href="javascript:;" class="nav-link text-white p-0" id="dropdownMenuButton"
+                        data-bs-toggle="dropdown" aria-expanded="false">
+                        <i class="fa fa-lg  fa-user"></i>
+                    </a>
+                    <ul class="dropdown-menu  dropdown-menu-end  px-2 py-3 me-sm-n4">
+                            <li>
+                                <a rel="alternate" class="dropdown-item border-radius-md">
+                                    <span class="m-2"><i class="fa  fa-user"></i></span>
+                                    <span>profile</span>
+                                </a>
+                                <hr style="padding:0;margin:3px 0"/>
+                                <a href="{{ route('logout') }}"  wire:
+                                onclick="event.preventDefault();
+                                document.getElementById('logout-form').submit();"
+                                class="dropdown-item border-radius-md">
+                                    <span>
+                                        {{-- <a  href="{{ route('logout') }}"
+                                        onclick="event.preventDefault();
+                                                    document.getElementById('logout-form').submit();"> --}}
+                                        {{ __('Logout') }}
+                                        {{-- </a> --}}
+                                    </span>
+                                </a>
+                            </li>
+
+                    </ul>
+                    <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                        @csrf
+                    </form>
                 </li>
             </ul>
         </div>

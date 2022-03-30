@@ -2,6 +2,7 @@
 
 namespace Database\Seeders;
 
+use App\Models\Admin;
 use App\Models\Feature;
 use App\Models\Package;
 use App\Models\Subscription;
@@ -28,8 +29,14 @@ class DatabaseSeeder extends Seeder
             "whatsapp_no" => "96623323093",
             "email" => "info@faster.com",
         ]);
+        Admin::create([
+            'email' => 'admin@gmail.com',
+            'password' => bcrypt('123456789'),
+            'name' => 'jksa altigani',
+        ]);
+
         \App\Models\User::factory(1)->create([
-            'email' => 'admin@gmail.com' ,
+            'email' => 'user@gmail.com',
             'password' => bcrypt('123456789'),
         ]);
         $features = ['image notification' ,  'number of app' , 'copy right' , 'app customization' , 'splash screen' , 'google paly uploads' , 'slider' , 'about us' , 'contanct us' , 'notification'];

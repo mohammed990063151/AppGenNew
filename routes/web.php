@@ -41,6 +41,10 @@ Auth::routes();
 |
 */
 
+Route::get('argon-login' , function(){
+    return view('Argon.auth.login');
+});
+
 Route::group(['prefix' => LaravelLocalization::setLocale()], function()
 {
 	/** ADD ALL LOCALIZED ROUTES INSIDE THIS GROUP **/
@@ -84,5 +88,10 @@ Route::post('get-price' , [PaymentController::class , 'ChosePrice'])->name('Chos
 Route::get('/clients/dashboard' , [FrontController::class , 'index'])->name('clients.dashboard');
 Route::resource('notification' , FirebaseNotificationController::class);
 
+
+Route::get('get-priceing' , [PaymentController::class , 'getPriceingInside']);
+Route::post('get-priceing' , [PaymentController::class , 'PayInside'])->name('PayInside');
+
 });
 });
+

@@ -15,6 +15,7 @@ class SubscriptionController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+
     public function index()
     {
         $Subscriptions = Subscription::paginate(10);

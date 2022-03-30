@@ -15,6 +15,7 @@
         "laravel/framework": "^8.0",
         "laravel/tinker": "^2.0",
         "laravel/ui": "^3.4",
+        "mcamara/laravel-localization": "^1.7",
         "paypal/rest-api-sdk-php": "^1.14"
     },
     "require-dev": {

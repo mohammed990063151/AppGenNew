@@ -47,12 +47,19 @@ class PaymentController extends Controller
         ]);
         // return 'jksa';
         $PayIstance = new PayWithPaypal();
-        return $PayIstance->postPaymentWithpaypal($Package->price ,route('subscribtionStatus' , $Subscription->id ));
-
-        // return $Subscription;
+        return $PayIstance->postPaymentWithpaypal($Package->price ,route('subscribtionStatus' , $Subscription->id));
     }
 
-    public function subscribtionStatus(Request $request){
+    public function subscribtionStatus($id , Request $request){
+        // return $id;
+        $PayIstance = new PayWithPaypal();
+        $PaymentStatus  = $PayIstance->getPaymentStatus($request);
+        if($PaymentStatus){
+            return $Subscription = Subscription::find($id);
+        }
+
+
         return $request;
+
     }
 }

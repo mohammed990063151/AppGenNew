@@ -103,28 +103,27 @@ class PayWithPaypal
     	return Redirect::route('paywithpaypal');
     }
 
-    public function getPaymentStatus(Request $request)
+    public function getPaymentStatus($request)
     {
 
         // return $request;
         $payment_id = Session::get('paypal_payment_id');
-
         Session::forget('paypal_payment_id');
-        if (empty($request->input('PayerID')) || empty($request->input('token'))) {
-            \Session::put('error','Payment failed');
-            return Redirect::route('paywithpaypal');
+        if (empty($request->PayerID) || empty($request->token)) {
+           return false;
+            // \Session::put('error','Payment failed');
+            // return Redirect::route('paywithpaypal');
         }
         $payment = Payment::get($payment_id, $this->_api_context);
         $execution = new PaymentExecution();
-        $execution->setPayerId($request->input('PayerID'));
+        $execution->setPayerId($request->PayerID);
         $result = $payment->execute($execution, $this->_api_context);
 
         if ($result->getState() == 'approved') {
-            \Session::put('success','Payment success !!');
-            return Redirect::route('paywithpaypal');
+            return true;
         }
-
-        \Session::put('error','Payment failed !!');
-		return Redirect::route('paywithpaypal');
+        return false;
+        // \Session::put('error','Payment failed !!');
+		// return Redirect::route('paywithpaypal');
     }
 }

@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-return new class extends Migration
+class CreateScreensTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,11 +13,16 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('screen3s', function (Blueprint $table) {
+        Schema::create('screens', function (Blueprint $table) {
             $table->id();
+            $table->string('screen_type')->nullable();
             $table->string('screen_image')->nullable();
             $table->string('screen_title');
             $table->string('screen_body');
+            //$table->unsignedBigInteger('profile_id')->nullable();
+            $table->foreignId('profile_id')->references('id')->on('app_profiles');
+
+            //$table->foreign('profile_id')->references('id')->on('app_profiles')->onDelete('cascade');
             $table->timestamps();
         });
     }
@@ -29,6 +34,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('screen3s');
+        Schema::dropIfExists('screens');
     }
-};
+}

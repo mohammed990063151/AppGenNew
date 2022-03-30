@@ -11,7 +11,7 @@ use App\Models\Package;
 use App\Http\Controllers\front\FrontController;
 use App\Http\Controllers\front\ProfileController;
 use App\Http\Controllers\front\ApplicationController;
-
+use App\Http\Controllers\front\ScreenController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -62,9 +62,9 @@ Route::get('/dashboard', function () {
 
 
 
-Route::get('/dashboard' , function(){
-return view('dashboard');
-})->name('dashboard');
+// Route::get('/dashboard' , function(){
+// return view('dashboard');
+// })->name('dashboard');
 
 // Route::view('/table')->name('pac')
 Route::resource('packages', PackageController::class);
@@ -85,8 +85,10 @@ Route::group(['prefix' => 'profile'], function () {
     Route::get('create',[ProfileController::class ,'create']) -> name('profile.create');
     Route::post('store',[ProfileController::class ,'store']) -> name('profile.store');
 
-    Route::get('edit/{id}',[ProfileController::class ,'edit']) -> name('admin.languages.edit');
-    Route::post('update/{id}',[ProfileController::class ,'update']) -> name('admin.languages.update');
+    Route::get('edit/{id}',[ProfileController::class ,'edit']) -> name('profile.edit');
+    Route::post('update/{id}',[ProfileController::class ,'update']) -> name('profile.update');
+    Route::post('destroy/{id}',[ProfileController::class ,'destroy']) -> name('profile.destroy');
+
 
 
 });
@@ -100,13 +102,21 @@ Route::group(['prefix' => 'application'], function () {
 
     Route::get('edit/{id}',[ApplicationController::class ,'edit']) -> name('application.edit');
     Route::post('update/{id}',[ApplicationController::class ,'update']) -> name('application.update');
-    Route::post('destroy/{id}',[ApplicationController::class ,'update']) -> name('application.destroy');
-
-
-
+    Route::post('destroy/{id}',[ApplicationController::class ,'destroy']) -> name('application.destroy');
 
 });
 
+// start Screenes1
+Route::group(['prefix' => 'Screenes'], function () {
+// Route::resource('Screen',[ScreenController::class ]);
+Route::get('/',[ScreenController::class ,'index']) -> name('Screen.index');
+Route::get('create',[ScreenController::class ,'create']) -> name('Screen.create');
+Route::post('store',[ScreenController::class ,'store']) -> name('Screen.store');
+
+Route::get('edit/{id}',[ScreenController::class ,'edit']) -> name('Screen.edit');
+Route::post('update/{id}',[ScreenController::class ,'update']) -> name('Screen.update');
+Route::post('destroy/{id}',[ScreenController::class ,'destroy']) -> name('Screen.destroy');
+});
 
 
 

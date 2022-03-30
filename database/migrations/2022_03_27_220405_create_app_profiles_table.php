@@ -14,13 +14,16 @@ return new class extends Migration
     public function up()
     {
         Schema::create('app_profiles', function (Blueprint $table) {
-            $table->increments('id');
-            $table->integer('app_id')->unsigned();
-            $table->string('orgname', 999);
+            $table->id();
+            // $table->integer('app_id')->unsigned();
+            $table->string('orgname');
             $table->string('orgemail');
             $table->string('ogwhatsapp')->nullable();
+            $table->string('color');
+            $table->string('pc');
+            $table->string('sc');
             // $table->unsignedBigInteger('app_id');
-            $table->foreign('app_id')->references('id')->on('apps')->onDelete('cascade');
+            $table->foreignId('app_id')->references('id')->on('apps')->onDelete('cascade');
             $table->timestamps();
         });
     }

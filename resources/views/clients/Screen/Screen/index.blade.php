@@ -1,8 +1,8 @@
 @extends('layouts.master')
 @section('breadceumbs')
 {{-- <x-bread-crumps> --}}
-    @component('components.bread-crumps' , ['head' => 'profile ' ,
-    'links' => [ 'profile']
+    @component('components.bread-crumps' , ['head' => 'screen ' ,
+    'links' => [' screen']
     ])
     @endcomponent
     @endsection
@@ -14,9 +14,9 @@
             <div class="card z-index-2 h-100">
                 <div class="card-header pb-0 pt-3 bg-transparent">
                     <div class="d-flex justify-content-between">
-                        <h6 class="text-capitalize col-4">profile</h6>
+                        <h6 class="text-capitalize col-4">screen table</h6>
 
-                            <span><a href="{{route('profile.create')}}" class="btn btn-primary btn-sm"
+                            <span><a href="{{route('Screen.create')}}" class="btn btn-primary btn-sm"
                                 {{--  --}}
                                     type="button">add New</a></span>
 
@@ -26,38 +26,34 @@
                             <thead>
                                 <tr>
                                     <td>id</td>
-                                    <td>Name</td>
-                                    <td>Email</td>
-                                    <td>Whatsapp</td>
-                                    <td>color</td>
-                                    <td>pc</td>
-                                    <td>sc</td>
-                                    <td>Name applaction</td>
+                                    <td>Screen Image</td>
+                                    <td>Screen Title</td>
+                                    <td>Screen Body</td>
+                                    <td>Screen Type</td>
+                                    <td>profile name</td>
                                     <td>option</td>
                                 </tr>
                             </thead>
                             <tbody>
                                 <?php $i = 0; ?>
-                                @forelse ($data as  $data )
+                                @forelse ($Screen as  $Screen )
                                 <?php $i++; ?>
                                 <tr>
                                     <td>{{$i}}</td>
-                                    <td>{{$data->orgname}}</td>
-                                    <td>{{$data->orgemail}}</td>
-                                    <td>{{$data->ogwhatsapp}}</td>
-                                    <td>{{$data->color}}</td>
-                                    <td>{{$data->pc}}</td>
-                                    <td>{{$data->sc}}</td>
-                                    <td> {{$data->app->name?? '-'}}</td>
-                                <td>
+                                    <td><img height="70" width="100" src="/screen/{{$Screen->screen_image}}"></td>
+                                    <td>{{$Screen->screen_title}}</td>
+                                    <td>{{$Screen->screen_body}}</td>
+                                    <td>{{$Screen->screen_type}}</td>
+                                    <td> {{$Screen->app_profile->orgname?? '-'}}</td>
+                                    <td>
                                         <!-- Modal -->
-                                        <form action="{{route('profile.destroy' , $data->id)}}" method="post" style="display:inline">
+                                        <form action="{{route('Screen.destroy' , $Screen->id)}}" method="post" style="display:inline">
                                             @csrf
                                             {{-- @method('DELETE') --}}
                                             <button class="btn btn-sm btn-circle btn-danger">Delete</button>
                                         </form>
 
-                                        <a href="{{route('profile.edit' , $data->id)}}" class="btn btn-info btn-icon-split">
+                                        <a href="{{route('Screen.edit' , $Screen->id)}}" class="btn btn-info btn-icon-split">
 
                                             <span class="icon text-white-50">
                                                 {{-- <i class="fas fa-info-circle"></i> --}}

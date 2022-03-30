@@ -8,6 +8,7 @@ use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
 use Illuminate\Foundation\Bus\DispatchesJobs;
 use Illuminate\Foundation\Validation\ValidatesRequests;
 use Illuminate\Http\Request;
+use App\Http\Requests\ApplicationRequest;
 use Illuminate\Routing\Controller as BaseController;
 
 class ApplicationController extends BaseController
@@ -29,9 +30,9 @@ class ApplicationController extends BaseController
      */
     public function create()
     {
-        $data = app_profile::get();
+
         $data2 = app::get();
-        return view('clients.app.create',compact('data','data2'));
+        return view('clients.app.create',compact('data2'));
     }
 
     /**
@@ -40,7 +41,7 @@ class ApplicationController extends BaseController
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(request $request)
     {
 // return $request;
 
@@ -61,7 +62,7 @@ class ApplicationController extends BaseController
 
                           $data->save();
 
-                          return redirect()->back();
+                          return redirect('/application');
 
     }
     public function edit($id){
@@ -72,7 +73,7 @@ class ApplicationController extends BaseController
     }
 
 
-    public function update(Request $request ,$id ){
+    public function update(request $request ,$id ){
         $data=app::find($id);
 
 
@@ -94,10 +95,16 @@ class ApplicationController extends BaseController
 
                  $data->save();
 
-                 $data = app::all();
-        return view('clients.app.index' ,compact('data'));
+                 return redirect('/application');
 
                 }
 
+
+                public function destroy(request $request ,$id ){
+                $id = $request->id;
+                app::find($id)->delete();
+                return redirect('/application');
+
+                }
 
 }

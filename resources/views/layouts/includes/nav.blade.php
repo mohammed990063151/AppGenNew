@@ -9,7 +9,7 @@
             <div class="ms-md-auto pe-md-3 d-flex align-items-center">
                 <div class="input-group">
                     <span class="input-group-text text-body"><i class="fas fa-search" aria-hidden="true"></i></span>
-                    <input type="text" class="form-control" placeholder="Type here...">
+                    <input type="text" class="form-control" placeholder="{{ __('translation.Type_here') }}">
                 </div>
             </div>
             <ul class="navbar-nav  justify-content-end">
@@ -24,11 +24,13 @@
                             <a class="dropdown-item border-radius-md" href="javascript:;">
                                 <div class="d-flex py-1">
                                     <div class="my-auto">
-                                        <img src="../assets/img/team-2.jpg" class="avatar avatar-sm  me-3 ">
+                                        <img src="{{ asset('img/team-2.jpg') }}" class="avatar avatar-sm  me-3 ">
                                     </div>
                                     <div class="d-flex flex-column justify-content-center">
                                         <h6 class="text-sm font-weight-normal mb-1">
-                                            <span class="font-weight-bold">New message</span> from Laur
+                                            <span
+                                                class="font-weight-bold">{{ __('translation.New_message_from') }}</span>
+                                            Laur
                                         </h6>
                                         <p class="text-xs text-secondary mb-0">
                                             <i class="fa fa-clock me-1"></i>
@@ -47,7 +49,8 @@
                                     </div>
                                     <div class="d-flex flex-column justify-content-center">
                                         <h6 class="text-sm font-weight-normal mb-1">
-                                            <span class="font-weight-bold">New album</span> by Travis Scott
+                                            <span class="font-weight-bold">{{ __('translation.New_album_by') }}</span>
+                                            Travis Scott
                                         </h6>
                                         <p class="text-xs text-secondary mb-0">
                                             <i class="fa fa-clock me-1"></i>
@@ -102,9 +105,10 @@
                         <i class="fa fa-lg  fa-language"></i>
                     </a>
                     <ul class="dropdown-menu  dropdown-menu-end  px-2 py-3 me-sm-n4">
-                        @foreach(LaravelLocalization::getSupportedLocales() as $localeCode => $properties)
+                        @foreach (LaravelLocalization::getSupportedLocales() as $localeCode => $properties)
                             <li>
-                                <a rel="alternate" class="dropdown-item border-radius-md" hreflang="{{ $localeCode }}" href="{{ LaravelLocalization::getLocalizedURL($localeCode, null, [], true) }}">
+                                <a rel="alternate" class="dropdown-item border-radius-md" hreflang="{{ $localeCode }}"
+                                    href="{{ LaravelLocalization::getLocalizedURL($localeCode, null, [], true) }}">
                                     {{ $properties['native'] }}
                                 </a>
                             </li>
@@ -195,25 +199,24 @@
                         <i class="fa fa-lg  fa-user"></i>
                     </a>
                     <ul class="dropdown-menu  dropdown-menu-end  px-2 py-3 me-sm-n4">
-                            <li>
-                                <a rel="alternate" class="dropdown-item border-radius-md">
-                                    <span class="m-2"><i class="fa  fa-user"></i></span>
-                                    <span>profile</span>
-                                </a>
-                                <hr style="padding:0;margin:3px 0"/>
-                                <a href="{{ route('logout') }}"  wire:
-                                onclick="event.preventDefault();
+                        <li>
+                            <a rel="alternate" class="dropdown-item border-radius-md">
+                                <span class="m-2"><i class="fa  fa-user"></i></span>
+                                <span>{{ __('translation.profile') }}</span>
+                            </a>
+                            <hr style="padding:0;margin:3px 0" />
+                            <a href="{{ route('logout') }}" wire: onclick="event.preventDefault();
                                 document.getElementById('logout-form').submit();"
                                 class="dropdown-item border-radius-md">
-                                    <span>
-                                        {{-- <a  href="{{ route('logout') }}"
+                                <span>
+                                    {{-- <a  href="{{ route('logout') }}"
                                         onclick="event.preventDefault();
                                                     document.getElementById('logout-form').submit();"> --}}
-                                        {{ __('Logout') }}
-                                        {{-- </a> --}}
-                                    </span>
-                                </a>
-                            </li>
+                                    {{ __('translation.Logout') }}
+                                    {{-- </a> --}}
+                                </span>
+                            </a>
+                        </li>
 
                     </ul>
                     <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">

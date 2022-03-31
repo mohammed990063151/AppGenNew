@@ -41,57 +41,55 @@ Auth::routes();
 |
 */
 
-Route::get('argon-login' , function(){
+Route::get('argon-login', function () {
     return view('Argon.auth.login');
 });
 
-Route::group(['prefix' => LaravelLocalization::setLocale()], function()
-{
-	/** ADD ALL LOCALIZED ROUTES INSIDE THIS GROUP **/
+Route::group(['prefix' => LaravelLocalization::setLocale()], function () {
+    /** ADD ALL LOCALIZED ROUTES INSIDE THIS GROUP **/
 
 
 
-Route::middleware('auth:web')->group(function(){
+    Route::middleware('auth:web')->group(function () {
 
-    Route::get('paywithpaypal', array('as' => 'paywithpaypal','uses' => 'App\Http\Controllers\PaypalController@payWithPaypal',));
-Route::post('paypal', array('as' => 'paypal','uses' => 'App\Http\Controllers\PaypalController@postPaymentWithpaypal',));
-Route::get('paypal', array('as' => 'status','uses' => 'App\Http\Controllers\PaypalController@getPaymentStatus',));
+        Route::get('paywithpaypal', array('as' => 'paywithpaypal', 'uses' => 'App\Http\Controllers\PaypalController@payWithPaypal',));
+        Route::post('paypal', array('as' => 'paypal', 'uses' => 'App\Http\Controllers\PaypalController@postPaymentWithpaypal',));
+        Route::get('paypal', array('as' => 'status', 'uses' => 'App\Http\Controllers\PaypalController@getPaymentStatus',));
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+        Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 
-// require __DIR__.'/auth.php';
-// Route::view('/table')->name('pac')
+        // require __DIR__.'/auth.php';
+        // Route::view('/table')->name('pac')
 
-/// start profile
-Route::group(['prefix' => 'profile'], function () {
-    Route::get('/',[ProfileController::class ,'index']) -> name('profile.index');
-    Route::get('create',[ProfileController::class ,'create']) -> name('profile.create');
-    Route::post('store',[ProfileController::class ,'store']) -> name('profile.store');
-    Route::get('edit/{id}',[ProfileController::class ,'edit']) -> name('admin.languages.edit');
-    Route::post('update/{id}',[ProfileController::class ,'update']) -> name('admin.languages.update');
+        /// start profile
+        Route::group(['prefix' => 'profile'], function () {
+            Route::get('/', [ProfileController::class, 'index'])->name('profile.index');
+            Route::get('create', [ProfileController::class, 'create'])->name('profile.create');
+            Route::post('store', [ProfileController::class, 'store'])->name('profile.store');
+            Route::get('edit/{id}', [ProfileController::class, 'edit'])->name('admin.languages.edit');
+            Route::post('update/{id}', [ProfileController::class, 'update'])->name('admin.languages.update');
+        });
+
+        // /start app
+        Route::group(['prefix' => 'application'], function () {
+            Route::get('/', [ApplicationController::class, 'index'])->name('application.index');
+            Route::get('create', [ApplicationController::class, 'create'])->name('application.create');
+            Route::post('store', [ApplicationController::class, 'store'])->name('application.store');
+            Route::get('edit/{id}', [ApplicationController::class, 'edit'])->name('application.edit');
+            Route::post('update/{id}', [ApplicationController::class, 'update'])->name('application.update');
+            Route::post('destroy/{id}', [ApplicationController::class, 'update'])->name('application.destroy');
+        });
+
+        Route::get('get-price', [PaymentController::class, 'getPrice'])->name('getPrice');
+        Route::post('get-price', [PaymentController::class, 'ChosePrice'])->name('ChosePrice');
+
+        Route::get('/clients/dashboard', [FrontController::class, 'index'])->name('clients.dashboard');
+        Route::resource('notification', FirebaseNotificationController::class);
+
+
+        Route::get('get-priceing', [PaymentController::class, 'getPriceingInside']);
+        Route::post('get-priceing', [PaymentController::class, 'PayInside'])->name('PayInside');
+        Route::get('subscribtion-status/{id}', [PaymentController::class, 'subscribtionStatus'])->name('subscribtionStatus');
+    });
 });
-
-// /start app
-Route::group(['prefix' => 'application'], function () {
-    Route::get('/',[ApplicationController::class ,'index']) -> name('application.index');
-    Route::get('create',[ApplicationController::class ,'create']) -> name('application.create');
-    Route::post('store',[ApplicationController::class ,'store']) -> name('application.store');
-    Route::get('edit/{id}',[ApplicationController::class ,'edit']) -> name('application.edit');
-    Route::post('update/{id}',[ApplicationController::class ,'update']) -> name('application.update');
-    Route::post('destroy/{id}',[ApplicationController::class ,'update']) -> name('application.destroy');
-});
-
-Route::get('get-price' , [PaymentController::class , 'getPrice'])->name('getPrice');
-Route::post('get-price' , [PaymentController::class , 'ChosePrice'])->name('ChosePrice');
-
-Route::get('/clients/dashboard' , [FrontController::class , 'index'])->name('clients.dashboard');
-Route::resource('notification' , FirebaseNotificationController::class);
-
-
-Route::get('get-priceing' , [PaymentController::class , 'getPriceingInside']);
-Route::post('get-priceing' , [PaymentController::class , 'PayInside'])->name('PayInside');
-Route::get('subscribtion-status/{id}' ,[PaymentController::class , 'subscribtionStatus'])->name('subscribtionStatus');
-});
-});
-

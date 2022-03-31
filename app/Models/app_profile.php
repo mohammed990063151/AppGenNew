@@ -11,12 +11,24 @@ class app_profile extends Model
         'orgname',
         'orgemail',
         'ogwhatsapp',
-        // 'app_id',
+        'color',
+        'pc',
+        'sc',
+        'app_id',
         'Created_by',
-    ];
 
-    public function section()
+    ];
+    public function app()
     {
-    return $this->belongsTo('App\app');
+    return $this->belongsTo(app::class);
+    }
+
+    public function applaction()
+    {
+    return $this->belongsTo('App\Models\app');
+    }
+    public function screen()
+    {
+    return $this->belongsTo('App\Models\screen');
     }
 }

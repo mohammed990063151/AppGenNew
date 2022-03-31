@@ -31,12 +31,19 @@
                                                     </div>
                                                 </div>
                                                 <div class="col-md-6">
-                                                    <div class="form-group">
-                                                      <label for="">photo</label>
-                                                      <input type="file"
-                                                        class="form-control" name="photo" id="" aria-describedby="helpId" placeholder="">
+                                                    <label class="my-1 mr-2" for="inlineFormCustomSelectPref">applaction</label>
+                                            <select name="app_id" id="app_id" class="form-control" required>
+
+                                                @foreach ($applcation as $applcation)
+                                                    <option value="{{ $applcation->id }}">{{ $applcation->name }}</option>
+                                                @endforeach
+                                                @error('app_id')
+                                                        <small id="helpId" class="form-text text-danger text-muted">{{$message}}</small>
+                                                        @enderror
+                                            </select>
                                                     </div>
-                                                </div>
+
+
                                                 <div class="col-md-6">
                                                     <label> {{__('translation.content')}}</label>
                                                     <textarea name="content" id="" cols="30" rows="10"
@@ -44,7 +51,17 @@
                                                     @error('content') <span class="text-danger error">{{ $message
                                                         }}</span>@enderror
                                                 </div>
+                                                <div class="col-md-6">
+                                                    <div class="form-group">
+                                                      <label for="">photo</label>
+                                                      <input type="file"
+                                                        class="form-control" name="photo" id="" aria-describedby="helpId" placeholder="">
+                                                    </div>
+                                                </div>
                                             </div>
+
+
+
                                             <div class="m-1 mt-3">
                                                 <a href="{{route('notification.index')}}" type="button"
                                                     class="btn btn-warning mr-1">
@@ -54,6 +71,7 @@
                                                     <i class="la la-check"></i> {{__('translation.send')}}
                                                 </button>
                                             </div>
+
                                     </div>
 
                                 </div>

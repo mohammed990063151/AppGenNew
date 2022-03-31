@@ -14,12 +14,10 @@ return new class extends Migration
     public function up()
     {
         Schema::create('apps', function (Blueprint $table) {
-            $table->increments('id');
-            $table->string('name', 30);
+            $table->id();
+            $table->string('name', 999);
             $table->string('link');
-            $table->string('version', 30)->nullable();
-            // $table->unsignedInteger('user_id')->nullable();
-            $table->foreignid('user_id')->references('id')->on('users');
+            $table->string('version', 999)->nullable();
             $table->string('image')->nullable();
             $table->timestamps();
         });

@@ -13,6 +13,7 @@ use App\Http\Controllers\front\FrontController;
 use App\Http\Controllers\front\ProfileController;
 use App\Http\Controllers\front\ApplicationController;
 use App\Http\Controllers\InvoiceController;
+use App\Http\Controllers\front\ScreenController;
 use App\Models\FirebaseNotification;
 use Illuminate\Support\Facades\View;
 
@@ -60,6 +61,9 @@ Route::get('paypal', array('as' => 'status','uses' => 'App\Http\Controllers\Payp
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
+// Route::get('/dashboard' , function(){
+// return view('dashboard');
+// })->name('dashboard');
 
 // require __DIR__.'/auth.php';
 // Route::view('/table')->name('pac')
@@ -69,8 +73,14 @@ Route::group(['prefix' => 'profile'], function () {
     Route::get('/',[ProfileController::class ,'index']) -> name('profile.index');
     Route::get('create',[ProfileController::class ,'create']) -> name('profile.create');
     Route::post('store',[ProfileController::class ,'store']) -> name('profile.store');
-    Route::get('edit/{id}',[ProfileController::class ,'edit']) -> name('admin.languages.edit');
-    Route::post('update/{id}',[ProfileController::class ,'update']) -> name('admin.languages.update');
+
+    Route::get('edit/{id}',[ProfileController::class ,'edit']) -> name('profile.edit');
+    Route::post('update/{id}',[ProfileController::class ,'update']) -> name('profile.update');
+    Route::post('destroy/{id}',[ProfileController::class ,'destroy']) -> name('profile.destroy');
+
+
+
+
 });
 
 // /start app
@@ -80,6 +90,25 @@ Route::group(['prefix' => 'application'], function () {
     Route::post('store',[ApplicationController::class ,'store']) -> name('application.store');
     Route::get('edit/{id}',[ApplicationController::class ,'edit']) -> name('application.edit');
     Route::post('update/{id}',[ApplicationController::class ,'update']) -> name('application.update');
+    Route::post('destroy/{id}',[ApplicationController::class ,'destroy']) -> name('application.destroy');
+
+});
+
+// start Screenes1
+Route::group(['prefix' => 'Screenes'], function () {
+// Route::resource('Screen',[ScreenController::class ]);
+Route::get('/',[ScreenController::class ,'index']) -> name('Screen.index');
+Route::get('create',[ScreenController::class ,'create']) -> name('Screen.create');
+Route::post('store',[ScreenController::class ,'store']) -> name('Screen.store');
+
+Route::get('edit/{id}',[ScreenController::class ,'edit']) -> name('Screen.edit');
+Route::post('update/{id}',[ScreenController::class ,'update']) -> name('Screen.update');
+Route::post('destroy/{id}',[ScreenController::class ,'destroy']) -> name('Screen.destroy');
+});
+
+
+
+Route::resource('features' , FeatureController::class);
     Route::post('destroy/{id}',[ApplicationController::class ,'update']) -> name('application.destroy');
 });
 
@@ -97,5 +126,5 @@ Route::get('subscribtion-status/{id}' ,[PaymentController::class , 'subscribtion
 Route::get('get-invoice' ,[InvoiceController::class , 'getInvoice'])->name('getInvoice');
 Route::post('pay-invoice' ,[InvoiceController::class , 'PayInvoice'])->name('PayInvoice');
 });
-});
+
 

@@ -23,6 +23,7 @@ class CreateFirebaseNotificationsTable extends Migration
             $table->string('notification_date')->nullable();
             $table->string('topic')->nullable();
             $table->integer('user_id')->nullable();
+            $table->foreignId('app_id')->references('id')->on('apps')->onDelete('cascade');
             $table->timestamps();
         });
     }

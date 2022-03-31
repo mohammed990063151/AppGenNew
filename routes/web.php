@@ -12,6 +12,7 @@ use App\Models\Package;
 use App\Http\Controllers\front\FrontController;
 use App\Http\Controllers\front\ProfileController;
 use App\Http\Controllers\front\ApplicationController;
+use App\Http\Controllers\InvoiceController;
 use App\Models\FirebaseNotification;
 use Illuminate\Support\Facades\View;
 
@@ -89,9 +90,12 @@ Route::get('/clients/dashboard' , [FrontController::class , 'index'])->name('cli
 Route::resource('notification' , FirebaseNotificationController::class);
 
 
-Route::get('get-priceing' , [PaymentController::class , 'getPriceingInside']);
+Route::get('get-priceing' , [PaymentController::class , 'getPriceingInside'])->name('getPricing');
 Route::post('get-priceing' , [PaymentController::class , 'PayInside'])->name('PayInside');
 Route::get('subscribtion-status/{id}' ,[PaymentController::class , 'subscribtionStatus'])->name('subscribtionStatus');
+
+Route::get('get-invoice' ,[InvoiceController::class , 'getInvoice'])->name('getInvoice');
+Route::post('pay-invoice' ,[InvoiceController::class , 'PayInvoice'])->name('PayInvoice');
 });
 });
 

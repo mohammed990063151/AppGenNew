@@ -22,7 +22,6 @@
                 </a>
             </li>
             <li class="nav-item">
-
                 <a class="nav-link  {{ request()->is('notification') ? 'active' : ''}}  " href="{{ route('notification.index')}}" >
                     <div
                         class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">

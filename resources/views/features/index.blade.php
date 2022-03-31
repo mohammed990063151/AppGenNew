@@ -22,7 +22,7 @@
                             </div>
                         </div>
                         <div class="table-responsive mt-5">
-                            <table class="table align-items-center table-bordered  ">
+                            <table class="table align-items-center table-bordered">
                                 <thead>
                                     <tr>
                                         <td>id</td>

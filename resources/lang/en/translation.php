@@ -1,0 +1,4 @@
+<?php
+return[
+    'en' => 'english',
+];

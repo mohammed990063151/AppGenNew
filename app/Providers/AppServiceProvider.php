@@ -2,6 +2,8 @@
 
 namespace App\Providers;
 
+use App\Models\OrganizationProfile;
+use Exception;
 use Illuminate\Support\ServiceProvider;
 
 class AppServiceProvider extends ServiceProvider
@@ -23,6 +25,12 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        //
+       try{
+            $Proifle = OrganizationProfile::first();
+            // OrganizationProfile
+            view()->share('OrganizationProfile', $Proifle);
+       }catch(Exception $e){
+
+       }
     }
 }

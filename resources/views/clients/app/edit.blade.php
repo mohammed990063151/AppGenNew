@@ -6,9 +6,13 @@
     ])
     @endcomponent
     @endsection
+
+
+    @section('title')
+    Updata applction
+@stop
     @section('content')
-    @include('clients.alerts.success')
-@include('clients.alerts.errors')
+
     <div class="container-fluid py-4">
         <div class="row mt-4">
             <div class="col-lg-12 mb-lg-0 mb-4">
@@ -25,6 +29,8 @@
                         </div>
                         <div class="row">
                             <div class="mt-3">
+                                @include('clients.alerts.success')
+                                @include('clients.alerts.errors')
                                 <form action="{{route('application.update' , $data->id)}}" method="post" enctype="multipart/form-data">
 
                                     @csrf

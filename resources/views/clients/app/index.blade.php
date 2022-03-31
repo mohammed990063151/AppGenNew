@@ -6,9 +6,12 @@
     ])
     @endcomponent
     @endsection
+
+    @section('title')
+    applction
+@stop
 @section('content')
-@include('clients.alerts.success')
-@include('clients.alerts.errors')
+
 <div class="container-fluid py-4">
     <div class="row mt-4">
         <div class="col-lg-12 mb-lg-0 mb-4">
@@ -24,6 +27,8 @@
                         {{-- </div> --}}
                     </div>
                     <div class="table-responsive mt-5">
+                        @include('clients.alerts.success')
+                        @include('clients.alerts.errors')
                         <table class="table align-items-center table-bordered  ">
                             <thead>
                                 <tr>
@@ -45,14 +50,14 @@
                                     <td><img height="70" width="100" src="/app/{{$data->image}}"></td>
                                     <td>
                                         <!-- Modal -->
-                                        <form action="{{route('application.destroy' , $data->id)}}" method="POST" style="display:inline">
+                                        <form action="{{route('application.destroy', $data->id)}}" method="post" style="display:inline">
 
                                             @csrf
                                             {{-- @method('DELETE') --}}
                                             <button class="btn btn-sm btn-circle btn-danger">Delete</button>
                                         </form>
 
-                                        <a href="{{route('application.edit' , $data->id)}}" class="btn btn-info btn-icon-split">
+                                        <a href="{{route('application.edit', $data->id)}}" class="btn btn-info btn-icon-split">
 
                                             <span class="icon text-white-50">
                                                 <i class="fas fa-info-circle"></i>

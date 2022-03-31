@@ -1,12 +1,15 @@
 @extends('layouts.master')
 @section('breadceumbs')
 {{-- <x-bread-crumps> --}}
-    @component('components.bread-crumps' , ['head' => 'Add New applction' ,
-    'links' => ['applction' , 'Add New applction']
+    @component('components.bread-crumps' , ['head' => ' Add applction' ,
+    'links' => ['Dashbard' , 'Add New applction']
     ])
 
     @endcomponent
     @endsection
+    @section('title')
+    Add applction
+@stop
 
     @section('content')
     <div class="container-fluid py-4">
@@ -24,6 +27,8 @@
                         </div>
                         <div class="col-md-12">
                             <div class="mt-3">
+                                @include('clients.alerts.success')
+                                @include('clients.alerts.errors')
                                 <form action="{{route('application.store')}}" method="post" enctype="multipart/form-data">
                                     @csrf
                                     <h5>Applction details</h5>

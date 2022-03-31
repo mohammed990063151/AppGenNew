@@ -6,6 +6,9 @@
     ])
     @endcomponent
     @endsection
+    @section('title')
+    screen
+@stop
 @section('content')
 
 <div class="container-fluid py-4">
@@ -22,6 +25,8 @@
 
                     </div>
                     <div class="table-responsive mt-5">
+                        @include('clients.alerts.success')
+                        @include('clients.alerts.errors')
                         <table class="table align-items-center table-bordered  ">
                             <thead>
                                 <tr>

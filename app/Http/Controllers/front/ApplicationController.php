@@ -8,7 +8,7 @@ use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
 use Illuminate\Foundation\Bus\DispatchesJobs;
 use Illuminate\Foundation\Validation\ValidatesRequests;
 use Illuminate\Http\Request;
-use App\Http\Requests\ApplicationRequest;
+use App\Http\Requests\ApplctionRequest;
 use Illuminate\Routing\Controller as BaseController;
 
 class ApplicationController extends BaseController
@@ -41,10 +41,10 @@ class ApplicationController extends BaseController
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(request $request)
+    public function store(ApplctionRequest $request)
     {
 // return $request;
-
+try{
                  $data = new app;
 
 
@@ -62,7 +62,14 @@ class ApplicationController extends BaseController
 
                           $data->save();
 
-                          return redirect('/application');
+
+                          return redirect('/application')->with(['success' => 'ok']);
+                          // DB::commit();
+                      } catch (\Exception $ex) {
+                          // DB::rollback();
+                          return $ex;
+                          return redirect('/application')->with(['error' => 'حدث خطا ما برجاء المحاوله لاحقا']);
+                      }
 
     }
     public function edit($id){
@@ -73,9 +80,12 @@ class ApplicationController extends BaseController
     }
 
 
-    public function update(request $request ,$id ){
-        $data=app::find($id);
+    public function update(ApplctionRequest $request ,$id ){
 
+      try{
+        $data=app::find($id);
+        if (!$data)
+        return redirect()->route('clients.app.edit')->with(['error' => 'not found']);
 
         $image=$request->image;
 
@@ -95,15 +105,33 @@ class ApplicationController extends BaseController
 
                  $data->save();
 
-                 return redirect('/application');
+                 return redirect('/application')->with(['success' => 'ok']);
+                          // DB::commit();
+                      } catch (\Exception $ex) {
+                          // DB::rollback();
+                        //   return $ex;
+                          return redirect('/application')->with(['error' => 'حدث خطا ما برجاء المحاوله لاحقا']);
+                      }
 
                 }
 
 
                 public function destroy(request $request ,$id ){
+                    try{
                 $id = $request->id;
+
                 app::find($id)->delete();
-                return redirect('/application');
+
+                return redirect('/application')->with(['success' => 'ok']);
+                // DB::commit();
+            } catch (\Exception $ex) {
+                // DB::rollback();
+                // return $ex;
+                return redirect('/application')->with(['error' => 'حدث خطا ما برجاء المحاوله لاحقا']);
+            }
+
+
+
 
                 }
 

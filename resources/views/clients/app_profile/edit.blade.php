@@ -6,7 +6,9 @@
     ])
     @endcomponent
     @endsection
-
+    @section('title')
+    Updata profile
+    @stop
     @section('content')
     @include('clients.alerts.success')
 @include('clients.alerts.errors')
@@ -26,6 +28,8 @@
                         </div>
                         <div class="row">
                             <div class="mt-3">
+                                @include('clients.alerts.success')
+                                @include('clients.alerts.errors')
                                 <form action="{{route('profile.update' , $data->id)}}" method="post" enctype="multipart/form-data">
 
                                     @csrf

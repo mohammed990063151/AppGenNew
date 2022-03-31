@@ -6,7 +6,9 @@
     ])
     @endcomponent
     @endsection
-
+    @section('title')
+    Edite screen
+    @stop
     @section('content')
     <div class="container-fluid py-4">
         <div class="row mt-4">
@@ -24,6 +26,8 @@
                         </div>
                         <div class="row">
                             <div class="mt-3">
+                                @include('clients.alerts.success')
+                                @include('clients.alerts.errors')
                                 <form action="{{route('Screen.update' , $Screen->id)}}" method="post" enctype="multipart/form-data">
 
                                     @csrf
@@ -65,7 +69,7 @@
                                     <div class="form-group col-md-6">
                                         <label class="my-1 mr-2" for="inlineFormCustomSelectPref">applaction</label>
                                 <select name="profile_id" value="profile_id" class="form-control" required>
-                                    
+
                                     @foreach ($profile as $profile)
                                     <option value="{{ $profile->id }}">{{ $profile->orgname }}</option>
                                 @endforeach

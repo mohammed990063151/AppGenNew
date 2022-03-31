@@ -42,8 +42,9 @@ class ScreenController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(request $request)
+    public function store(ScreenRequest $request)
     {
+        try{
 
         // return ;
         $Screen = new screen;
@@ -65,6 +66,14 @@ class ScreenController extends Controller
                  $Screen->save();
 
                  return redirect('/Screenes');
+                   //  DB::commit();
+                return redirect('/Screenes')->with(['success' => 'ok']);
+                // DB::commit();
+            } catch (\Exception $ex) {
+                // DB::rollback();
+                return $ex;
+                return redirect('/Screenes')->with(['error' => 'حدث خطا ما برجاء المحاوله لاحقا']);
+            }
 
 
     }
@@ -101,12 +110,13 @@ class ScreenController extends Controller
      * @param  \App\Models\screen  $screen
      * @return \Illuminate\Http\Response
      */
-    public function update(request $request ,$id ){
+    public function update(ScreenRequest $request ,$id ){
 
-
+try{
 // return $request;
         $Screen=screen::find($id);
-
+        if (!$Screen)
+        return redirect()->route('clients.Screen.Screen.edit')->with(['error' => 'not found']);
 
         $image=$request->screen_image;
 
@@ -125,6 +135,14 @@ class ScreenController extends Controller
 
 
                  $Screen->save();
+                   //  DB::commit();
+                return redirect('/Screenes')-> with(['success' => 'ok']);
+                // DB::commit();
+            } catch (\Exception $ex) {
+                // DB::rollback();
+            //    / return $ex;
+                return redirect('/Screenes') -> with(['error' => 'حدث خطا ما برجاء المحاوله لاحقا']);
+            }
 
        return redirect('/Screenes');
 
@@ -137,11 +155,19 @@ class ScreenController extends Controller
      * @param  \App\Models\screen  $screen
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Request $request ,$id ){
-
+    public function destroy(request $request ,$id ){
+try{
         $id = $request->id;
-        screen1::find($id)->delete();
-        return redirect('/Screenes');
+        screen::find($id)->delete();
+        return redirect('/Screenes')-> with(['success' => 'ok']);
+        // DB::commit();
+    } catch (\Exception $ex) {
+        // DB::rollback();
+    //   /  return $ex;
+        return redirect('/Screenes') -> with(['error' => 'حدث خطا ما برجاء المحاوله لاحقا']);
+    }
+
+return redirect('/Screenes');
 
         }
 }

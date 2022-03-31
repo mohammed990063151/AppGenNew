@@ -8,7 +8,8 @@ use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
 use Illuminate\Foundation\Bus\DispatchesJobs;
 use Illuminate\Foundation\Validation\ValidatesRequests;
 use Illuminate\Http\Request;
-use App\Http\Requests\ProfileRequest;
+use App\Http\Requests\ProfileappRequest;
+use DB;
 use Illuminate\Routing\Controller as BaseController;
 
 class ProfileController extends BaseController
@@ -44,9 +45,15 @@ class ProfileController extends BaseController
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store( request $request)
+    public function store(ProfileappRequest  $request)
     {
-// return $request;
+// return $request ->except('_token');
+// app_profile::create($request->except('_token'));
+
+try {
+//     return $request ->except('_token');
+// app_profile::create($request->except('_token'));
+    // DB::beginTransaction();
                         app_profile::create([
 
                  'orgname' => $request->orgname,
@@ -60,8 +67,14 @@ class ProfileController extends BaseController
             ]);
 
                 //  $data->save();
-                return redirect('/profile');
 
+                return redirect()-> route('profile.index')->with(['success' => 'success']);
+                // DB::commit();
+            } catch (\Exception $ex) {
+                // DB::rollback();
+                return $ex;
+                return redirect('/profile') -> route('profile.index')->with(['error' => 'حدث خطا ما برجاء المحاوله لاحقا']);
+            }
 
     }
 
@@ -75,8 +88,16 @@ class ProfileController extends BaseController
     }
 
 
-    public function update(request $request ,$id ){
+    public function update(ProfileappRequest $request ,$id ){
+
+        try {
+
         $data=app_profile::find($id);
+
+        if (!$data)
+        return redirect()->route('clients.app_profile.edit')->with(['error' => 'not found']);
+
+        // DB::beginTransaction();
                  $data->orgname=$request->orgname;
                  $data->orgemail=$request->orgemail;
                  $data->ogwhatsapp=$request->ogwhatsapp;
@@ -86,17 +107,28 @@ class ProfileController extends BaseController
                  $data->sc=$request->sc;
 
                  $data->save();
-
-       return redirect('/profile');
+                //  DB::commit();
+                return redirect()-> route('profile.index')->with(['success' => 'ok']);
+                // DB::commit();
+            } catch (\Exception $ex) {
+                // DB::rollback();
+                return $ex;
+                return redirect('/profile') -> route('profile.index')->with(['error' => 'حدث خطا ما برجاء المحاوله لاحقا']);
+            }
 
                 }
 
 
                 public function destroy(request $request ,$id ){
-
+try{
                 $id = $request->id;
                 app_profile::find($id)->delete();
-                return redirect('/profile');
+                return redirect('/profile')->with(['success' => 'ok']);
+            } catch (\Exception $ex) {
+                // DB::rollback();
+                return $ex;
+                return redirect('/profile') -> route('profile.index')->with(['error' => 'حدث خطا ما برجاء المحاوله لاحقا']);
+            }
 
                 }
 

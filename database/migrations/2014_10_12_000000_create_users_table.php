@@ -26,6 +26,7 @@ return new class extends Migration
             $table->string('profile_photo_path', 2048)->nullable();
             $table->unsignedInteger('package_id')->nullable();
             $table->boolean('is_subscribed')->default(0);
+            $table->boolean('crruent_subscription_id')->nullable();
             // $table->foreign('package_id')->references('id')->on('packages');
             $table->timestamps();
         });

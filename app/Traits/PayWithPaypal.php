@@ -1,5 +1,5 @@
 <?php
-namespace App\Http\Controllers;
+namespace App\Traits;
 
 use App\Http\Requests;
 use App\Models\Package;
@@ -26,7 +26,7 @@ use PayPal\Api\ExecutePayment;
 use PayPal\Api\PaymentExecution;
 use PayPal\Api\Transaction;
 
-class PaypalController extends Controller
+class PayWithPaypal
 {
     private $_api_context;
 
@@ -42,32 +42,8 @@ class PaypalController extends Controller
         return view('paywithpaypal');
     }
 
-    public function postPaymentWithpaypal(Request $request)
+    public function postPaymentWithpaypal($PayPalAmount , $route)
     {
-        $Validator = validator($request->all(), [
-            'name' => ['required', 'string', 'max:255'],
-            'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
-            'password' => ['required', 'string', 'min:8', 'confirmed'],
-        ]);
-
-        if(!FacadesSession::has('package_id')) return redirect()->route('getPrice');
-        if($Validator->fails()) return $Validator->errors(); #redirect()->back()->withError($Validator->errors());
-
-        $user = User::create([
-            'name' => $request->name,
-            'email' => $request->email,
-            'password' => Hash::make($request->password),
-        ]);
-        // dd(Session::get('package_id'));
-        $Package = Package::find(FacadesSession::get('package_id'));
-        // dd($Package);
-        FacadesSession::forget('package_id');
-        Subscription::create([
-            'user_id' => $user->id ,
-            'package_id' => $Package->id,
-            'amount' => $Package->price,
-        ]);
-
         // dd('user and Subscribtion Scuccesfuly');
         $payer = new Payer();
         $payer->setPaymentMethod('paypal');
@@ -75,14 +51,14 @@ class PaypalController extends Controller
         $item_1->setName('Product 1')
             ->setCurrency('USD')
             ->setQuantity(1)
-            ->setPrice($Package->price);
+            ->setPrice($PayPalAmount);
 
         $item_list = new ItemList();
         $item_list->setItems(array($item_1));
 
         $amount = new Amount();
         $amount->setCurrency('USD')
-            ->setTotal($Package->price);
+            ->setTotal($PayPalAmount);
 
         $transaction = new Transaction();
         $transaction->setAmount($amount)
@@ -90,8 +66,8 @@ class PaypalController extends Controller
             ->setDescription('Enter Your transaction description');
 
         $redirect_urls = new RedirectUrls();
-        $redirect_urls->setReturnUrl(URL::route('status'))
-            ->setCancelUrl(URL::route('status'));
+        $redirect_urls->setReturnUrl($route)
+            ->setCancelUrl($route);
 
         $payment = new Payment();
         $payment->setIntent('Sale')
@@ -127,27 +103,27 @@ class PaypalController extends Controller
     	return Redirect::route('paywithpaypal');
     }
 
-    public function getPaymentStatus(Request $request)
+    public function getPaymentStatus($request)
     {
 
         // return $request;
         $payment_id = Session::get('paypal_payment_id');
         Session::forget('paypal_payment_id');
-        if (empty($request->input('PayerID')) || empty($request->input('token'))) {
-            \Session::put('error','Payment failed');
-            return Redirect::route('paywithpaypal');
+        if (empty($request->PayerID) || empty($request->token)) {
+           return false;
+            // \Session::put('error','Payment failed');
+            // return Redirect::route('paywithpaypal');
         }
         $payment = Payment::get($payment_id, $this->_api_context);
         $execution = new PaymentExecution();
-        $execution->setPayerId($request->input('PayerID'));
+        $execution->setPayerId($request->PayerID);
         $result = $payment->execute($execution, $this->_api_context);
 
         if ($result->getState() == 'approved') {
-            \Session::put('success','Payment success !!');
-            return Redirect::route('paywithpaypal');
+            return true;
         }
-
-        \Session::put('error','Payment failed !!');
-		return Redirect::route('paywithpaypal');
+        return false;
+        // \Session::put('error','Payment failed !!');
+		// return Redirect::route('paywithpaypal');
     }
 }

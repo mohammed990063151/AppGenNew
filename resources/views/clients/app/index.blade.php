@@ -1,5 +1,15 @@
 @extends('layouts.master')
+@section('breadceumbs')
+{{-- <x-bread-crumps> --}}
+    @component('components.bread-crumps' , ['head' => 'applction table ' ,
+    'links' => [ 'applction ']
+    ])
+    @endcomponent
+    @endsection
 
+    @section('title')
+    applction
+@stop
 @section('content')
 
 <div class="container-fluid py-4">
@@ -7,16 +17,18 @@
         <div class="col-lg-12 mb-lg-0 mb-4">
             <div class="card z-index-2 h-100">
                 <div class="card-header pb-0 pt-3 bg-transparent">
-                    <div class="row space-between">
-                        <h6 class="text-capitalize col-4">packages table</h6>
-                        <div class="col-6"></div>
-                        <div class="col-2">
+                    <div class="d-flex justify-content-between">
+                        <h6 class="text-capitalize col-4">applction table</h6>
+
+                        {{-- <div class="col-2"> --}}
                             <span><a href="{{route('application.create')}}" class="btn btn-primary btn-sm"
-                                {{--  --}}
-                                    type="button">add New</a></span>
-                        </div>
+                                    type="button">add applction</a>
+                            </span>
+                        {{-- </div> --}}
                     </div>
                     <div class="table-responsive mt-5">
+                        @include('clients.alerts.success')
+                        @include('clients.alerts.errors')
                         <table class="table align-items-center table-bordered  ">
                             <thead>
                                 <tr>
@@ -35,22 +47,22 @@
                                     <td>{{$data->name}}</td>
                                     <td>{{$data->link}}</td>
                                     <td>{{$data->version}}</td>
-                                    <td><img height="100" width="150" src="/app/{{$data->image}}"></td>
+                                    <td><img height="70" width="100" src="/app/{{$data->image}}"></td>
                                     <td>
                                         <!-- Modal -->
-                                        <form action="{{route('application.destroy' , $data->id)}}" method="post" style="display:inline">
+                                        <form action="{{route('application.destroy', $data->id)}}" method="post" style="display:inline">
 
                                             @csrf
-                                            @method('DELETE')
-                                            <button class="btn btn-sm btn-circle btn-danger"><i class="fa fa-trash"></i></button>
+                                            {{-- @method('DELETE') --}}
+                                            <button class="btn btn-sm btn-circle btn-danger">Delete</button>
                                         </form>
 
-                                        <a href="{{route('application.edit' , $data->id)}}" class="btn btn-info btn-icon-split">
-                                            
+                                        <a href="{{route('application.edit', $data->id)}}" class="btn btn-info btn-icon-split">
+
                                             <span class="icon text-white-50">
                                                 <i class="fas fa-info-circle"></i>
                                             </span>
-                                            <span class="text">Show Pacakage Feture</span>
+                                            <span class="text">Edite</span>
                                         </a>
                                     </td>
                                 </tr>

@@ -22,6 +22,8 @@ class CreateOrganizationProfilesTable extends Migration
             $table->string('whatsapp_no');
             $table->text('pravicy_en')->nullable();
             $table->text('pravicy_ar')->nullable();
+            $table->integer('fixed_subscribtion_price')->default(100);
+            $table->string('domain')->default('app.example.com');
             $table->string('email');
             $table->timestamps();
         });

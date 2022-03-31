@@ -1,5 +1,14 @@
 @extends('layouts.master')
-
+@section('breadceumbs')
+{{-- <x-bread-crumps> --}}
+    @component('components.bread-crumps' , ['head' => 'profile ' ,
+    'links' => [ 'profile']
+    ])
+    @endcomponent
+    @endsection
+    @section('title')
+profile
+@stop
 @section('content')
 
 <div class="container-fluid py-4">
@@ -7,72 +16,69 @@
         <div class="col-lg-12 mb-lg-0 mb-4">
             <div class="card z-index-2 h-100">
                 <div class="card-header pb-0 pt-3 bg-transparent">
-                    <div class="row space-between">
-                        <h6 class="text-capitalize col-4">packages table</h6>
-                        <div class="col-6"></div>
-                        <div class="col-2">
+                    <div class="d-flex justify-content-between">
+                        <h6 class="text-capitalize col-4">profile</h6>
+
                             <span><a href="{{route('profile.create')}}" class="btn btn-primary btn-sm"
                                 {{--  --}}
                                     type="button">add New</a></span>
-                        </div>
+
                     </div>
                     <div class="table-responsive mt-5">
+                        @include('clients.alerts.success')
+                        @include('clients.alerts.errors')
                         <table class="table align-items-center table-bordered  ">
                             <thead>
                                 <tr>
                                     <td>id</td>
-                                    <td>name</td>
-                                    <td>price</td>
-                                    <td>duration</td>
-                                    <td>status</td>
+                                    <td>Name</td>
+                                    <td>Email</td>
+                                    <td>Whatsapp</td>
+                                    <td>color</td>
+                                    <td>pc</td>
+                                    <td>sc</td>
+                                    <td>Name applaction</td>
                                     <td>option</td>
                                 </tr>
                             </thead>
                             <tbody>
-                                {{-- @forelse ($Packages as $key => $Package )
+                                <?php $i = 0; ?>
+                                @forelse ($data as  $data )
+                                <?php $i++; ?>
                                 <tr>
-                                    <td>{{$Package->id}}</td>
-                                    <td>{{$Package->name}}</td>
-                                    <td>{{$Package->price}}</td>
-                                    <td>{{$Package->duration}}</td>
-                                    <td>{!! $Package->StatusWithSpan() !!}</td>
-                                    <td> --}}
+                                    <td>{{$i}}</td>
+                                    <td>{{$data->orgname}}</td>
+                                    <td>{{$data->orgemail}}</td>
+                                    <td>{{$data->ogwhatsapp}}</td>
+                                    <td>{{$data->color}}</td>
+                                    <td>{{$data->pc}}</td>
+                                    <td>{{$data->sc}}</td>
+                                    <td> {{$data->app->name?? '-'}}</td>
+                                <td>
                                         <!-- Modal -->
-                                        <form action="" method="post" style="display:inline">
-                                            {{-- {{route('packages.destroy' , $Package->id)}} --}}
-                                            {{-- @csrf
-                                            @method('DELETE') --}}
-                                            <button class="btn btn-sm btn-circle btn-danger"><i class="fa fa-trash"></i></button>
+                                        <form action="{{route('profile.destroy' , $data->id)}}" method="post" style="display:inline">
+                                            @csrf
+                                            {{-- @method('DELETE') --}}
+                                            <button class="btn btn-sm btn-circle btn-danger">Delete</button>
                                         </form>
-                                        <a href="" class="btn btn-sm btn-circle btn-xs ">
-                                            {{-- {{$Package->status ? 'btn-warning' :'btn-success'}} --}}
-                                            {{-- {{route('packages.status' , $Package->id)}} --}}
-                                            <i class="fa fa-power-off"></i>
-                                        </a>
-                                        <a href="" class="btn btn-info btn-icon-split">
-                                            {{-- {{route('EditFeatures' , $Package->id)}} --}}
+
+                                        <a href="{{route('profile.edit' , $data->id)}}" class="btn btn-info btn-icon-split">
+
                                             <span class="icon text-white-50">
-                                                <i class="fas fa-info-circle"></i>
+                                                {{-- <i class="fas fa-info-circle"></i> --}}
                                             </span>
-                                            <span class="text">Show Pacakage Feture</span>
+                                            <span class="text">Edite</span>
                                         </a>
                                     </td>
                                 </tr>
                                 <tr></tr>
-                                {{-- @empty --}}
+                                @empty
                                 <tr>
                                     <td colspan="5"> No data Right Now</td>
                                 </tr>
-                                {{-- @endforelse --}}
+                                @endforelse
                             </tbody>
-                            <tfoot>
-                                <td>id</td>
-                                <td>name</td>
-                                <td>price</td>
-                                <td>duration</td>
-                                <td>status</td>
-                                <td>option</td>
-                            </tfoot>
+
                         </table>
                     </div>
                 </div>

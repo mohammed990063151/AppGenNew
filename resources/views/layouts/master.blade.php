@@ -12,6 +12,7 @@
     <!--     Fonts and icons     -->
     @include('layouts.includes.style')
     @yield('style')
+    @include('notify::components.notify')
 </head>
 
 <body class="g-sidenav-show   bg-gray-100">

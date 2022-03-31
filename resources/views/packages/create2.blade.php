@@ -1,4 +1,5 @@
-@extends('layouts.master2')
+@extends('layouts.Admin.app')
+@section('BreadCrumbs' , 'Add Packages Futrue')
 @section('breadceumbs')
 {{-- <x-bread-crumps> --}}
     @component('components.bread-crumps' , ['head' => 'Add New Packages' ,

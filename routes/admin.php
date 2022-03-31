@@ -50,5 +50,6 @@ Route::middleware('auth:admin')->group(function () {
     Route::resource('subscription', SubscriptionController::class);
     Route::get('client-reports' , [ReportController::class , 'Clients'])->name('client.reports');
     Route::resource('features' , FeatureController::class);
+    Route::get('notification-report' , [ReportController::class , 'NotificationReport'])->name('notification.report');
 
 });

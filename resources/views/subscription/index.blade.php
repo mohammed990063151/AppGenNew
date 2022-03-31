@@ -1,4 +1,5 @@
-@extends('layouts.master2')
+@extends('layouts.Admin.app')
+@section('BreadCrumbs' , 'Show Subscrption')
 @section('breadceumbs')
 {{-- <x-bread-crumps> --}}
     @component('components.bread-crumps' , ['head' => 'Subscription' ,

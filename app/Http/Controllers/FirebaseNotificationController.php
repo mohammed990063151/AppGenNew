@@ -2,11 +2,13 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\app;
 use App\Models\FirebaseNotification;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 use App\Events\BordcastToAllRepresetitve;
 use Exception;
+use Illuminate\Support\Facades\Auth;
 
 class FirebaseNotificationController extends Controller
 {
@@ -23,8 +25,8 @@ class FirebaseNotificationController extends Controller
      */
     public function create()
     {
-        // $Area = Area::get();
-        return view('notification.create');
+        $applcation = app::get();
+        return view('notification.create',compact('applcation'));
     }
 
     /**
@@ -63,11 +65,11 @@ class FirebaseNotificationController extends Controller
             //     // $type = 'representative';
             // }
             // Check If The Notification Send TO Spicefic User
-            $User = $request->user_id ? $request->user_id : null;
+            $User = Auth::user()->id;
             $FireBase = FirebaseNotification::create([
                 'title' => $request->title,
                 'notifcation' => $request->content,
-
+                // 'U'
                 'user_id' => $User ,
                 'image' => $fileName,
                 // 'topic' => $topic,
@@ -81,7 +83,7 @@ class FirebaseNotificationController extends Controller
             //     return redirect()->route('notification.index');
             }
             // fire To All Representive
-            event(new BordcastToAllRepresetitve($topic , $request->title , $request->content, asset('uploads/notification/' .$fileName)));
+            // event(new BordcastToAllRepresetitve($topic , $request->title , $request->content, asset('uploads/notification/' .$fileName)));
             session()->flash('success', __('translation.notifcation.send.successfuly'));
             return redirect()->route('notification.index');
         } catch (Exception $e) {
@@ -127,7 +129,7 @@ class FirebaseNotificationController extends Controller
      */
     public function destroy($id)
     {
-        $FireBase =  FireBaseNotificationHistory::find($id)->delete();
+        $FireBase =  FirebaseNotification::find($id)->delete();
         return redirect()->back();
     }
 }

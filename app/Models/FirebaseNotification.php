@@ -35,6 +35,10 @@ class FirebaseNotification extends Model
     {
         return Carbon::parse($this->created_at)->diffForHumans();
     }
+    public function app()
+    {
+    return $this->belongsTo(app::class);
+    }
 
 }
 

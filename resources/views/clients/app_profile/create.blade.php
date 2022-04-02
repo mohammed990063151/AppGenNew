@@ -59,7 +59,7 @@ Add New profile
                                         @error('ogwhatsapp')
                                         <span class="text-danger error">{{ $message
                                         }}</span>@enderror
-                                       
+
                                     </div>
                                     <div class="form-group col-md-6">
                                         <label for="">App Profile color</label>
@@ -109,3 +109,16 @@ Add New profile
         </footer>
     </div>
     @endsection
+
+
+
+
+
+
+
+
+
+
+
+
+    {{-- <div class="_3WqBaLCYbnU_M9KuvuJiXF width-100 position-relative" style="height: 692.619px;"><div class="_1tbN39d0nYr3WRpHWsC6Ov" data-testid="hotspot-109634431" style="left: 130px; top: 604px; width: 61px; height: 57px;"></div><div class="_1tbN39d0nYr3WRpHWsC6Ov" data-testid="hotspot-109634434" style="left: 62px; top: 622px; width: 57px; height: 58px;"></div><div class="_1tbN39d0nYr3WRpHWsC6Ov" data-testid="hotspot-109634444" style="left: 202px; top: 622px; width: 56px; height: 58px;"></div><div class="_1tbN39d0nYr3WRpHWsC6Ov" data-testid="hotspot-109634445" style="left: 266px; top: 622px; width: 54px; height: 57px;"></div><div class="_1tbN39d0nYr3WRpHWsC6Ov" data-testid="hotspot-109634477" style="left: 1px; top: 622px; width: 53px; height: 59px;"></div><div></div></div> --}}

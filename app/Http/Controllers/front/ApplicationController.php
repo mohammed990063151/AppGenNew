@@ -80,7 +80,7 @@ try{
     }
 
 
-    public function update(ApplctionRequest $request ,$id ){
+    public function update(request $request ,$id ){
 
       try{
         $data=app::find($id);
@@ -105,7 +105,7 @@ try{
 
                  $data->save();
 
-                 return redirect('/application')->with(['success' => 'ok']);
+                 return view('clients.app.edit')->with(['success' => 'ok']);
                           // DB::commit();
                       } catch (\Exception $ex) {
                           // DB::rollback();

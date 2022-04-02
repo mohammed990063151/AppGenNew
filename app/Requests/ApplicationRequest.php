@@ -28,7 +28,7 @@ class ApplicationRequest extends FormRequest
             'image' => 'required_without:id|mimes:jpg,jpeg,png',
             'name' => 'required|string|max:100',
             'link' => 'required|string|max:100',
-            'version'   => 'required|string|max:50',
+            // 'version'   => 'required|string|max:50',
 
         ];
     }
@@ -39,7 +39,7 @@ class ApplicationRequest extends FormRequest
             'in' => 'Incorrect values entered ',
             'name.string' => 'The name must be letters',
             'abbr.max' => 'This field must not be more than 10 characters ',
-            
+
             'name.max' => 'The name of the applction must not be more than 100 characters ',
         ];
     }

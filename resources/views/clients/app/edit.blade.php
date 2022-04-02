@@ -35,44 +35,50 @@
 
                                     @csrf
                                     <h5>Applction details</h5>
-                                    <div class="row col-md-12">
-                                        <div>
+                                    {{-- <div class="row col-md-12"> --}}
+                                        {{-- <div>
                                             <label>Old logo</label>
                                             <img height="100" width="150" src="/app/{{$data->image}}">
 
                                         </div>
 
-  		                                    <div>
-                                                        <label>New logo</label>
-                                                                <input type="file" name="image">
+  		                                    <div> --}}
+                                      {{-- <label>New logo</label>
+                                      <input type="file" name="image"> --}}
 
                                                     </div>
-                                    <div class="form-group col-md-6">
+                                    <div class="form-group col-md-3">
                                         <label for=""> Name</label>
-                                        <input type="text" class="form-control" name="name" value="{{$data->name}}" id=""
+                                        <input type="text" class="form-control" name="name" value="{{$data->name}}" id="name"
                                             aria-describedby="helpId" placeholder="">
-                                        @error('Name')
+                                        @error('name')
                                         <small id="helpId" class="form-text text-danger text-muted">{{$message}}</small>
                                         @enderror
                                     </div>
-                                    <div class="form-group col-md-6">
+
+                                    <div class="form-group col-md-3">
                                         <label for="">link</label>
                                         <input type="text" class="form-control" name="link" value="{{$data->link}}" id=""
                                             aria-describedby="helpId" placeholder="">
-                                        @error('email')
+                                        @error('link')
                                         <small id="helpId" class="form-text text-muted">{{$message}}</small>
                                         @enderror
                                     </div>
-                                    <div class="form-group col-md-6">
-                                        <label for="">version</label>
-                                        <input type="text" class="form-control" name="version" value="{{$data->version}}" id=""
-                                            aria-describedby="helpId" placeholder="">
-                                        @error('Nmae')
-                                        <small id="helpId" class="form-text text-danger text-muted">{{$message}}</small>
-                                        @enderror
-                                    </div>
 
-                                        <button class="btn btn-primary"> Save </button>
+
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                      <label for="">logo</label>
+                                      <input type="file"
+                                        class="form-control" name="image" id="" aria-describedby="helpId" placeholder="">
+                                    </div>
+                                </div>
+                                @error('image')
+                                <small id="helpId" class="form-text text-muted">{{$message}}</small>
+                                @enderror
+                            </div>
+<div class="save">
+                                        <button class="btn btn-primary"> Save </button></div>
                                     </div>
                                 </form>
                             </div>

@@ -12,6 +12,24 @@
 @stop
 @section('content')
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <div class="container-fluid py-4">
     <div class="row mt-4">
         <div class="col-lg-12 mb-lg-0 mb-4">
@@ -29,7 +47,47 @@
                     <div class="table-responsive mt-5">
                         @include('clients.alerts.success')
                         @include('clients.alerts.errors')
-                        <table class="table align-items-center table-bordered  ">
+
+
+                    <section class="projects" id ="projects">
+                        {{-- <h2 class="title">how are you feeling</h2> --}}
+<div class="content">
+
+    @foreach($data as $data)
+    <div class="project-card">
+        <div class="project-image">
+            <img  src="/app/{{$data->image}}"/>
+        </div>
+    <div class="project-info">
+<p class="project-category">{{$data->name}}</p>
+<strong class="project-title">
+{{-- <span>dev</span> --}}
+<a href="{{route('application.edit', $data->id)}}" class="more-add">edite</a>
+<a href="#" class="more-details">more</a>
+
+</strong>
+
+    </div>
+
+
+        </div>   @endforeach
+</div>
+                    </section>
+{{-- <div id="tracking_id">
+    <div class="inner_tracking title"></div>
+
+</div>
+
+<div class="inner_tracking main"></div>
+<div class="child_tracking"> --}}
+    {{-- @forelse ($data as  $data ) --}}
+
+{{-- <h5>heart rate</h5>
+<p><span>0</span></p>
+</div></div></div> --}}
+
+{{-- @endforelse --}}
+                        {{-- <table class="table align-items-center table-bordered  ">
                             <thead>
                                 <tr>
                                     <td>id</td>
@@ -48,13 +106,13 @@
                                     <td>{{$data->link}}</td>
                                     <td>{{$data->version}}</td>
                                     <td><img height="70" width="100" src="/app/{{$data->image}}"></td>
-                                    <td>
+                                    <td> --}}
                                         <!-- Modal -->
-                                        <form action="{{route('application.destroy', $data->id)}}" method="post" style="display:inline">
+                                        {{-- <form action="{{route('application.destroy', $data->id)}}" method="post" style="display:inline">
 
-                                            @csrf
+                                            @csrf --}}
                                             {{-- @method('DELETE') --}}
-                                            <button class="btn btn-sm btn-circle btn-danger">Delete</button>
+                                            {{-- <button class="btn btn-sm btn-circle btn-danger">Delete</button>
                                         </form>
 
                                         <a href="{{route('application.edit', $data->id)}}" class="btn btn-info btn-icon-split">
@@ -83,7 +141,7 @@
 
     </div>
 
-</div>
+</div>--}}
 
 </div>
 </div>

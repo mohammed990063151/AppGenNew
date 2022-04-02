@@ -17,6 +17,7 @@ return new class extends Migration
             $table->id();
             $table->string('name' , 30);
             $table->integer('duration');
+            $table->boolean('is_freetrial')->default(0);
             $table->integer('price');
             $table->boolean('status')->default(0);
             $table->timestamps();

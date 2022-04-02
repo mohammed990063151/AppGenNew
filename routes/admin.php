@@ -10,6 +10,7 @@ use App\Http\Controllers\ClientController;
 use App\Http\Controllers\DashBoardContorller;
 use App\Http\Controllers\FeatureController;
 use App\Http\Controllers\ReportController;
+use GuzzleHttp\Middleware;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -23,8 +24,11 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/login' , [AdminAuthController::class , 'getLoginForm'])->name('get.admin.login');
-Route::post('/login' , [AdminAuthController::class , 'AdminLoign'])->name('admin.login');
+Route::middleware('guest:admin')->group(function() {
+    Route::get('/login' , [AdminAuthController::class , 'getLoginForm'])->name('get.admin.login');
+    Route::post('/login' , [AdminAuthController::class , 'AdminLoign'])->name('admin.login');
+});
+
 // AdminController
 Route::middleware('auth:admin')->group(function () {
     Route::prefix('user-mangement')->group( function(){

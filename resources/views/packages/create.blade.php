@@ -41,13 +41,23 @@
                                         <div class="form-group col-md-6">
                                             <label for="">Package Duration</label>
                                             <select class="form-control" name="Duration" id="">
-                                                <option value="30">1 mounth</option>
-                                                <option value="60">2 mounth</option>
-                                                <option value="90">3 mounth</option>
+                                                @for ($i = 1 ; $i < 100 ;$i++)
+                                                    @if ($i % 2 == 0)
+                                                        <option value='{{$i}}'> {{$i}} days</option>
+                                                    @endif
+                                                @endfor
                                             </select>
                                             @error('Duration')
                                                 <small id="helpId" class="form-text text-muted">Help text</small>
                                             @enderror
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="form-check">
+                                              <label class="form-check-label mt-4">
+                                                <input type="checkbox" class="form-check-input" name="is_freetrial" id="" value="checkedValue" checked>
+                                                is free trial
+                                              </label>
+                                            </div>
                                         </div>
                                     </div>
                                     <div class="mt-2"></div>
@@ -71,54 +81,15 @@
                                             @enderror
                                         </div>
                                     </div>
-                                    <<<<<<< HEAD <button class="btn m-1 btn-primary"> Save </button>
+                                    <button class="btn m-1 btn-primary"> Save </button>
                                 </form>
                             </div>
-                            =======
-                            <div class="form-group col-md-6">
-                                <label for="">Package Duration</label>
-                                <select class="form-control" name="Duration" id="">
-                                    <option value="30">1 mounth</option>
-                                    <option value="60">2 mounth</option>
-                                    <option value="90">3 mounth</option>
-                                </select>
-                                @error('Duration')
-                                    <small id="helpId" class="form-text text-muted">Help text</small>
-                                @enderror
-                            </div>
                         </div>
-                        <div class="mt-2"></div>
-                        <hr />
-                        <h5>Package Name</h5>
-                        <div class="row">
-                            <div class="form-group col-md-6">
-                                <label for="">Package Text</label>
-                                <input type="text" class="form-control" name="Text" id="" aria-describedby="helpId"
-                                    placeholder="">
-                                @error('Text')
-                                    <small id="helpId" class="form-text text-muted">{{ $message }}</small>
-                                @enderror
-                            </div>
-                            <div class="form-group col-md-6">
-                                <label for="">Package Icon</label>
-                                <input type="text" class="form-control" name="Icon" id="" aria-describedby="helpId"
-                                    placeholder="">
-                                @error('Icon')
-                                    <small id="helpId" class="form-text text-muted">{{ $message }}</small>
-                                @enderror
-                            </div>
-                        </div>
-
-                        <button class="btn m-1 btn-primary"> Save </button>
-                        </form>
-                        >>>>>>> 41bb71c1d7e1064a56d78fe6be2a1d6bf21e7608
-                    </div>
                 </div>
             </div>
         </div>
     </div>
     </div>
-    <<<<<<< HEAD=======</footer>
-        </div>
-        >>>>>>> 41bb71c1d7e1064a56d78fe6be2a1d6bf21e7608
+    </footer>
+    </div>
     @endsection

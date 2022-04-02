@@ -51,10 +51,13 @@ class PackageController extends Controller
         ]);
 
         if($Validator->fails()) return $Validator->errors();
+        $FreeTrial = $request->is_freetrial ? true : false ;
+
         $Package  = Package::create([
             'name' => $request->Name ,
             'price' => $request->Price ,
             'duration' => $request->Duration ,
+            'is_freetrial' => $FreeTrial,
         ]);
          packageDetails::create([
              'package_id' => $Package->id,

@@ -13,7 +13,6 @@
             <div class="sidebar-menu">
                 <ul class="menu">
                     <li class="sidebar-title">Menu</li>
-
                     <li class="sidebar-item {{ request()->routeIs('admin.index') ? 'active' : ''}} ">
                         <a href="index.html" class='sidebar-link'>
                             <i class="bi bi-grid-fill"></i>
@@ -40,7 +39,7 @@
                             <i class="bi bi-stack"></i>
                             <span>reports</span>
                         </a>
-                        <ul class="submenu ">
+                        <ul class="submenu">
                             <li class="submenu-item ">
                                 <a href="{{route('client.reports')}}">client reports</a>
                             </li>
@@ -49,6 +48,51 @@
                             </li>
                             <li class="submenu-item ">
                                 <a href="component-modal.html">notification reports</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="sidebar-title">user  &amp; clients Mangement</li>
+
+                    <li class="sidebar-item  has-sub">
+                        <a href="#" class='sidebar-link'>
+                            <i class="bi bi-file-person-fill"></i>
+                            <span>User Mangment</span>
+                        </a>
+                        <ul class="submenu">
+                            <li class="submenu-item ">
+                                <a href="{{route('admin.create')}}">Add User </a>
+                            </li>
+                            <li class="submenu-item ">
+                                <a href="{{route('admin.index')}}">Show Clients</a>
+                            </li>
+                        </ul>
+                    </li>
+
+                    <li class="sidebar-item  has-sub">
+                        <a href="#" class='sidebar-link'>
+                            <i class="bi bi-person"></i>
+                            <span>Client Mangemnt</span>
+                        </a>
+                        <ul class="submenu">
+                            <li class="submenu-item ">
+                                <a href="{{route('client.create')}}">Add Client </a>
+                            </li>
+                            <li class="submenu-item ">
+                                <a href="{{route('client.index')}}">Show Clients </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="sidebar-item  has-sub">
+                        <a href="#" class='sidebar-link'>
+                            <i class="bi bi-gear"></i>
+                            <span>setting</span>
+                        </a>
+                        <ul class="submenu">
+                            <li class="submenu-item ">
+                                <a href="{{route('admin.create')}}">Add User </a>
+                            </li>
+                            <li class="submenu-item ">
+                                <a href="{{route('admin.index')}}">Show Clients</a>
                             </li>
                         </ul>
                     </li>

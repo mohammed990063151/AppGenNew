@@ -229,7 +229,10 @@
                             <form action="{{route('PayInside')}}" method="post" style="display:block">
                                 @csrf
                                 <input type="hidden" name="package_id" value='{{$Package->id}}'>
-                                <button href="#" class="btn btn-custom">Subscribe now</button>
+                                <button href="#" class="btn btn-custom">
+                                    <i class="fa fa-lg fa-brands fa-paypal"></i>
+                                    Subscribe Now
+                                </button>
                             </form>
                         </div>
                     </div>

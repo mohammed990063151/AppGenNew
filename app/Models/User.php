@@ -29,6 +29,9 @@ class User extends Authenticatable
         'email',
         'password',
         'package_id' ,
+        'app_genration_price_paid',
+        'subscribed_to_free' ,
+        'is_subscribed'
     ];
 
     /**

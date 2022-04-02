@@ -59,20 +59,11 @@ Route::group(['prefix' => LaravelLocalization::setLocale()], function () {
         Route::get('paypal', array('as' => 'status', 'uses' => 'App\Http\Controllers\PaypalController@getPaymentStatus',));
 
         Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-
-        // Route::get('/dashboard' , function(){
-        // return view('dashboard');
-        // })->name('dashboard');
-
-        // require __DIR__.'/auth.php';
-        // Route::view('/table')->name('pac')
-
         /// start profile
         Route::group(['prefix' => 'profile'], function () {
             Route::get('/', [ProfileController::class, 'index'])->name('profile.index');
             Route::get('create', [ProfileController::class, 'create'])->name('profile.create');
             Route::post('store', [ProfileController::class, 'store'])->name('profile.store');
-
             Route::get('edit/{id}', [ProfileController::class, 'edit'])->name('profile.edit');
             Route::post('update/{id}', [ProfileController::class, 'update'])->name('profile.update');
             Route::post('destroy/{id}', [ProfileController::class, 'destroy'])->name('profile.destroy');
@@ -94,13 +85,10 @@ Route::group(['prefix' => LaravelLocalization::setLocale()], function () {
             Route::get('/', [ScreenController::class, 'index'])->name('Screen.index');
             Route::get('create', [ScreenController::class, 'create'])->name('Screen.create');
             Route::post('store', [ScreenController::class, 'store'])->name('Screen.store');
-
             Route::get('edit/{id}', [ScreenController::class, 'edit'])->name('Screen.edit');
             Route::post('update/{id}', [ScreenController::class, 'update'])->name('Screen.update');
             Route::post('destroy/{id}', [ScreenController::class, 'destroy'])->name('Screen.destroy');
         });
-
-
 
         Route::resource('features', FeatureController::class);
         Route::post('destroy/{id}', [ApplicationController::class, 'update'])->name('application.destroy');
@@ -110,13 +98,10 @@ Route::group(['prefix' => LaravelLocalization::setLocale()], function () {
     Route::post('get-price', [PaymentController::class, 'ChosePrice'])->name('ChosePrice');
 
     Route::get('/clients/dashboard', [FrontController::class, 'index'])->name('clients.dashboard');
-    Route::resource('notification', FirebaseNotificationController::class);
-
-
+    Route::resource('notification', FirebaseNotificationController::class)->middleware('IsSubscribe');
     Route::get('get-priceing', [PaymentController::class, 'getPriceingInside'])->name('getPricing');
     Route::post('get-priceing', [PaymentController::class, 'PayInside'])->name('PayInside');
     Route::get('subscribtion-status/{id}', [PaymentController::class, 'subscribtionStatus'])->name('subscribtionStatus');
-
     Route::get('get-invoice', [InvoiceController::class, 'getInvoice'])->name('getInvoice');
     Route::post('pay-invoice', [InvoiceController::class, 'PayInvoice'])->name('PayInvoice');
 });

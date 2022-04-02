@@ -1,4 +1,4 @@
-alert( $("edite_name").text());
+// alert( $("edite_name").text());
 
 $(function (){
     "use strict";

@@ -2,9 +2,12 @@
 <script src="{{ asset("assets/js/core/bootstrap.min.js")}}"></script>
 <script src="{{ asset('assets/js/plugins/perfect-scrollbar.min.js')}}"></script>
 <script src="{{asset("assets/js/plugins/smooth-scrollbar.min.js")}}"></script>
-<script src="{{asset("assets/js/jquery-migrate-1.4.1.min.js")}}"></script>
+<script src="{{asset("assets/js/jquery-3.6.0.min.js")}}"></script>
 <script src="{{asset("assets/js/plugins/copy_text.js")}}"></script>
 <script>
+    // $(function(){
+    //     alert('sd');
+    // });
     var win = navigator.platform.indexOf('Win') > -1;
 if (win && document.querySelector('#sidenav-scrollbar')) {
   var options = {

@@ -1,6 +1,5 @@
 @extends('layouts.Admin.app')
 @section('BreadCrumbs', 'CLient Mangement')
-
     @section('content')
     <div class="container-fluid py-4">
         <div class="row mt-4">

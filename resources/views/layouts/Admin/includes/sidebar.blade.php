@@ -19,7 +19,7 @@
                             <span>Dashboard</span>
                         </a>
                     </li>
-
+                  
                     <li class="sidebar-item {{ request()->routeIs('features.index') ? 'active' : ''}} ">
                         <a href="{{ route('features.index')}}" class='sidebar-link'>
                             {{-- <i class="fa fa-assistive-listening-systems"></i> --}}
@@ -33,6 +33,20 @@
                             <i class="bi bi-bag-check-fill"></i>
                             <span>subscription</span>
                         </a>
+                    </li>
+                    <li class="sidebar-item  has-sub">
+                        <a href="#" class='sidebar-link'>
+                            <i class="bi bi-calendar2-week"></i>
+                            <span>package</span>
+                        </a>
+                        <ul class="submenu">
+                            <li class="submenu-item ">
+                                <a href="{{route('packages.create')}}">add Package</a>
+                            </li>
+                            <li class="submenu-item ">
+                                <a href="{{route('packages.index')}}">show  pacakges</a>
+                            </li>
+                        </ul>
                     </li>
                     <li class="sidebar-item  has-sub">
                         <a href="#" class='sidebar-link'>
@@ -51,6 +65,8 @@
                             </li>
                         </ul>
                     </li>
+
+                   
                     <li class="sidebar-title">user  &amp; clients Mangement</li>
 
                     <li class="sidebar-item  has-sub">
@@ -62,8 +78,8 @@
                             <li class="submenu-item ">
                                 <a href="{{route('admin.create')}}">Add User </a>
                             </li>
-                            <li class="submenu-item ">
-                                <a href="{{route('admin.index')}}">Show Clients</a>
+                            <li class="submenu-item">
+                                <a href="{{route('admin.index')}}">Show Users</a>
                             </li>
                         </ul>
                     </li>
@@ -74,9 +90,9 @@
                             <span>Client Mangemnt</span>
                         </a>
                         <ul class="submenu">
-                            <li class="submenu-item ">
+                            {{-- <li class="submenu-item ">
                                 <a href="{{route('client.create')}}">Add Client </a>
-                            </li>
+                            </li> --}}
                             <li class="submenu-item ">
                                 <a href="{{route('client.index')}}">Show Clients </a>
                             </li>
@@ -85,17 +101,18 @@
                     <li class="sidebar-item  has-sub">
                         <a href="#" class='sidebar-link'>
                             <i class="bi bi-gear"></i>
-                            <span>setting</span>
+                            <span>Setting</span>
                         </a>
                         <ul class="submenu">
                             <li class="submenu-item ">
-                                <a href="{{route('admin.create')}}">Add User </a>
+                                <a href="{{route('getOrganizationProfile')}}"> orgnazation profile  </a>
                             </li>
                             <li class="submenu-item ">
-                                <a href="{{route('admin.index')}}">Show Clients</a>
+                                <a href="{{route('client.index')}}">Logout</a>
                             </li>
                         </ul>
                     </li>
+                 
 {{--
                     <li class="sidebar-item  has-sub">
                         <a href="#" class='sidebar-link'>

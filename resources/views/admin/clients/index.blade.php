@@ -1,12 +1,6 @@
-@extends('layouts.master2')
-@section('breadceumbs')
-{{-- <x-bread-crumps> --}}
-    @component('components.bread-crumps' , ['head' => 'Packages' ,
-    'links' => ['Dashboard' , 'Packages']
-    ])
+@extends('layouts.Admin.app')
+@section('BreadCrumbs', 'CLient Mangement')
 
-    @endcomponent
-    @endsection
     @section('content')
     <div class="container-fluid py-4">
         <div class="row mt-4">

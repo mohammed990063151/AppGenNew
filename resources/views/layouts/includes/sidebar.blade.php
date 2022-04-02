@@ -5,12 +5,12 @@
             aria-hidden="true" id="iconSidenav"></i>
         <a class="navbar-brand m-0" href=" https://demos.creative-tim.com/argon-dashboard/pages/dashboard.html "
             target="_blank">
-            {{-- <img src="{{$OrganizationProfile->logo}}" class="navbar-brand-img h-100" alt="main_logo"> --}}
-            <span class="ms-1 font-weight-bold">Argon Dashboard 2</span>
+            <img src="{{ $OrganizationProfile->logo }}" class="navbar-brand-img h-100" alt="main_logo">
+            <span class="ms-1 font-weight-bold">{{ __('translation.Admin_Control') }}</span>
         </a>
     </div>
     <hr class="horizontal dark mt-0">
-    <div  style="height: auto" class="collapse navbar-collapse  w-auto " id="sidenav-collapse-main">
+    <div style="height: auto" class="collapse navbar-collapse  w-auto " id="sidenav-collapse-main">
         <ul class="navbar-nav">
             <li class="nav-item">
                 <a class="nav-link " href="{{ route('clients.dashboard')}}">
@@ -38,29 +38,30 @@
                         class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
                         <i class="ni ni-tv-2 text-primary text-sm opacity-10"></i>
                     </div>
-                    <span class="nav-link-text ms-1">App profile</span>
+                    <span class="nav-link-text ms-1">{{ __('translation.App_profile') }}</span>
                 </a>
             </li>
             <li class="nav-item">
 
-                <a class="nav-link  {{ request()->is('notification') ? 'active' : ''}}  " href="{{ route('notification.index')}}" >
+                <a class="nav-link  {{ request()->is('notification') ? 'active' : '' }}  "
+                    href="{{ route('notification.index') }}">
                     <div
                         class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
                         <i class="ni ni-bell-55 text-success text-sm opacity-10"></i>
                     </div>
-                    <span class="nav-link-text ms-1"> Notification Mangement</span>
+                    <span class="nav-link-text ms-1"> {{ __('translation.Notification_Mangement') }}</span>
                 </a>
             </li>
             <li class="nav-item">
-                <a class="nav-link {{ request()->routeIs('Screen.index') ? 'active' : ''}}  " href="{{ route('Screen.index')}}">
+                <a class="nav-link {{ request()->routeIs('application.index') ? 'active' : '' }}  "
+                    href="{{ route('application.index') }}">
                     <div
                         class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
-                        <i class="ni ni-satisfied text-danger text-sm opacity-10"></i>
+                        <i class="ni ni-calendar-grid-58 text-warning text-sm opacity-10"></i>
                     </div>
-                    <span class="nav-link-text ms-1">Screen</span>
+                    <span class="nav-link-text ms-1">{{ __('translation.Application') }}</span>
                 </a>
             </li>
-
             {{-- <li class="nav-item mt-3">
                 <h6 class="ps-4 ms-2 text-uppercase text-xs font-weight-bolder opacity-6">Account pages</h6>
             </li>

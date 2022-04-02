@@ -1,4 +1,23 @@
 <?php
-return[
+return [
     'en' => 'english',
+    'Email' => 'Email',
+    'Password' => 'Password',
+    'Remember_me' => 'Remember me',
+    'Sign_in' => 'Sign in',
+    'No_account' => 'Don\'t You Have Account',
+    'Sign_up' => 'Sign up',
+    'Admin_Control' => 'Admin Control',
+    'App_profile' => 'App Profile',
+    'Notification_Mangement' => 'Notification Mangement',
+    'Application' => 'Application',
+    'Type_here' => 'Type Here',
+    'New_message_from' => 'New Message From',
+    'profile' => 'profile',
+    'Logout' => 'Logout',
+    'add_new_package' => 'Add New Package',
+    'packages_table' => 'Packages Table',
+    'add_New' => 'Add New',
+    'Show_Pacakage_Feture' => 'Show Pacakage Feture',
+    'No_data_Right_Now' => 'No Data Right Now',
 ];

@@ -49,8 +49,9 @@ class PaymentController extends Controller
             'amount' => $Package->price,
         ]);
         // return 'jksa';
-        $PayIstance = new PayWithPaypal();
-        return $PayIstance->postPaymentWithpaypal($Package->price ,route('subscribtionStatus' , $Subscription->id));
+        session()->put('package_id' , $Package->id);
+        session()->put('subscribtion_id' , $Subscription->id);
+        return redirect()->route('getInvoice');
     }
 
     public function subscribtionStatus($id , Request $request){
@@ -68,6 +69,7 @@ class PaymentController extends Controller
             $User->crruent_subscription_id = $Subscription->id;
             $User->package_id = $Package->id;
             $User->is_subscribed = 1;
+            $User->subscribed_to_free = 1;
             $User->save();
             return redirect()->route('clients.dashboard');
         }

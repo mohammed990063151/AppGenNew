@@ -1,12 +1,6 @@
-@extends('layouts.master2')
-@section('breadceumbs')
+@extends('layouts.Admin.app')
+@section('BreadCrumbs' , 'Show Fetures')
 {{-- <x-bread-crumps> --}}
-    @component('components.bread-crumps' , ['head' => 'Packages' ,
-    'links' => ['Dashboard' , 'Packages']
-    ])
-    @endcomponent
-
-    @endsection
     @section('content')
     <div class="container-fluid py-4">
         <div class="row mt-4">
@@ -22,7 +16,7 @@
                             </div>
                         </div>
                         <div class="table-responsive mt-5">
-                            <table class="table align-items-center table-bordered  ">
+                            <table class="table align-items-center table-bordered">
                                 <thead>
                                     <tr>
                                         <td>id</td>

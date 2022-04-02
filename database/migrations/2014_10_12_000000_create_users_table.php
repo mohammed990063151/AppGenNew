@@ -25,6 +25,8 @@ return new class extends Migration
             $table->foreignId('current_team_id')->nullable();
             $table->string('profile_photo_path', 2048)->nullable();
             $table->unsignedInteger('package_id')->nullable();
+            $table->boolean('subscribed_to_free')->default(0);
+            $table->boolean('app_genration_price_paid')->default(0);
             $table->boolean('is_subscribed')->default(0);
             $table->boolean('crruent_subscription_id')->nullable();
             // $table->foreign('package_id')->references('id')->on('packages');

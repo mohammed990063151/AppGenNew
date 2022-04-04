@@ -60,3 +60,5 @@ Route::middleware('auth:admin')->group(function () {
     Route::get('orgnaization-profile' ,[OrganizationProfile::class , 'getForm'])->name('getOrganizationProfile');
     Route::post('orgnaization-profile' ,[OrganizationProfile::class , 'storeFrom'])->name('storeOrganizationProfile');
 });
+
+Route::post('webhook', 'App\Controllers\WebhookController@handle');

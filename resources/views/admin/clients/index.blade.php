@@ -8,14 +8,10 @@
                     <div class="card-header pb-0 pt-3 bg-transparent">
                         <div class="d-flex justify-content-between">
                             <h6 class="text-capitalize col-4">Clients table</h6>
-                            {{-- <div class="col-2"> --}}
                                 <button type="button" class="btn btn-primary" data-toggle="modal"
                                     data-target="#exampleModal">
                                     new Client
                                 </button>
-                                {{-- <span><a href="{{route('packages.create')}}" class="btn btn-primary btn-sm"
-                                        type="button">add New</a></span> --}}
-                            {{-- </div> --}}
                         </div>
                         <div class="table-responsive mt-5">
                             <table class="table align-items-center table-bordered  ">
@@ -24,6 +20,8 @@
                                         <td>id</td>
                                         <td>name</td>
                                         <td>emial</td>
+                                        <td>Applications</td>
+                                        <td>subscribtions</td>
                                         <td>package</td>
                                         <td>status</td>
                                         <td>option</td>
@@ -35,6 +33,8 @@
                                         <td>{{$Client->id}}</td>
                                         <td>{{$Client->name}}</td>
                                         <td>{{$Client->email}}</td>
+                                        <td>{{$Client->Applications->count()}}</td>
+                                        <td>{{$Client->Subscription->count() ?? ''}}</td>
                                         <td>{{$Client->Package->name ?? ''}}</td>
                                         <td>{!! $Client->StatusWithSpan() !!}</td>
 
@@ -45,10 +45,10 @@
                                                 @csrf
                                                 @method('DELETE')
                                                 <button class="btn btn-sm btn-circle btn-danger"><i
-                                                        class="fa fa-trash"></i></button>
+                                                        class="bi bi-trash2"></i></button>
                                             </form>
-                                            <a href="{{route('client.status' , $Client->id)}}" class="btn btn-sm btn-circle {{$Client->status ? 'btn-warning' :'btn-success'}}"><i class="fa fa-thin fa-power-off"></i></a>
-                                            <a href="{{route('client.edit' , $Client->id)}}" class="btn btn-sm btn-circle btn-primary "><i class="fa fa-thin fa-pen"></i></a>
+                                            <a href="{{route('client.status' , $Client->id)}}" class="btn btn-sm btn-circle {{$Client->status ? 'btn-warning' :'btn-success'}}"><i class="bi bi-toggle-on"></i></a>
+                                            <a href="{{route('client.edit' , $Client->id)}}" class="btn btn-sm btn-circle btn-primary "><i class="bi bi-pen"></i></a>
                                             <a href="{{route('client.edit' , $Client->id)}}" class="btn btn-sm btn-circle btn-secondary ">
                                                 <i class="fa fa-solid fa-file"></i>
                                             </a>
@@ -65,6 +65,8 @@
                                     <td>id</td>
                                     <td>name</td>
                                     <td>email</td>
+                                    <td>Applications</td>
+                                    <td>subscribtions</td>
                                     <td>package</td>
                                     <td>status</td>
                                     <td>option</td>

@@ -1,13 +1,6 @@
 @extends('layouts.Admin.app')
-@section('BreadCrumbs', 'Subscription Report')
-@section('breadceumbs')
-{{-- <x-bread-crumps> --}}
-    @component('components.bread-crumps' , ['head' => 'Packages' ,
-    'links' => ['Dashboard' , 'Packages']
-    ])
-
-    @endcomponent
-    @endsection
+@section('BreadCrumbs', 'Notification Report')
+    {{-- @section(') --}}
     @section('content')
     <div class="container-fluid py-4">
         <div class="row mt-4">
@@ -99,12 +92,12 @@
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    @forelse ($Packages as $key => $Package )
+                                    @forelse ($NotificationsReprot as $key => $Notifications )
                                     <tr>
-                                        <td>{{$Package->id}}</td>
-                                        <td>{{$Package->name}}</td>
-                                        <td>{{$Package->price * $Package->subscription->count()}}</td>
-                                        <td>{{$Package->subscription->count() }}</td>
+                                        <td>{{$Notifications->id}}</td>
+                                        <td>{{$Notifications->date}}</td>
+                                        <td>{{$Notifications->user_id}}</td>
+                                        <td>{{$Notifications->count}}</td>
                                     </tr>
                                     <tr></tr>
                                     @empty
@@ -172,17 +165,9 @@
                             </table>
                         </div>
                     </div>
-
                 </div>
             </div>
-
         </div>
-
-    </div>
-
-    </div>
-    </div>
-    </div>
     </div>
     </div>
     @endsection

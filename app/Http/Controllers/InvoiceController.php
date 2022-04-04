@@ -28,12 +28,13 @@ class InvoiceController extends Controller
         // return $request;
         $SesstionPackageID = session()->get('package_id');
         $SubscribtionPackageID = session()->get('subscribtion_id');
+        // dd([$SesstionPackageID , $SubscribtionPackageID]);
         if($SesstionPackageID && $SubscribtionPackageID ){
             $Package = Package::find($SesstionPackageID);
             // dd(!$Package->is_freetrial);
-            if(auth()->user()->subscribed_to_free && auth()->user()->app_genration_price_paid)
-            {
-                if($Package->is_freetrial){
+            // if(auth()->user()->subscribed_to_free && auth()->user()->app_genration_price_paid)
+            // {
+                if($Package->is_freetrial && !auth()->user()->subscribed_to_free){
                     $Subscription = Subscription::find($SubscribtionPackageID);
                     $Subscription->exporation_date = Carbon::now()->addDays($Package->duration);
                     $Subscription->status = 'free';
@@ -55,7 +56,7 @@ class InvoiceController extends Controller
                 $RetunedRouteWithPaymentValue = $PayIstance->postPaymentWithpaypal(($Package->price + $OrganizationProfile->fixed_subscribtion_price),route('subscribtionStatus' , $SubscribtionPackageID));
                 return $RetunedRouteWithPaymentValue;
             }
-          }
+        //   }
         }
         return redirect()->route('getPricing');
     }

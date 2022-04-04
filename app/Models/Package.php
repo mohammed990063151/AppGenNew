@@ -13,9 +13,9 @@ class Package extends Model
 
     public function StatusWithSpan(){
         if($this->status){
-            return ' <span class="badge bg-gradient-success whait-text">active</span>';
+            return ' <span class="badge bg-success whait-text">active</span>';
         } else {
-            return ' <span class="badge bg-gradient-warning whait-text">in active</span>';
+            return ' <span class="badge bg-warning whait-text">in active</span>';
         }
     }
 

@@ -3,37 +3,24 @@
 @section('content')
     <div class="content-wrapper">
         <div class="content-body">
-            <!-- Zero configuration table -->
             <section id="configuration">
                 <div class="row">
                     <div class="col-12">
-
                         <div class="card">
-
-                            <!-- project-info -->
                             <div id="project-info" class="card-body row">
-
                                 <div class="project-info-count col-sm-12">
-                                    {{-- <div class="project-info-icon"> --}}
                                     <div style="width: 250px; height:250px; margin: auto">
                                         <img src="{{ $OrganizationProfile->logo }}" alt=""
                                             style="width: 100%; height: 100%">
                                     </div>
-                                    {{-- <div wire:click="" class="project-info-sub-icon">
-                                        <span class="la la-edit"></span>
-                                    </div> --}}
-                                    {{-- </div> --}}
                                     <div class="project-info-text pt-1">
                                         <h5>{{ __('translation.logo.image') }}</h5>
                                     </div>
                                 </div>
                             </div>
-                            <!-- project-info -->
                             <div class="card-body">
                                 <div class="card-subtitle line-on-side text-muted text-center font-small-3 mx-2 my-1">
-                                    {{-- <span>Egal's Eye View Of Project Status</span> --}}
                                 </div>
-                                {{-- @include('includes.dashboard.notifications') --}}
                                 <form action="{{ route('storeOrganizationProfile') }}" method="post"
                                     enctype="multipart/form-data">
                                     <div class="row">
@@ -53,7 +40,6 @@
                                         </div>
                                     </div>
                                     <div class="row">
-
                                         <div class="col-lg-6 col-md-12">
                                             <div class="insights px-2">
                                                 <fieldset>
@@ -167,7 +153,6 @@
                                 </form>
                             </div>
                         </div>
-
                     </div>
                 </div>
             </section>

@@ -19,6 +19,7 @@ return new class extends Migration
             $table->string('link');
             $table->string('version', 999)->nullable();
             $table->string('image')->nullable();
+            $table->foreignId('user_id')->references('id')->on('users');
             $table->timestamps();
         });
     }

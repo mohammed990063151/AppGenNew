@@ -10,7 +10,6 @@
     <link rel="stylesheet" href="{{asset('Admin/assets/css/bootstrap.css')}}">
 
 <link rel="stylesheet" href="{{ asset('Admin/assets/vendors/iconly/bold.css')}}">
-
     <link rel="stylesheet" href="{{ asset('Admin/assets/vendors/perfect-scrollbar/perfect-scrollbar.css')}}">
     <link rel="stylesheet" href="{{ asset('Admin/assets/vendors/bootstrap-icons/bootstrap-icons.css') }}">
     <link rel="stylesheet" href="{{ asset('Admin/assets/css/app.css')}}">

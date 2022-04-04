@@ -11,8 +11,10 @@ use App\Http\Controllers\DashBoardContorller;
 use App\Http\Controllers\FeatureController;
 use App\Http\Controllers\OrganizationProfile;
 use App\Http\Controllers\ReportController;
+use App\Http\Controllers\WebhookController;
 use GuzzleHttp\Middleware;
 use Illuminate\Support\Facades\Route;
+use PayPal\Api\Webhook;
 
 /*
 |--------------------------------------------------------------------------
@@ -61,4 +63,4 @@ Route::middleware('auth:admin')->group(function () {
     Route::post('orgnaization-profile' ,[OrganizationProfile::class , 'storeFrom'])->name('storeOrganizationProfile');
 });
 
-Route::post('webhook', 'App\Controllers\WebhookController@handle');
+Route::post('webhook', [WebhookController::class , 'handle']);

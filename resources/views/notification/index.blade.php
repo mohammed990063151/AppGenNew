@@ -40,10 +40,10 @@
                         <div class="card-content collapse show">
                             <div class="card-body card-dashboard">
                                 <div class="d-flex justify-content-between">
-                                    <h6 class="text-capitalize col-4">notifiaction  table</h6>
+                                    <h6 class="text-capitalize col-4">{{__('translation.notifiaction table')}}</h6>
                                     {{-- <div class="col-2"> --}}
                                         <span><a href="{{route('notification.create')}}" class="btn btn-primary btn-sm"
-                                                type="button">add New Notification</a></span>
+                                                type="button">{{__('translation.notifiaction table')}}</a></span>
                                     {{-- </div> --}}
                                 </div>
                                 <div class="table-responsive">

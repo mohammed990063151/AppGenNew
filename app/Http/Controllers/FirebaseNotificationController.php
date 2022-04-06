@@ -26,6 +26,8 @@ class FirebaseNotificationController extends Controller
     public function create()
     {
         $applcation = app::get();
+        // notify()->success('Laravel Notify is awesome!');
+
         return view('notification.create',compact('applcation'));
     }
 

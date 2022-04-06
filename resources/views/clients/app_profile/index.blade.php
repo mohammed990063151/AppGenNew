@@ -1,13 +1,13 @@
 @extends('layouts.master')
 @section('breadceumbs')
 {{-- <x-bread-crumps> --}}
-    @component('components.bread-crumps' , ['head' => 'profile ' ,
+    @component('components.bread-crumps' , ['head' => 'translation.profile ' ,
     'links' => [ 'profile']
     ])
     @endcomponent
     @endsection
     @section('title')
-profile
+    {{__('translation.Sign_Up')}}
 @stop
 @section('content')
 
@@ -17,11 +17,11 @@ profile
             <div class="card z-index-2 h-100">
                 <div class="card-header pb-0 pt-3 bg-transparent">
                     <div class="d-flex justify-content-between">
-                        <h6 class="text-capitalize col-4">profile</h6>
+                        <h6 class="text-capitalize col-4"> {{__('translation.profile')}}</h6>
 
                             <span><a href="{{route('profile.create')}}" class="btn btn-primary btn-sm"
                                 {{--  --}}
-                                    type="button">add New</a></span>
+                                    type="button"> {{__('translation.add New')}}</a></span>
 
                     </div>
                     <div class="table-responsive mt-5">
@@ -30,15 +30,15 @@ profile
                         <table class="table align-items-center table-bordered  ">
                             <thead>
                                 <tr>
-                                    <td>id</td>
-                                    <td>Name</td>
-                                    <td>Email</td>
-                                    <td>Whatsapp</td>
-                                    <td>color</td>
-                                    <td>pc</td>
-                                    <td>sc</td>
-                                    <td>Name applaction</td>
-                                    <td>option</td>
+                                    <td> {{__('translation.id')}}</td>
+                                    <td> {{__('translation.name')}}</td>
+                                    <td> {{__('translation.email')}}</td>
+                                    <td> {{__('translation.Whatsapp')}}</td>
+                                    <td> {{__('translation.color')}}</td>
+                                    <td> {{__('translation.pc')}}</td>
+                                    <td> {{__('translation.sc')}}</td>
+                                    <td> {{__('translation.Name applaction')}}</td>
+                                    <td> {{__('translation.option')}}</td>
                                 </tr>
                             </thead>
                             <tbody>
@@ -74,7 +74,7 @@ profile
                                 <tr></tr>
                                 @empty
                                 <tr>
-                                    <td colspan="5"> No data Right Now</td>
+                                    <td colspan="5"> {{__('translation. No data Right Now')}}</td>
                                 </tr>
                                 @endforelse
                             </tbody>

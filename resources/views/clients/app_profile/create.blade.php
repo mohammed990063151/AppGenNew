@@ -1,7 +1,7 @@
 @extends('layouts.master')
 @section('breadceumbs')
 {{-- <x-bread-crumps> --}}
-    @component('components.bread-crumps' , ['head' => 'Add New profile' ,
+    @component('components.bread-crumps' , ['head' => 'translation.Add New profile' ,
     'links' => ['profile' , 'Add New profile']
     ])
 @section('title')
@@ -18,10 +18,10 @@ Add New profile
                 <div class="card z-index-2 h-100">
                     <div class="card-header pb-0 pt-3 bg-transparent">
                         <div class="d-flex justify-content-between">
-                            <h6 class="text-capitalize col-4"> Add New profile</h6>
+                            <h6 class="text-capitalize col-4"> {{__('translation.Add New profile')}}</h6>
 
                                 <span><a href="{{route('profile.index')}}" class="btn btn-danger btn-sm"
-                                        type="button">Go Back</a></span>
+                                        type="button">{{__('translation.go back')}}</a></span>
                             </div>
                         </div>
                         <div class="col-md-6">
@@ -30,12 +30,12 @@ Add New profile
                                 @include('clients.alerts.errors')
                                 <form action="{{route('profile.store')}}" method="post" enctype="multipart/form-data">
                                     @csrf
-                                    <h5>Add Profile details</h5>
+                                    <h5>{{__('translation.Add Profile details')}}</h5>
                                     <div class="row col-md-12">
 
 
                                     <div class="form-group col-md-6">
-                                        <label for="">App Profile Name</label>
+                                        <label for="">{{__('translation.App Profile Name')}}</label>
                                         <input type="text" class="form-control" name="orgname" id=""
                                             aria-describedby="helpId" placeholder="">
                                         @error('orgname')
@@ -44,7 +44,7 @@ Add New profile
 
                                     </div>
                                     <div class="form-group col-md-6">
-                                        <label for="">App Profile email</label>
+                                        <label for="">{{__('translation.App Profile email')}}</label>
                                         <input type="text" class="form-control" name="orgemail" id=""
                                             aria-describedby="helpId" placeholder="">
                                         @error('orgemail')
@@ -53,7 +53,7 @@ Add New profile
 
                                     </div>
                                     <div class="form-group col-md-6">
-                                        <label for="">App Profile whatsapp</label>
+                                        <label for="">{{__('translation.App Profile whatsapp')}}</label>
                                         <input type="text" class="form-control" name="ogwhatsapp" id=""
                                             aria-describedby="helpId" placeholder="">
                                         @error('ogwhatsapp')
@@ -62,7 +62,7 @@ Add New profile
 
                                     </div>
                                     <div class="form-group col-md-6">
-                                        <label for="">App Profile color</label>
+                                        <label for="">{{__('translation.App Profile color')}}</label>
                                         <input type="text" class="form-control" name="color" id=""
                                             aria-describedby="helpId" placeholder="">
                                         @error('color')
@@ -70,7 +70,7 @@ Add New profile
                                         }}</span>@enderror
                                     </div>
                                     <div class="form-group col-md-6">
-                                        <label for="">App Profile pc</label>
+                                        <label for="">{{__('translation.App Profile pc')}}</label>
                                         <input type="text" class="form-control" name="pc" id=""
                                             aria-describedby="helpId" placeholder="">
                                         @error('pc')
@@ -78,7 +78,7 @@ Add New profile
                                         }}</span>@enderror
                                     </div>
                                     <div class="form-group col-md-6">
-                                        <label for="">App Profile sc</label>
+                                        <label for="">{{__('translation.App Profile sc')}}</label>
                                         <input type="text" class="form-control" name="sc" id=""
                                             aria-describedby="helpId" placeholder="">
                                         @error('sc')
@@ -87,7 +87,7 @@ Add New profile
                                     </div>
 
                                     <div class="form-group col-md-6">
-                                    <label class="my-1 mr-2" for="inlineFormCustomSelectPref">applaction</label>
+                                    <label class="my-1 mr-2" for="inlineFormCustomSelectPref">{{__('translation.applaction')}}</label>
                             <select name="app_id" id="app_id" class="form-control" required>
 
                                 @foreach ($applcation as $applcation)
@@ -98,7 +98,7 @@ Add New profile
                                 }}</span>@enderror
                             </select>
                                     </div>
-                                <button class="btn m-1 btn-primary"> Save </button>
+                                <button class="btn m-1 btn-primary"> {{__('translation.Save')}} </button>
                                 </form>
                             </div>
                         </div>

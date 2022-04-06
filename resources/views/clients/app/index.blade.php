@@ -1,8 +1,8 @@
 @extends('layouts.master')
 @section('breadceumbs')
 {{-- <x-bread-crumps> --}}
-    @component('components.bread-crumps' , ['head' => 'applction table ' ,
-    'links' => [ 'applction ']
+    @component('components.bread-crumps' , ['head' => 'applction table' ,  
+    'links' => [ 'applction']
     ])
     @endcomponent
     @endsection
@@ -36,11 +36,11 @@
             <div class="card z-index-2 h-100">
                 <div class="card-header pb-0 pt-3 bg-transparent">
                     <div class="d-flex justify-content-between">
-                        <h6 class="text-capitalize col-4">applction table</h6>
+                        <h6 class="text-capitalize col-4">{{__('translation.applction_table')}}</h6>
 
                         {{-- <div class="col-2"> --}}
                             <span><a href="{{route('application.create')}}" class="btn btn-primary btn-sm"
-                                    type="button">add applction</a>
+                                    type="button">{{__('translation.Add applction')}}</a>
                             </span>
                         {{-- </div> --}}
                     </div>

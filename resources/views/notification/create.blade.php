@@ -11,10 +11,10 @@
                                 <div class="card-content collapse show">
                                     <div class="card-body">
                                         <div class="d-flex justify-content-between">
-                                            <h6 class="text-capitalize col-4">notifiaction  table</h6>
+                                            <h6 class="text-capitalize col-4">{{__('translation.notifiaction table')}}</</h6>
                                             {{-- <div class="col-2"> --}}
                                                 <span><a href="{{route('notification.index')}}" class="btn btn-primary btn-sm"
-                                                        type="button"> Go Back </a></span>
+                                                        type="button"> {{__('translation.go back')}} </a></span>
                                             {{-- </div> --}}
                                         </div>
                                         <form action="{{route('notification.store')}}" method="post"
@@ -31,7 +31,7 @@
                                                     </div>
                                                 </div>
                                                 <div class="col-md-6">
-                                                    <label class="my-1 mr-2" for="inlineFormCustomSelectPref">applaction</label>
+                                                    <label class="my-1 mr-2" for="inlineFormCustomSelectPref"></label>
                                             <select name="app_id" id="app_id" class="form-control" required>
 
                                                 @foreach ($applcation as $applcation)
@@ -53,7 +53,7 @@
                                                 </div>
                                                 <div class="col-md-6">
                                                     <div class="form-group">
-                                                      <label for="">photo</label>
+                                                      <label for="">{{__('translation.photo')}}</</label>
                                                       <input type="file"
                                                         class="form-control" name="photo" id="" aria-describedby="helpId" placeholder="">
                                                     </div>

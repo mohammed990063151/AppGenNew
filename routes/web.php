@@ -38,14 +38,14 @@ Auth::routes();
 |--------------------------------------------------------------------------
 |
 | Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider within a group which
+| routes are loaded by tGGhe RouteServiceProvider within a group which
 | contains the "web" middleware group. Now create something great!
 |
 */
 
-Route::get('argon-login', function () {
-    return view('Argon.auth.login');
-});
+// Route::get('argon-login', function () {
+//     return view('Argon.auth.login');
+// });
 
 Route::group(['prefix' => LaravelLocalization::setLocale()], function () {
     /** ADD ALL LOCALIZED ROUTES INSIDE THIS GROUP **/
@@ -98,7 +98,7 @@ Route::group(['prefix' => LaravelLocalization::setLocale()], function () {
     Route::post('get-price', [PaymentController::class, 'ChosePrice'])->name('ChosePrice');
 
     Route::get('/clients/dashboard', [FrontController::class, 'index'])->name('clients.dashboard');
-    Route::resource('notification', FirebaseNotificationController::class)->middleware('IsSubscribe');
+    Route::resource('notification', FirebaseNotificationController::class);#->middleware('IsSubscribe');
     Route::get('get-priceing', [PaymentController::class, 'getPriceingInside'])->name('getPricing');
     Route::post('get-priceing', [PaymentController::class, 'PayInside'])->name('PayInside');
     Route::get('subscribtion-status/{id}', [PaymentController::class, 'subscribtionStatus'])->name('subscribtionStatus');

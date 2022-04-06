@@ -20,4 +20,17 @@ return [
     'add_New' => 'Add New',
     'Show_Pacakage_Feture' => 'Show Pacakage Feture',
     'No_data_Right_Now' => 'No Data Right Now',
+   
+    'Dashboard'=> 'Dashboard',
+    'Profile'=> 'Profile',
+    'applction_table ' =>'جدول applction_table',
+    'Add applction'=> 'Add applction',
+    'Applction_details'=> 'Applction_details',
+    'Name'=> 'Name',
+    'Name'=> 'الاسم',
+        'link'=> 'link',
+        'logo'=> 'logo',
+        'save' =>'save',
 ];
+
+

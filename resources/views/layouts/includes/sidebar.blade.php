@@ -18,7 +18,7 @@
                         class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
                         <i class="ni ni-credit-card text-success text-sm opacity-10"></i>
                     </div>
-                    <span class="nav-link-text ms-1">Dashboard</span>
+                    <span class="nav-link-text ms-1">{{__('translation.dashboard')}}</span>
                 </a>
             </li>
             <li class="nav-item">
@@ -28,7 +28,7 @@
                         class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
                         <i class="ni ni-calendar-grid-58 text-warning text-sm opacity-10"></i>
                     </div>
-                    <span class="nav-link-text ms-1">Applection</span>
+                    <span class="nav-link-text ms-1">{{__('translation.Applection')}}</span>
                 </a>
             </li>
             <li class="nav-item">

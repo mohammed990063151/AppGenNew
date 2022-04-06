@@ -18,11 +18,11 @@
                 <div class="card z-index-2 h-100">
                     <div class="card-header pb-0 pt-3 bg-transparent">
                         <div class="row">
-                            <h6 class="text-capitalize col-4"> add applction</h6>
+                            <h6 class="text-capitalize col-4"> {{__('translation.applction table')}}</h6>
                             <div class="col-6"></div>
                             <div class="col-2">
                                 <span><a href="{{route('application.index')}}" class="btn btn-danger btn-sm"
-                                        type="button">Go Back</a></span>
+                           type="button">{{__('translation.Go Back')}}</a></span>
                             </div>
                         </div>
                         <div class="col-md-12">
@@ -31,7 +31,7 @@
                                 @include('clients.alerts.errors')
                                 <form action="{{route('application.store')}}" method="post" enctype="multipart/form-data">
                                     @csrf
-                                    <h5>Applction details</h5>
+                                    <h5>{{__('translation.Name')}}</h5>
                                     <div class="row col-md-12">
 
                                         <div>
@@ -42,7 +42,7 @@
                                             @enderror
                                         </div>
                                     <div class="form-group col-md-6">
-                                        <label for="">Name</label>
+                                        <label for="">{{__('translation.link')}}</label>
                                         <input type="text" class="form-control" name="name" id=""
                                             aria-describedby="helpId" placeholder="">
                                         @error('name')
@@ -50,7 +50,7 @@
                                         @enderror
                                     </div>
                                     <div class="form-group col-md-6">
-                                        <label for=""> link</label>
+                                        <label for=""> {{__('translation.logo')}}</label>
                                         <input type="text" class="form-control" name="link" id=""
                                             aria-describedby="helpId" placeholder="">
                                         @error('link')
@@ -58,7 +58,7 @@
                                         @enderror
                                     </div>
                                     <div class="form-group col-md-6">
-                                        <label for="">version</label>
+                                        <label for="">{{__('translation.version')}}</label>
                                         <input type="text" class="form-control" name="version" id=""
                                             aria-describedby="helpId" placeholder="">
                                         @error('version')
@@ -67,7 +67,7 @@
                                     </div>
 
 
-                                <button class="btn m-1 btn-primary"> Save </button>
+                                <button class="btn m-1 btn-primary"> {{__('translation.save')}} </button>
                                 </form>
                             </div>
                         </div>

@@ -20,7 +20,7 @@ class ApplicationController extends BaseController
     public function index()
     {
         $data = app::all();
-        return view('clients.app.index' ,compact('data'));
+        return view('clients.app.text' ,compact('data'));
     }
 
     /**
@@ -81,7 +81,7 @@ try{
 
 
     public function update(request $request ,$id ){
-
+// return $request ;
       try{
         $data=app::find($id);
         if (!$data)
@@ -101,16 +101,16 @@ try{
 
                  $data->link=$request->link;
 
-                 $data->version=$request->version;
+                //  $data->version=$request->version;
 
                  $data->save();
-
-                 return view('clients.app.edit')->with(['success' => 'ok']);
+                 $data2 = app::all();
+                 return view('clients.app_profile.create', compact('data2' ))->with(['success' => 'ok']);
                           // DB::commit();
                       } catch (\Exception $ex) {
                           // DB::rollback();
                         //   return $ex;
-                          return redirect('/application')->with(['error' => 'حدث خطا ما برجاء المحاوله لاحقا']);
+                        return view('clients.app_profile.create')->with(['error' => 'حدث خطا ما برجاء المحاوله لاحقا']);
                       }
 
                 }

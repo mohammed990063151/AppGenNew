@@ -15,10 +15,13 @@ return new class extends Migration
     {
         Schema::create('apps', function (Blueprint $table) {
             $table->id();
-            $table->string('name', 999);
-            $table->string('link');
-            $table->string('version', 999)->nullable();
-            $table->string('image')->nullable();
+            $table->string('App_Name');
+            $table->string('Discrptions');
+            $table->string('Web_Url')->nullable();
+            $table->string('WhatsappNumber')->nullable();
+            $table->string('PhoneNumber')->nullable();
+            $table->string('Logo')->nullable();
+            $table->string('SplashScreenImage')->nullable();
             $table->timestamps();
         });
     }

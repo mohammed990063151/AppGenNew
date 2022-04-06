@@ -15,14 +15,15 @@ return new class extends Migration
     {
         Schema::create('app_profiles', function (Blueprint $table) {
             $table->id();
-            // $table->integer('app_id')->unsigned();
-            $table->string('orgname');
-            $table->string('orgemail');
-            $table->string('ogwhatsapp')->nullable();
-            $table->string('color');
-            $table->string('pc');
-            $table->string('sc');
-            // $table->unsignedBigInteger('app_id');
+            $table->integer('TwitterLink')->unsigned();
+            $table->string('InstgramLink')->nullable();
+            $table->string('FacebookLink')->nullable();
+            $table->string('SnapchatLink')->nullable();
+            $table->string('TikTokLink')->nullable();
+            $table->string('ButtonBarColor')->nullable();
+            $table->string('IconsBackgroundColor');
+            $table->string('Icons_Color');
+            $table->boolean('CopyRightStutas');
             $table->foreignId('app_id')->references('id')->on('apps')->onDelete('cascade');
             $table->timestamps();
         });

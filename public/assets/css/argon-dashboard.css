@@ -19766,7 +19766,7 @@ fieldset:disabled .btn {
 /*!
 
 =========================================================
-* Argon Dashboard - v2.0.0
+* Argon Dashboard - v2.0.1
 =========================================================
 
 * Product Page: https://www.creative-tim.com/product/argon-dashboard
@@ -22149,6 +22149,8 @@ hr.horizontal.gray-light {
   }
 }
 
+@use "sass:math";
+
 .navbar-vertical .navbar-brand>img,
 .navbar-vertical .navbar-brand-img {
   max-width: 100%;
@@ -22286,8 +22288,8 @@ hr.horizontal.gray-light {
 }
 
 .navbar-vertical.navbar-expand-xs .navbar-nav .nav .nav-link {
-  padding-top: 0.45rem;
-  padding-bottom: 0.45rem;
+  padding-top: calc($navbar-vertical-nav-link-padding-y / 1.5);
+  padding-bottom: calc($navbar-vertical-nav-link-padding-y / 1.5);
   padding-left: 15px;
 }
 
@@ -22386,8 +22388,8 @@ hr.horizontal.gray-light {
   }
 
   .navbar-vertical.navbar-expand-sm .navbar-nav .nav .nav-link {
-    padding-top: 0.45rem;
-    padding-bottom: 0.45rem;
+    padding-top: calc($navbar-vertical-nav-link-padding-y / 1.5);
+    padding-bottom: calc($navbar-vertical-nav-link-padding-y / 1.5);
     padding-left: 15px;
   }
 
@@ -22487,8 +22489,8 @@ hr.horizontal.gray-light {
   }
 
   .navbar-vertical.navbar-expand-md .navbar-nav .nav .nav-link {
-    padding-top: 0.45rem;
-    padding-bottom: 0.45rem;
+    padding-top: calc($navbar-vertical-nav-link-padding-y / 1.5);
+    padding-bottom: calc($navbar-vertical-nav-link-padding-y / 1.5);
     padding-left: 15px;
   }
 
@@ -22588,8 +22590,8 @@ hr.horizontal.gray-light {
   }
 
   .navbar-vertical.navbar-expand-lg .navbar-nav .nav .nav-link {
-    padding-top: 0.45rem;
-    padding-bottom: 0.45rem;
+    padding-top: calc($navbar-vertical-nav-link-padding-y / 1.5);
+    padding-bottom: calc($navbar-vertical-nav-link-padding-y / 1.5);
     padding-left: 15px;
   }
 
@@ -22689,8 +22691,8 @@ hr.horizontal.gray-light {
   }
 
   .navbar-vertical.navbar-expand-xl .navbar-nav .nav .nav-link {
-    padding-top: 0.45rem;
-    padding-bottom: 0.45rem;
+    padding-top: calc($navbar-vertical-nav-link-padding-y / 1.5);
+    padding-bottom: calc($navbar-vertical-nav-link-padding-y / 1.5);
     padding-left: 15px;
   }
 
@@ -22790,8 +22792,8 @@ hr.horizontal.gray-light {
   }
 
   .navbar-vertical.navbar-expand-xxl .navbar-nav .nav .nav-link {
-    padding-top: 0.45rem;
-    padding-bottom: 0.45rem;
+    padding-top: calc($navbar-vertical-nav-link-padding-y / 1.5);
+    padding-bottom: calc($navbar-vertical-nav-link-padding-y / 1.5);
     padding-left: 15px;
   }
 

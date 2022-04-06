@@ -5,7 +5,7 @@
             aria-hidden="true" id="iconSidenav"></i>
         <a class="navbar-brand m-0" href=" https://demos.creative-tim.com/argon-dashboard/pages/dashboard.html "
             target="_blank">
-            <img src="{{ $OrganizationProfile->logo }}" class="navbar-brand-img h-100" alt="main_logo">
+            <img src="" class="navbar-brand-img h-100" alt="main_logo">
             <span class="ms-1 font-weight-bold">{{ __('translation.Admin_Control') }}</span>
         </a>
     </div>
@@ -13,7 +13,7 @@
     <div style="height: auto" class="collapse navbar-collapse  w-auto " id="sidenav-collapse-main">
         <ul class="navbar-nav">
             <li class="nav-item">
-                <a class="nav-link " href="{{ route('clients.dashboard')}}">
+                <a class="nav-link active " href="{{ route('clients.dashboard')}}">
                     <div
                         class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
                         <i class="ni ni-credit-card text-success text-sm opacity-10"></i>
@@ -21,6 +21,7 @@
                     <span class="nav-link-text ms-1">Dashboard</span>
                 </a>
             </li>
+           
             <li class="nav-item">
 
                 <a class="nav-link {{ request()->routeIs('application.index') ? 'active' : ''}}  " href="{{ route('application.index')}}">

@@ -45,17 +45,18 @@
                                             <div class="d-flex justify-content-between w-100 p-1">
                                                 <h5>{{$Package->name}}</h5>
                                                 {{-- @dd(auth()->user()->app_genration_price_paid); --}}
-                                                @if (! auth()->user()->subscribed_to_free && ! auth()->user()->app_genration_price_paid)
-                                                    @if ($Package->is_freetrial)
-                                                    <h5>{{number_format( 0 , 2)}}</h5>
-                                                    @endif
+                                                @if (! auth()->user()->subscribed_to_free && !
+                                                auth()->user()->app_genration_price_paid)
+                                                @if ($Package->is_freetrial)
+                                                <h5>{{number_format( 0 , 2)}}</h5>
+                                                @endif
                                                 @else
                                                 <h5>{{number_format( $Package->price , 2)}}</h5>
                                                 @endif
 
                                             </div>
                                             @if (!auth()->user()->app_genration_price_paid)
-                                                <div class="d-flex justify-content-between w-100 p-1">
+                                            <div class="d-flex justify-content-between w-100 p-1">
                                                 <h5> App fiexed Price</h5>
                                                 @if (!$Package->is_freetrial)
                                                 <h5>{{number_format($OrganizationProfile->fixed_subscribtion_price ,
@@ -76,15 +77,16 @@
                                                         {{number_format($Package->price , 2)}}
                                                         @else
                                                         @if (!$Package->is_freetrial)
-                                                        <h5 class="text-primary">{{number_format($OrganizationProfile->fixed_subscribtion_price
+                                                        <h5 class="text-primary">
+                                                            {{number_format($OrganizationProfile->fixed_subscribtion_price
                                                             + $Package->price , 2)}}
-                                                        @else
-                                                        <h5>{{number_format( 0 ,
-                                                            2)}}</h5>
-                                                        @endif
-                                                        @endif
+                                                            @else
+                                                            <h5>{{number_format( 0 ,
+                                                                2)}}</h5>
+                                                            @endif
+                                                            @endif
 
-                                                        </span>
+                                                            </span>
                                                     </div>
                                                 </div>
                                             </div>
@@ -97,15 +99,24 @@
                                     @csrf
                                     <div class="d-flex justify-content-between w-100">
                                         <span></span>
-                                        @if (! auth()->user()->subscribed_to_free && ! auth()->user()->app_genration_price_paid)
-                                        @if($Package->is_freetrial)
-                                        <button class="btn  btn-primary py-1  mr-5" type='submit'> </i> Free Subscribe</button>
-                                        @endif
+                                        @if (! auth()->user()->subscribed_to_free && !
+                                            auth()->user()->app_genration_price_paid)
+                                            @if($Package->is_freetrial)
+                                            <button class="btn  btn-primary py-1  mr-5" type='submit'> </i> Free
+                                            Subscribe</button>
+                                            @else
+                                                <button class="btn  btn-primary py-1  mr-5" type='submit'> <i
+                                                class="fa fa-lg fa-brands fa-paypal mx-1"></i> Pay Now</button>
+                                                </button>
+                                            @endif
+
                                         @else
-                                            <button class="btn  btn-primary py-1  mr-5" type='submit'> <i
+                                        <button class="btn  btn-primary py-1  mr-5" type='submit'> <i
                                                 class="fa fa-lg fa-brands fa-paypal mx-1"></i> Pay Now</button>
                                         @endif
-                                     </div>
+
+                                    </div>
+
                                 </form>
                             </div>
                         </div>

@@ -17,7 +17,8 @@
         "laravel/ui": "^3.4",
         "mcamara/laravel-localization": "^1.7",
         "mckenziearts/laravel-notify": "^2.2",
-        "paypal/rest-api-sdk-php": "^1.14"
+        "paypal/rest-api-sdk-php": "^1.14",
+        "salla/ouath2-merchant": "^1.4"
     },
     "require-dev": {
         "facade/ignition": "^2.3.6",

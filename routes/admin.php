@@ -9,9 +9,12 @@ use App\Http\Controllers\AdminAuthController;
 use App\Http\Controllers\ClientController;
 use App\Http\Controllers\DashBoardContorller;
 use App\Http\Controllers\FeatureController;
+use App\Http\Controllers\OrganizationProfile;
 use App\Http\Controllers\ReportController;
+use App\Http\Controllers\WebhookController;
 use GuzzleHttp\Middleware;
 use Illuminate\Support\Facades\Route;
+use PayPal\Api\Webhook;
 
 /*
 |--------------------------------------------------------------------------
@@ -56,4 +59,8 @@ Route::middleware('auth:admin')->group(function () {
     Route::resource('features' , FeatureController::class);
     Route::get('notification-report' , [ReportController::class , 'NotificationReport'])->name('notification.report');
 
+    Route::get('orgnaization-profile' ,[OrganizationProfile::class , 'getForm'])->name('getOrganizationProfile');
+    Route::post('orgnaization-profile' ,[OrganizationProfile::class , 'storeFrom'])->name('storeOrganizationProfile');
 });
+
+Route::get('webhook', [WebhookController::class , 'handle']);

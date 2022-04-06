@@ -19,6 +19,6 @@ class OrganizationProfile extends Model
 
     public function getLogoAttribute($key)
     {
-        return asset('logos/' . $key);
+        return asset('logo/' . $key);
     }
 }

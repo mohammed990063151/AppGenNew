@@ -7,12 +7,13 @@
             <div class="col-lg-12 mb-lg-0 mb-4">
                 <div class="card z-index-2 h-100">
                     <div class="card-header pb-0 pt-3 bg-transparent">
-                        <div class="row space-between">
-                            <h6 class="text-capitalize col-4">Features table</h6>
-                            <div class="col-6"></div>
-                            <div class="col-2">
-                                <span><a href="{{route('packages.create')}}" class="btn btn-primary btn-sm"
-                                        type="button">add New</a></span>
+                        <div class="d-flex justify-content-between">
+                            <h6 class="text-capitalize col-4">Feature table</h6>
+                                <a type="button" class="btn btn-sm btn-primary" data-toggle="modal" data-target="#exampleModal">
+                                    new Feature
+                                </a>
+                                {{-- <span><a href="{{route('packages.create')}}" class="btn btn-primary btn-sm"
+                                        type="button">add New</a></span> --}}
                             </div>
                         </div>
                         <div class="table-responsive mt-5">
@@ -34,7 +35,7 @@
                                             <form action="{{route('features.destroy' , $Feature->id)}}" method="post" style="display:inline">
                                                 @csrf
                                                 @method('DELETE')
-                                                <button class="btn btn-sm btn-circle btn-danger"><i class="fa fa-trash"></i></button>
+                                                <button class="btn btn-sm btn-circle btn-danger"><i class="bi bi-trash2-fill"></i></button>
                                             </form>
                                         </td>
                                     </tr>

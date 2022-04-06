@@ -35,6 +35,32 @@
 
                                     @csrf
                                     <h5>Applction details</h5>
+
+                    <section class="projects" id ="projects">
+                        {{-- <h2 class="title">how are you feeling</h2> --}}
+<div class="content">
+
+    {{-- @foreach($data as $data) --}}
+    <div class="project-card">
+        <div class="project-image">
+            <img  src="/app/{{$data->image}}"/>
+        </div>
+    <div class="project-info">
+<p class="project-category">{{$data->name}}</p>
+<strong class="project-title">
+<span>dev</span>
+<a href="{{route('application.edit', $data->id)}}" class="more-add">edite</a>
+<a href="#" class="more-details">add profile</a>
+
+</strong>
+
+    </div>
+
+
+        </div>
+          {{-- @endforeach --}}
+</div>
+                    </section>
                                     {{-- <div class="row col-md-12"> --}}
                                         {{-- <div>
                                             <label>Old logo</label>
@@ -77,7 +103,7 @@
                                 <small id="helpId" class="form-text text-muted">{{$message}}</small>
                                 @enderror
                             </div>
-<div class="save">
+                                        <div class="save">
                                         <button class="btn btn-primary"> Save </button></div>
                                     </div>
                                 </form>

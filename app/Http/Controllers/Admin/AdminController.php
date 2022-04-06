@@ -12,6 +12,7 @@ use Illuminate\Http\Request;
 use Illuminate\Routing\Controller as BaseController;
 use App\Traits\UserMangements;
 
+
 class AdminController extends BaseController
 {
 
@@ -38,13 +39,27 @@ class AdminController extends BaseController
         return view('admin.admin.create');
     }
 
-    public function store(CreateUser $request){
-        return $this->StoreUser(Admin::class , $request->email , $request->name , $request->password);
+    public function store(Request $request){
+        // return $request;
+        $redirectRoute = redirect()->route('admin.index');
+        return $this->StoreUser(Admin::class , $request->admin_email , $request->admin_name , $request->admin_password  , null , $redirectRoute);
     }
 
     public function destroy($id){
         return $this->Delete(Admin::class , $id);
     }
 
-
+    public function edit($id){
+        $Admin = Admin::find($id);
+        return view('admin.admin.create' ,['Admin' => $Admin]);
+    }
+    public function update(Request $request , $id){
+        $Admin = Admin::find($id);
+        $Admin->name = $request->admin_name ;
+        $Admin->email = $request->admin_email;
+        $Admin->password = bcrypt($request->admin_password);
+        $Admin->save();
+        // return $request;
+        return redirect()->route('admin.index');
+    }
 }

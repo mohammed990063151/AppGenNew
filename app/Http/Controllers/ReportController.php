@@ -25,6 +25,7 @@ class ReportController extends Controller
     }
 
     public function NotificationReport(Request $request){
-        return $request;
+        $NotificationsReprot = [];
+        return view('reports.notification' , compact('NotificationsReprot'));
     }
 }

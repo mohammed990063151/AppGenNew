@@ -7,12 +7,13 @@
                 <div class="card z-index-2 h-100">
                     <div class="card-header pb-0 pt-3 bg-transparent">
                         <div class="d-flex justify-content-between">
-                            <h6 class="text-capitalize col-4">packages table</h6>
-                            <div class="col-6"></div>
-                            {{-- <div class="col-2"> --}}
-                                <span><a href="{{route('packages.create')}}" class="btn btn-primary btn-sm"
-                                        type="button">add New</a></span>
-                            {{-- </div> --}}
+                            <h6 class="text-capitalize col-4">Packages table</h6>
+                                <a type="button" class="btn btn-sm btn-primary" data-toggle="modal" data-target="#exampleModal">
+                                    New Package
+                                </a>
+                                {{-- <span><a href="{{route('packages.create')}}" class="btn btn-primary btn-sm"
+                                        type="button">add New</a></span> --}}
+                            </div>
                         </div>
                         <div class="table-responsive mt-5">
                             <table class="table align-items-center table-bordered  ">
@@ -39,9 +40,9 @@
                                             <form action="{{route('packages.destroy' , $Package->id)}}" method="post" style="display:inline">
                                                 @csrf
                                                 @method('DELETE')
-                                                <button class="btn btn-sm btn-circle  btn-danger"> <i class="fa fa-trash"></i> </button>
+                                                <button class="btn btn-sm btn-circle  btn-danger"> <i class="bi bi-trash2-fill"></i> </button>
                                             </form>
-                                            <a href="{{route('packages.status' , $Package->id)}}" class="btn  btn-sm  btn-circle  {{$Package->status ? 'btn-warning' :'btn-success'}}"><i class="fa fa-power-off"></i></a>
+                                            <a href="{{route('packages.status' , $Package->id)}}" class="btn  btn-sm  btn-circle  {{$Package->status ? 'btn-warning' :'btn-success'}}"><i class="bi bi-toggle-on"></i></a>
                                         </td>
                                     </tr>
                                     <tr></tr>

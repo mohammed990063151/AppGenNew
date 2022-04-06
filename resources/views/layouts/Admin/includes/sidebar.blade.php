@@ -19,7 +19,7 @@
                             <span>Dashboard</span>
                         </a>
                     </li>
-                  
+
                     <li class="sidebar-item {{ request()->routeIs('features.index') ? 'active' : ''}} ">
                         <a href="{{ route('features.index')}}" class='sidebar-link'>
                             {{-- <i class="fa fa-assistive-listening-systems"></i> --}}
@@ -61,12 +61,12 @@
                                 <a href="{{route('subscription.reports')}}">subscription report</a>
                             </li>
                             <li class="submenu-item ">
-                                <a href="component-modal.html">notification reports</a>
+                                <a href="{{route('notification.report')}}">notification reports</a>
                             </li>
                         </ul>
                     </li>
 
-                   
+
                     <li class="sidebar-title">user  &amp; clients Mangement</li>
 
                     <li class="sidebar-item  has-sub">
@@ -112,7 +112,7 @@
                             </li>
                         </ul>
                     </li>
-                 
+
 {{--
                     <li class="sidebar-item  has-sub">
                         <a href="#" class='sidebar-link'>

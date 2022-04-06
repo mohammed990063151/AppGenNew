@@ -3,6 +3,7 @@
 namespace App\Models;
 
 use App\Traits\ModelHelpers;
+use Illuminate\Console\Application;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
@@ -61,13 +62,20 @@ class User extends Authenticatable
         return $this->hasMany(Subscription::class, 'user_id');
     }
 
+    public function Subscription(){
+        return $this->hasMany(Subscription::class, 'user_id');
+    }
     public function Applications(){
         return $this->hasMany(app::class, 'user_id');
     }
      public function Package(): object
     {
-        return $this->hasOne(Package::class, 'user_id');
+        return $this->belongsTo(Package::class, 'user_id');
     }
+
+    // public function Applications(){
+    //  return $this->hasMany(App::class);
+    // }
 
 
     /**

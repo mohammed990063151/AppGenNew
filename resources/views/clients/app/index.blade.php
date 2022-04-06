@@ -15,25 +15,14 @@
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 <div class="container-fluid py-4">
+
     <div class="row mt-4">
+
         <div class="col-lg-12 mb-lg-0 mb-4">
+
             <div class="card z-index-2 h-100">
+
                 <div class="card-header pb-0 pt-3 bg-transparent">
                     <div class="d-flex justify-content-between">
                         <h6 class="text-capitalize col-4">{{__('translation.applction_table')}}</h6>
@@ -63,7 +52,7 @@
 <strong class="project-title">
 {{-- <span>dev</span> --}}
 <a href="{{route('application.edit', $data->id)}}" class="more-add">edite</a>
-<a href="#" class="more-details">more</a>
+<a href="#" class="more-details">add profile</a>
 
 </strong>
 

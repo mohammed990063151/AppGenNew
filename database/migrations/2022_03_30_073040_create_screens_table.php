@@ -15,10 +15,9 @@ class CreateScreensTable extends Migration
     {
         Schema::create('screens', function (Blueprint $table) {
             $table->id();
-            $table->string('screen_type')->nullable();
-            $table->string('screen_image')->nullable();
-            $table->string('screen_title');
-            $table->string('screen_body');
+            $table->string('Page_Discrption')->nullable();
+            $table->string('Page_Image')->nullable();
+            $table->string('color');
             //$table->unsignedBigInteger('profile_id')->nullable();
             $table->foreignId('profile_id')->references('id')->on('app_profiles');
 

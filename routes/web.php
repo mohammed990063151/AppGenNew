@@ -46,6 +46,9 @@ Auth::routes();
 // Route::get('argon-login', function () {
 //     return view('Argon.auth.login');
 // });
+Route::get('/', function () {
+    return view('clients.dashboard');
+});
 
 Route::group(['prefix' => LaravelLocalization::setLocale()], function () {
     /** ADD ALL LOCALIZED ROUTES INSIDE THIS GROUP **/

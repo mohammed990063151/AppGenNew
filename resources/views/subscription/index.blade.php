@@ -49,7 +49,7 @@
                                             <form action="{{route('packages.destroy' , $Subscription->id)}}" method="post" style="display:inline">
                                                 @csrf
                                                 @method('DELETE')
-                                                <button class="btn btn-sm btn-circle btn-danger"><i class="fa fa-trash"></i></button>
+                                                <button class="btn btn-sm btn-circle btn-danger"><i class="bi bi-trash2-fill"></i></button>
                                             </form>
                                         </td>
                                     </tr>

@@ -35,8 +35,8 @@ class ProfileController extends BaseController
     public function create()
     {
         $data = app_profile::all();
-        $applcation = app::all();
-        return view('clients.app_profile.create',compact('data','applcation'));
+        $data2 = app::all();
+        return view('clients.app_profile.create',compact('data','data2'));
     }
 
     /**

@@ -24,7 +24,7 @@ return new class extends Migration
             $table->string('Twitter')->nullable();
             $table->string('TikTok')->nullable();
             $table->string('Social_Media_Icons_Color');
-            $table->boolean('is_active') ;
+            $table->boolean('is_active')->nullable() ;
             // $table->unsignedBigInteger('app_id');
             $table->foreignId('app_id')->references('id')->on('apps')->onDelete('cascade');
             $table->timestamps();

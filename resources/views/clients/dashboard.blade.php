@@ -18,12 +18,12 @@
                             <table class="table align-items-center table-bordered  ">
                                 <thead>
                                     <tr>
-                                        <td>id</td>
-                                        <td>name</td>
-                                        <td>price</td>
-                                        <td>duration</td>
-                                        <td>status</td>
-                                        <td>option</td>
+                                        <td>{{__('translation.id')}}</td>
+                                        <td>{{__('translation.name')}}</td>
+                                        <td>{{__('translation.price')}}</td>
+                                        <td>{{__('translation.duration')}}</td>
+                                        <td>{{__('translation.status')}}</td>
+                                        <td>{{__('translation.option')}}</td>>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -66,12 +66,12 @@
                                     {{-- @endforelse --}}
                                 </tbody>
                                 <tfoot>
-                                    <td>id</td>
-                                    <td>name</td>
-                                    <td>price</td>
-                                    <td>duration</td>
-                                    <td>status</td>
-                                    <td>option</td>
+                                    <td>{{__('translation.id')}}</td>
+                                    <td>{{__('translation.name')}}</td>
+                                    <td>{{__('translation.price')}}</td>
+                                    <td>{{__('translation.duration')}}</td>
+                                    <td>{{__('translation.status')}}</td>
+                                    <td>{{__('translation.option')}}</td>
                                 </tfoot>
                             </table>
                         </div>
@@ -89,7 +89,7 @@
     </div>
     </div>
     </div>
-@endsection
+
 
 
 <!DOCTYPE html>
@@ -112,7 +112,7 @@
     <script src="https://kit.fontawesome.com/42d5adcbca.js" crossorigin="anonymous"></script>
     <link href="../assets/css/nucleo-svg.css" rel="stylesheet" />
     <!-- CSS Files -->
-    <link id="pagestyle" href="../assets/css/argon-dashboard.css?v=2.0.0" rel="stylesheet" />
+    <link id="pagestyle" href="../assets/css/argon-{{__('translation.dashboard')}}.css?v=2.0.0" rel="stylesheet" />
 </head>
 
 
@@ -134,9 +134,9 @@
                     <ol class="breadcrumb bg-transparent mb-0 pb-0 pt-1 px-0 me-sm-6 me-5">
                         <li class="breadcrumb-item text-sm"><a class="opacity-5 text-white"
                                 href="javascript:;">Pages</a></li>
-                        <li class="breadcrumb-item text-sm text-white active" aria-current="page">Dashboard</li>
+                        <li class="breadcrumb-item text-sm text-white active" aria-current="page">{{__('translation.dashboard')}}</li>
                     </ol>
-                    <h6 class="font-weight-bolder text-white mb-0">Dashboard</h6>
+                    <h6 class="font-weight-bolder text-white mb-0">{{__('translation.dashboard')}}</h6>
                 </nav>
                 <div class="collapse navbar-collapse mt-sm-0 mt-2 me-md-0 me-sm-4" id="navbar">
                     <div class="ms-md-auto pe-md-3 d-flex align-items-center">
@@ -150,7 +150,7 @@
                         <li class="nav-item d-flex align-items-center">
                             <a href="javascript:;" class="nav-link text-white font-weight-bold px-0">
                                 <i class="fa fa-user me-sm-1"></i>
-                                <span class="d-sm-inline d-none">Sign In</span>
+                                <span class="d-sm-inline d-none">{{__('translation.Sign In')}}</span>
                             </a>
                         </li>
                         <li class="nav-item d-xl-none ps-3 d-flex align-items-center">
@@ -676,19 +676,19 @@
                             <ul class="nav nav-footer justify-content-center justify-content-lg-end">
                                 <li class="nav-item">
                                     <a href="https://www.creative-tim.com" class="nav-link text-muted"
-                                        target="_blank">Creative Tim</a>
+                                        target="_blank">{{__('translation.Creative Tim')}}</a>
                                 </li>
                                 <li class="nav-item">
                                     <a href="https://www.creative-tim.com/presentation" class="nav-link text-muted"
-                                        target="_blank">About Us</a>
+                                        target="_blank">{{__('translation.About Us')}}</a>
                                 </li>
                                 <li class="nav-item">
                                     <a href="https://www.creative-tim.com/blog" class="nav-link text-muted"
-                                        target="_blank">Blog</a>
+                                        target="_blank">{{__('translation.blog')}}</a>
                                 </li>
                                 <li class="nav-item">
                                     <a href="https://www.creative-tim.com/license" class="nav-link pe-0 text-muted"
-                                        target="_blank">License</a>
+                                        target="_blank">{{__('translation.License')}}</a>
                                 </li>
                             </ul>
                         </div>
@@ -888,6 +888,7 @@
     <script async defer src="https://buttons.github.io/buttons.js"></script>
     <!-- Control Center for Soft Dashboard: parallax effects, scripts for the example pages etc -->
     <script src="../assets/js/argon-dashboard.min.js?v=2.0.1"></script>
-</body>
 
-</html>
+@endsection
+
+

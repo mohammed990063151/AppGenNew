@@ -94,8 +94,8 @@
                         <div class="form-group col-md-6">
                                     {{-- <label class="my-1 mr-2" for="inlineFormCustomSelectPref">Name profile</label> --}}
                             {{-- <select name="profile_id" id="profile_id" class="form-control" required  value="{{$profile->id}}"> --}}
- <input type="hidden" class="form-control" name="profile_id"
-                                        aria-describedby="helpId" placeholder=""  value="{{$profile->id}}" >
+                                <input  type="hidden" class="form-control" value="{{ $profile ->id}}" name="app_id"
+                                aria-describedby="helpId" placeholder="">
                             {{--    @foreach ($profile as $profile)
                                     <option value="{{ $profile->id }}">{{$profile->Name}}</option>
                                 @endforeach

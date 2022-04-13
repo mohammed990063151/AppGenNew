@@ -18,11 +18,11 @@
                 <div class="card z-index-2 h-100">
                     <div class="card-header pb-0 pt-3 bg-transparent">
                         <div class="row">
-                            <h6 class="text-capitalize col-4"> add applction</h6>
+                            <h6 class="text-capitalize col-4"> {{__('translation.applction table')}}</h6>
                             <div class="col-6"></div>
                             <div class="col-2">
                                 <span><a href="{{route('application.index')}}" class="btn btn-danger btn-sm"
-                                        type="button">Go Back</a></span>
+                           type="button">{{__('translation.Go Back')}}</a></span>
                             </div>
                         </div>
 
@@ -71,8 +71,8 @@
 
                                                 <div class="col-md-6">
                                                     <div class="form-group">
-                                                      <label for="">logo</label>
-                                                      <input type="file"
+                                                    <label for="">logo</label>
+                                                    <input type="file"
                                                         class="form-control" name="Logo" id="Logo" aria-describedby="helpId" placeholder="">
                                                     </div>
                                                 </div>

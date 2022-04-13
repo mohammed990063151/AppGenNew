@@ -16,12 +16,17 @@ class screen extends Model
         'ContainarButtonBarColor',
         'IconsBackgroundColor',
         'IconsColor',
-        // 'profile_id',
+        'profile_id',
+        'app_id',
         'Created_by',
 
     ];
     public function app_profile()
     {
     return $this->belongsTo(app_profile::class,'profile_id');
+    }
+    public function app()
+    {
+    return $this->belongsTo(app::class);
     }
 }

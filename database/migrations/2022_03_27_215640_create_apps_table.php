@@ -21,9 +21,11 @@ return new class extends Migration
             $table->string('Link');
             $table->string('WhatsApp')->nullable();
             $table->string('Phone');
-            $table->string('Splash_Screen');
+            $table->string('Splash_Screen')->nullable();
             $table->string('Logo');
             // $table->foreignId('user_id')->references('id')->on('users');
+
+
             $table->timestamps();
         });
     }

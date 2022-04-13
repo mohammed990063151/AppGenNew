@@ -32,7 +32,7 @@ class ScreenController extends Controller
     {
         // $Screen = screen::with("app_profile")->get();
         // $profile = app_profile::all();, compact('Screen', 'profile')
-        $profile = app_profile::find($id);
+        $profile = app::find($id);
         return view('clients.Screen.Screen.create', compact('profile'));
     }
 
@@ -43,7 +43,7 @@ class ScreenController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(ScreenRequest $request)
+    public function store(ScreenRequest $request )
     {
         // return $request;
 
@@ -59,7 +59,7 @@ class ScreenController extends Controller
             $Screen->image = $imagename;
 
 
-            $Screen->profile_id = $request->profile_id;
+            // $Screen->profile_id = $request->profile_id;
 
             $Screen->Discrption1st = $request->Discrption1st;
 
@@ -68,18 +68,19 @@ class ScreenController extends Controller
 
             $Screen->IconsBackgroundColor = $request->IconsBackgroundColor;
             $Screen->IconsColor = $request->IconsColor;
+            $Screen->app_id = $request->app_id;
             // $Screen->screen_type = $request->screen_type;
 
             $Screen->save();
 
             //  return redirect('/Screenes');
             // DB::commit();
-            $profileid=app_profile::get()->where("app_id")->last();
+            // $Screen=app_profile::get()->where("profile_id")->last();
 
-            if(!$profileid)
-            return redirect()->route('Screen.create1',$profileid);
-            else
-            return response()->json(['message' => 'error message'], 500);
+            // if($Screen->id)
+            return redirect()->route('Screen.create1',$Screen->id);
+            // else
+            // return response()->json(['message' => 'error message'], 500);
 
             // DB::commit();
         } catch (\Exception $ex) {
@@ -120,6 +121,7 @@ class ScreenController extends Controller
 
     $Screen->IconsBackgroundColor = $request->IconsBackgroundColor;
     $Screen->IconsColor = $request->IconsColor;
+    $Screen->app_id = $request->app_id;
     // $Screen->screen_type = $request->screen_type;
 
     $Screen->save();
@@ -181,6 +183,7 @@ class ScreenController extends Controller
             $Screen->Color = $request->Color;
             $Screen->ContainarButtonBarColor = $request->ContainarButtonBarColor;
             $Screen->IconsColor = $request->IconsColor;
+            $Screen->app_id = $request->app_id;
             // $Screen->screen_type = $request->screen_type;
 
 
@@ -228,8 +231,8 @@ class ScreenController extends Controller
         // $profile = app_profile::all();, compact('Screen', 'profile')
 
 
-        $profile = app_profile::find($id);
-        return view('clients.Screen.Screen.create1', compact('profile'));
+        $Screen = app::find($id);
+        return view('clients.Screen.Screen.create1', compact('Screen'));
     }
     public function create2($id)
     {
@@ -237,8 +240,8 @@ class ScreenController extends Controller
         // $profile = app_profile::all();, compact('Screen', 'profile')
 
 
-        $profile = app_profile::find($id);
-        return view('clients.Screen.Screen.create2', compact('profile'));
+        $Screen = app::find($id);
+        return view('clients.Screen.Screen.create2', compact('Screen'));
     }
 
     public function store2(ScreenRequest $request)
@@ -266,6 +269,7 @@ class ScreenController extends Controller
 
     $Screen->IconsBackgroundColor = $request->IconsBackgroundColor;
     $Screen->IconsColor = $request->IconsColor;
+    $Screen->app_id = $request->app_id;
     // $Screen->screen_type = $request->screen_type;
 
     $Screen->save();

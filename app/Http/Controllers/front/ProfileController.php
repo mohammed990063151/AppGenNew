@@ -104,8 +104,9 @@ class ProfileController extends BaseController
         }
 
     }
+    // route('admin.edit');
 
-    public function edit($id)
+    public function edit($AppID, $id)
     {
         $profile = app_profile::find($id);
 

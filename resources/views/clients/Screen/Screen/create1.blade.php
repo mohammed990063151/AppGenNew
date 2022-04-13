@@ -128,8 +128,8 @@
 
                                             <div class="form-group col-md-6">
 
-                                                <input type="hidden" class="form-control" name="profile_id"
-                                                    aria-describedby="helpId" placeholder="" value="{{ $profile->id }}">
+                                                <input  type="hidden" class="form-control" value="{{ $Screen ->id}}" name="app_id"
+                                                aria-describedby="helpId" placeholder="">
 
 
                                                 <button class="btn m-1 btn-primary"> Save </button>

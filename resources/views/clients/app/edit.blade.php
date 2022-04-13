@@ -1,17 +1,15 @@
 @extends('layouts.master')
 @section('breadceumbs')
-{{-- <x-bread-crumps> --}}
-    @component('components.bread-crumps' , ['head' => 'Updata applction' ,
-    'links' => ['applction' ,  'Updata applction']
-    ])
+    {{-- <x-bread-crumps> --}}
+    @component('components.bread-crumps', ['head' => 'Updata applction', 'links' => ['applction', 'Updata applction']])
     @endcomponent
-    @endsection
+@endsection
 
 
-    @section('title')
+@section('title')
     Updata applction
 @stop
-    @section('content')
+@section('content')
 
     <div class="container-fluid py-4">
         <div class="row mt-4">
@@ -22,15 +20,15 @@
                             <h6 class="text-capitalize col-4"> updata applction</h6>
                             <div class="col-6"></div>
                             <div class="col-2">
-                                <span><a href="{{route('application.index')}}" class="btn btn-danger btn-sm"
-
+                                <span><a href="{{ route('application.index') }}" class="btn btn-danger btn-sm"
                                         type="button">Go Back</a></span>
                             </div>
                         </div>
                         <div class="row">
                             <div class="mt-3">
-   
-                                <form action="{{ route( 'application.update' , $Applction->id)}}" method="POST" enctype="multipart/form-data">
+
+                                <form action="{{ route('application.update', $Applction->id) }}" method="POST"
+                                    enctype="multipart/form-data">
 
                                     @csrf
                                     <h5>Applction details</h5>
@@ -38,63 +36,59 @@
 
                                         <div class="col-md-6">
                                             <div class="form-group">
-                                              <label for="">Logo</label>
-                                              <input type="file"
-                                                class="form-control" name="Logo" id="" aria-describedby="helpId" placeholder="">
+                                                <label for="">Logo</label>
+                                                <input type="file" class="form-control" name="Logo" id=""
+                                                    aria-describedby="helpId" placeholder="">
                                             </div>
                                         </div>
-                                        @error('Logo')
-                                        <small id="helpId" class="form-text text-muted">{{$message}}</small>
-                                        @enderror
+                                        @error('Logo') <span class="text-danger error">{{ $message
+                                        }}</span>@enderror
                                     </div>
-                                        <div>
-                                            <label>Old logo</label>
-                                            <img height="100" width="150" src="/app/{{$Applction->Logo}}">
+                                    <div>
+                                        <label>Old logo</label>
+                                        <img height="100" width="150" src="/app/{{ $Applction->Logo }}">
 
-                                        </div>
+                                    </div>
 
 
 
-                                      <div class="form-group col-md-6">
+                                    <div class="form-group col-md-6">
                                         <label for="">Name</label>
-                                        <input type="text" class="form-control" name="AppName" id="" value="{{$Applction->AppName}}"
-                                            aria-describedby="helpId" placeholder="">
-                                        @error('AppName')
-                                        <small id="helpId" class="form-text text-danger text-muted">{{$message}}</small>
-                                        @enderror
+                                        <input type="text" class="form-control" name="AppName" id=""
+                                            value="{{ $Applction->AppName }}" aria-describedby="helpId" placeholder="">
+                                            @error('AppName') <span class="text-danger error">{{ $message
+                                            }}</span>@enderror
                                     </div>
                                     <div class="form-group col-md-6">
                                         <label for=""> Link</label>
-                                        <input type="text" class="form-control" name="Link" id="" value="{{$Applction->Link}}"
-                                            aria-describedby="helpId" placeholder="">
-                                        @error('Link')
-                                        <small id="helpId" class="form-text text-muted">{{$message}}</small>
-                                        @enderror
+                                        <input type="text" class="form-control" name="Link" id=""
+                                            value="{{ $Applction->Link }}" aria-describedby="helpId" placeholder="">
+                                            @error('Link') <span class="text-danger error">{{ $message
+                                            }}</span>@enderror
                                     </div>
                                     <div class="form-group col-md-6">
                                         <label for="">Phone</label>
-                                        <input type="text" class="form-control" name="Phone" id="" value="{{$Applction->Phone}}"
-                                            aria-describedby="helpId" placeholder="">
-                                        @error('Phone')
-                                        <small id="helpId" class="form-text text-danger text-muted">{{$message}}</small>
-                                        @enderror
+                                        <input type="text" class="form-control" name="Phone" id=""
+                                            value="{{ $Applction->Phone }}" aria-describedby="helpId" placeholder="">
+                                            @error('Phone') <span class="text-danger error">{{ $message
+                                            }}</span>@enderror
                                     </div>
                                     <div class="form-group col-md-6">
                                         <label for="">Splash_Screen</label>
-                                        <input type="text" class="form-control" name="Splash_Screen" id="" value="{{$Applction->Splash_Screen}}"
-                                            aria-describedby="helpId" placeholder="">
-                                        @error('Splash_Screen')
-                                        <small id="helpId" class="form-text text-danger text-muted">{{$message}}</small>
-                                        @enderror
+                                        <input type="text" class="form-control" name="Splash_Screen" id=""
+                                            value="{{ $Applction->Splash_Screen }}" aria-describedby="helpId"
+                                            placeholder="">
+                                            @error('Splash_Screen') <span class="text-danger error">{{ $message
+                                            }}</span>@enderror
                                     </div>
 
                                     <div class="col-md-6">
                                         <label> Discrptions</label>
-                                        <textarea name="Discrptions" id="" cols="30" rows="10" value="{{$Applction->Discrptions}}"
+                                        <textarea name="Discrptions" id="" cols="30" rows="10" value="{{ $Applction->Discrptions }}"
                                             class="form-control"></textarea>
-                                        @error('Discrptions') <span class="text-danger error">{{ $message
+                                            @error('Discrptions') <span class="text-danger error">{{ $message
                                             }}</span>@enderror
-                                    {{-- <div class="form-group col-md-6"> --}}
+                                        {{-- <div class="form-group col-md-6"> --}}
                                         {{-- <label for="">version</label> --}}
                                         {{-- <input type="hidden" class="form-control" name="version" id=""
                                             aria-describedby="helpId" placeholder="">
@@ -102,7 +96,7 @@
                                         <small id="helpId" class="form-text text-danger text-muted">{{$message}}</small>
                                         @enderror
                                     </div> --}}
-                                       {{-- <div class="form-group col-md-6">
+                                        {{-- <div class="form-group col-md-6">
                                         <label for="">user</label>
                                         <input type="hidden" class="form-control" name="user_id" value="{{ Auth::user()->name }}"
                                             aria-describedby="helpId" placeholder="">
@@ -110,28 +104,32 @@
                                         <small id="helpId" class="form-text text-danger text-muted">{{$message}}</small>
                                         @enderror
                                     </div> --}}
-                                    <div class="form-group col-md-6">
-                                        <label for="">WhatsApp</label>
-                                        <input type="text" class="form-control" name="WhatsApp" id="" value="{{$Applction->WhatsApp}}"
-                                            aria-describedby="helpId" placeholder="">
-                                        @error('WhatsApp')
-                                        <small id="helpId" class="form-text text-danger text-muted">{{$message}}</small>
-                                        @enderror
+                                        <div class="form-group col-md-6">
+                                            <label for="">WhatsApp</label>
+                                            <input type="text" class="form-control" name="WhatsApp" id=""
+                                                value="{{ $Applction->WhatsApp }}" aria-describedby="helpId"
+                                                placeholder="">
+                                                @error('WhatsApp') <span class="text-danger error">{{ $message
+                                                }}</span>@enderror
+                                        {{-- <div class="save">
+
                                     </div>
+                                    @error('image')
+                                        <small id="helpId" class="form-text text-muted">{{ $message }}</small>
+                                    @enderror --}}
+                            </div>
 
 
-
-
-<div class="save">
-                                        <button class="btn btn-primary"> Save </button></div>
-                                    </div>
-                                </form>
+                                <button class="btn btn-primary"> Save </button>
                             </div>
                         </div>
+                        </form>
                     </div>
                 </div>
             </div>
         </div>
-        </footer>
     </div>
-    @endsection
+    </div>
+    </footer>
+    </div>
+@endsection

@@ -15,25 +15,25 @@
           <li class="nav-item">
             <a class="nav-link d-flex align-items-center me-2 active" aria-current="page" href="../pages/dashboard.html">
               <i class="fa fa-chart-pie opacity-6  me-1"></i>
-              Dashboard
+              {{__('translation.Dashboard')}}
             </a>
           </li>
           <li class="nav-item">
             <a class="nav-link me-2" href="../pages/profile.html">
               <i class="fa fa-user opacity-6  me-1"></i>
-              Profile
+              {{__('translation.Profile')}}
             </a>
           </li>
           <li class="nav-item">
             <a class="nav-link me-2" href="../pages/sign-up.html">
               <i class="fas fa-user-circle opacity-6  me-1"></i>
-              Sign Up
+              {{__('translation.Sign_up')}}
             </a>
           </li>
           <li class="nav-item">
             <a class="nav-link me-2" href="../pages/sign-in.html">
               <i class="fas fa-key opacity-6  me-1"></i>
-              Sign In
+              {{__('translation.Sign_in')}} 
             </a>
           </li>
         </ul>

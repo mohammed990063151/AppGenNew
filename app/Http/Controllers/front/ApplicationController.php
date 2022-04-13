@@ -65,7 +65,7 @@ class ApplicationController extends BaseController
 
 
             $Applction->save();
-
+// dd($Applction);
             return redirect()->route('profile.create', $Applction->id);
             // DB::commit();
         } catch (\Exception $ex) {
@@ -114,12 +114,12 @@ if($Logo){
             //return redirect()->route('Screen.edit');
 
 
-            $profileid=app_profile::get()->where("app_id",$id)->last();
+            $profileid=app_profile::where("app_id",$id)->latest()->get();
       //      dd($profileid);
-if(!$profileid)
-return redirect()->route('profile.edit',$profileid);
-else
-return response()->json(['message' => 'error message'], 500);
+// if(!$profileid)
+return redirect()->route('profile.edit',$profileid->$id);
+// else
+// return response()->json(['message' => 'error message'], 500);
 
             // DB::commit();
         } catch (\Exception $ex) {
@@ -141,7 +141,7 @@ return response()->json(['message' => 'error message'], 500);
             // DB::commit();
         } catch (\Exception $ex) {
             // DB::rollback();
-            // return $ex;
+            return $ex;
             return redirect('/application')->with(['error' => 'حدث خطا ما برجاء المحاوله لاحقا']);
         }
     }

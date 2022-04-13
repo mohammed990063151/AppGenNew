@@ -30,7 +30,7 @@
 
                                 <form action="{{ route('profile.store') }}" method="POST" enctype="multipart/form-data">
                                     @csrf
-                                    <h5>Add Profile details</h5>
+                                    <h5>{{__('translation.Add Profile details')}}</h5>
                                     <div class="row col-md-12">
                                         <div class="form-group col-md-6">
                                             <label for=""> Name</label>
@@ -127,10 +127,10 @@
                                                     name="is_active" value="1" checked>
                                                 {{-- <label class="form-check-label" for="mySwitch">active</label> --}}
                                             </div>
-
+                                            <button class="btn m-1 btn-primary"> Save </button>
                                         </div>
 
-                                        <button class="btn m-1 btn-primary"> Save </button>
+
 
 
                                     </div>
@@ -270,7 +270,7 @@
 
                         </div>
                     </div>
-                </div>
+                </div></div>
             </div>
 
             </form>

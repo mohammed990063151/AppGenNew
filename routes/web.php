@@ -15,6 +15,7 @@ use App\Http\Controllers\front\ApplicationController;
 use App\Http\Controllers\InvoiceController;
 use App\Http\Controllers\front\ScreenController;
 use App\Models\FirebaseNotification;
+use App\Models\screen;
 use Illuminate\Support\Facades\View;
 
 /*
@@ -38,13 +39,16 @@ Auth::routes();
 |--------------------------------------------------------------------------
 |
 | Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider within a group which
+| routes are loaded by tGGhe RouteServiceProvider within a group which
 | contains the "web" middleware group. Now create something great!
 |
 */
 
-Route::get('argon-login', function () {
-    return view('Argon.auth.login');
+// Route::get('argon-login', function () {
+//     return view('Argon.auth.login');
+// });
+Route::get('/', function () {
+    return view('clients.dashboard');
 });
 
 Route::group(['prefix' => LaravelLocalization::setLocale()], function () {
@@ -62,9 +66,9 @@ Route::group(['prefix' => LaravelLocalization::setLocale()], function () {
         /// start profile
         Route::group(['prefix' => 'profile'], function () {
             Route::get('/', [ProfileController::class, 'index'])->name('profile.index');
-            Route::get('create/{id}', [ProfileController::class, 'create'])->name('profile.create');
+            Route::get('create', [ProfileController::class, 'create'])->name('profile.create');
             Route::POST('store', [ProfileController::class, 'store'])->name('profile.store');
-            Route::get('edit/{id}', [ProfileController::class, 'edit'])->name('profile.edit');
+            Route::get('edit/{Appid}/{id}', [ProfileController::class, 'edit'])->name('profile.edit');
             Route::post('update/{id}', [ProfileController::class, 'update'])->name('profile.update');
             Route::post('destroy/{id}', [ProfileController::class, 'destroy'])->name('profile.destroy');
         });
@@ -103,10 +107,15 @@ Route::group(['prefix' => LaravelLocalization::setLocale()], function () {
     Route::post('get-price', [PaymentController::class, 'ChosePrice'])->name('ChosePrice');
 
     Route::get('/clients/dashboard', [FrontController::class, 'index'])->name('clients.dashboard');
-    Route::resource('notification', FirebaseNotificationController::class)->middleware('IsSubscribe');
+    Route::resource('notification', FirebaseNotificationController::class);#->middleware('IsSubscribe');
     Route::get('get-priceing', [PaymentController::class, 'getPriceingInside'])->name('getPricing');
     Route::post('get-priceing', [PaymentController::class, 'PayInside'])->name('PayInside');
     Route::get('subscribtion-status/{id}', [PaymentController::class, 'subscribtionStatus'])->name('subscribtionStatus');
     Route::get('get-invoice', [InvoiceController::class, 'getInvoice'])->name('getInvoice');
     Route::post('pay-invoice', [InvoiceController::class, 'PayInvoice'])->name('PayInvoice');
+});
+Route::get('test/{id}/Screen/{ScreanId}' , function( $ScreanId, $id){
+    return 'test' . $id;
+    // compact()
+    // route('asdasd' , ['id' =>$id , screen ])
 });

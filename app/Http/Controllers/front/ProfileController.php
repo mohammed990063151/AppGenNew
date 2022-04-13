@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\front;
 
 use App\Models\app;
+use App\Models\screen;
 use App\Models\app_profile;
 use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
 use Illuminate\Foundation\Bus\DispatchesJobs;
@@ -20,11 +21,10 @@ class ProfileController extends BaseController
 
     public function index()
     {
-        $data = app_profile::with("app")->get();
+        $profile = app_profile::with("app")->get();
         // dd($data);
         $applcation = app::all();
-        return view('clients.app_profile.index' ,compact('data','applcation'));
-
+        return view('clients.app_profile.index', compact('profile', 'applcation'));
     }
 
     /**
@@ -32,11 +32,11 @@ class ProfileController extends BaseController
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create($id)
     {
-        $data = app_profile::all();
-        $applcation = app::all();
-        return view('clients.app_profile.create',compact('data','applcation'));
+        $profile = app_profile::all();
+        $applcation = app::find($id);
+        return view('clients.app_profile.create', compact('profile', 'applcation'));
     }
 
     /**
@@ -47,95 +47,132 @@ class ProfileController extends BaseController
      */
     public function store(ProfileappRequest  $request)
     {
-// return $request ->except('_token');
-// app_profile::create($request->except('_token'));
 
-try {
-//     return $request ->except('_token');
-// app_profile::create($request->except('_token'));
-    // DB::beginTransaction();
-                        app_profile::create([
-
-                 'orgname' => $request->orgname,
-                 'orgemail' => $request->orgemail,
-                'ogwhatsapp' => $request->ogwhatsapp,
-                 'app_id' => $request->app_id,
-                 'color' => $request->color,
-                 'pc' => $request->pc,
-                 'sc' => $request->sc,
-
-            ]);
-
-                //  $data->save();
-
-                return redirect()-> route('profile.index')->with(['success' => 'success']);
-                // DB::commit();
-            } catch (\Exception $ex) {
-                // DB::rollback();
-                return $ex;
-                return redirect('/profile') -> route('profile.index')->with(['error' => 'حدث خطا ما برجاء المحاوله لاحقا']);
-            }
-
-    }
-
-    public function edit($id){
-        $data=app_profile::find($id);
-
-
-        $data2 = app::get();
-
-        return view('clients.app_profile.edit' , compact('id','data','data2' ));
-    }
-
-
-    public function update(ProfileappRequest $request ,$id ){
-
+        // return $request ->except('_token');
+        // app_profile::create($request->except('_token'));
+        // return $request;
         try {
+        //     return $request ->except('_token');
+        // app_profile::create($request->except('_token'));
+        // DB::beginTransaction();
 
-        $data=app_profile::find($id);
+        if (!$request->has('is_active'))
+            $request->request->add(['is_active' => 0]);
+        else
+        //     $request->request->add(['is_active' => 1]);
+        // app_profile::create([
 
-        if (!$data)
-        return redirect()->route('clients.app_profile.edit')->with(['error' => 'not found']);
+        //     'Name' => $request->Name,
+        //     'Email' => $request->Email,
+        //     'Facebook' => $request->Facebook,
+        //      'app_id' => $request->app_id,
+        //     'Snapchat' => $request->Snapchat,
+        //     'Instgram' => $request->Instgram,
+        //     'Twitter' => $request->Twitter,
+        //     'TikTok' => $request->TikTok,
+        //     'Social_Media_Icons_Color' => $request->Social_Media_Icons_Color,
+        //     'is_active' => $request->is_active,
+            $profile = new app_profile;
+
+
+
+            // DB::beginTransaction();
+            $profile->Name = $request->Name;
+            $profile->Email = $request->Email;
+            $profile->Facebook = $request->Facebook;
+             $profile->app_id=$request->app_id;
+            $profile->Snapchat = $request->Snapchat;
+            $profile->Instgram = $request->Instgram;
+            $profile->Twitter = $request->Twitter;
+            $profile->Social_Media_Icons_Color = $request->Social_Media_Icons_Color;
+            $profile->is_active = $request->is_active;
+
+            $profile->save();
+
+
+        // ]);
+
+        //  $request->save();
+
+        return redirect()->route('Screen.create', $profile->id);
+        // DB::commit();
+        } catch (\Exception $ex) {
+        // DB::rollback();
+
+        return $ex;
+        return redirect() -> route('profile.index');
+        }
+
+    }
+
+    public function edit($id)
+    {
+        $profile = app_profile::find($id);
+
+
+        $applcation = app::get();
+
+        return view('clients.app_profile.edit', compact('id', 'profile', 'applcation'));
+    }
+
+
+    public function update(request $request, $id)
+    {
+
+        // try {
+
+        $profile = app_profile::find($id);
+
+        if (!$profile)
+            return redirect()->route('clients.app_profile.edit')->with(['error' => 'not found']);
 
         // DB::beginTransaction();
-                 $data->orgname=$request->orgname;
-                 $data->orgemail=$request->orgemail;
-                 $data->ogwhatsapp=$request->ogwhatsapp;
-                 $data->app_id=$request->app_id;
-                 $data->color=$request->color;
-                 $data->pc=$request->pc;
-                 $data->sc=$request->sc;
+        $profile->Name = $request->Name;
+        $profile->Email = $request->Email;
+        $profile->Facebook = $request->Facebook;
+         $profile->app_id=$request->app_id;
+        $profile->Snapchat = $request->Snapchat;
+        $profile->Instgram = $request->Instgram;
+        $profile->Twitter = $request->Twitter;
+        $profile->Social_Media_Icons_Color = $request->Social_Media_Icons_Color;
+        $profile->is_active = $request->is_active;
 
-                 $data->save();
-                //  DB::commit();
-                return redirect()-> route('profile.index')->with(['success' => 'ok']);
-                // DB::commit();
-            } catch (\Exception $ex) {
-                // DB::rollback();
-                return $ex;
-                return redirect('/profile') -> route('profile.index')->with(['error' => 'حدث خطا ما برجاء المحاوله لاحقا']);
-            }
+        $profile->save();
+        $Screen = screen::find($id);
+        $profile = app_profile::get();
 
-                }
-
-
-                public function destroy(request $request ,$id ){
-try{
-                $id = $request->id;
-                app_profile::find($id)->delete();
-                return redirect('/profile')->with(['success' => 'ok']);
-            } catch (\Exception $ex) {
-                // DB::rollback();
-                return $ex;
-                return redirect('/profile') -> route('profile.index')->with(['error' => 'حدث خطا ما برجاء المحاوله لاحقا']);
-            }
-
-                }
-
-                public function Dashboard( ){
+        return view('clients.Screen.Screen.edit', compact('Screen', 'profile'));
+        // DB::commit();
+        // } catch (\Exception $ex) {
+        // DB::rollback();
+        $profile = app_profile::find($id);
 
 
-                    return view('front.dashboard');
+        $applcation = app::get();
 
-                    }
+        return view('clients.app_profile.edit', compact('id', 'profile', 'applcation'));
+        // }
+
+    }
+
+
+    public function destroy(request $request, $id)
+    {
+        try {
+            $id = $request->id;
+            app_profile::find($id)->delete();
+            return redirect('/profile')->with(['success' => 'ok']);
+        } catch (\Exception $ex) {
+            // DB::rollback();
+            return $ex;
+            return redirect('/profile')->route('profile.index')->with(['error' => 'حدث خطا ما برجاء المحاوله لاحقا']);
+        }
+    }
+
+    public function Dashboard()
+    {
+
+
+        return view('front.dashboard');
+    }
 }

@@ -7,13 +7,17 @@ use Illuminate\Database\Eloquent\Model;
 
 class app_profile extends Model
 {
+    protected $table = 'app_profiles';
     protected $fillable = [
-        'orgname',
-        'orgemail',
-        'ogwhatsapp',
-        'color',
-        'pc',
-        'sc',
+        'Name',
+        'Email',
+        'Facebook',
+        'Snapchat',
+        'Instgram',
+        'Twitter',
+        'TikTok',
+        'Social_Media_Icons_Color',
+        'is_active',
         'app_id',
         'Created_by',
 
@@ -30,5 +34,22 @@ class app_profile extends Model
     public function screen()
     {
     return $this->belongsTo('App\Models\screen');
+    }
+    public function scopeActive($query){
+        return $query -> where('is_active',1);
+    }
+
+    public function  scopeSelection($query){
+
+        return $query -> select('Facebook',
+        'Snapchat',
+        'Instgram',
+        'Twitter',
+        'TikTok',);
+    }
+
+
+    public function getActive(){
+      return   $this -> is_active == 1 ? 'مفعل'  : 'غير مفعل';
     }
 }

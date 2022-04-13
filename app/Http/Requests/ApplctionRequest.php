@@ -25,22 +25,25 @@ class ApplctionRequest extends FormRequest
     {
         return [
 
-            'image' => 'required_without:id|mimes:jpg,jpeg,png',
-            'name' => 'required|string|max:100',
-            'link' => 'required|string|max:100',
-            'version'   => 'required|string|max:50',
+            'Logo' => 'required_without:id|mimes:jpg,jpeg,png',
+            'AppName' => 'required|string|max:100',
+            'Link' => 'required|string|max:100',
+            'Discrptions' => 'required|string|max:100',
+            'Phone' => 'required|string|max:100',
+            // 'Splash_Screen' => 'required|string|max:100',
+            'WhatsApp' => 'required|string|max:100',
 
         ];
     }
-//     public function messages()
-//     {
-//         return [
-//             'required' => 'This field is required',
-//             'in' => 'Incorrect values entered ',
-//             'name.string' => 'The name must be letters',
-//             'abbr.max' => 'This field must not be more than 10 characters ',
+    public function messages()
+    {
+        return [
+            'required' => 'This field is required',
+            'in' => 'Incorrect values entered ',
+            'name.string' => 'The name must be letters',
+            'abbr.max' => 'This field must not be more than 10 characters ',
 
-//             'name.max' => 'The name of the applction must not be more than 100 characters ',
-//         ];
-// }
+            'name.max' => 'The name of the applction must not be more than 100 characters ',
+        ];
+}
 }

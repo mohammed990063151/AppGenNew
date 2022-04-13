@@ -28,71 +28,96 @@
                         </div>
                         <div class="row">
                             <div class="mt-3">
-                                @include('clients.alerts.success')
-                                @include('clients.alerts.errors')
-                                <form action="{{route('profile.update' , $data->id)}}" method="post" enctype="multipart/form-data">
+                                
+                                <form action="{{route('profile.update',$profile->id)}}" method="post" enctype="multipart/form-data">
 
                                     @csrf
                                     <h5>Updata Profile </h5>
                                     <div class="row col-md-12">
 
                                     <div class="form-group col-md-6">
-                                        <label for="">App Profile Name</label>
-                                        <input type="text" class="form-control" name="orgname" value="{{$data->orgname}}" id=""
+                                        <label for="">Name</label>
+                                        <input type="text" class="form-control" name="Name" value="{{$profile->Name}}" id=""
                                             aria-describedby="helpId" placeholder="">
-                                        @error('orgname')
+                                        @error('Name')
                                         <small id="helpId" class="form-text text-danger text-muted">{{$message}}</small>
                                         @enderror
                                     </div>
                                     <div class="form-group col-md-6">
                                         <label for="">App Profile email</label>
-                                        <input type="text" class="form-control" name="orgemail" value="{{$data->orgemail}}" id=""
+                                        <input type="text" class="form-control" name="Email" value="{{$profile->Email}}" id=""
                                             aria-describedby="helpId" placeholder="">
-                                        @error('orgemail')
+                                        @error('Email')
                                         <small id="helpId" class="form-text text-muted">{{$message}}</small>
                                         @enderror
                                     </div>
                                     <div class="form-group col-md-6">
                                         <label for="">App Profile whatsapp</label>
-                                        <input type="text" class="form-control" name="ogwhatsapp" value="{{$data->ogwhatsapp}}" id=""
+                                        <input type="text" class="form-control" name="Facebook" value="{{$profile->Facebook}}" id=""
                                             aria-describedby="helpId" placeholder="">
-                                        @error('ogwhatsapp')
+                                        @error('Facebook')
                                         <small id="helpId" class="form-text text-danger text-muted">{{$message}}</small>
                                         @enderror
                                     </div>
                                     <div class="form-group col-md-6">
                                         <label for="">App Profile whatsapp</label>
-                                        <input type="text" class="form-control" name="color" value="{{$data->color}}" id=""
+                                        <input type="text" class="form-control" name="Snapchat" value="{{$profile->Snapchat}}" id=""
                                             aria-describedby="helpId" placeholder="">
-                                        @error('color')
+                                        @error('Snapchat')
                                         <small id="helpId" class="form-text text-danger text-muted">{{$message}}</small>
                                         @enderror
                                     </div>
                                     <div class="form-group col-md-6">
                                         <label for="">App Profile whatsapp</label>
-                                        <input type="text" class="form-control" name="pc" value="{{$data->pc}}" id=""
+                                        <input type="text" class="form-control" name="Instgram" value="{{$profile->Instgram}}" id=""
                                             aria-describedby="helpId" placeholder="">
-                                        @error('pc')
+                                        @error('Instgram')
                                         <small id="helpId" class="form-text text-danger text-muted">{{$message}}</small>
                                         @enderror
                                     </div>
                                     <div class="form-group col-md-6">
                                         <label for="">App Profile whatsapp</label>
-                                        <input type="text" class="form-control" name="sc" value="{{$data->sc}}" id=""
+                                        <input type="text" class="form-control" name="Twitter" value="{{$profile->Twitter}}" id=""
                                             aria-describedby="helpId" placeholder="">
-                                        @error('sc')
+                                        @error('Twitter')
                                         <small id="helpId" class="form-text text-danger text-muted">{{$message}}</small>
                                         @enderror
                                     </div>
                                     <div class="form-group col-md-6">
+                                        <label for="">App Profile whatsapp</label>
+                                        <input type="text" class="form-control" name="TikTok" value="{{$profile->TikTok}}" id=""
+                                            aria-describedby="helpId" placeholder="">
+                                        @error('TikTok')
+                                        <small id="helpId" class="form-text text-danger text-muted">{{$message}}</small>
+                                        @enderror
+                                    </div>
+                                    <div class="form-group col-md-6">
+                                        <label for="">App Profile whatsapp</label>
+                                        <input type="text" class="form-control" name="Social_Media_Icons_Color" value="{{$profile->Social_Media_Icons_Color}}" id=""
+                                            aria-describedby="helpId" placeholder="">
+                                        @error('Social_Media_Icons_Color')
+                                        <small id="helpId" class="form-text text-danger text-muted">{{$message}}</small>
+                                        @enderror
+                                    </div>
+
+                                    <div class="container mt-3">
+
+                                        <div class="form-check form-switch">
+                                            <input class="form-check-input" type="checkbox" id="mySwitch"
+                                                name="is_active" value="1" checked>
+                                            <label class="form-check-label" for="mySwitch">active</label>
+                                        </div>
+
+                                    </div>
+                                    {{-- <div class="form-group col-md-6">
                                         <label class="my-1 mr-2" for="inlineFormCustomSelectPref">applaction</label>
                                 <select name="app_id" id="app_id" class="form-control" required>
                                     <option value="" selected disabled> -- Locate applaction--</option>
-                                    @foreach ($data2 as $data2)
-                                        <option value="{{ $data2->id }}">{{ $data2->name }}</option>
+                                    @foreach ($applcation as $applcation)
+                                        <option value="{{ $applcation->id }}">{{ $applcation->name }}</option>
                                     @endforeach
                                 </select>
-                                        </div>
+                                        </div> --}}
                                         <button class="btn btn-primary"> Save </button>
                                     </div>
                                 </form>

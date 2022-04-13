@@ -26,10 +26,15 @@ class ProfileRequest extends FormRequest
         return [
 
 
-            'orgname' => 'required|string|max:100',
-            'orgemail'  => 'required|email|unique:profile,email,',
+            'Name' => 'required|string|max:100',
+            'Email'  => 'required|email|unique:profile,email,',
             'app_id'  => 'required|exists:application,id',
-            'ogwhatsapp'   => 'required|string|max:50',
+            'Facebook'   => 'required|string|max:50',
+            'Snapchat'   => 'required|string|max:50',
+            'Instgram'   => 'required|string|max:50',
+            'Twitter'   => 'required|string|max:50',
+            'TikTok'   => 'required|string|max:50',
+            'Social_Media_Icons_Color;' => 'required|string|max:50',
 
         ];
     }
@@ -38,10 +43,16 @@ class ProfileRequest extends FormRequest
         return [
             'required' => 'This field is required',
             'in' => 'Incorrect values entered ',
-            'orgname.string' => 'The name must be letters',
-            'orgemail.max' => 'This field must not be more than 10 characters ',
+            'Name.string' => 'The name must be letters',
+            'Email.max' => 'This field must not be more than 10 characters ',
 
-            'ogwhatsapp.max' => 'The name of the applction must not be more than 100 characters ',
+            'Facebook.max' => 'The name of the applction must not be more than 100 characters ',
+            'Snapchat.max' => 'The name of the applction must not be more than 100 characters ',
+            'Instgram.max' => 'The name of the applction must not be more than 100 characters ',
+            'Twitter.max' => 'The name of the applction must not be more than 100 characters ',
+            'TikTok.max' => 'The name of the applction must not be more than 100 characters ',
+            'Social_Media_Icons_Color.max' => 'The name of the applction must not be more than 100 characters ',
+
         ];
     }
 }

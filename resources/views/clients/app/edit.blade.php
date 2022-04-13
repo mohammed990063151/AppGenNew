@@ -29,54 +29,99 @@
                         </div>
                         <div class="row">
                             <div class="mt-3">
-                                @include('clients.alerts.success')
-                                @include('clients.alerts.errors')
-                                <form action="{{route('application.update' , $data->id)}}" method="post" enctype="multipart/form-data">
+   
+                                <form action="{{ route( 'application.update' , $Applction->id)}}" method="POST" enctype="multipart/form-data">
 
                                     @csrf
                                     <h5>Applction details</h5>
-                                    {{-- <div class="row col-md-12"> --}}
-                                        {{-- <div>
+                                    <div class="row col-md-12">
+
+                                        <div class="col-md-6">
+                                            <div class="form-group">
+                                              <label for="">Logo</label>
+                                              <input type="file"
+                                                class="form-control" name="Logo" id="" aria-describedby="helpId" placeholder="">
+                                            </div>
+                                        </div>
+                                        @error('Logo')
+                                        <small id="helpId" class="form-text text-muted">{{$message}}</small>
+                                        @enderror
+                                    </div>
+                                        <div>
                                             <label>Old logo</label>
-                                            <img height="100" width="150" src="/app/{{$data->image}}">
+                                            <img height="100" width="150" src="/app/{{$Applction->Logo}}">
 
                                         </div>
 
-  		                                    <div> --}}
-                                      {{-- <label>New logo</label>
-                                      <input type="file" name="image"> --}}
 
-                                                    </div>
-                                    <div class="form-group col-md-3">
-                                        <label for=""> Name</label>
-                                        <input type="text" class="form-control" name="name" value="{{$data->name}}" id="name"
+
+                                      <div class="form-group col-md-6">
+                                        <label for="">Name</label>
+                                        <input type="text" class="form-control" name="AppName" id="" value="{{$Applction->AppName}}"
                                             aria-describedby="helpId" placeholder="">
-                                        @error('name')
+                                        @error('AppName')
+                                        <small id="helpId" class="form-text text-danger text-muted">{{$message}}</small>
+                                        @enderror
+                                    </div>
+                                    <div class="form-group col-md-6">
+                                        <label for=""> Link</label>
+                                        <input type="text" class="form-control" name="Link" id="" value="{{$Applction->Link}}"
+                                            aria-describedby="helpId" placeholder="">
+                                        @error('Link')
+                                        <small id="helpId" class="form-text text-muted">{{$message}}</small>
+                                        @enderror
+                                    </div>
+                                    <div class="form-group col-md-6">
+                                        <label for="">Phone</label>
+                                        <input type="text" class="form-control" name="Phone" id="" value="{{$Applction->Phone}}"
+                                            aria-describedby="helpId" placeholder="">
+                                        @error('Phone')
+                                        <small id="helpId" class="form-text text-danger text-muted">{{$message}}</small>
+                                        @enderror
+                                    </div>
+                                    <div class="form-group col-md-6">
+                                        <label for="">Splash_Screen</label>
+                                        <input type="text" class="form-control" name="Splash_Screen" id="" value="{{$Applction->Splash_Screen}}"
+                                            aria-describedby="helpId" placeholder="">
+                                        @error('Splash_Screen')
                                         <small id="helpId" class="form-text text-danger text-muted">{{$message}}</small>
                                         @enderror
                                     </div>
 
-                                    <div class="form-group col-md-3">
-                                        <label for="">link</label>
-                                        <input type="text" class="form-control" name="link" value="{{$data->link}}" id=""
+                                    <div class="col-md-6">
+                                        <label> Discrptions</label>
+                                        <textarea name="Discrptions" id="" cols="30" rows="10" value="{{$Applction->Discrptions}}"
+                                            class="form-control"></textarea>
+                                        @error('Discrptions') <span class="text-danger error">{{ $message
+                                            }}</span>@enderror
+                                    {{-- <div class="form-group col-md-6"> --}}
+                                        {{-- <label for="">version</label> --}}
+                                        {{-- <input type="hidden" class="form-control" name="version" id=""
                                             aria-describedby="helpId" placeholder="">
-                                        @error('link')
-                                        <small id="helpId" class="form-text text-muted">{{$message}}</small>
+                                        @error('version')
+                                        <small id="helpId" class="form-text text-danger text-muted">{{$message}}</small>
+                                        @enderror
+                                    </div> --}}
+                                       {{-- <div class="form-group col-md-6">
+                                        <label for="">user</label>
+                                        <input type="hidden" class="form-control" name="user_id" value="{{ Auth::user()->name }}"
+                                            aria-describedby="helpId" placeholder="">
+                                        @error('user_id')
+                                        <small id="helpId" class="form-text text-danger text-muted">{{$message}}</small>
+                                        @enderror
+                                    </div> --}}
+                                    <div class="form-group col-md-6">
+                                        <label for="">WhatsApp</label>
+                                        <input type="text" class="form-control" name="WhatsApp" id="" value="{{$Applction->WhatsApp}}"
+                                            aria-describedby="helpId" placeholder="">
+                                        @error('WhatsApp')
+                                        <small id="helpId" class="form-text text-danger text-muted">{{$message}}</small>
                                         @enderror
                                     </div>
 
 
-                                <div class="col-md-6">
-                                    <div class="form-group">
-                                      <label for="">logo</label>
-                                      <input type="file"
-                                        class="form-control" name="image" id="" aria-describedby="helpId" placeholder="">
-                                    </div>
-                                </div>
-                                @error('image')
-                                <small id="helpId" class="form-text text-muted">{{$message}}</small>
-                                @enderror
-                            </div>
+
+
 <div class="save">
                                         <button class="btn btn-primary"> Save </button></div>
                                     </div>

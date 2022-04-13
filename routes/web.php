@@ -62,8 +62,8 @@ Route::group(['prefix' => LaravelLocalization::setLocale()], function () {
         /// start profile
         Route::group(['prefix' => 'profile'], function () {
             Route::get('/', [ProfileController::class, 'index'])->name('profile.index');
-            Route::get('create', [ProfileController::class, 'create'])->name('profile.create');
-            Route::post('store', [ProfileController::class, 'store'])->name('profile.store');
+            Route::get('create/{id}', [ProfileController::class, 'create'])->name('profile.create');
+            Route::POST('store', [ProfileController::class, 'store'])->name('profile.store');
             Route::get('edit/{id}', [ProfileController::class, 'edit'])->name('profile.edit');
             Route::post('update/{id}', [ProfileController::class, 'update'])->name('profile.update');
             Route::post('destroy/{id}', [ProfileController::class, 'destroy'])->name('profile.destroy');
@@ -77,17 +77,22 @@ Route::group(['prefix' => LaravelLocalization::setLocale()], function () {
             Route::get('edit/{id}', [ApplicationController::class, 'edit'])->name('application.edit');
             Route::post('update/{id}', [ApplicationController::class, 'update'])->name('application.update');
             Route::post('destroy/{id}', [ApplicationController::class, 'destroy'])->name('application.destroy');
+
         });
 
         // start Screenes1
         Route::group(['prefix' => 'Screenes'], function () {
             // Route::resource('Screen',[ScreenController::class ]);
             Route::get('/', [ScreenController::class, 'index'])->name('Screen.index');
-            Route::get('create', [ScreenController::class, 'create'])->name('Screen.create');
+            Route::get('create/{id}', [ScreenController::class, 'create'])->name('Screen.create');
             Route::post('store', [ScreenController::class, 'store'])->name('Screen.store');
             Route::get('edit/{id}', [ScreenController::class, 'edit'])->name('Screen.edit');
             Route::post('update/{id}', [ScreenController::class, 'update'])->name('Screen.update');
             Route::post('destroy/{id}', [ScreenController::class, 'destroy'])->name('Screen.destroy');
+            Route::get('create1/{id}', [ScreenController::class, 'create1'])->name('Screen.create1');
+            Route::get('create2/{id}', [ScreenController::class, 'create2'])->name('Screen.create2');
+            Route::post('store1', [ScreenController::class, 'store1'])->name('Screen.store1');
+            Route::post('store2', [ScreenController::class, 'store2'])->name('Screen.store2');
         });
 
         Route::resource('features', FeatureController::class);

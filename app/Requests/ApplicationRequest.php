@@ -25,10 +25,14 @@ class ApplicationRequest extends FormRequest
     {
         return [
 
-            'image' => 'required_without:id|mimes:jpg,jpeg,png',
-            'name' => 'required|string|max:100',
-            'link' => 'required|string|max:100',
-            // 'version'   => 'required|string|max:50',
+            'Logo' => 'required_without:id|mimes:jpg,jpeg,png',
+            'AppName' => 'required|string|max:100',
+            'Link' => 'required|string|max:100',
+            'Discrptions' => 'required|string|max:100',
+            'Phone' => 'required|string|max:100',
+            'Splash_Screen' => 'required|string|max:100',
+            'WhatsApp' => 'required|string|max:100',
+
 
         ];
     }

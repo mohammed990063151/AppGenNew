@@ -16,12 +16,15 @@ return new class extends Migration
         Schema::create('app_profiles', function (Blueprint $table) {
             $table->id();
             // $table->integer('app_id')->unsigned();
-            $table->string('orgname');
-            $table->string('orgemail');
-            $table->string('ogwhatsapp')->nullable();
-            $table->string('color');
-            $table->string('pc');
-            $table->string('sc');
+            $table->string('Name');
+            $table->string('Email');
+            $table->string('Facebook')->nullable();
+            $table->string('Snapchat')->nullable();
+            $table->string('Instgram')->nullable();
+            $table->string('Twitter')->nullable();
+            $table->string('TikTok')->nullable();
+            $table->string('Social_Media_Icons_Color');
+            $table->boolean('is_active') ;
             // $table->unsignedBigInteger('app_id');
             $table->foreignId('app_id')->references('id')->on('apps')->onDelete('cascade');
             $table->timestamps();

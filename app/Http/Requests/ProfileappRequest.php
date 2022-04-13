@@ -24,13 +24,17 @@ class ProfileappRequest extends FormRequest
     public function rules()
     {
         return [
-            'orgname' => 'required|string|max:100',
-            'orgemail'  => 'required|email|unique:app_profiles',
-            'app_id'  => 'required|exists:apps,id',
-            'ogwhatsapp'   => 'required|string|max:50',
-            'color'   => 'required|string|max:50',
-            'sc'   => 'required|string|max:50',
-            'pc'   => 'required|string|max:50',
+
+            'Name' => 'required|string|max:100',
+            'Email'  => 'required|Email|unique:app_profiles,Email',
+            // 'app_id'  => 'required|exists:apps,id',
+            'Facebook'   => 'required|string|max:50',
+            'Snapchat'   => 'required|string|max:50',
+            'Instgram'   => 'required|string|max:50',
+            'Twitter'   => 'required|string|max:50',
+            'TikTok'   => 'required|string|max:50',
+            'Social_Media_Icons_Color' => 'required|string|max:50'
+
         ];
 
     }
@@ -39,10 +43,15 @@ class ProfileappRequest extends FormRequest
         return [
             'required' => 'This field is required',
             'in' => 'Incorrect values entered ',
-            'name.string' => 'The name must be letters',
-            'email.max' => 'This field must not be more than 10 characters ',
+            'Name.string' => 'The name must be letters',
+            'Email.max' => 'This field must not be more than 10 characters ',
 
-            'whatsapp.max' => 'The name of the applction must not be more than 100 characters ',
+            'Facebook.max' => 'The name of the applction must not be more than 100 characters ',
+            'Snapchat.max' => 'The name of the applction must not be more than 100 characters ',
+            'Instgram.max' => 'The name of the applction must not be more than 100 characters ',
+            'Twitter.max' => 'The name of the applction must not be more than 100 characters ',
+            'TikTok.max' => 'The name of the applction must not be more than 100 characters ',
+            'Social_Media_Icons_Color.max' => 'The name of the applction must not be more than 100 characters ',
         ];
     }
 }

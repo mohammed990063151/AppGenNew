@@ -9,10 +9,14 @@ class screen extends Model
 {
     use HasFactory;
     protected $fillable = [
-        'screen_image',
-        'screen_title',
-        'screen_body',
-        'screen_type',
+        // 'screen_type',
+        'image',
+        'Discrption1st',
+        'Color',
+        'ContainarButtonBarColor',
+        'IconsBackgroundColor',
+        'IconsColor',
+        // 'profile_id',
         'Created_by',
 
     ];

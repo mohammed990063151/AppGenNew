@@ -24,7 +24,19 @@ if (win && document.querySelector('#sidenav-scrollbar')) {
 <script async defer src="https://buttons.github.io/buttons.js"></script>
 
 
+<script>
+    const list = document.querySelectorAll('.list');
+    function activelink(){
+       //  remove(...tokens:string[]);
+        list.forEach((item) =>
+       //   void
+        item.classList.remove('active'));
+        this.classList.add('active');
 
+    }
+    list.forEach((item)=>
+    item.addEventListener('click',activelink));
+    </script>
 
 
 <script>
@@ -120,9 +132,50 @@ if (win && document.querySelector('#sidenav-scrollbar')) {
     Scrollbar.init(document.querySelector('#sidenav-scrollbar'), options);
   }
 </script>
+{{-- card --}}
 <script>
+
+var app = new Vue({
+  el: '#app',
+  data: {
+    posts: [
+      { id: 1, flip: false, avatar: 'http://loremflickr.com/g/64/64/men', image: 'http://loremflickr.com/g/320/240/paris', name: chance.name(), ssn: chance.ssn() },
+      { id: 2, flip: false, avatar: 'http://loremflickr.com/g/64/64/boys', image: 'http://loremflickr.com/g/320/240/amsterdam', name: chance.name(), ssn: chance.ssn() },
+      { id: 3, flip: false, avatar: 'http://loremflickr.com/g/64/64/women', image: 'http://loremflickr.com/g/320/240/london', name: chance.name(), ssn: chance.ssn() },
+      { id: 4, flip: false, avatar: 'http://loremflickr.com/g/64/64/girl', image: 'http://loremflickr.com/g/320/240/newyork', name: chance.name(), ssn: chance.ssn() }
+    ]
+  },
+  methods: {
+    letsFlip: function(item){
+      this.posts.filter(function(v,k){
+        return v.id != item.id;
+      }).forEach(function(v,k){
+        v.flip = false;
+      })
+      window.setTimeout(function(v,k){
+        item.flip = !item.flip;
+      }, 100)
+    },
+    viewCard: function(){
+      window.alert('view card!')
+    }
+  }
+})
+
 
 
 
 </script>
+<script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
+
+
+<script>
+    let toggle = document.querySelector('.toggle');
+    let menu = document.querySelector(".menu");
+    toggle.onclick = function (){
+         menu.classList.toggle('active');
+    }
+    </script>
 

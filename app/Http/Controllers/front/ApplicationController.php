@@ -19,8 +19,8 @@ class ApplicationController extends BaseController
 
     public function index()
     {
-        $data = app::all();
-        return view('clients.app.index' ,compact('data'));
+        $Applction = app::all();
+        return view('clients.app.index', compact('Applction'));
     }
 
     /**
@@ -31,8 +31,8 @@ class ApplicationController extends BaseController
     public function create()
     {
 
-        $data2 = app::get();
-        return view('clients.app.create',compact('data2'));
+        $Applction = app::get();
+        return view('clients.app.create', compact('Applction'));
     }
 
     /**
@@ -43,96 +43,106 @@ class ApplicationController extends BaseController
      */
     public function store(ApplctionRequest $request)
     {
-// return $request;
-try{
-                 $data = new app;
+        // return $request;
+        try {
+            $Applction = new app;
 
 
-                 $image=$request->image;
-                   $imagename = time().'.'.$image->getClientOriginalExtension();
-                        $request->image->move('app',$imagename);
-                               $data->image=$imagename;
+            $image = $request->Logo;
+            $imagename = time() . '.' . $image->getClientOriginalExtension();
+            $request->Logo->move('app', $imagename);
+            $Applction->Logo = $imagename;
 
 
-                          $data->name=$request->name;
+            $Applction->AppName = $request->AppName;
+            $Applction->Link = $request->Link;
+            //  $Applction->version=$request->version;
+            $Applction->Discrptions = $request->Discrptions;
+            $Applction->Phone = $request->Phone;
+            $Applction->WhatsApp = $request->WhatsApp;
+            // $Applction->Splash_Screen = $request->Splash_Screen;
+            //    $Applction->user_id=$request->user_id;
 
-                          $data->link=$request->link;
 
-                          $data->version=$request->version;
+            $Applction->save();
 
-                          $data->save();
-
-
-                          return redirect('/application')->with(['success' => 'ok']);
-                          // DB::commit();
-                      } catch (\Exception $ex) {
-                          // DB::rollback();
-                          return $ex;
-                          return redirect('/application')->with(['error' => 'حدث خطا ما برجاء المحاوله لاحقا']);
-                      }
-
+            return redirect()->route('profile.create', $Applction->id);
+            // DB::commit();
+        } catch (\Exception $ex) {
+            // DB::rollback();
+            return $ex;
+            return redirect('/application')->with(['error' => 'حدث خطا ما برجاء المحاوله لاحقا']);
+        }
     }
-    public function edit($id){
-        $data = app::find($id);
+    public function edit($id)
+    {
+        $Applction = app::find($id);
         // dd($data);
 
-        return view('clients.app.edit' , compact('id','data' ));
+        return view('clients.app.edit', compact('id', 'Applction'));
     }
 
 
-    public function update(request $request ,$id ){
+    public function update(request $request, $id)
+    {
 
-      try{
-        $data=app::find($id);
-        if (!$data)
-        return redirect()->route('clients.app.edit')->with(['error' => 'not found']);
+        try {
+            //   return $request;
+            $Applction = app::find($id);
+            if (!$Applction)
+                return redirect()->route('clients.app.edit');
 
-        $image=$request->image;
+            $Logo = $request->Logo;
 
+if($Logo){
+            $imagename = time() . '.' . $Logo->getClientOriginalExtension();
 
-        $imagename =time().'.'.$image->getClientOriginalExtension();
+            $request->Logo->move('app', $imagename);
 
-                 $request->image->move('app',$imagename);
+            $Applction->Logo = $imagename;
+        }
+            $Applction->AppName = $request->AppName;
+            $Applction->Link = $request->Link;
+            //  $Applction->version=$request->version;
+            $Applction->Discrptions = $request->Discrptions;
+            $Applction->Phone = $request->Phone;
+            $Applction->WhatsApp = $request->WhatsApp;
+            $Applction->Splash_Screen = $request->Splash_Screen;
+            //    $Applction->user_id=$request->user_id;
 
-                 $data->image=$imagename;
-
-
-                 $data->name=$request->name;
-
-                 $data->link=$request->link;
-
-                 $data->version=$request->version;
-
-                 $data->save();
-
-                 return view('clients.app.edit')->with(['success' => 'ok']);
-                          // DB::commit();
-                      } catch (\Exception $ex) {
-                          // DB::rollback();
-                        //   return $ex;
-                          return redirect('/application')->with(['error' => 'حدث خطا ما برجاء المحاوله لاحقا']);
-                      }
-
-                }
+            $Applction->save();
+            //return redirect()->route('Screen.edit');
 
 
-                public function destroy(request $request ,$id ){
-                    try{
-                $id = $request->id;
+            $profileid=app_profile::get()->where("app_id",$id)->last();
+      //      dd($profileid);
+if(!$profileid)
+return redirect()->route('profile.edit',$profileid);
+else
+return response()->json(['message' => 'error message'], 500);
 
-                app::find($id)->delete();
-
-                return redirect('/application')->with(['success' => 'ok']);
-                // DB::commit();
-            } catch (\Exception $ex) {
-                // DB::rollback();
-                // return $ex;
-                return redirect('/application')->with(['error' => 'حدث خطا ما برجاء المحاوله لاحقا']);
-            }
+            // DB::commit();
+        } catch (\Exception $ex) {
+            // DB::rollback();
+            return $ex;
+            return redirect()->route('Screen.create' );
+        }
+    }
 
 
+    public function destroy(request $request, $id)
+    {
+        try {
+            $id = $request->id;
 
+            app::find($id)->delete();
 
-                }
-
+            return redirect('/application')->with(['success' => 'ok']);
+            // DB::commit();
+        } catch (\Exception $ex) {
+            // DB::rollback();
+            // return $ex;
+            return redirect('/application')->with(['error' => 'حدث خطا ما برجاء المحاوله لاحقا']);
+        }
+    }
 }

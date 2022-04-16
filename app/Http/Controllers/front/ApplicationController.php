@@ -76,10 +76,9 @@ class ApplicationController extends BaseController
     }
     public function edit($id)
     {
-        $Applction = app::find($id);
-        // dd($data);
-
-        return view('clients.app.edit', compact('id', 'Applction'));
+         $Applction = app::with('Screen', 'AppProfile')->find($id);
+        return view('clients.app.dashboard' , compact('id', 'Applction') );
+        // return view('clients.app.edit', compact('id', 'Applction'));
     }
 
 
@@ -101,6 +100,7 @@ if($Logo){
 
             $Applction->Logo = $imagename;
         }
+        $Applction->id = $request->id;
             $Applction->AppName = $request->AppName;
             $Applction->Link = $request->Link;
             //  $Applction->version=$request->version;
@@ -114,10 +114,11 @@ if($Logo){
             //return redirect()->route('Screen.edit');
 
 
-            $profileid=app_profile::where("app_id",$id)->latest()->get();
+            // $profileid=app_profile::where("app_id",$id)->latest()->get();
       //      dd($profileid);
-// if(!$profileid)
-return redirect()->route('profile.edit',$profileid->$id);
+// if($Applction->id)
+// $Applction = app_profile::find($id);
+return redirect()->route('profile.edit', $Applction ->id);
 // else
 // return response()->json(['message' => 'error message'], 500);
 
@@ -144,5 +145,13 @@ return redirect()->route('profile.edit',$profileid->$id);
             return $ex;
             return redirect('/application')->with(['error' => 'حدث خطا ما برجاء المحاوله لاحقا']);
         }
+    }
+
+    public function AddDetialsDetials($ProfileID){
+        // $Applction = app::with('Screen')->find($ApplctionId);
+        $profile = app_profile::find($ProfileID);
+        // $Applction = app::with('Screen')->find($Profile->app_id);
+        // return view('clients.app.dashboard' , compact('id', 'Applction') );
+        return view('clients.app_profile.edit', compact('profile'));
     }
 }

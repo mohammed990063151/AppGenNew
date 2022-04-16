@@ -1,6 +1,6 @@
-@extends('layouts.master')
+{{-- @extends('layouts.master')
 @section('breadceumbs')
-{{-- <x-bread-crumps> --}}
+<x-bread-crumps>
     @component('components.bread-crumps' , ['head' => 'screen ' ,
     'links' => [' screen']
     ])
@@ -20,7 +20,7 @@
                         <h6 class="text-capitalize col-4">screen table</h6>
 
                             <span><a href="{{route('Screen.create')}}" class="btn btn-primary btn-sm"
-                                {{--  --}}
+
                                     type="button">add New</a></span>
 
                     </div>
@@ -40,9 +40,9 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                <?php $i = 0; ?>
+
                                 @forelse ($Screen as  $Screen )
-                                <?php $i++; ?>
+
                                 <tr>
                                     <td>{{$i}}</td>
                                     <td><img height="70" width="100" src="/screen/{{$Screen->screen_image}}"></td>
@@ -54,14 +54,14 @@
                                         <!-- Modal -->
                                         <form action="{{route('Screen.destroy' , $Screen->id)}}" method="post" style="display:inline">
                                             @csrf
-                                            {{-- @method('DELETE') --}}
+                                            @method('DELETE')
                                             <button class="btn btn-sm btn-circle btn-danger">Delete</button>
                                         </form>
 
                                         <a href="{{route('Screen.edit' , $Screen->id)}}" class="btn btn-info btn-icon-split">
 
                                             <span class="icon text-white-50">
-                                                {{-- <i class="fas fa-info-circle"></i> --}}
+                                                <i class="fas fa-info-circle"></i>
                                             </span>
                                             <span class="text">Edite</span>
                                         </a>
@@ -100,4 +100,4 @@
 
 
 
-@endsection
+@endsection --}}

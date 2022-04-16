@@ -22,6 +22,13 @@ class app extends Model
     ];
     public function user()
     {
-    return $this->belongsTo(User::class);
+        return $this->belongsTo(User::class);
+    }
+    public function Screen(){
+        return $this->hasMany(screen::class);
+    }
+
+    public function AppProfile(){
+        return $this->hasOne(app_profile::class);
     }
 }

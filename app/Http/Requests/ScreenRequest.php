@@ -26,9 +26,9 @@ class ScreenRequest extends FormRequest
         return [
 
             'image' => 'required_without:id|mimes:jpg,jpeg,png',
-            // 'screen_type' => 'required|string|max:10',
+            'screen_type' => 'required',
             'Discrption1st'   => 'required|string|max:100',
-            // 'profile_id'  => 'required|exists:app_profiles,id',
+            'profile_id'  => 'required',
             'Color'   => 'required|string|max:50',
             'ContainarButtonBarColor'   => 'required|string|max:30',
             'IconsBackgroundColor'   => 'required|string|max:30',

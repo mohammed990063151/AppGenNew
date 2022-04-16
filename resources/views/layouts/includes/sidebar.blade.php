@@ -5,11 +5,7 @@
             aria-hidden="true" id="iconSidenav"></i>
         <a class="navbar-brand m-0" href=" https://demos.creative-tim.com/argon-dashboard/pages/dashboard.html "
             target="_blank">
-<<<<<<< HEAD
             {{-- <img src="{{ $OrganizationProfile->logo }}" class="navbar-brand-img h-100" alt="main_logo"> --}}
-=======
-            <img src="" class="navbar-brand-img h-100" alt="main_logo">
->>>>>>> 4942bf92bf88ca90d03d8c2d4d5f9b443b609305
             <span class="ms-1 font-weight-bold">{{ __('translation.Admin_Control') }}</span>
         </a>
     </div>

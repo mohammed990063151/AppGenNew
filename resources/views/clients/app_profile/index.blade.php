@@ -1,6 +1,6 @@
-@extends('layouts.master')
+{{-- @extends('layouts.master')
 @section('breadceumbs')
-{{-- <x-bread-crumps> --}}
+<x-bread-crumps>
     @component('components.bread-crumps' , ['head' => 'translation.profile ' ,
     'links' => [ 'profile']
     ])
@@ -20,7 +20,7 @@
                         <h6 class="text-capitalize col-4"> {{__('translation.profile')}}</h6>
 
                             <span><a href="{{route('profile.create')}}" class="btn btn-primary btn-sm"
-                                {{--  --}}
+
                                     type="button"> {{__('translation.add New')}}</a></span>
 
                     </div>
@@ -42,9 +42,9 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                <?php $i = 0; ?>
+
                                 @forelse ($data as  $data )
-                                <?php $i++; ?>
+                              
                                 <tr>
                                     <td>{{$i}}</td>
                                     <td>{{$data->orgname}}</td>
@@ -58,14 +58,14 @@
                                         <!-- Modal -->
                                         <form action="{{route('profile.destroy' , $data->id)}}" method="post" style="display:inline">
                                             @csrf
-                                            {{-- @method('DELETE') --}}
+                                            @method('DELETE')
                                             <button class="btn btn-sm btn-circle btn-danger">Delete</button>
                                         </form>
 
                                         <a href="{{route('profile.edit' , $data->id)}}" class="btn btn-info btn-icon-split">
 
                                             <span class="icon text-white-50">
-                                                {{-- <i class="fas fa-info-circle"></i> --}}
+                                                <i class="fas fa-info-circle"></i>
                                             </span>
                                             <span class="text">Edite</span>
                                         </a>
@@ -104,4 +104,4 @@
 
 
 
-@endsection
+@endsection --}}

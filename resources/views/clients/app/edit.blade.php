@@ -30,10 +30,15 @@
                                 <form action="{{ route('application.update', $Applction->id) }}" method="POST"
                                     enctype="multipart/form-data">
 
+
                                     @csrf
+
+
+
                                     <h5>Applction details</h5>
                                     <div class="row col-md-12">
-
+                                        <input  type="hidden" class="form-control" value="{{ $Applction ->id}}" name="id"
+                                        aria-describedby="helpId" placeholder="">
                                         <div class="col-md-6">
                                             <div class="form-group">
                                                 <label for="">Logo</label>

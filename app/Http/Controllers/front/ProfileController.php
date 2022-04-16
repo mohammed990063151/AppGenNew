@@ -94,7 +94,7 @@ class ProfileController extends BaseController
 
         //  $request->save();
 
-        return redirect()->route('Screen.create', $profile->id);
+        return redirect()->route('Screen.create', $profile->app_id);
         // DB::commit();
         } catch (\Exception $ex) {
         // DB::rollback();
@@ -106,14 +106,15 @@ class ProfileController extends BaseController
     }
     // route('admin.edit');
 
-    public function edit($AppID, $id)
+    public function edit( $id)
     {
-        $profile = app_profile::find($id);
 
+      //  return view('clients.app_profile.create', compact('profile', 'applcation'));
+        // $profile = app_profile::find($app_id,$id);s
 
-        $applcation = app::get();
-
-        return view('clients.app_profile.edit', compact('id', 'profile', 'applcation'));
+         $profile=app_profile::where("app_id",$id)->latest()->get()->first();
+        // $applcation = app::get();
+        return view('clients.app_profile.edit', compact('profile'));
     }
 
 
@@ -139,19 +140,25 @@ class ProfileController extends BaseController
         $profile->is_active = $request->is_active;
 
         $profile->save();
-        $Screen = screen::find($id);
-        $profile = app_profile::get();
+        // $Screen = screen::find($id);
+        // $profile = app_profile::get();
 
-        return view('clients.Screen.Screen.edit', compact('Screen', 'profile'));
+        // return view('clients.Screen.Screen.edit', compact('Screen', 'profile'));
+        $Screen=screen::where("app_id",$id)->latest()->get()->first();
+        return view('clients.Screen.Screen.edit', compact('Screen'));
+        // return redirect()->route('Screen.edit', $Screen );
+        // return redirect()->route('Screen.edit', $profile->app_id );
         // DB::commit();
         // } catch (\Exception $ex) {
         // DB::rollback();
-        $profile = app_profile::find($id);
+        // $profile = app_profile::find($id);
 
 
-        $applcation = app::get();
+        // $applcation = app::get();
 
-        return view('clients.app_profile.edit', compact('id', 'profile', 'applcation'));
+        // return view('clients.app_profile.edit', compact('id', 'profile', 'applcation'));
+
+        // return redirect()->route('profile.edit', $Applction ->id);
         // }
 
     }
@@ -176,4 +183,6 @@ class ProfileController extends BaseController
 
         return view('front.dashboard');
     }
+
+
 }

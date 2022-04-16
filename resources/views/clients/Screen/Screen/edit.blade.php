@@ -24,91 +24,130 @@
                         <div class="row">
                             <div class="mt-3">
 
-                                <form action="{{ route('Screen.update', $Screen->id)}}" method="POST"
+                                <form action="{{route('Screen.update', $Screen->id)}}" method="POST"
                                     enctype="multipart/form-data">
 
                                     @csrf
-                                    <h5>Edite screen</h5>
+
+
                                     <div class="row col-md-12">
 
-                                        <div>
-                                            <label>Old Screen Image</label>
-                                            <img height="100" width="150" src="/screen/{{ $Screen->screen_image }}">
+                                        <div class="row col-md-6">
+                                            <h5>screen three</h5>
+                                            <div>
 
-                                        </div>
 
-                                        <div>
-                                            <label>New Screen Image</label>
-                                            <input type="file" name="screen_image">
-                                            @error('screen_image')
-                                                <small id="helpId"
-                                                    class="form-text text-danger text-muted">{{ $message }}</small>
-                                            @enderror
                                         </div>
 
                                         <div class="form-group col-md-6">
-                                            <label for="">Screen Title</label>
-                                            <input type="text" class="form-control" name="screen_title"
-                                                value="{{ $Screen->screen_title }}" id="" aria-describedby="helpId"
-                                                placeholder="">
-                                            @error('screen_title')
-                                                <small id="helpId"
-                                                    class="form-text text-danger text-muted">{{ $message }}</small>
-                                            @enderror
+                                            <div class="form-group">
+                                              <label for="">logo</label>
+                                              <input type="file"
+                                                class="form-control" name="image" value="{{ $Screen->image}}" aria-describedby="helpId" placeholder="">
+                                            </div>
                                         </div>
-                                        <div class="form-group col-md-6">
-                                            <label for="">Screen Body</label>
-                                            <input type="text" class="form-control" name="screen_body"
-                                                value="{{ $Screen->screen_body }}" id="" aria-describedby="helpId"
-                                                placeholder="">
-                                            @error('screen_body')
-                                                <small id="helpId" class="form-text text-muted">{{ $message }}</small>
-                                            @enderror
-                                        </div>
+                                        @error('image')
+                                        <small id="helpId" class="form-text text-muted">{{$message}}</small>
+                                        @enderror
 
-
-                                        <div class="form-group col-md-6">
-                                            <label class="my-1 mr-2"
-                                                for="inlineFormCustomSelectPref">applaction</label>
-                                            <select name="profile_id" value="profile_id" class="form-control" required>
-
-                                                @foreach ($profile as $profile)
-                                                    <option value="{{ $profile->id }}">{{ $profile->orgname }}</option>
-                                                @endforeach
-                                                @error('profile_id')
-                                                    <small id="helpId"
-                                                        class="form-text text-danger text-muted">{{ $message }}</small>
-                                                @enderror
-                                            </select>
-                                        </div>
-
-
-                                        <div class="form-group col-md-6">
-                                            <label for="projectinput2"> Screen </label>
-                                            <select name="screen_type" value="{{ $Screen->screen_type }}"
-                                                class="select2 form-control">
-                                                <optgroup label=" ">
-                                                    <option value="screen one">screen one</option>
-                                                    <option value="screen two">screen two</option>
-                                                    <option value="screen three">screen three</option>
-                                                </optgroup>
-                                            </select>
-                                            @error('direction')
-                                                <span class="text-danger">{{ $message }}</span>
-                                            @enderror
-                                        </div>
+                                    <div class="form-group col-md-6">
+                                        <label for="">Discrption1st</label>
+                                        <input type="text" class="form-control" name="Discrption1st"    value="{{ $Screen->Discrption1st}}"
+                                            aria-describedby="helpId" placeholder="">
+                                        @error('Discrption1st')
+                                        <small id="helpId" class="form-text text-danger text-muted">{{$message}}</small>
+                                        @enderror
                                     </div>
-                            </div>
+                                    <div class="form-group col-md-6">
+                                        <label for="">Color</label>
+                                        <input type="text" class="form-control" name="Color"    value="{{ $Screen->Color}}"
+                                            aria-describedby="helpId" placeholder="">
+                                        @error('Color')
+                                        <small id="helpId" class="form-text text-muted">{{$message}}</small>
+                                        @enderror
+                                    </div>
 
-                            <button class="btn btn-primary"> updata </button>
+                                    <div class="form-group col-md-6">
+                                        <label for="">Containar Button BarColor</label>
+                                        <input type="text" class="form-control" name="ContainarButtonBarColor"    value="{{ $Screen->ContainarButtonBarColor}}"
+                                            aria-describedby="helpId" placeholder="">
+                                        @error('ContainarButtonBarColor')
+                                        <small id="helpId" class="form-text text-muted">{{$message}}</small>
+                                        @enderror
+                                    </div>
+                                    <div class="form-group col-md-6">
+                                        <label for="">Icons Background Color</label>
+                                        <input type="text" class="form-control" name="IconsBackgroundColor"    value="{{ $Screen->IconsBackgroundColor}}"
+                                            aria-describedby="helpId" placeholder="">
+                                        @error('IconsBackgroundColor')
+                                        <small id="helpId" class="form-text text-muted">{{$message}}</small>
+                                        @enderror
+                                    </div>
+                                    <div class="form-group col-md-6">
+                                        <label for="">Icons Color</label>
+                                        <input type="text" class="form-control" name="IconsColor"    value="{{ $Screen->IconsColor}}"
+                                            aria-describedby="helpId" placeholder="">
+                                        @error('IconsColor')
+                                        <small id="helpId" class="form-text text-muted">{{$message}}</small>
+                                        @enderror
+                                    </div>
+
+
+
+
+                                    <div class="form-group col-md-6">
+
+                                        <input  type="hidden" class="form-control" value="{{ $Screen ->app_id}}" name="app_id"
+                                        aria-describedby="helpId" placeholder="">
+
+
+                                                                   <button class="btn m-1 btn-primary"> Save </button>
+                                                                           </div>
+                                    {{-- <div class="form-group col-md-6">
+                                        <label class="my-1 mr-2" for="inlineFormCustomSelectPref">Name profile</label>
+                                <select name="profile_id" id="profile_id" class="form-control" required>
+
+                                    @foreach ($profile as $profile)
+                                        <option value="{{ $profile->id }}">{{$profile->Name}}</option>
+                                    @endforeach
+                                    @error('profile_id')
+                                            <small id="helpId" class="form-text text-danger text-muted">{{$message}}</small>
+                                            @enderror
+                                </select>
+                                        </div>
+
+
+
+
+                                    <div class="form-group col-md-6">
+                                        <label class="my-1 mr-2" for="inlineFormCustomSelectPref">Screen</label>
+                                <select name="screen_type"  class="form-control" required>
+
+
+                                    <option value="screen one">screen one</option>
+                                    <option value="screen two">screen two</option>
+                                    <option value="screen three">screen three</option>
+
+                                    @error('screen_type')
+                                            <small id="helpId" class="form-text text-danger text-muted">{{$message}}</small>
+                                            @enderror
+                                </select>
+                                        </div> --}}
+                                    </div>
+
+                                        <div class="form-group col-md-6">
+                                            <iframe class="mobile" id="mobile_id"
+                                                src="https://ahmedict6.github.io/mobile-app-genrator-app/" />
+
+
+                                    </form>
+                                </div>
+                            </div>
                         </div>
-                        </form>
                     </div>
                 </div>
             </div>
+            </footer>
         </div>
-    </div>
-    </div>
-    </footer>
-    </div>
-@endsection
+
+        @endsection

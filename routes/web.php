@@ -68,7 +68,7 @@ Route::group(['prefix' => LaravelLocalization::setLocale()], function () {
             Route::get('/', [ProfileController::class, 'index'])->name('profile.index');
             Route::get('create', [ProfileController::class, 'create'])->name('profile.create');
             Route::POST('store', [ProfileController::class, 'store'])->name('profile.store');
-            Route::get('edit/{Appid}/{id}', [ProfileController::class, 'edit'])->name('profile.edit');
+            Route::get('edit/{id}', [ProfileController::class, 'edit'])->name('profile.edit');
             Route::post('update/{id}', [ProfileController::class, 'update'])->name('profile.update');
             Route::post('destroy/{id}', [ProfileController::class, 'destroy'])->name('profile.destroy');
         });
@@ -81,7 +81,7 @@ Route::group(['prefix' => LaravelLocalization::setLocale()], function () {
             Route::get('edit/{id}', [ApplicationController::class, 'edit'])->name('application.edit');
             Route::post('update/{id}', [ApplicationController::class, 'update'])->name('application.update');
             Route::post('destroy/{id}', [ApplicationController::class, 'destroy'])->name('application.destroy');
-
+            Route::get('application-details/{id}' , [ApplicationController::class , 'AddDetialsDetials'])->name('AddDetialsDetials');
         });
 
         // start Screenes1
@@ -90,8 +90,13 @@ Route::group(['prefix' => LaravelLocalization::setLocale()], function () {
             Route::get('/', [ScreenController::class, 'index'])->name('Screen.index');
             Route::get('create/{id}', [ScreenController::class, 'create'])->name('Screen.create');
             Route::post('store', [ScreenController::class, 'store'])->name('Screen.store');
+            // Route::get('edit/{id}', [ScreenController::class, 'edit'])->name('Screen.edit');
             Route::get('edit/{id}', [ScreenController::class, 'edit'])->name('Screen.edit');
             Route::post('update/{id}', [ScreenController::class, 'update'])->name('Screen.update');
+            Route::get('edit1/{id}', [ScreenController::class, 'edit1'])->name('Screen.edit1');
+            Route::post('update1/{id}', [ScreenController::class, 'update1'])->name('Screen.update1');
+            Route::get('edit2/{id}', [ScreenController::class, 'edit2'])->name('Screen.edit2');
+            Route::post('update2/{id}', [ScreenController::class, 'update2'])->name('Screen.update2');
             Route::post('destroy/{id}', [ScreenController::class, 'destroy'])->name('Screen.destroy');
             Route::get('create1/{id}', [ScreenController::class, 'create1'])->name('Screen.create1');
             Route::get('create2/{id}', [ScreenController::class, 'create2'])->name('Screen.create2');

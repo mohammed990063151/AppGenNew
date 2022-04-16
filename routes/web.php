@@ -123,4 +123,16 @@ Route::get('test/{id}/Screen/{ScreanId}' , function( $ScreanId, $id){
     return 'test' . $id;
     // compact()
     // route('asdasd' , ['id' =>$id , screen ])
+            ############ticKet................................................
+
+    
+        Route::get('create-ticket', [TicketController::class, 'create'])->name('ticket.create');
+    Route::post('store-ticket', [TicketController::class, 'store'])->name('ticket.store');
+    Route::get('ticket', [TicketController::class, 'index'])->name('ticket.index');
+    ############ticKet massage ................................................
+    Route::get('ticket/massege/{id}', [TicketMassegeController::class, 'show'])->name('ticket.show');
+    Route::post('ticket/massege/', [TicketMassegeController::class, 'store'])->name('ticket.send');
 });
+
+// shagal fffff
+

@@ -52,27 +52,27 @@ class ProfileController extends BaseController
         // app_profile::create($request->except('_token'));
         // return $request;
         try {
-        //     return $request ->except('_token');
-        // app_profile::create($request->except('_token'));
-        // DB::beginTransaction();
+            //     return $request ->except('_token');
+            // app_profile::create($request->except('_token'));
+            // DB::beginTransaction();
 
-        if (!$request->has('is_active'))
-            $request->request->add(['is_active' => 0]);
-        else
-        //     $request->request->add(['is_active' => 1]);
-        // app_profile::create([
+            if (!$request->has('is_active'))
+                $request->request->add(['is_active' => 0]);
+            else
+                //     $request->request->add(['is_active' => 1]);
+                // app_profile::create([
 
-        //     'Name' => $request->Name,
-        //     'Email' => $request->Email,
-        //     'Facebook' => $request->Facebook,
-        //      'app_id' => $request->app_id,
-        //     'Snapchat' => $request->Snapchat,
-        //     'Instgram' => $request->Instgram,
-        //     'Twitter' => $request->Twitter,
-        //     'TikTok' => $request->TikTok,
-        //     'Social_Media_Icons_Color' => $request->Social_Media_Icons_Color,
-        //     'is_active' => $request->is_active,
-            $profile = new app_profile;
+                //     'Name' => $request->Name,
+                //     'Email' => $request->Email,
+                //     'Facebook' => $request->Facebook,
+                //      'app_id' => $request->app_id,
+                //     'Snapchat' => $request->Snapchat,
+                //     'Instgram' => $request->Instgram,
+                //     'Twitter' => $request->Twitter,
+                //     'TikTok' => $request->TikTok,
+                //     'Social_Media_Icons_Color' => $request->Social_Media_Icons_Color,
+                //     'is_active' => $request->is_active,
+                $profile = new app_profile;
 
 
 
@@ -80,7 +80,7 @@ class ProfileController extends BaseController
             $profile->Name = $request->Name;
             $profile->Email = $request->Email;
             $profile->Facebook = $request->Facebook;
-             $profile->app_id=$request->app_id;
+            $profile->app_id = $request->app_id;
             $profile->Snapchat = $request->Snapchat;
             $profile->Instgram = $request->Instgram;
             $profile->Twitter = $request->Twitter;
@@ -90,29 +90,28 @@ class ProfileController extends BaseController
             $profile->save();
 
 
-        // ]);
+            // ]);
 
-        //  $request->save();
+            //  $request->save();
 
-        return redirect()->route('Screen.create', $profile->app_id);
-        // DB::commit();
+            return redirect()->route('Screen.create', $profile->app_id);
+            // DB::commit();
         } catch (\Exception $ex) {
-        // DB::rollback();
+            // DB::rollback();
 
-        return $ex;
-        return redirect() -> route('profile.index');
+            return $ex;
+            return redirect()->route('profile.index');
         }
-
     }
     // route('admin.edit');
 
-    public function edit( $id)
+    public function edit($id)
     {
 
-      //  return view('clients.app_profile.create', compact('profile', 'applcation'));
+        //  return view('clients.app_profile.create', compact('profile', 'applcation'));
         // $profile = app_profile::find($app_id,$id);s
 
-         $profile=app_profile::where("app_id",$id)->latest()->get()->first();
+        $profile = app_profile::where("app_id", $id)->latest()->get()->first();
         // $applcation = app::get();
         return view('clients.app_profile.edit', compact('profile'));
     }
@@ -132,7 +131,7 @@ class ProfileController extends BaseController
         $profile->Name = $request->Name;
         $profile->Email = $request->Email;
         $profile->Facebook = $request->Facebook;
-         $profile->app_id=$request->app_id;
+        $profile->app_id = $request->app_id;
         $profile->Snapchat = $request->Snapchat;
         $profile->Instgram = $request->Instgram;
         $profile->Twitter = $request->Twitter;
@@ -144,7 +143,7 @@ class ProfileController extends BaseController
         // $profile = app_profile::get();
 
         // return view('clients.Screen.Screen.edit', compact('Screen', 'profile'));
-        $Screen=screen::where("app_id",$id)->latest()->get()->first();
+        $Screen = screen::where("app_id", $id)->latest()->get()->first();
         return view('clients.Screen.Screen.edit', compact('Screen'));
         // return redirect()->route('Screen.edit', $Screen );
         // return redirect()->route('Screen.edit', $profile->app_id );
@@ -183,6 +182,4 @@ class ProfileController extends BaseController
 
         return view('front.dashboard');
     }
-
-
 }

@@ -14,7 +14,7 @@
                                             style="width: 100%; height: 100%">
                                     </div>
                                     <div class="project-info-text pt-1">
-                                        <h5>{{ __('translation.logo.image') }}</h5>
+                                        <h5>{{ __('translation.logo_image') }}</h5>
                                     </div>
                                 </div>
                             </div>
@@ -28,7 +28,7 @@
                                         <div class="col-12">
                                             <div class="insights px-2 ">
                                                 <fieldset>
-                                                    <label for="">{{ __('translation.logo.image') }}</label>
+                                                    <label for="">{{ __('translation.logo_images') }}</label>
                                                     <input type="file" name="logoo" class="form-control" accept=".svg" />
                                                     @error('logo')
                                                         <small class="text-danger">
@@ -44,8 +44,8 @@
                                             <div class="insights px-2">
                                                 <fieldset>
                                                     <label for="">{{ __('translation.name') }}</label>
-                                                    <input name="name" type="text" value='{{ $OrganizationProfile->name }}'
-                                                        class="form-control">
+                                                    <input name="name" type="text"
+                                                        value='{{ $OrganizationProfile->name }}' class="form-control">
                                                     @error('name')
                                                         <small class="text-danger">
                                                             {{ $message }}
@@ -57,7 +57,7 @@
                                         <div class="col-lg-6 col-md-12">
                                             <div class="insights px-2">
                                                 <fieldset>
-                                                    <label for="">{{ __('translation.email') }}</label>
+                                                    <label for="">{{ __('translation.emial') }}</label>
                                                     <input name="email" type="text"
                                                         value="{{ $OrganizationProfile->email }}" class="form-control">
                                                     @error('email')
@@ -88,7 +88,8 @@
                                                 <fieldset>
                                                     <label for="">{{ __('translation.app_domain') }}</label>
                                                     <input name="domain" type="text"
-                                                        value="{{ $OrganizationProfile->domain }}" class="form-control">
+                                                        value="{{ $OrganizationProfile->domain }}"
+                                                        class="form-control">
                                                     @error('domain')
                                                         <small class="text-danger">
                                                             {{ $message }}
@@ -115,9 +116,10 @@
                                             <div class="col-lg-3 col-md-12">
                                                 <div class="insights px-2">
                                                     <fieldset>
-                                                        <label for="">{{ __('translation.phone') }}</label>
-                                                        <input name="phone_no" value="{{ $OrganizationProfile->phone_no }}"
-                                                            type="text" class="form-control">
+                                                        <label for="">{{ __('translation.Phone') }}</label>
+                                                        <input name="phone_no"
+                                                            value="{{ $OrganizationProfile->phone_no }}" type="text"
+                                                            class="form-control">
                                                         @error('phone_no')
                                                             <small class="text-danger">
                                                                 {{ $message }}
@@ -146,7 +148,7 @@
                                             <div class="col-12">
                                                 <div class="mt-2 col-12 px-2">
                                                     <input type="submit" class="btn btn-block btn-info"
-                                                        value="{{ __('translation.save') }}">
+                                                        value="{{ __('translation.Save') }}">
                                                 </div>
                                             </div>
                                         </div>

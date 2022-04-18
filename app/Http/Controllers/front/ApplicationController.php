@@ -65,7 +65,7 @@ class ApplicationController extends BaseController
 
 
             $Applction->save();
-// dd($Applction);
+            // dd($Applction);
             return redirect()->route('profile.create', $Applction->id);
             // DB::commit();
         } catch (\Exception $ex) {
@@ -76,8 +76,8 @@ class ApplicationController extends BaseController
     }
     public function edit($id)
     {
-         $Applction = app::with('Screen', 'AppProfile')->find($id);
-        return view('clients.app.dashboard' , compact('id', 'Applction') );
+        $Applction = app::with('Screen', 'AppProfile')->find($id);
+        return view('clients.app.dashboard', compact('id', 'Applction'));
         // return view('clients.app.edit', compact('id', 'Applction'));
     }
 
@@ -93,14 +93,14 @@ class ApplicationController extends BaseController
 
             $Logo = $request->Logo;
 
-if($Logo){
-            $imagename = time() . '.' . $Logo->getClientOriginalExtension();
+            if ($Logo) {
+                $imagename = time() . '.' . $Logo->getClientOriginalExtension();
 
-            $request->Logo->move('app', $imagename);
+                $request->Logo->move('app', $imagename);
 
-            $Applction->Logo = $imagename;
-        }
-        $Applction->id = $request->id;
+                $Applction->Logo = $imagename;
+            }
+            $Applction->id = $request->id;
             $Applction->AppName = $request->AppName;
             $Applction->Link = $request->Link;
             //  $Applction->version=$request->version;
@@ -115,18 +115,18 @@ if($Logo){
 
 
             // $profileid=app_profile::where("app_id",$id)->latest()->get();
-      //      dd($profileid);
-// if($Applction->id)
-// $Applction = app_profile::find($id);
-return redirect()->route('profile.edit', $Applction ->id);
-// else
-// return response()->json(['message' => 'error message'], 500);
+            //      dd($profileid);
+            // if($Applction->id)
+            // $Applction = app_profile::find($id);
+            return redirect()->route('profile.edit', $Applction->id);
+            // else
+            // return response()->json(['message' => 'error message'], 500);
 
             // DB::commit();
         } catch (\Exception $ex) {
             // DB::rollback();
             return $ex;
-            return redirect()->route('Screen.create' );
+            return redirect()->route('Screen.create');
         }
     }
 
@@ -147,7 +147,8 @@ return redirect()->route('profile.edit', $Applction ->id);
         }
     }
 
-    public function AddDetialsDetials($ProfileID){
+    public function AddDetialsDetials($ProfileID)
+    {
         // $Applction = app::with('Screen')->find($ApplctionId);
         $profile = app_profile::find($ProfileID);
         // $Applction = app::with('Screen')->find($Profile->app_id);

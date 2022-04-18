@@ -1,73 +1,74 @@
-
-        <div class="sidebar-wrapper active">
-            <div class="sidebar-header">
-                <div class="d-flex justify-content-between">
-                    <div class="logo">
-                        <a href="index.html"><img src="assets/images/logo/logo.png" alt="Logo" srcset=""></a>
-                    </div>
-                    <div class="toggler">
-                        <a href="#" class="sidebar-hide d-xl-none d-block"><i class="bi bi-x bi-middle"></i></a>
-                    </div>
-                </div>
+<div class="sidebar-wrapper active">
+    <div class="sidebar-header">
+        <div class="d-flex justify-content-between">
+            <div class="logo">
+                <a href="index.html"><img src="assets/images/logo/logo.png" alt="Logo" srcset=""></a>
             </div>
-            <div class="sidebar-menu">
-                <ul class="menu">
-                    <li class="sidebar-title">Menu</li>
-                    <li class="sidebar-item {{ request()->routeIs('admin.index') ? 'active' : ''}} ">
-                        <a href="index.html" class='sidebar-link'>
-                            <i class="bi bi-grid-fill"></i>
-                            <span>Dashboard</span>
-                        </a>
-                    </li>
+            <div class="toggler">
+                <a href="#" class="sidebar-hide d-xl-none d-block"><i class="bi bi-x bi-middle"></i></a>
+            </div>
+        </div>
+    </div>
+    <div class="sidebar-menu">
+        <ul class="menu">
+            <li class="sidebar-title">{{ __('translation.Menu') }}</li>
+            <li class="sidebar-item {{ request()->routeIs('admin.index') ? 'active' : '' }} ">
+                <a href="index.html" class='sidebar-link'>
+                    <i class="bi bi-grid-fill"></i>
+                    <span>{{ __('translation.Dashboard') }}</span>
+                </a>
+            </li>
 
-                    <li class="sidebar-item {{ request()->routeIs('features.index') ? 'active' : ''}} ">
-                        <a href="{{ route('features.index')}}" class='sidebar-link'>
-                            {{-- <i class="fa fa-assistive-listening-systems"></i> --}}
-                            <i class="bi bi-flag"></i>
-                            <span>Features</span>
-                        </a>
+            <li class="sidebar-item {{ request()->routeIs('features.index') ? 'active' : '' }} ">
+                <a href="{{ route('features.index') }}" class='sidebar-link'>
+                    {{-- <i class="fa fa-assistive-listening-systems"></i> --}}
+                    <i class="bi bi-flag"></i>
+                    <span>{{ __('translation.Features') }}</span>
+                </a>
+            </li>
+            <li class="sidebar-item {{ request()->routeIs('subscription.index') ? 'active' : '' }} ">
+                <a href="{{ route('subscription.index') }}" class='sidebar-link'>
+                    {{-- <i class="fa fa-assistive-listening-systems"></i> --}}
+                    <i class="bi bi-bag-check-fill"></i>
+                    <span>{{ __('translation.subscription') }}</span>
+                </a>
+            </li>
+            <li class="sidebar-item  has-sub">
+                <a href="#" class='sidebar-link'>
+                    <i class="bi bi-calendar2-week"></i>
+                    <span>{{ __('translation.package') }}</span>
+                </a>
+                <ul class="submenu">
+                    <li class="submenu-item ">
+                        <a href="{{ route('packages.create') }}">add Package</a>
                     </li>
-                    <li class="sidebar-item {{ request()->routeIs('subscription.index') ? 'active' : ''}} ">
-                        <a href="{{ route('subscription.index')}}" class='sidebar-link'>
-                            {{-- <i class="fa fa-assistive-listening-systems"></i> --}}
-                            <i class="bi bi-bag-check-fill"></i>
-                            <span>subscription</span>
-                        </a>
+                    <li class="submenu-item ">
+                        <a href="{{ route('packages.index') }}">show pacakges</a>
                     </li>
-                    <li class="sidebar-item  has-sub">
-                        <a href="#" class='sidebar-link'>
-                            <i class="bi bi-calendar2-week"></i>
-                            <span>package</span>
-                        </a>
-                        <ul class="submenu">
-                            <li class="submenu-item ">
-                                <a href="{{route('packages.create')}}">add Package</a>
-                            </li>
-                            <li class="submenu-item ">
-                                <a href="{{route('packages.index')}}">show  pacakges</a>
-                            </li>
-                        </ul>
+                </ul>
+            </li>
+            <li class="sidebar-item  has-sub">
+                <a href="#" class='sidebar-link'>
+                    <i class="bi bi-stack"></i>
+                    <span>{{ __('translation.reports') }}</span>
+                </a>
+                <ul class="submenu">
+                    <li class="submenu-item ">
+                        <a href="{{ route('client.reports') }}">{{ __('translation.client_reports') }}</a>
                     </li>
-                    <li class="sidebar-item  has-sub">
-                        <a href="#" class='sidebar-link'>
-                            <i class="bi bi-stack"></i>
-                            <span>reports</span>
-                        </a>
-                        <ul class="submenu">
-                            <li class="submenu-item ">
-                                <a href="{{route('client.reports')}}">client reports</a>
-                            </li>
-                            <li class="submenu-item ">
-                                <a href="{{route('subscription.reports')}}">subscription report</a>
-                            </li>
-                            <li class="submenu-item ">
-                                <a href="{{route('notification.report')}}">notification reports</a>
-                            </li>
-                        </ul>
+                    <li class="submenu-item ">
+                        <a
+                            href="{{ route('subscription.reports') }}">{{ __('translation.subscription_report') }}</a>
                     </li>
+                    <li class="submenu-item ">
+                        <a
+                            href="{{ route('notification.report') }}">{{ __('translation.notification_reports') }}</a>
+                    </li>
+                </ul>
+            </li>
 
 
-                    <li class="sidebar-title">user  &amp; clients Mangement</li>
+            <li class="sidebar-title">{{ __('translation.clients_Mangement') }}</li>
 
                     <li class="sidebar-item  has-sub">
                         <a href="#" class='sidebar-link'>
@@ -85,7 +86,14 @@
                     </li>
                     <li class="sidebar-item {{ request()->routeIs('ticket.index') ? 'active' : ''}} ">
                         <a href="{{ route('ticket.index')}}" class='sidebar-link'>
-                            {{-- <i class="fa fa-assistive-listening-systems"></i> --}}
+                            {{-- <i class="fa fa-assistive-listening-sys
+                            
+                            
+                            
+                            
+                            
+                            
+                            tems"></i> --}}
                             <i class="bi bi-bricks"></i>
                             <span>{{_('translation.Technical support')}}</span>                            
                         </a>
@@ -93,37 +101,37 @@
                     
                      
 
-                    <li class="sidebar-item  has-sub">
-                        <a href="#" class='sidebar-link'>
-                            <i class="bi bi-person"></i>
-                            <span>Client Mangemnt</span>
-                        </a>
-                        <ul class="submenu">
-                            {{-- <li class="submenu-item ">
+            <li class="sidebar-item  has-sub">
+                <a href="#" class='sidebar-link'>
+                    <i class="bi bi-person"></i>
+                    <span>{{ __('translation.Client_Mangemnt') }}</span>
+                </a>
+                <ul class="submenu">
+                    {{-- <li class="submenu-item ">
                                 <a href="{{route('client.create')}}">Add Client </a>
                             </li> --}}
-                            <li class="submenu-item ">
-                                <a href="{{route('client.index')}}">Show Clients </a>
-                            </li>
-                        </ul>
+                    <li class="submenu-item ">
+                        <a href="{{ route('client.index') }}">{{ __('translation.Show_Clients') }} </a>
                     </li>
-                    <li class="sidebar-item  has-sub">
-                        <a href="#" class='sidebar-link'>
-                            <i class="bi bi-gear"></i>
-                            <span>Setting</span>
-                        </a>
-                        <ul class="submenu">
-                            <li class="submenu-item ">
-                                <a href="{{route('getOrganizationProfile')}}"> orgnazation profile  </a>
-                            </li>
-                            <li class="submenu-item ">
-                                <a href="{{route('client.index')}}">Logout</a>
-                            </li>
-                        </ul>
+                </ul>
+            </li>
+            <li class="sidebar-item  has-sub">
+                <a href="#" class='sidebar-link'>
+                    <i class="bi bi-gear"></i>
+                    <span>{{ __('translation.Setting') }}</span>
+                </a>
+                <ul class="submenu">
+                    <li class="submenu-item ">
+                        <a href="{{ route('getOrganizationProfile') }}">
+                            {{ __('translation.orgnazation_profile') }}</a>
                     </li>
+                    <li class="submenu-item ">
+                        <a href="{{ route('client.index') }}">{{ __('translation.Logout') }}</a>
+                    </li>
+                </ul>
+            </li>
 
-{{--
-                    <li class="sidebar-item  has-sub">
+            {{-- <li class="sidebar-item  has-sub">
                         <a href="#" class='sidebar-link'>
                             <i class="bi bi-collection-fill"></i>
                             <span>Extra Components</span>
@@ -410,6 +418,6 @@
                         </a>
                     </li>
                 </ul> --}}
-            </div>
-            <button class="sidebar-toggler btn x"><i data-feather="x"></i></button>
-        </div>
+    </div>
+    <button class="sidebar-toggler btn x"><i data-feather="x"></i></button>
+</div>

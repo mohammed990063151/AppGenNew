@@ -1,7 +1,8 @@
 @extends('layouts.master')
 @section('breadceumbs')
     {{-- <x-bread-crumps> --}}
-    @component('components.bread-crumps', ['head' => 'applction ', 'links' => ['applction ']])
+    @component('components.bread-crumps', ['head' => __('translation.applcation'), 'links' =>
+        [__('translation.applcation')]])
     @endcomponent
 @endsection
 
@@ -17,11 +18,11 @@
                 <div class="card z-index-2 h-100">
                     <div class="card-header pb-0 pt-3 bg-transparent">
                         <div class="d-flex justify-content-between">
-                            <h6 class="text-capitalize col-4"> new applction </h6>
+                            <h6 class="text-capitalize col-4"> {{ __('translation.New_Application') }}</h6>
 
                             {{-- <div class="col-12"> --}}
                             <span><a href="{{ route('application.create') }}" class="btn btn-primary btn-sm"
-                                    {{--  --}} type="button">add apps</a></span>
+                                    {{--  --}} type="button">{{ __('translation.add_apps') }}</a></span>
                             {{-- </div> --}}
                         </div>
                         <div class="table-responsive mt-5" style="display: flex;">
@@ -29,7 +30,7 @@
                             @include('clients.alerts.errors')
                             <section class="projects" id="projects">
                                 {{-- <h2 class="title">how are you feeling</h2> --}}
-                                <div class="content row" >
+                                <div class="content row">
                                     @foreach ($Applction as $Applction)
                                         <div class="col-sm-3">
                                             <div>

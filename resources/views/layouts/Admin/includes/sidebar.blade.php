@@ -71,7 +71,7 @@
 
                     <li class="sidebar-item  has-sub">
                         <a href="#" class='sidebar-link'>
-                            <i class="bi bi-file-person-fill"></i>
+                            <span class="bi bi-file-person-fill blue-color"> </span>
                             <span>User Mangment</span>
                         </a>
                         <ul class="submenu">
@@ -83,6 +83,15 @@
                             </li>
                         </ul>
                     </li>
+                    <li class="sidebar-item {{ request()->routeIs('ticket.index') ? 'active' : ''}} ">
+                        <a href="{{ route('ticket.index')}}" class='sidebar-link'>
+                            {{-- <i class="fa fa-assistive-listening-systems"></i> --}}
+                            <i class="bi bi-bricks"></i>
+                            <span>{{_('translation.Technical support')}}</span>                            
+                        </a>
+                    </li>
+                    
+                     
 
                     <li class="sidebar-item  has-sub">
                         <a href="#" class='sidebar-link'>

@@ -11,11 +11,32 @@ use Illuminate\Support\Facades\Auth;
 class TicketController extends Controller
 {
     public function index(){
+
+       
+        $allTicket = null;
+
+        if(Auth::guard('admin')->check()){
+            $allTicket = Ticket::with('User' , 'Topic')->get();
+            
+        }else{
         
-        $allTicket = Ticket::with('User' , 'Topic')->get();
-        // $allTicket = Ticket::with('topic')->get();
+            $allTicket = Ticket::with('User' , 'Topic')->where('sender',  auth()->user()->id)->get();
+        
+        }
+
+       
+        // return $allTicket;
+        // $allTicket = Ticket::with('topic')   ->get();
         // return $allTicket;// dd($data);
        // $ticket = Ticketmassege::all();
+    //    auth::admin();
+    //    if($Ticket->ticketmassege==)
+    //    Ticketmassege::get('allticket');
+    //    else
+    //    Ticket::with("Ticketmassege")->find('clients');
+
+
+
         return view('clients.Technical_support.index' ,compact('allTicket'));
 
     }
@@ -39,12 +60,14 @@ public function store(Request $request)
         'topic_id' => $request->topic_selected,    
    ]);
 //    haiyyyyyy
-   return redirect()-> route('ticket.index');
+   return redirect()-> route(  (Auth::guard('admin')->check()?'admin.':'').'ticket.index');
    // DB::commit();
 } 
+
 public function show($id){
     
 }
+
 // public function massege(Request $request){
     
 

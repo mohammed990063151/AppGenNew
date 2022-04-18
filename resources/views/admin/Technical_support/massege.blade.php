@@ -1,5 +1,6 @@
+@extends('layouts.Admin.app')
+@section('BreadCrumbs')
 
-@extends('layouts.master')
 @section('content')
 <div class="content-wrapper">
     <div class="container-fluid py-4">
@@ -34,7 +35,7 @@
                             <div class="heading-elements">
                                 <ul class="list-inline mb-0">
                                     <li><a data-action="collapse"><i class="ft-minus"></i></a></li>
-<li><a data-action="reload"><i class="ft-rotate-cw"></i></a></li>
+                                    <li><a data-action="reload"><i class="ft-rotate-cw"></i></a></li>
                                     <li><a data-action="expand"><i class="ft-maximize"></i></a></li>
                                     {{-- <li><a data-action="close"><i class="ft-x"></i></a></li> --}}
                                 </ul>
@@ -95,7 +96,7 @@
                                                          
                                                             type="button">send</a>  
                                                  </div> --}}
-                                                 <form action="{{route((Auth::guard('admin')->check()?'admin.':'').'ticket.send')}}" method="post" >
+                                                 <form action="{{route('ticket.send')}}" method="post" >
                                                     @csrf
                                                     
                   

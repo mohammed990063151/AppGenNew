@@ -30,12 +30,12 @@ class ProfileController extends BaseController
     /**
      * Show the form for creating a new resource.
      *
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\H ttp\Response
      */
-    public function create($id)
+    public function create()
     {
         $profile = app_profile::all();
-        $applcation = app::find($id);
+        $applcation = app::find(1);
         return view('clients.app_profile.create', compact('profile', 'applcation'));
     }
 

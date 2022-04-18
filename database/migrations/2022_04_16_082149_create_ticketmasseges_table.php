@@ -19,10 +19,10 @@ class CreateTicketmassegesTable extends Migration
             
             $table->string('text');
             
-            $table->string('ticket_id');
+            $table->integer('ticket_id');
            
-            $table->string('sender');
-            $table->integer('admin_id');
+            $table->integer('sender')->default(0);
+            $table->integer('admin_id')->default(0);
             $table->timestamps();
         });
     }

@@ -1,14 +1,7 @@
-@extends('layouts.master')
-@section('breadceumbs')
+@extends('layouts.Admin.app')
+@section('BreadCrumbs', 'tecncal support')
 {{-- <x-bread-crumps> --}}
-    @component('components.bread-crumps' , ['head' => 'ticket ' ,
-    'links' => [ 'ticket']
-    ])
-    @endcomponent
-    @endsection
-    @section('title')
 
-@stop
 @section('content')
 
 <div class="container-fluid py-4">
@@ -19,7 +12,7 @@
                     <div class="d-flex justify-content-between">
                         <h6 class="text-capitalize col-4">{{_('translation.ticket')}}</h6>
 
-                            <span><a href="{{route((Auth::guard('admin')->check()?'admin.':'').'ticket.create')}}" class="btn btn-primary btn-sm"
+                            <span><a href="{{route('ticket.create')}}" class="btn btn-primary btn-sm"
                                 {{--  --}}
                                     type="button">{{_('translation.open-ticket')}}</a></span>
 
@@ -59,16 +52,17 @@
                                     <td>{{($data->user->name) ?? ' - '}}</td>
                                     <td>{{$data->status}}</td>
                                     <td>{{$data->created_at}}</td>
-                                   <td><a href="{{route( (Auth::guard('admin')->check()?'admin.':'').'ticket.show', $data->id)}}" class="btn btn-primary btn-sm"
+                                   <td><a href="{{route('ticket.show', $data->id)}}" class="btn btn-primary btn-sm"
                                     {{--  --}}
                                         type="button">{{_('translation.view')}}</a></span> </td>
                                     
-                                    <form action="{{route((Auth::guard('admin')->check()?'admin.':'').'ticket.create' )}}" method="post" style="display:inline">
+                                    <form action="{{route('ticket.create' )}}" method="post" style="display:inline">
                                         @csrf
                                         {{-- @method('DELETE') --}}
       
                                     </form>
                                     
+                                    {{-- <a href="{{route('' , $data->id)}}" class="btn btn-info btn-icon-split"> --}}
 
                                             
                                 </tr>

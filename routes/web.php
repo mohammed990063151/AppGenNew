@@ -14,8 +14,11 @@ use App\Http\Controllers\front\ProfileController;
 use App\Http\Controllers\front\ApplicationController;
 use App\Http\Controllers\InvoiceController;
 use App\Http\Controllers\front\ScreenController;
+use App\Http\Controllers\TicketController;
+use App\Http\Controllers\TicketMassegeController;
 use App\Models\FirebaseNotification;
 use App\Models\screen;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\View;
 
 /*
@@ -47,9 +50,7 @@ Auth::routes();
 // Route::get('argon-login', function () {
 //     return view('Argon.auth.login');
 // });
-Route::get('/', function () {
-    return view('clients.dashboard');
-});
+
 
 Route::group(['prefix' => LaravelLocalization::setLocale()], function () {
     /** ADD ALL LOCALIZED ROUTES INSIDE THIS GROUP **/
@@ -57,6 +58,10 @@ Route::group(['prefix' => LaravelLocalization::setLocale()], function () {
 
 
     Route::middleware('auth:web')->group(function () {
+
+        Route::get('/', function () {
+            return view('clients.dashboard');
+        });
 
         Route::get('paywithpaypal', array('as' => 'paywithpaypal', 'uses' => 'App\Http\Controllers\PaypalController@payWithPaypal',));
         Route::post('paypal', array('as' => 'paypal', 'uses' => 'App\Http\Controllers\PaypalController@postPaymentWithpaypal',));
@@ -81,7 +86,7 @@ Route::group(['prefix' => LaravelLocalization::setLocale()], function () {
             Route::get('edit/{id}', [ApplicationController::class, 'edit'])->name('application.edit');
             Route::post('update/{id}', [ApplicationController::class, 'update'])->name('application.update');
             Route::post('destroy/{id}', [ApplicationController::class, 'destroy'])->name('application.destroy');
-            Route::get('application-details/{id}' , [ApplicationController::class , 'AddDetialsDetials'])->name('AddDetialsDetials');
+            Route::get('application-details/{id}', [ApplicationController::class, 'AddDetialsDetials'])->name('AddDetialsDetials');
         });
 
         // start Screenes1
@@ -104,35 +109,34 @@ Route::group(['prefix' => LaravelLocalization::setLocale()], function () {
             Route::post('store2', [ScreenController::class, 'store2'])->name('Screen.store2');
         });
 
+
         Route::resource('features', FeatureController::class);
         Route::post('destroy/{id}', [ApplicationController::class, 'update'])->name('application.destroy');
+
+        Route::get('create-ticket', [TicketController::class, 'create'])->name('ticket.create');
+        Route::post('store-ticket', [TicketController::class, 'store'])->name('ticket.store');
+
+        Route::group(['prefix' => 'ticket'], function () {
+            Route::get('/', [TicketController::class, 'index'])->name('ticket.index');
+            Route::get('/massege/{id}', [TicketMassegeController::class, 'show'])->name('ticket.show');
+            Route::post('massege/', [TicketMassegeController::class, 'store'])->name('ticket.send');
+        });
     });
+
+
 
     Route::get('get-price', [PaymentController::class, 'getPrice'])->name('getPrice');
     Route::post('get-price', [PaymentController::class, 'ChosePrice'])->name('ChosePrice');
 
     Route::get('/clients/dashboard', [FrontController::class, 'index'])->name('clients.dashboard');
-    Route::resource('notification', FirebaseNotificationController::class);#->middleware('IsSubscribe');
+    Route::resource('notification', FirebaseNotificationController::class); #->middleware('IsSubscribe');
     Route::get('get-priceing', [PaymentController::class, 'getPriceingInside'])->name('getPricing');
     Route::post('get-priceing', [PaymentController::class, 'PayInside'])->name('PayInside');
     Route::get('subscribtion-status/{id}', [PaymentController::class, 'subscribtionStatus'])->name('subscribtionStatus');
     Route::get('get-invoice', [InvoiceController::class, 'getInvoice'])->name('getInvoice');
     Route::post('pay-invoice', [InvoiceController::class, 'PayInvoice'])->name('PayInvoice');
 });
-Route::get('test/{id}/Screen/{ScreanId}' , function( $ScreanId, $id){
-    return 'test' . $id;
-    // compact()
-    // route('asdasd' , ['id' =>$id , screen ])
-            ############ticKet................................................
 
-    
-        Route::get('create-ticket', [TicketController::class, 'create'])->name('ticket.create');
-    Route::post('store-ticket', [TicketController::class, 'store'])->name('ticket.store');
-    Route::get('ticket', [TicketController::class, 'index'])->name('ticket.index');
-    ############ticKet massage ................................................
-    Route::get('ticket/massege/{id}', [TicketMassegeController::class, 'show'])->name('ticket.show');
-    Route::post('ticket/massege/', [TicketMassegeController::class, 'store'])->name('ticket.send');
-});
+
 
 // shagal fffff
-

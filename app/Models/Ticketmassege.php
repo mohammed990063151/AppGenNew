@@ -10,10 +10,11 @@ class Ticketmassege extends Model
     use HasFactory;
     
     protected $fillable = [
-        'tickets',
+        
         'text',
         'ticket_id',
         'sender',
+        
       
     ];
     public function Topic(){

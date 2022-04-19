@@ -25,12 +25,11 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-       try{
-            $Proifle = OrganizationProfile::first();
-            // OrganizationProfile
-            view()->share('OrganizationProfile', $Proifle);
-       }catch(Exception $e){
-
-       }
+        app()->setLocale($request->segment(1) ?? app()->getLocale());
+        // try {
+        //     $Proifle = OrganizationProfile::first();
+        //     // OrganizationProfile
+        //     view()->share('OrganizationProfile', $Proifle);
+        // } catch (Exception $e) { }
     }
 }

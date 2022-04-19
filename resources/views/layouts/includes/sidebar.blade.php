@@ -3,8 +3,7 @@
     <div class="sidenav-header">
         <i class="fas fa-times p-3 cursor-pointer text-secondary opacity-5 position-absolute end-0 top-0 d-none d-xl-none"
             aria-hidden="true" id="iconSidenav"></i>
-        <a class="navbar-brand m-0" href=" https://demos.creative-tim.com/argon-dashboard/pages/dashboard.html "
-            target="_blank">
+        <a class="navbar-brand m-0" target="_blank">
             {{-- <img src="{{ $OrganizationProfile->logo }}" class="navbar-brand-img h-100" alt="main_logo"> --}}
             <span class="ms-1 font-weight-bold">{{ __('translation.Admin_Control') }}</span>
         </a>
@@ -13,19 +12,20 @@
     <div style="height: auto" class="collapse navbar-collapse  w-auto " id="sidenav-collapse-main">
         <ul class="navbar-nav">
             <li class="nav-item">
-                <a class="nav-link active " href="{{ route('clients.dashboard')}}">
+                <a class="nav-link active " href="{{ route('clients.dashboard') }}">
                     <div
                         class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
                         <i class="ni ni-credit-card text-success text-sm opacity-10"></i>
                     </div>
-                    <span class="nav-link-text ms-1">{{__('translation.dashboard')}}</span>
+                    <span class="nav-link-text ms-1">{{ __('translation.Dashboard') }}</span>
                 </a>
             </li>
 
 {{--
             <li class="nav-item">
 
-                <a class="nav-link {{ request()->routeIs('application.index') ? 'active' : ''}}  " href="{{ route('application.index')}}">
+                <a class="nav-link {{ request()->routeIs('application.index') ? 'active' : '' }}  "
+                    href="{{ route('application.index') }}">
                     <div
                         class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
                         <i class="ni ni-calendar-grid-58 text-warning text-sm opacity-10"></i>
@@ -35,6 +35,12 @@
             </li> --}}
             {{-- <li class="nav-item">
                 <a class="nav-link  {{ request()->is('profile.index') ? 'active' : ''}} " href="{{ route('profile.index')}}">
+                    <span class="nav-link-text ms-1">{{ __('translation.Application') }}</span>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link  {{ request()->is('profile.index') ? 'active' : '' }} "
+                    href="{{ route('profile.index') }}">
 
                     <div
                         class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
@@ -55,7 +61,6 @@
                 </a>
             </li>
             <li class="nav-item">
-
                 <a class="nav-link  {{ request()->is('notification') ? 'active' : '' }}  "
                     href="{{ route('notification.index') }}">
                     <div
@@ -65,8 +70,31 @@
                     <span class="nav-link-text ms-1"> {{ __('translation.Notification_Mangement') }}</span>
                 </a>
             </li>
+            <li class="nav-item">
+                <a class="nav-link  {{ request()->is('ticket.index') ? 'active' : ''}} " href="{{ route('ticket.index')}}">
 
-            {{-- <li class="nav-item mt-3">
+                    <div
+                        class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
+                        <i class="ni ni-tv-2 text-pri
+
+
+
+
+
+
+
+
+
+
+
+
+
+                    </div>
+                    <span class="nav-link-text ms-1">{{_('translation.Technical support')}}</span>
+                </a>
+            </li>     {{-- <li class="nav-item mt-3">
+
+
                 <h6 class="ps-4 ms-2 text-uppercase text-xs font-weight-bolder opacity-6">Account pages</h6>
             </li>
             <li class="nav-item">

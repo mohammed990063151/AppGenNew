@@ -31,7 +31,7 @@ class ProfileController extends BaseController
     public function create($id)
     {
         $profile = app_profile::all();
-        $applcation = app::find($id);
+        $applcation = app::find(1);
         return view('clients.app_profile.create', compact('profile', 'applcation'));
     }
 
@@ -40,18 +40,14 @@ class ProfileController extends BaseController
     {
 
         try {
-
-
-        if (!$request->has('is_active'))
-            $request->request->add(['is_active' => 0]);
-        else
-
-            $profile = new app_profile;
-
+            if (!$request->has('is_active'))
+                $request->request->add(['is_active' => 0]);
+            else
+                $profile = new app_profile;
             $profile->Name = $request->Name;
             $profile->Email = $request->Email;
             $profile->Facebook = $request->Facebook;
-             $profile->app_id=$request->app_id;
+            $profile->app_id = $request->app_id;
             $profile->Snapchat = $request->Snapchat;
             $profile->Instgram = $request->Instgram;
             $profile->Twitter = $request->Twitter;
@@ -59,26 +55,20 @@ class ProfileController extends BaseController
             $profile->is_active = $request->is_active;
 
             $profile->save();
-
-
-        return redirect()->route('Screen.create', $profile->app_id);
-
+            return redirect()->route('Screen.create', $profile->app_id);
         } catch (\Exception $ex) {
-
-
-        return $ex;
-        return redirect() -> route('profile.index');
+            return $ex;
+            return redirect()->route('profile.index');
         }
-
     }
 
 
-    public function edit( $id)
+    public function edit($id)
     {
 
 
 
-         $profile=app_profile::where("app_id",$id)->latest()->get()->first();
+        $profile = app_profile::where("app_id", $id)->latest()->get()->first();
 
         return view('clients.app_profile.edit', compact('profile'));
     }
@@ -89,31 +79,27 @@ class ProfileController extends BaseController
 
         try {
 
-        $profile = app_profile::find($id);
+            $profile = app_profile::find($id);
 
-        if (!$profile)
-            return redirect()->route('clients.app_profile.edit')->with(['error' => 'not found']);
+            if (!$profile)
+                return redirect()->route('clients.app_profile.edit')->with(['error' => 'not found']);
 
 
-        $profile->Name = $request->Name;
-        $profile->Email = $request->Email;
-        $profile->Facebook = $request->Facebook;
+            $profile->Name = $request->Name;
+            $profile->Email = $request->Email;
+            $profile->Facebook = $request->Facebook;
+            $profile->Snapchat = $request->Snapchat;
+            $profile->Instgram = $request->Instgram;
+            $profile->Twitter = $request->Twitter;
+            $profile->Social_Media_Icons_Color = $request->Social_Media_Icons_Color;
+            $profile->is_active = $request->is_active;
 
-        $profile->Snapchat = $request->Snapchat;
-        $profile->Instgram = $request->Instgram;
-        $profile->Twitter = $request->Twitter;
-        $profile->Social_Media_Icons_Color = $request->Social_Media_Icons_Color;
-        $profile->is_active = $request->is_active;
+            $profile->save();
 
-        $profile->save();
-
-       return redirect()->route('application.edit', $profile->app_id);
-
+            return redirect()->route('application.edit', $profile->app_id);
         } catch (\Exception $ex) {
             return redirect('/application')->with(['error' => 'حدث خطا ما برجاء المحاوله لاحقا']);
-
         }
-
     }
 
 
@@ -136,6 +122,4 @@ class ProfileController extends BaseController
 
         return view('front.dashboard');
     }
-
-
 }

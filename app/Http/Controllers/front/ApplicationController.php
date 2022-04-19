@@ -57,9 +57,7 @@ class ApplicationController extends BaseController
             $Applction->WhatsApp = $request->WhatsApp;
 
             $Applction->save();
-
             return redirect()->route('profile.create', $Applction->id);
-
         } catch (\Exception $ex) {
 
             return $ex;
@@ -69,18 +67,17 @@ class ApplicationController extends BaseController
     public function edit($id)
     {
 
-         $Applction = app::with('Screen', 'AppProfile')->find($id);
-         $MyApp = app::find($id);
-         if($id){
-        return view('clients.app.dashboard' , compact('id', 'Applction','MyApp') );
-}else{
-    return redirect()->route('application.index');
-}
-
+        $Applction = app::with('Screen', 'AppProfile')->find($id);
+        $MyApp = app::find($id);
+        if ($id) {
+            return view('clients.app.dashboard', compact('id', 'Applction', 'MyApp'));
+        } else {
+            return redirect()->route('application.index');
+        }
     }
     public function edit_Applaction($id)
     {
-         $Applction = app::with('Screen', 'AppProfile')->find($id);
+        $Applction = app::with('Screen', 'AppProfile')->find($id);
 
         return view('clients.app.edit', compact('id', 'Applction'));
     }
@@ -97,14 +94,14 @@ class ApplicationController extends BaseController
 
             $Logo = $request->Logo;
 
-if($Logo){
-            $imagename = time() . '.' . $Logo->getClientOriginalExtension();
+            if ($Logo) {
+                $imagename = time() . '.' . $Logo->getClientOriginalExtension();
 
-            $request->Logo->move('app', $imagename);
+                $request->Logo->move('app', $imagename);
 
-            $Applction->Logo = $imagename;
-        }
-        $Applction->id = $request->id;
+                $Applction->Logo = $imagename;
+            }
+            $Applction->id = $request->id;
             $Applction->AppName = $request->AppName;
             $Applction->Link = $request->Link;
 
@@ -118,14 +115,11 @@ if($Logo){
             $Applction = app::with('Screen', 'AppProfile')->find($id);
             $MyApp = app::find($id);
 
-           return view('clients.app.dashboard' , compact('id', 'Applction','MyApp') );
-
-
-
+            return view('clients.app.dashboard', compact('id', 'Applction', 'MyApp'));
         } catch (\Exception $ex) {
 
             return $ex;
-            return redirect()->route('Screen.create' );
+            return redirect()->route('Screen.create');
         }
     }
 
@@ -138,7 +132,6 @@ if($Logo){
             app::find($id)->delete();
 
             return redirect('/application')->with(['success' => 'ok']);
-
         } catch (\Exception $ex) {
 
             return redirect('/application')->with(['error' => 'حدث خطا ما برجاء المحاوله لاحقا']);
@@ -147,7 +140,8 @@ if($Logo){
 
 
 
-    public function AddDetialsDetials($ProfileID){
+    public function AddDetialsDetials($ProfileID)
+    {
 
         $profile = app_profile::find($ProfileID);
 

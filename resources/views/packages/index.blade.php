@@ -1,79 +1,83 @@
 @extends('layouts.Admin.app')
-@section('BreadCrumbs' , 'Show Packages')
-    @section('content')
+@section('BreadCrumbs', __('translation.Show_Packages'))
+@section('content')
     <div class="container-fluid py-4">
         <div class="row mt-4">
             <div class="col-lg-12 mb-lg-0 mb-4">
                 <div class="card z-index-2 h-100">
                     <div class="card-header pb-0 pt-3 bg-transparent">
                         <div class="d-flex justify-content-between">
-                            <h6 class="text-capitalize col-4">Packages table</h6>
-                                <a type="button" class="btn btn-sm btn-primary" data-toggle="modal" data-target="#exampleModal">
-                                    New Package
-                                </a>
-                                {{-- <span><a href="{{route('packages.create')}}" class="btn btn-primary btn-sm"
+                            <h6 class="text-capitalize col-4">{{ __('translation.Packages_Table') }}</h6>
+                            <a type="button" class="btn btn-sm btn-primary" data-toggle="modal" data-target="#exampleModal">
+                                {{ __('translation.New_Package') }}
+                            </a>
+                            {{-- <span><a href="{{route('packages.create')}}" class="btn btn-primary btn-sm"
                                         type="button">add New</a></span> --}}
-                            </div>
                         </div>
-                        <div class="table-responsive mt-5">
-                            <table class="table align-items-center table-bordered  ">
-                                <thead>
+                    </div>
+                    <div class="table-responsive mt-5">
+                        <table class="table align-items-center table-bordered  ">
+                            <thead>
+                                <tr>
+                                    <td>{{ __('translation.id') }}</td>
+                                    <td>{{ __('translation.name') }}</td>
+                                    <td>{{ __('translation.price') }}</td>
+                                    <td>{{ __('translation.duration') }}</td>
+                                    <td>{{ __('translation.status') }}</td>
+                                    <td>{{ __('translation.option') }}</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @forelse ($Packages as $key => $Package)
                                     <tr>
-                                        <td>id</td>
-                                        <td>name</td>
-                                        <td>price</td>
-                                        <td>duration</td>
-                                        <td>status</td>
-                                        <td>option</td>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    @forelse ($Packages as $key => $Package )
-                                    <tr>
-                                        <td>{{$Package->id}}</td>
-                                        <td>{{$Package->name}}</td>
-                                        <td>{{$Package->price}}</td>
-                                        <td>{{$Package->duration}}</td>
+                                        <td>{{ $Package->id }}</td>
+                                        <td>{{ $Package->name }}</td>
+                                        <td>{{ $Package->price }}</td>
+                                        <td>{{ $Package->duration }}</td>
                                         <td>{!! $Package->StatusWithSpan() !!}</td>
                                         <td>
                                             <!-- Modal -->
-                                            <form action="{{route('packages.destroy' , $Package->id)}}" method="post" style="display:inline">
+                                            <form action="{{ route('packages.destroy', $Package->id) }}" method="post"
+                                                style="display:inline">
                                                 @csrf
                                                 @method('DELETE')
-                                                <button class="btn btn-sm btn-circle  btn-danger"> <i class="bi bi-trash2-fill"></i> </button>
+                                                <button class="btn btn-sm btn-circle  btn-danger"> <i
+                                                        class="bi bi-trash2-fill"></i> </button>
                                             </form>
-                                            <a href="{{route('packages.status' , $Package->id)}}" class="btn  btn-sm  btn-circle  {{$Package->status ? 'btn-warning' :'btn-success'}}"><i class="bi bi-toggle-on"></i></a>
+                                            <a href="{{ route('packages.status', $Package->id) }}"
+                                                class="btn  btn-sm  btn-circle  {{ $Package->status ? 'btn-warning' : 'btn-success' }}"><i
+                                                    class="bi bi-toggle-on"></i></a>
                                         </td>
                                     </tr>
                                     <tr></tr>
-                                    @empty
+                                @empty
                                     <tr>
-                                        <td colspan="5"> No data Right Now</td>
+                                        <td colspan="5">{{ __('translation.No_data') }} </td>
                                     </tr>
-                                    @endforelse
-                                </tbody>
-                                <tfoot>
-                                    <td>id</td>
-                                    <td>name</td>
-                                    <td>price</td>
-                                    <td>duration</td>
-                                    <td>status</td>
-                                    <td>option</td>
-                                </tfoot>
-                            </table>
-                        </div>
+                                @endforelse
+                            </tbody>
+                            <tfoot>
+                                <td>{{ __('translation.id') }}</td>
+                                <td>{{ __('translation.name') }}</td>
+                                <td>{{ __('translation.price') }}</td>
+                                <td>{{ __('translation.duration') }}</td>
+                                <td>{{ __('translation.status') }}</td>
+                                <td>{{ __('translation.option') }}</td>
+                            </tfoot>
+                        </table>
                     </div>
-
                 </div>
-            </div>
 
+            </div>
         </div>
 
     </div>
 
     </div>
+
     </div>
     </div>
     </div>
     </div>
-    @endsection
+    </div>
+@endsection

@@ -9,8 +9,12 @@ use App\Http\Controllers\AdminAuthController;
 use App\Http\Controllers\ClientController;
 use App\Http\Controllers\DashBoardContorller;
 use App\Http\Controllers\FeatureController;
+use App\Http\Controllers\MassegeController;
 use App\Http\Controllers\OrganizationProfile;
 use App\Http\Controllers\ReportController;
+use App\Http\Controllers\Ticketadmincontroller;
+use App\Http\Controllers\TicketController;
+use App\Http\Controllers\TicketMassegeController;
 use App\Http\Controllers\WebhookController;
 use GuzzleHttp\Middleware;
 use Illuminate\Support\Facades\Route;
@@ -64,3 +68,13 @@ Route::middleware('auth:admin')->group(function () {
 });
 
 Route::get('webhook', [WebhookController::class , 'handle']);
+
+############ticket......
+Route::get('create-ticket', [TicketController::class, 'create'])->name('admin.ticket.create')->middleware('auth:admin');
+Route::post('store-ticket', [TicketController::class, 'store'])->name('admin.ticket.store')->middleware('auth:admin');
+Route::get('ticket', [TicketController::class, 'index'])->name('ticket.index')->middleware('auth:admin');
+############ticKet massage ................................................
+Route::get('ticket/massege/{id}', [TicketMassegeController::class, 'show'])->name('admin.ticket.show')->middleware('auth:admin');
+Route::post('ticket/massege/', [TicketMassegeController::class, 'store'])->name('admin.ticket.send')->middleware('auth:admin');
+
+

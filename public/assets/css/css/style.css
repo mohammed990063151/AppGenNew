@@ -181,13 +181,13 @@
     bottom: 0;
 }
 .container .card_apps:nth-child(1) .content_apps{
-    background: linear-gradient(0deg,orange, transparent);
+    background: linear-gradient(0deg,rgb(72, 0, 255), transparent);
 }
 .container .card_apps:nth-child(2) .content_apps{
     background: linear-gradient(0deg,purple, transparent);
 }
 .container .card_apps:nth-child(3) .content_apps{
-    background: linear-gradient(0deg,brown, transparent);
+    background: linear-gradient(0deg,rgb(0, 250, 250), transparent);
 }
 .container .card_apps .content_apps h2{
     margin: 0 0 10px;

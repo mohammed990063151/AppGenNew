@@ -38,6 +38,8 @@
 
                                     <div class="container">
                                         <div class="card_apps">
+                                            <a
+                                            href="{{ route('application.edit_Applaction', $Applction->id) }}">
                                             <div class="img-box">
                                                 <img src="{{ asset("app/{$Applction->Logo}") }}">
                                             </div>
@@ -45,19 +47,13 @@
                                                 <h2>main basic<br><span>{{ $Applction->Name }}</span></h2>
                                                 <p>{{ $Applction->Discrptions }}.</p>
                                                 <ul>
-
-
-                                                    <li><a
-                                                        href="{{ route('application.edit_Applaction', $Applction->id) }}"><i
-                                                            class="fa fa-pencil-square" aria-hidden="true"></i></a></li>
-
+                                                    </a>
                                                 </ul>
                                             </div>
                                         </div>
-
-
-
                                         <div class="card_apps">
+                                            <a
+                                                            href="{{ route('AddDetialsDetials', $Applction->AppProfile->id) }}">
                                             <div class="img-box">
                                                 <img src="{{ asset("app/{$Applction->Logo}") }}">
                                             </div>
@@ -65,10 +61,7 @@
                                                 <h2>Social Media<br><span>{{ $Applction->AppName }}</span></h2>
                                                 <p>{{ $Applction->Discrptions }}.</p>
                                                 <ul>
-                                                    <li><a
-                                                            href="{{ route('AddDetialsDetials', $Applction->AppProfile->id) }}"><i
-                                                                class="fa fa-pencil-square" aria-hidden="true"></i></a></li>
-                                                    </li>
+                                                   </a>
                                                 </ul>
                                             </div>
                                         </div>

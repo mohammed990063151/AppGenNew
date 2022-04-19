@@ -8,7 +8,7 @@
             <div class="card">
                 <div class="card-body p-3">
                     <div class="row">
-                        <div class="col-8">
+                        <div class="    col-8">
                             <div class="numbers">
                                 <p class="text-sm mb-0 text-uppercase font-weight-bold">Today's Money</p>
                                 <h5 class="font-weight-bolder">

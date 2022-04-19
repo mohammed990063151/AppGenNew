@@ -1,149 +1,112 @@
 @extends('layouts.master')
 @section('breadceumbs')
     {{-- <x-bread-crumps> --}}
-    @component('components.bread-crumps', ['head' => 'Edite screen', 'links' => ['Screen ', ' Edite screen']])
+    @component('components.bread-crumps', ['head' => 'Updata Scrren Tow', 'links' => ['profile', 'Updata Scrren Tow']])
+        @section('title')
+        Updata Scrren Tow
+        @stop
     @endcomponent
 @endsection
-@section('title')
-    Edite screen
-@stop
 @section('content')
     <div class="container-fluid py-4">
         <div class="row mt-4">
             <div class="col-lg-12 mb-lg-0 mb-4">
                 <div class="card z-index-2 h-100">
                     <div class="card-header pb-0 pt-3 bg-transparent">
-                        <div class="row">
-                            <h6 class="text-capitalize col-4"> Edite screen</h6>
-                            <div class="col-6"></div>
-                            <div class="col-2">
-                                <span><a href="{{ route('Screen.index') }}" class="btn btn-danger btn-sm" type="button">Go
-                                        Back</a></span>
+                        <div class="col-md-12" style="text-align: end;">
+                            <span><a href="{{ route('application.index') }}" class="btn btn-primary" type="button">
+                                    Go Back
+                                </a></span>
                             </div>
-                        </div>
-                        <div class="row">
-                            <div class="mt-3">
-
-                                <form action="{{ route('Screen.update1', $Screen->id) }}" method="POST"
-                                    enctype="multipart/form-data">
-
+                        <div class="row no-gutters">
+                            <div class="col no-gutters" style="text-align: center;">
+                                <iframe class="mobile" id="mobile_id"
+                                src="https://ahmedict6.github.io/mobile-app-genrator-app/"  >
+                            </iframe>
+                            </div>
+                            <div class="col no-gutters">
+                                <div class="form-group col-md-6" style="display: contents;">
+                                <form action="{{route('Screen.update1', $Screen->id)}}" method="POST"
+                                    enctype="multipart/form-data" class="form">
                                     @csrf
-                                    <div class="row col-md-12">
-
-                                        <div class="row col-md-6">
-                                            <h5>screen three</h5>
-                                            <div>
-
-
-                                            </div>
-
-                                            <div class="form-group col-md-6">
-                                                <div class="form-group">
-                                                    <label for="">logo</label>
-                                                    <input type="file" class="form-control" name="image"
-                                                        value="{{ $Screen->image }}" aria-describedby="helpId"
-                                                        placeholder="">
-                                                </div>
-                                            </div>
+                                    <h1 class="text-center">My Screen Tow </h1>
+                                    <!-- Progress bar -->
+                                    <div class="progressbar">
+                                        <div class="progress" id="progress"></div>
+                                        <div class="progress-step progress-step-active" data-title="Intro"></div>
+                                        <div class="progress-step" data-title="Colors"></div>
+                                        <div class="progress-step" data-title="Follow"></div>
+                                    </div>
+                                    <!-- Steps -->
+                                    <div class="form-step form-step-active">
+                                        <div class="input-group">
+                                            <label for="image">image</label>
+                                            <input type="file" name="image"   value="{{ $Screen->image}}"/>
                                             @error('image')
-                                                <small id="helpId" class="form-text text-muted">{{ $message }}</small>
+                                                <span
+                                                    class="text-danger error">{{$message }}</span>
                                             @enderror
-
-                                            <div class="form-group col-md-6">
-                                                <label for="">Discrption1st</label>
-                                                <input type="text" class="form-control" name="Discrption1st"
-                                                    value="{{ $Screen->Discrption1st }}" aria-describedby="helpId"
-                                                    placeholder="">
-                                                @error('Discrption1st')
-                                                    <small id="helpId"
-                                                        class="form-text text-danger text-muted">{{ $message }}</small>
-                                                @enderror
-                                            </div>
-                                            <div class="form-group col-md-6">
-                                                <label for="">Color</label>
-                                                <input type="text" class="form-control" name="Color"
-                                                    value="{{ $Screen->Color }}" aria-describedby="helpId" placeholder="">
-                                                @error('Color')
-                                                    <small id="helpId" class="form-text text-muted">{{ $message }}</small>
-                                                @enderror
-                                            </div>
-
-                                            <div class="form-group col-md-6">
-                                                <label for="">Containar Button BarColor</label>
-                                                <input type="text" class="form-control" name="ContainarButtonBarColor"
-                                                    value="{{ $Screen->ContainarButtonBarColor }}"
-                                                    aria-describedby="helpId" placeholder="">
-                                                @error('ContainarButtonBarColor')
-                                                    <small id="helpId" class="form-text text-muted">{{ $message }}</small>
-                                                @enderror
-                                            </div>
-                                            <div class="form-group col-md-6">
-                                                <label for="">Icons Background Color</label>
-                                                <input type="text" class="form-control" name="IconsBackgroundColor"
-                                                    value="{{ $Screen->IconsBackgroundColor }}" aria-describedby="helpId"
-                                                    placeholder="">
-                                                @error('IconsBackgroundColor')
-                                                    <small id="helpId" class="form-text text-muted">{{ $message }}</small>
-                                                @enderror
-                                            </div>
-                                            <div class="form-group col-md-6">
-                                                <label for="">Icons Color</label>
-                                                <input type="text" class="form-control" name="IconsColor"
-                                                    value="{{ $Screen->IconsColor }}" aria-describedby="helpId"
-                                                    placeholder="">
-                                                @error('IconsColor')
-                                                    <small id="helpId" class="form-text text-muted">{{ $message }}</small>
-                                                @enderror
-                                            </div>
-
-
-
-
-                                            <div class="form-group col-md-6">
-
-                                                <input type="hidden" class="form-control" value="{{ $Screen->id }}"
-                                                    name="app_id" aria-describedby="helpId" placeholder="">
-
-
-                                                <button class="btn m-1 btn-primary"> Save </button>
-                                            </div>
-                                            {{-- <div class="form-group col-md-6">
-                                        <label class="my-1 mr-2" for="inlineFormCustomSelectPref">Name profile</label>
-                                <select name="profile_id" id="profile_id" class="form-control" required>
-
-                                    @foreach ($profile as $profile)
-                                        <option value="{{ $profile->id }}">{{$profile->Name}}</option>
-                                    @endforeach
-                                    @error('profile_id')
-                                            <small id="helpId" class="form-text text-danger text-muted">{{$message}}</small>
-                                            @enderror
-                                </select>
                                         </div>
-
-
-
-
-                                    <div class="form-group col-md-6">
-                                        <label class="my-1 mr-2" for="inlineFormCustomSelectPref">Screen</label>
-                                <select name="screen_type"  class="form-control" required>
-
-
-                                    <option value="screen one">screen one</option>
-                                    <option value="screen two">screen two</option>
-                                    <option value="screen three">screen three</option>
-
-                                    @error('screen_type')
-                                            <small id="helpId" class="form-text text-danger text-muted">{{$message}}</small>
+                                        <div class="input-group">
+                                            <label for="Discrption1st">Discrption</label>
+                                            <input type="text" name="Discrption1st" value="{{ $Screen->Discrption1st}}" />
+                                            @error('Discrption1st')
+                                                <span
+                                                    class="text-danger error">{{$message }}</span>
                                             @enderror
-                                </select>
-                                        </div> --}}
                                         </div>
-
-                                        <div class="form-group col-md-6">
-                                            <iframe class="mobile" id="mobile_id"
-                                                src="https://ahmedict6.github.io/mobile-app-genrator-app/" />
-
-
+                                        <div class="">
+                                            <a href="#" class="btn btn-next width-50 ml-auto">Next</a>
+                                        </div>
+                                    </div>
+                                    <div class="form-step">
+                                        <div class="input-group">
+                                            <label for="Color">Color</label>
+                                            <input type="color" name="Color" id="color-range" class="color-range" value="{{ $Screen->Color}}"
+                                            onchange="this.style.background = this.value; console.log('done')" />
+                                            @error('Color')
+                                                <span
+                                                    class="text-danger error">{{$message }}</span>
+                                            @enderror
+                                        </div>
+                                        <div class="input-group">
+                                            <label for="ContainarButtonBarColor">Containar ButtonBar Color</label>
+                                            <input type="color" name="ContainarButtonBarColor" id="color-range" class="color-range" value="{{ $Screen->ContainarButtonBarColor}}"
+                                            onchange="this.style.background = this.value; console.log('done')"/>
+                                            @error('ContainarButtonBarColor')
+                                                <span
+                                                    class="text-danger error">{{$message }}</span>
+                                            @enderror
+                                        </div>
+                                        <div class="btns-group">
+                                            <a href="#" class="btn btn-prev">Previous</a>
+                                            <a href="#" class="btn btn-next">Next</a>
+                                        </div>
+                                    </div>
+                                    <div class="form-step">
+                                        <div class="input-group">
+                                            <label for="IconsBackgroundColor"> Icons Background Color</label>
+                                            <input type="color" name="IconsBackgroundColor" id="color-range" class="color-range"  value="{{ $Screen->IconsBackgroundColor}}"
+                                            onchange="this.style.background = this.value; console.log('done')"/>
+                                            @error('IconsBackgroundColor')
+                                                <span
+                                                    class="text-danger error">{{$message }}</span>
+                                            @enderror
+                                        </div>
+                                        <div class="input-group">
+                                            <label for="IconsColor">Icons Color</label>
+                                            <input type="color" name="IconsColor" id="color-range" class="color-range" value="{{ $Screen->IconsColor}}"
+                                            onchange="this.style.background = this.value; console.log('done')"/>
+                                            @error('IconsColor')
+                                                <span
+                                                    class="text-danger error">{{$message }}</span>
+                                            @enderror
+                                        </div>
+                                        <div class="btns-group">
+                                            <a href="#" class="btn btn-prev">Previous</a>
+                                            <input type="submit" value="Submit" class="btn" />
+                                        </div>
+                                    </div>
                                 </form>
                             </div>
                         </div>
@@ -151,7 +114,4 @@
                 </div>
             </div>
         </div>
-        </footer>
-    </div>
-
-@endsection
+    @endsection

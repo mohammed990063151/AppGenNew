@@ -10,46 +10,41 @@ use Illuminate\Routing\Controller;
 
 class ScreenController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+
     public function index()
     {
         $Screen = screen::with("app_profile")->get();
         $profile = app_profile::all();
-        // return $profile;
         return view('clients.Screen.Screen.index', compact('Screen', 'profile'));
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+
     public function create($id)
     {
-        // $Screen = screen::with("app_profile")->get();
-        // $profile = app_profile::all();, compact('Screen', 'profile')
+
         $profile = app::find($id);
         return view('clients.Screen.Screen.create', compact('profile'));
     }
 
+    public function create1($id)
+    {
+        $Screen = app::find($id);
+        return view('clients.Screen.Screen.create1', compact('Screen'));
+    }
+    public function create2($id)
+    {
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
+        $Screen = app::find($id);
+        return view('clients.Screen.Screen.create2', compact('Screen'));
+    }
+
     public function store(ScreenRequest $request )
     {
-        // return $request;
+
 
         try {
 
-            // return ;
+
             $Screen = new screen;
 
 
@@ -59,8 +54,6 @@ class ScreenController extends Controller
             $Screen->image = $imagename;
 
 
-            // $Screen->profile_id = $request->profile_id;
-
             $Screen->Discrption1st = $request->Discrption1st;
 
             $Screen->Color = $request->Color;
@@ -69,40 +62,27 @@ class ScreenController extends Controller
             $Screen->IconsBackgroundColor = $request->IconsBackgroundColor;
             $Screen->IconsColor = $request->IconsColor;
             $Screen->app_id = $request->app_id;
-            // $Screen->screen_type = $request->screen_type;
+
 
             $Screen->save();
 
-            //  return redirect('/Screenes');
-            // DB::commit();
-            // $Screen=app_profile::get()->where("profile_id")->last();
-
-            // if($Screen->id)
             return redirect()->route('Screen.create1',$Screen->app_id);
-            // else
-            // return response()->json(['message' => 'error message'], 500);
 
-            // DB::commit();
         } catch (\Exception $ex) {
-            // DB::rollback();
+
             return $ex;
             return redirect('/Screenes')->with(['error' => 'حدث خطا ما برجاء المحاوله لاحقا']);
         }
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  \App\Models\screen  $screen
-     * @return \Illuminate\Http\Response
-     */
+
     public function store1(ScreenRequest $request)
     {
- // return $request;
+
 
  try {
 
-    // return ;
+
     $Screen = new screen;
 
 
@@ -112,8 +92,6 @@ class ScreenController extends Controller
     $Screen->image = $imagename;
 
 
-    // $Screen->profile_id = $request->profile_id;
-
     $Screen->Discrption1st = $request->Discrption1st;
 
     $Screen->Color = $request->Color;
@@ -122,144 +100,32 @@ class ScreenController extends Controller
     $Screen->IconsBackgroundColor = $request->IconsBackgroundColor;
     $Screen->IconsColor = $request->IconsColor;
     $Screen->app_id = $request->app_id;
-    // $Screen->screen_type = $request->screen_type;
+
 
     $Screen->save();
 
-    //  return redirect('/Screenes');
-    // DB::commit();
+
     return redirect()->route('Screen.create2', $Screen->app_id);
-    // DB::commit();
+
 } catch (\Exception $ex) {
-    // DB::rollback();
+
     return $ex;
     return redirect('/Screenes');
 }
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\Models\screen  $screen
-     * @return \Illuminate\Http\Response
-     */
-    public function edit($id)
-    {
-        // $Screen = screen::find($id);
-        // $profile = app_profile::get();
-
-        // return view('clients.Screen.Screen.edit', compact('Screen', 'profile'));
-        // $Screen=screen::where("app_id",$id)->latest()->get()->first();
-        // $applcation = app::get();
-        // dd($Screen);
-        $Screen=screen::find($id);
-        return view('clients.Screen.Screen.edit', compact('Screen'));
-    }
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\screen  $screen
-     * @return \Illuminate\Http\Response
-     */
-    public function update(request $request, $id)
-    {
-
-        // try {
-            // return $request;
-            $Screen = screen::find($id);
-            if (!$Screen)
-                return redirect()->route('clients.Screen.Screen.edit')->with(['error' => 'not found']);
-
-            $image = $request->image;
-
-
-            $imagename = time() . '.' . $image->getClientOriginalExtension();
-
-            $request->image->move('screen', $imagename);
-
-            $Screen->image = $imagename;
-
-
-            $Screen->profile_id = $request->profile_id;
-
-            $Screen->Discrption1st = $request->Discrption1st;
-            $Screen->Color = $request->Color;
-            $Screen->ContainarButtonBarColor = $request->ContainarButtonBarColor;
-            $Screen->IconsColor = $request->IconsColor;
-            $Screen->app_id = $request->app_id;
-            $Screen->screen_type = $request->screen_type;
 
 
 
 
-            $Screen->save();
-            $Screen=screen::where("app_id",$id)->latest()->get()->first();
-            return  view('clients.Screen.Screen.edit1', compact('Screen'));
-            // return redirect()->route('Screen.edit1',$Screen);
-            //  DB::commit();
-            // return redirect('/Screenes')->with(['success' => 'ok']);
-            // DB::commit();
-        // } catch (\Exception $ex) {
-            // DB::rollback();
-                // return $ex;
-            return redirect('/Screenes')->with(['error' => 'حدث خطا ما برجاء المحاوله لاحقا']);
-        // }
 
 
-        // return redirect('/Screenes');
-    }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  \App\Models\screen  $screen
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy(request $request, $id)
-    {
-        try {
-            $id = $request->id;
-            screen::find($id)->delete();
-            return redirect('/Screenes')->with(['success' => 'ok']);
-            // DB::commit();
-        } catch (\Exception $ex) {
-            // DB::rollback();
-            //   /  return $ex;
-            return redirect('/Screenes')->with(['error' => 'حدث خطا ما برجاء المحاوله لاحقا']);
-        }
-
-        return redirect('/Screenes');
-    }
-
-
-    public function create1($id)
-    {
-        // $Screen = screen::with("app_profile")->get();
-        // $profile = app_profile::all();, compact('Screen', 'profile')
-
-
-        $Screen = app::find($id);
-        return view('clients.Screen.Screen.create1', compact('Screen'));
-    }
-    public function create2($id)
-    {
-        // $Screen = screen::with("app_profile")->get();
-        // $profile = app_profile::all();, compact('Screen', 'profile')
-
-
-        $Screen = app::find($id);
-        return view('clients.Screen.Screen.create2', compact('Screen'));
-    }
 
     public function store2(ScreenRequest $request)
     {
- // return $request;
 
  try {
-
-    // return ;
     $Screen = new screen;
 
 
@@ -267,9 +133,6 @@ class ScreenController extends Controller
     $imagename = time() . '.' . $image->getClientOriginalExtension();
     $request->image->move('screen', $imagename);
     $Screen->image = $imagename;
-
-
-    // $Screen->profile_id = $request->profile_id;
 
     $Screen->Discrption1st = $request->Discrption1st;
 
@@ -279,16 +142,9 @@ class ScreenController extends Controller
     $Screen->IconsBackgroundColor = $request->IconsBackgroundColor;
     $Screen->IconsColor = $request->IconsColor;
     $Screen->app_id = $request->app_id;
-    // $Screen->screen_type = $request->screen_type;
-
     $Screen->save();
-
-    //  return redirect('/Screenes');
-    // DB::commit();
     return  redirect('/application');
-    // DB::commit();
 } catch (\Exception $ex) {
-    // DB::rollback();
     return $ex;
     return redirect('/Screenes');
 }
@@ -296,107 +152,124 @@ class ScreenController extends Controller
 
 
 
+    public function edit($id)
+    {
 
+        $Screen=screen::find($id);
+        return view('clients.Screen.Screen.edit', compact('Screen'));
+    }
 
 
 
 public function edit1($id)
 {
-    // $Screen = screen::find($id);
-    // $profile = app_profile::get();
-
-    // return view('clients.Screen.Screen.edit', compact('Screen', 'profile'));
-    // $Screen=screen::where("app_id",$id)->latest()->get()->first();
-    // $applcation = app::get();
     $Screen=screen::find($id);
     return view('clients.Screen.Screen.edit1', compact('Screen'));
 
 
 }
-/**
- * Update the specified resource in storage.
- *
- * @param  \Illuminate\Http\Request  $request
- * @param  \App\Models\screen  $screen
- * @return \Illuminate\Http\Response
- */
-public function update1(ScreenRequest $request, $id)
-{
-
-    try {
-        // return $request;
-        $Screen = screen::find($id);
-        if (!$Screen)
-            return redirect()->route('clients.Screen.Screen.edit')->with(['error' => 'not found']);
-
-        $image = $request->image;
-
-
-        $imagename = time() . '.' . $image->getClientOriginalExtension();
-
-        $request->image->move('screen', $imagename);
-
-        $Screen->image = $imagename;
-
-
-        // $Screen->profile_id = $request->profile_id;
-
-        $Screen->Discrption1st = $request->Discrption1st;
-        $Screen->Color = $request->Color;
-        $Screen->ContainarButtonBarColor = $request->ContainarButtonBarColor;
-        $Screen->IconsColor = $request->IconsColor;
-        $Screen->app_id = $request->app_id;
-
-
-
-
-        $Screen->save();
-        $Screen=screen::where("app_id",$id)->latest()->get()->first();
-        return redirect()->route('Screen.edit2', $Screen );
-
-    } catch (\Exception $ex) {
-        // DB::rollback();
-        //    / return $ex;
-        return redirect('/Screenes')->with(['error' => 'حدث خطا ما برجاء المحاوله لاحقا']);
-    }
-
-    return redirect('/Screenes');
-}
-
-
 public function edit2($id)
 {
-    // $Screen = screen::find($id);
-    // $profile = app_profile::get();
 
-    // return view('clients.Screen.Screen.edit', compact('Screen', 'profile'));
     $Screen=screen::find($id);
-    // $applcation = app::get();
-    // return $Screen;
+
     return view('clients.Screen.Screen.edit2', compact('Screen'));
 
 
 
 
 }
-/**
- * Update the specified resource in storage.
- *
- * @param  \Illuminate\Http\Request  $request
- * @param  \App\Models\screen  $screen
- * @return \Illuminate\Http\Response
- */
+
+public function update(request $request, $id)
+{
+
+    try {
+
+        $Screen = screen::find($id);
+        if (!$Screen)
+            return redirect()->route('clients.Screen.Screen.edit')->with(['error' => 'not found']);
+
+        $image = $request->image;
+
+        if($image){
+        $imagename = time() . '.' . $image->getClientOriginalExtension();
+
+        $request->image->move('screen', $imagename);
+
+        $Screen->image = $imagename;
+
+        }
+
+
+        $Screen->Discrption1st = $request->Discrption1st;
+        $Screen->Color = $request->Color;
+        $Screen->ContainarButtonBarColor = $request->ContainarButtonBarColor;
+        $Screen->IconsColor = $request->IconsColor;
+        $Screen->screen_type = $request->screen_type;
+
+
+
+
+        $Screen->save();
+        return redirect()->route('application.edit', $Screen->app_id);
+
+    } catch (\Exception $ex) {
+        return redirect('/application')->with(['error' => 'حدث خطا ما برجاء المحاوله لاحقا']);
+
+    }
+}
+
+
+
+public function update1(ScreenRequest $request, $id)
+{
+
+    try {
+
+        $Screen = screen::find($id);
+        if (!$Screen)
+            return redirect()->route('clients.Screen.Screen.edit')->with(['error' => 'not found']);
+
+        $image = $request->image;
+
+        if($image){
+        $imagename = time() . '.' . $image->getClientOriginalExtension();
+
+        $request->image->move('screen', $imagename);
+
+        $Screen->image = $imagename;
+        }
+
+
+
+        $Screen->Discrption1st = $request->Discrption1st;
+        $Screen->Color = $request->Color;
+        $Screen->ContainarButtonBarColor = $request->ContainarButtonBarColor;
+        $Screen->IconsColor = $request->IconsColor;
+
+        $Screen->save();
+            return redirect()->route('application.edit', $Screen->app_id);
+
+        } catch (\Exception $ex) {
+            return redirect('/application')->with(['error' => 'حدث خطا ما برجاء المحاوله لاحقا']);
+
+        }
+}
+
+
+
+
 public function update2(ScreenRequest $request, $id)
 {
 
     try {
-        // return $request;
+
         $Screen = screen::find($id);
         if (!$Screen)
             return redirect()->route('clients.Screen.Screen.edit2')->with(['error' => 'not found']);
 
         $image = $request->image;
-
+        if($image){
 
         $imagename = time() . '.' . $image->getClientOriginalExtension();
 
@@ -404,32 +277,35 @@ public function update2(ScreenRequest $request, $id)
 
         $Screen->image = $imagename;
 
+        }
 
-        // $Screen->profile_id = $request->profile_id;
 
         $Screen->Discrption1st = $request->Discrption1st;
         $Screen->Color = $request->Color;
         $Screen->ContainarButtonBarColor = $request->ContainarButtonBarColor;
         $Screen->IconsColor = $request->IconsColor;
-        $Screen->app_id = $request->app_id;
-        // $Screen->screen_type = $request->screen_type;
-
-
-
 
         $Screen->save();
-        return  redirect('/application');
-        //  DB::commit();
-        // return redirect('/Screenes')->with(['success' => 'ok']);
-        // DB::commit();
+        return redirect()->route('application.edit', $Screen->app_id);
+
     } catch (\Exception $ex) {
-        // DB::rollback();
-        //    / return $ex;
+        return redirect('/application')->with(['error' => 'حدث خطا ما برجاء المحاوله لاحقا']);
+
+    }
+
+
+}
+public function destroy(request $request, $id)
+{
+    try {
+        $id = $request->id;
+        screen::find($id)->delete();
+        return redirect('/Screenes')->with(['success' => 'ok']);
+
+    } catch (\Exception $ex) {
         return redirect('/Screenes')->with(['error' => 'حدث خطا ما برجاء المحاوله لاحقا']);
     }
 
     return redirect('/Screenes');
 }
-
-
 }

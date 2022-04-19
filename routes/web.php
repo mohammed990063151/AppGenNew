@@ -66,7 +66,7 @@ Route::group(['prefix' => LaravelLocalization::setLocale()], function () {
         /// start profile
         Route::group(['prefix' => 'profile'], function () {
             Route::get('/', [ProfileController::class, 'index'])->name('profile.index');
-            Route::get('create', [ProfileController::class, 'create'])->name('profile.create');
+            Route::get('create/{id}', [ProfileController::class, 'create'])->name('profile.create');
             Route::POST('store', [ProfileController::class, 'store'])->name('profile.store');
             Route::get('edit/{id}', [ProfileController::class, 'edit'])->name('profile.edit');
             Route::post('update/{id}', [ProfileController::class, 'update'])->name('profile.update');
@@ -79,8 +79,9 @@ Route::group(['prefix' => LaravelLocalization::setLocale()], function () {
             Route::get('create', [ApplicationController::class, 'create'])->name('application.create');
             Route::post('store', [ApplicationController::class, 'store'])->name('application.store');
             Route::get('edit/{id}', [ApplicationController::class, 'edit'])->name('application.edit');
+            Route::get('edit_Applaction/{id}', [ApplicationController::class, 'edit_Applaction'])->name('application.edit_Applaction');
             Route::post('update/{id}', [ApplicationController::class, 'update'])->name('application.update');
-            Route::post('destroy/{id}', [ApplicationController::class, 'destroy'])->name('application.destroy');
+            Route::DELETE('delete/{id}', [ApplicationController::class, 'delete'])->name('application.delete');
             Route::get('application-details/{id}' , [ApplicationController::class , 'AddDetialsDetials'])->name('AddDetialsDetials');
         });
 

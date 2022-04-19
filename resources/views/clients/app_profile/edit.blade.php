@@ -1,300 +1,144 @@
 @extends('layouts.master')
 @section('breadceumbs')
     {{-- <x-bread-crumps> --}}
-    @component('components.bread-crumps', ['head' => 'Add New profile', 'links' => ['profile', 'Add New profile']])
+    @component('components.bread-crumps', ['head' => 'Updata profile', 'links' => ['applction', 'Updata profile']])
         @section('title')
-            Add New profile
+            Updata profile
         @stop
     @endcomponent
 @endsection
-
 @section('content')
     <div class="container-fluid py-4">
         <div class="row mt-4">
             <div class="col-lg-12 mb-lg-0 mb-4">
                 <div class="card z-index-2 h-100">
                     <div class="card-header pb-0 pt-3 bg-transparent">
-                        <div class="d-flex justify-content-between">
-                            <h6 class="text-capitalize col-4"> New profile</h6>
+                        <div class="col-md-12" style="text-align: end;">
+                            <span><a href="{{ route('application.index') }}" class="btn btn-primary" type="button">
+                                    Go Back
+                                </a></span>
+                            </div>
+                        <div class="row no-gutters">
+                            <div class="col no-gutters" style="text-align: center;">
+                                <iframe class="mobile" id="mobile_id"
+                                src="https://ahmedict6.github.io/mobile-app-genrator-app/"  >
+                            </iframe>
+                            </div>
+                            <div class="col no-gutters">
+                                <div class="form-group col-md-6" style="display: contents;">
+                                    <form action="{{route('profile.update',$profile->id)}}" method="post" enctype="multipart/form-data"  class="form">
 
-                            <span><a href="{{ route('profile.index') }}" class="btn btn-danger btn-sm" type="button">Go
-                                    Back</a></span>
-                        </div>
-                    </div>
-
-
-                    <div class="row">
-
-                        <div class="col-md-6">
-                            <div class="mt-3">
-
-                                <form action="{{route('profile.update',$profile->id)}}" method="post" enctype="multipart/form-data">
-
-                                    @csrf
-                                    <h5>{{__('translation.Add Profile details')}}</h5>
-                                    <div class="row col-md-12">
-                                        <div class="form-group col-md-6">
-                                            <label for=""> Name</label>
-                                            <input type="text" class="form-control" name="Name"
-                                            value="{{ $profile->Name}}"
-                                                aria-describedby="helpId" placeholder="">
-                                                @error('Name') <span class="text-danger error">{{ $message
-                                                }}</span>@enderror
-
-                                        </div>
-
-
-                                        <div class="form-group col-md-6">
-                                            <label for="">Email</label>
-                                            <input type="text" class="form-control" name="Email"    value="{{ $profile->Eamil}}"    value="{{ $profile->Email}}"
-                                                aria-describedby="helpId" placeholder="">
-                                                @error('Email') <span class="text-danger error">{{ $message
-                                                }}</span>@enderror
-
-                                        </div>
-
-
+                                        @csrf
+                                    <h1 class="text-center">Updata Profile</h1>
+                                    <div class="progressbar">
+                                        <div class="progress" id="progress"></div>
+                                        <div class="progress-step progress-step-active" data-title="Intro"></div>
+                                        <div class="progress-step" data-title="Link Social Media"></div>
+                                        <div class="progress-step" data-title="Follow"></div>
+                                        <div class="progress-step" data-title="Color"></div>
                                     </div>
-
-                                    <div class="row col-md-12">
-
-
-                                        <div class="form-group col-md-6">
-                                            <label for="">Facebook</label>
-                                            <input type="text" class="form-control" name="Facebook"    value="{{ $profile->Facebook}}"
-                                                aria-describedby="helpId" placeholder="">
-                                                @error('Facebook') <span class="text-danger error">{{ $message
-                                                }}</span>@enderror
-
+                                    <!-- Steps -->
+                                    <div class="form-step form-step-active">
+                                        <div class="input-group">
+                                            <label for="Name">Name</label>
+                                            <input type="text" name="Name" id="Name"   value="{{ $profile->Name}}"/>
+                                            @error('Name')
+                                                <span
+                                                    class="text-danger error">{{$message }}</span>
+                                            @enderror
                                         </div>
-                                        <div class="form-group col-md-6">
-                                            <label for="">Snapchat</label>
-                                            <input type="text" class="form-control" name="Snapchat"    value="{{ $profile->Snapchat}}"
-                                                aria-describedby="helpId" placeholder="">
-                                                @error('Snapchat') <span class="text-danger error">{{ $message
-                                                }}</span>@enderror
+                                        <div class="input-group">
+                                            <label for="Email">Email</label>
+                                            <input type="email" name="Email" id="Email"  value="{{ $profile->Email}}"/>
+                                            @error('Email')
+                                                <span
+                                                    class="text-danger error">{{$message }}</span>
+                                            @enderror
+                                        </div>
+                                        <div class="">
+                                            <a href="#" class="btn btn-next width-50 ml-auto">Next</a>
                                         </div>
                                     </div>
-                                    <div class="row col-md-12">
-                                        <div class="form-group col-md-6">
-                                            <label for="">Instgram</label>
-                                            <input type="text" class="form-control" name="Instgram"    value="{{ $profile->Instgram}}"
-                                                aria-describedby="helpId" placeholder="">
-                                                @error('Instgram') <span class="text-danger error">{{ $message
-                                                }}</span>@enderror
+                                    <div class="form-step">
+                                        <div class="input-group">
+                                            <label for="Facebook">Facebook</label>
+                                            <input type="text" name="Facebook" id="Facebook" value="{{ $profile->Facebook}}" />
+                                            @error('Facebook')
+                                                <span
+                                                    class="text-danger error">{{$message }}</span>
+                                            @enderror
                                         </div>
-                                        <div class="form-group col-md-6">
-                                            <label for="">Twitter</label>
-                                            <input type="text" class="form-control" name="Twitter"    value="{{ $profile->Twitter}}"
-                                                aria-describedby="helpId" placeholder="">
-                                                @error('Twitter') <span class="text-danger error">{{ $message
-                                                }}</span>@enderror
+                                        <div class="input-group">
+                                            <label for="Snapchat">Snapchat</label>
+                                            <input type="text" name="Snapchat" id="Snapchat"    value="{{ $profile->Snapchat}}"/>
+                                            @error('Snapchat')
+                                                <span
+                                                    class="text-danger error">{{$message }}</span>
+                                            @enderror
                                         </div>
-                                    </div>
-                                    <div class="row col-md-12">
-                                        <div class="form-group col-md-6">
-                                            <label for="">TikTok</label>
-                                            <input type="text" class="form-control" name="TikTok"    value="{{ $profile->TikTok}}"
-                                                aria-describedby="helpId" placeholder="">
-                                                @error('TikTok') <span class="text-danger error">{{ $message
-                                                }}</span>@enderror
-                                        </div>
-                                        <div class="form-group col-md-6">
-                                            <label for="">Social_Media_Icons_Color</label>
-                                            <input type="text" class="form-control" name="Social_Media_Icons_Color"    value="{{ $profile->Social_Media_Icons_Color}}"
-                                                aria-describedby="helpId" placeholder="">
-                                                @error('Social_Media_Icons_Color') <span class="text-danger error">{{ $message
-                                                }}</span>@enderror
+                                        <div class="btns-group">
+                                            <a href="#" class="btn btn-prev">Previous</a>
+                                            <a href="#" class="btn btn-next">Next</a>
                                         </div>
                                     </div>
-                                    <div class="row col-md-12">
-
-                                            <div class="container mt-3">
-
-                                            <div class="form-check form-switch">
-                                                <input class="form-check-input" type="hidden" id="mySwitch"
-                                                    name="is_active" value="1" checked>
-                                                {{-- <label class="form-check-label" for="mySwitch">active</label> --}}
-                                            </div>
-
-                                            <div class="form-group col-md-6">
-                                                {{-- <label class="my-1 mr-2" for="inlineFormCustomSelectPref">applaction</label> --}}
-                                        {{-- <select name="app_id" id="app_id" class="form-control" required> --}}
-                                            <input  type="hidden" class="form-control" value="{{ $profile ->id}}" name="app_id"
-                                            aria-describedby="helpId" placeholder="">
-                                            {{-- @foreach ($applcation as $applcation)
-                                                <option value="{{ $applcation }}"></option>
-                                            @endforeach --}}
-                                            @error('app_id') <span class="text-danger error">{{ $message
-                                            }}</span>@enderror
-                                        {{-- </select> --}}
-                                                </div>
-                                            <button class="btn m-1 btn-primary"> Save </button>
+                                    <div class="form-step">
+                                        <div class="input-group">
+                                            <label for="Instgram"> Instgram</label>
+                                            <input type="text" name="Instgram" id="Instgram" aria-describedby="helpId" value="{{ $profile->Instgram}}" />
+                                            @error('Instgram')
+                                                <span
+                                                    class="text-danger error">{{$message }}</span>
+                                            @enderror
                                         </div>
-
-
-
-
+                                        <div class="input-group">
+                                            <label for="Twitter">Twitter</label>
+                                            <input type="text" name="Twitter" id="Twitter" aria-describedby="helpId" value="{{ $profile->Twitter}}" />
+                                            @error('Twitter')
+                                                <span
+                                                    class="text-danger error">{{$message }}</span>
+                                            @enderror
+                                        </div>
+                                        <div class="input-group">
+                                            <label for="TikTok">TikTok </label>
+                                            <input type="text" name="TikTok" id="TikTok" aria-describedby="helpId" value="{{ $profile->TikTok}}" />
+                                            @error('TikTok')
+                                                <span
+                                                    class="text-danger error">{{$message }}</span>
+                                            @enderror
+                                        </div>
+                                        <div class="btns-group">
+                                            <a href="#" class="btn btn-prev">Previous</a>
+                                            <a href="#" class="btn btn-next">Next</a>
+                                        </div>
                                     </div>
+                                    <div class="form-step">
+                                        <div class="input-group">
+                                            <label for="Social Media botton Color">Social Media botton Color</label>
+                                            <input type="color" name="Social_Media_Icons_Color" value="{{ $profile->Social_Media_Icons_Color}}"
+                                                aria-describedby="helpId"
+                                                onchange="this.style.background = this.value; console.log('done')"
+                                                />
+                                            @error('Social_Media_Icons_Color')
+                                                <span
+                                                    class="text-danger error">{{$message }}</span>
+                                            @enderror
+                                            <input type="hidden" name="is_active" value="{{ $profile ->is_active}}"
+                                                aria-describedby="helpId" />
+                                            @error('is_active')
+                                                <span
+                                                    class="text-danger error">{{$message }}</span>
+                                            @enderror
+                                        </div>
+                                        <div class="btns-group">
+                                            <a href="#" class="btn btn-prev">Previous</a>
+                                            <input type="submit" value="Submit" class="btn" />
+                                        </div>
+                                    </div>
+                                </form>
                             </div>
                         </div>
-
-
-                        <div class="col-md-6">
-                            <iframe class="mobile" id="mobile_id"
-                                src="https://ahmedict6.github.io/mobile-app-genrator-app/" />
-
-                            {{-- <div class="container">
-                                <div class="chat">
-                                    <div class="chat-header">
-                                        <div class="profile">
-                                            <div class="left">
-                                             <img src="/assets/css/img/pp.png" class="pp">
-
-                                                 <i class="fa fa-battery-quarter" aria-hidden="true"></i>
-                                                <i class="fa fa-wifi" aria-hidden="true"></i>
-                                                <i class="fa fa-map-marker" aria-hidden="true"></i>
-
-                                            </div>
-                                            <div class="right">
-                                                <h5>11:50</h5>
-
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="chat-box">
-
-
-                                        <section class="projects" id="projects">
-
-
-                                            <div class="content">
-
-
-
-
-
-
-
-                                            </div>
-                                        </section>
-
-                                        <div class="chat-l">
-                                            <div class="mess">
-                                                <p>
-                                                    <img src="../assets/img/team-1.jpg" alt="profile_image"
-                                                        class="logoapp">
-                                                    <span>msc</span>
-                                                </p>
-                                                <div class="check">
-
-                                                </div>
-                                            </div>
-                                            <div class="sp"></div>
-                                        </div>
-                                        <div class="chat-l">
-                                            <div class="mess">
-                                                <p>
-                                                    <img src="../assets/img/team-1.jpg" alt="profile_image"
-                                                        class="logoapp">
-                                                    <span>msc</span>
-                                                </p>
-                                                <div class="check">
-
-                                                </div>
-                                            </div>
-                                            <div class="sp"></div>
-                                        </div>
-                                        <div class="chat-l">
-                                            <div class="mess">
-                                                <p>
-                                                    <img src="../assets/img/team-1.jpg" alt="profile_image"
-                                                        class="logoapp">
-                                                    <span>msc</span>
-                                                </p>
-                                                <div class="check">
-
-                                                </div>
-                                            </div>
-                                            <div class="sp"></div>
-                                        </div>
-
-
-                                    </div>
-
-                                    <div class="navigationes">
-
-                                        <ul>
-
-                                            <li class="list">
-                                                <a href="#">
-                                                    <span class="icon">
-                                                        <ion-icon name="person-outline"></ion-icon>
-                                                    </span>
-                                                </a>
-                                            </li>
-
-                                            <li class="list">
-                                                <a href="#">
-                                                    <span class="icon">
-                                                        <ion-icon name="camera-outline"></ion-icon>
-                                                    </span>
-                                                </a>
-                                            </li>
-                                            <li class="list active">
-                                                <a href="#">
-                                                    <span class="icon">
-                                                        <ion-icon name="home-outline"></ion-icon>
-                                                    </span>
-                                                </a>
-                                            </li>
-                                            <li class="list">
-                                                <a href="#">
-                                                    <span class="icon">
-                                                        <ion-icon name="chatbubble-outline"></ion-icon>
-                                                    </span>
-                                                </a>
-                                            </li>
-                                            <li class="list">
-                                                <a href="#">
-                                                    <span class="icon">
-                                                        <ion-icon name="settings-outline"></ion-icon>
-                                                    </span>
-                                                </a>
-                                            </li>
-                                            <div class="indicator"></div>
-
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div> --}}
-
-
-                        </div>
                     </div>
-                </div></div>
+                </div>
             </div>
-
-            </form>
         </div>
-    </div>
-    </div>
-    </div>
-    </div>
-    </div>
-    </footer>
-    </div>
-@endsection
-
-
-
-
-
-
-
-
-
-
-
-
-{{-- <div class="_3WqBaLCYbnU_M9KuvuJiXF width-100 position-relative" style="height: 692.619px;"><div class="_1tbN39d0nYr3WRpHWsC6Ov" data-testid="hotspot-109634431" style="left: 130px; top: 604px; width: 61px; height: 57px;"></div><div class="_1tbN39d0nYr3WRpHWsC6Ov" data-testid="hotspot-109634434" style="left: 62px; top: 622px; width: 57px; height: 58px;"></div><div class="_1tbN39d0nYr3WRpHWsC6Ov" data-testid="hotspot-109634444" style="left: 202px; top: 622px; width: 56px; height: 58px;"></div><div class="_1tbN39d0nYr3WRpHWsC6Ov" data-testid="hotspot-109634445" style="left: 266px; top: 622px; width: 54px; height: 57px;"></div><div class="_1tbN39d0nYr3WRpHWsC6Ov" data-testid="hotspot-109634477" style="left: 1px; top: 622px; width: 53px; height: 59px;"></div><div></div></div> --}}
+    @endsection

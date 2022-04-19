@@ -15,7 +15,7 @@ class app extends Model
         'Discrptions',
        'WhatsApp',
         'Phone',
-        // 'Splash_Screen',
+        'Splash_Screen',
         'Logo',
         'Created_by',
         'profile_id',

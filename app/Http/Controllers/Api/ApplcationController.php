@@ -44,10 +44,13 @@ $array =[
 //         }
 
 //             }
-            $applction = app::find($id);
+            // $applction = app::find($id);
+
+            $applction = app::with('Screen', 'AppProfile')->find($id);
+            $MyApp = app::find($id);
 
             if($applction){
-                return $this->apiResponse(new ApplctionResource($applction),'ok',200);
+                return $this->apiResponse(new ApplctionResource($applction,$MyApp,$id),'ok',200);
             }
             return $this->apiResponse(null,'The apps Not Found',404);
         }

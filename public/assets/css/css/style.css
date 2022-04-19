@@ -123,7 +123,7 @@
   .container{
     position: relative;
     width: 1000px;
-    margin: 150px;
+    margin: 115;
     height: auto;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
@@ -224,3 +224,261 @@
     font-size: 18px;
     transition: 0.5s;
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+:root {
+    --primary-color: rgb(11, 78, 179);
+  }
+
+  *,
+  *::before,
+  *::after {
+    box-sizing: border-box;
+  }
+
+
+  /* Global Stylings */
+  label {
+    display: block;
+    margin-bottom: 0.5rem;
+  }
+
+  input {
+    display: block;
+    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid #ccc;
+    border-radius: 0.25rem;
+  }
+
+  .width-50 {
+    width: 50%;
+  }
+
+  .ml-auto {
+    margin-left: auto;
+  }
+
+  .text-center {
+    text-align: center;
+  }
+
+  /* Progressbar */
+  .progressbar {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    counter-reset: step;
+    margin: 2rem 0 4rem;
+  }
+
+  .progressbar::before,
+  .progress {
+    content: "";
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    height: 4px;
+    width: 100%;
+    background-color: #dcdcdc;
+    z-index: -1;
+  }
+
+  .progress {
+    background-color: var(--primary-color);
+    width: 0%;
+    transition: 0.3s;
+  }
+
+  .progress-step {
+    width: 2.1875rem;
+    height: 2.1875rem;
+    background-color: #dcdcdc;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .progress-step::before {
+    counter-increment: step;
+    content: counter(step);
+  }
+
+  .progress-step::after {
+    content: attr(data-title);
+    position: absolute;
+    top: calc(100% + 0.5rem);
+    font-size: 0.85rem;
+    color: #666 !important;
+  }
+
+  .progress-step-active {
+    background-color: var(--primary-color);
+    color: #f3f3f3 !important;
+  }
+
+  /* Form */
+  .form {
+    width: clamp(320px, 90%, 450px);
+    margin: 0 auto;
+    border: 1px solid #ccc;
+    border-radius: 0.35rem;
+    padding: 1.5rem;
+  }
+
+  .form-step {
+    display: none;
+    transform-origin: top;
+    animation: animate 0.5s;
+  }
+
+  .form-step-active {
+    display: block;
+  }
+
+  .input-group {
+    margin: 2rem 0;
+  }
+
+  @keyframes animate {
+    from {
+      transform: scale(1, 0);
+      opacity: 0;
+    }
+    to {
+      transform: scale(1, 1);
+      opacity: 1;
+    }
+  }
+
+  /* Button */
+  .btns-group {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+  }
+
+  .btn {
+    padding: 0.75rem !important;
+    display: block;
+    text-decoration: none;
+    background-color: var(--primary-color) !important;
+    color: #f3f3f3 !important;
+    text-align: center !important;
+    border-radius: 0.25rem !important;
+    cursor: pointer !important;
+    transition: 0.3s;
+  }
+  .btn:hover {
+    box-shadow: 0 0 0 2px #fff, 0 0 0 3px var(--primary-color) !important;
+  }
+
+
+
+/* form create apps */
+.cardes {
+    background-color: white;
+    border: 1px solid #333;
+    border-radius: .5rem;
+    padding: .5rem;
+    max-width: 300px;
+    margin: 0 auto;
+    animation: fade 250ms ease-in-out forwards;
+  }
+
+  .form-groupes {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: .5rem;
+    gap: .25em;
+  }
+
+  .form-groupes:last-child {
+    margin: 0;
+  }
+
+  .form-groupes > label {
+    font-weight: bold;
+    font-size: .8em;
+    color: #333 !important;
+  }
+
+  .form-groupes > input {
+    border: 1px solid #333 !important;
+    border-radius: .25em;
+    font-size: 1rem;
+    padding: .25em;
+  }
+
+  .step-title {
+    margin: 0;
+    margin-bottom: 1rem;
+    text-align: center;
+  }
+
+  .card.active {
+    animation: slide 250ms 125ms ease-in-out both;
+  }
+
+  .multi-step-form {
+    overflow: hidden;
+    position: relative;
+  }
+
+  .hide {
+    display: none;
+  }
+
+  @keyframes slide {
+    0% {
+      transform: translateX(200%);
+      opacity: 0;
+    }
+    100% {
+      transform: translateX(0);
+      opacity: 1;
+    }
+  }
+
+  @keyframes fade {
+    0% {
+      transform: scale(1);
+      opacity: 1;
+    }
+    50% {
+      transform: scale(.75);
+      opacity: 0;
+    }
+    100% {
+      opacity: 0;
+      transform: scale(0);
+    }
+  }
+
+  .mobile{
+    width: 350px;
+    height: 590px;
+    border-radius: 40px;
+    margin-top: 0px;
+    background-color: #fefdf9;
+    overflow: hidden;
+    text-align: center;
+    box-shadow:0px 1px 8px 3px rgb(0 0 0 / 20%);
+  }
+
+
+

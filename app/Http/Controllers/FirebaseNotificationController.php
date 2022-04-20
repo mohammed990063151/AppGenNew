@@ -2,11 +2,12 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\app;
+use App\Models\User;
 use App\Models\FirebaseNotification;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 use App\Events\BordcastToAllRepresetitve;
+use App\Models\app;
 use Exception;
 use Illuminate\Support\Facades\Auth;
 
@@ -25,8 +26,9 @@ class FirebaseNotificationController extends Controller
      */
     public function create()
     {
-        $applcation = app::get();
-        // notify()->success('Laravel Notify is awesome!');
+
+        $applcation = app::where('user_id' , auth()->user()->id)->get();
+        // return $applcation;
 
         return view('notification.create',compact('applcation'));
     }
@@ -50,7 +52,7 @@ class FirebaseNotificationController extends Controller
                 // 'user_id' => 'required_if:ToSpicficUser,on',
                 // 'ToSpicficUser' => 'nullable',
             ]);
-            if ($Validator->fails()) return redirect()->back()->withErrors($Validator->errors());
+            if ($Validator->fails()) return $Validator->errors(); # redirect()->back()->withErrors($Validator->errors());
             // Init Value To FileNmae Vairble
             $fileName = null;
             // Check if Exist  And Upload The Image
@@ -74,7 +76,7 @@ class FirebaseNotificationController extends Controller
                 // 'U'
                 'user_id' => $User ,
                 'image' => $fileName,
-                // 'topic' => $topic,
+                'app_id' => $request->app_id,
             ]);
             // fire Event With User Token   ---------------------
             if($request->ToSpicficUser){
@@ -89,7 +91,7 @@ class FirebaseNotificationController extends Controller
             session()->flash('success', __('translation.notifcation.send.successfuly'));
             return redirect()->route('notification.index');
         } catch (Exception $e) {
-            // return $e;
+            return $e;
             session()->flash('error', __('translation.exception.error'));
             return redirect()->back();
             return $e;

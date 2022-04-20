@@ -9,6 +9,7 @@
                             <div class="col-md-12">
                                 <div class="card">
 
+                                    {{-- @dd($applcation) --}}
 
 
                                     <div class="card-content collapse show">
@@ -52,7 +53,7 @@
                                                                 aria-describedby="helpId" placeholder="">
                                                             @error('title')
                                                                 <span class="text-danger error">
-                                                                    class="text-danger error">$message }}</span>
+                                                                    {{$message }}</span>
                                                             @enderror
                                                         </div>
                                                     </div>
@@ -63,7 +64,7 @@
 
                                                             @foreach ($applcation as $applcation)
                                                                 <option value="{{ $applcation->id }}">
-                                                                    {{ $applcation->name }}</option>
+                                                                    {{ $applcation->AppName }}</option>
                                                             @endforeach
                                                             @error('app_id')
                                                                 <small id="helpId"
@@ -78,13 +79,13 @@
                                                         <textarea name="content" id="" cols="30" rows="10" class="form-control"></textarea>
                                                         @error('content')
                                                             <span class="text-danger error">
-                                                                class="text-danger error">$message
+                                                                {{$message
                                                                 }}</span>
                                                         @enderror
                                                     </div>
                                                     <div class="col-md-6">
                                                         <div class="form-group">
-                                                            <label for="">{{ __('translation.photo') }}</< /label>
+                                                            <label for="">{{ __('translation.photo') }}</label>
                                                                 <input type="file" class="form-control" name="photo" id=""
                                                                     aria-describedby="helpId" placeholder="">
                                                         </div>

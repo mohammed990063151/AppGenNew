@@ -15,11 +15,15 @@ return new class extends Migration
     {
                     Schema::create('apps', function (Blueprint $table) {
                         $table->id();
-                        $table->string('name', 999);
-                        $table->string('link');
-                        $table->string('version', 999)->nullable();
-                        $table->string('image')->nullable();
-                        $table->foreignId('user_id')->references('id')->on('users');
+                        $table->string('AppName');
+                        $table->string('Link');
+                        $table->string('Discrptions');
+                        $table->string('WhatsApp');
+                        $table->string('Phone');
+                        $table->string('Splash_Screen')->nullable();
+                        $table->string('version')->nullable();
+                        $table->string('Logo')->nullable();
+                        $table->foreignId('user_id')->references('id')->on('users')->nullable();
                         $table->timestamps();
                     });
     }

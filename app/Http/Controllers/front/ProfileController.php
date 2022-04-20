@@ -43,7 +43,7 @@ class ProfileController extends BaseController
             if (!$request->has('is_active'))
                 $request->request->add(['is_active' => 0]);
             else
-                $profile = new app_profile;
+            $profile = new app_profile;
             $profile->Name = $request->Name;
             $profile->Email = $request->Email;
             $profile->Facebook = $request->Facebook;

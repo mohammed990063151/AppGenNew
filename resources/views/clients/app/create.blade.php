@@ -39,6 +39,15 @@
                                             <div class="progress-step" data-title="Logo"></div>
                                         </div>
                                         <!-- Steps -->
+                                        {{-- <div class="form-step form-step-active">
+                                            <div class="input-group">
+                                                <label for="username">Name</label>
+                                                <input type="text" name="user_id" value="{{ $Applction->id }}" />
+                                                @error('AppName')
+                                                    <span
+                                                        class="text-danger error">{{$message }}</span>
+                                                @enderror
+                                            </div> --}}
                                         <div class="form-step form-step-active">
                                             <div class="input-group">
                                                 <label for="username">Name</label>
@@ -107,6 +116,11 @@
                                                 @error('Logo')
                                                     <span
                                                         class="text-danger error">{{$message }}</span>
+                                                @enderror
+                                                <input type="hidden" name="user_id" value="{{Auth::User()->name}}"
+                                                    aria-describedby="helpId" />
+                                                @error('user_id')
+                                                    <span class="text-danger error">{{ $message }}</span>
                                                 @enderror
                                             </div>
                                             <div class="btns-group">

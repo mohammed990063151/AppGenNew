@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Http\Controllers\front;
-
+use App\Models\User;
 use App\Models\app;
 use App\Models\app_profile;
 use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
@@ -10,6 +10,7 @@ use Illuminate\Foundation\Validation\ValidatesRequests;
 use Illuminate\Http\Request;
 use App\Http\Requests\ApplctionRequest;
 use Illuminate\Routing\Controller as BaseController;
+use Illuminate\Support\Facades\Auth;
 
 class ApplicationController extends BaseController
 {
@@ -26,42 +27,49 @@ class ApplicationController extends BaseController
 
     public function create()
     {
+        // $applcation = User::where->get();
+        $Applction = app::all();
 
-        $Applction = app::get();
         return view('clients.app.create', compact('Applction'));
     }
 
 
     public function store(request $request)
     {
-
+// return  $request;
         try {
+
             $Applction = new app;
 
 
-            $image = $request->Logo;
-            $imagename = time() . '.' . $image->getClientOriginalExtension();
+            $Logo = $request->Logo;
+            if($Logo){
+            $imagename = time() . '.' . $Logo->getClientOriginalExtension();
             $request->Logo->move('app', $imagename);
             $Applction->Logo = $imagename;
-
+            }
             $image = $request->Splash_Screen;
+            if( $image){
             $imagename = time() . '.' . $image->getClientOriginalExtension();
             $request->Splash_Screen->move('app', $imagename);
             $Applction->Splash_Screen = $imagename;
 
-
+            }
             $Applction->AppName = $request->AppName;
             $Applction->Link = $request->Link;
             $Applction->Discrptions = $request->Discrptions;
             $Applction->Phone = $request->Phone;
             $Applction->WhatsApp = $request->WhatsApp;
+            $Applction->user_id = (Auth::User()->id);
+            // 'user_id' => (Auth::User()->name);
+// dd($Applction);
 
             $Applction->save();
             return redirect()->route('profile.create', $Applction->id);
         } catch (\Exception $ex) {
 
             return $ex;
-            return redirect('/application')->with(['error' => 'حدث خطا ما برجاء المحاوله لاحقا']);
+            return redirect('/application');
         }
     }
     public function edit($id)

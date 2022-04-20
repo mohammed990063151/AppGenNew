@@ -11,32 +11,13 @@ use Illuminate\Support\Facades\Auth;
 class TicketController extends Controller
 {
     public function index(){
-
-
+        // return 'ia   m comming from add';
         $allTicket = null;
-
         if(Auth::guard('admin')->check()){
             $allTicket = Ticket::with('User' , 'Topic')->get();
-
         }else{
-
             $allTicket = Ticket::with('User' , 'Topic')->where('sender',  auth()->user()->id)->get();
-
         }
-
-
-        // return $allTicket;
-        // $allTicket = Ticket::with('topic')   ->get();
-        // return $allTicket;// dd($data);
-       // $ticket = Ticketmassege::all();
-    //    auth::admin();
-    //    if($Ticket->ticketmassege==)
-    //    Ticketmassege::get('allticket');
-    //    else
-    //    Ticket::with("Ticketmassege")->find('clients');
-
-
-
         return view('clients.Technical_support.index' ,compact('allTicket'));
 
     }
@@ -48,22 +29,15 @@ class TicketController extends Controller
 
 public function store(Request $request)
 {
-    // return $request;
-    Ticket::create([
-
-
-        // 'titel' => $request->titel,
-          #$request->titel,
+    // function working successfuly 100%  ------------------------------
+    $Toiket = Ticket::create([
         'status'=>'Pending',
         'subject' =>$request->subject,
         'sender'=>Auth::user()->id,
         'topic_id' => $request->topic_selected,
    ]);
-//    haiyyyyyy
-   return redirect()-> route(  (Auth::guard('admin')->check()?'admin.':'').'ticket.index');
-   // DB::commit();
+   return redirect()->route((Auth::guard('admin')->check() ?'admin.':'').'ticket.index');
 }
-
 public function show($id){
 
 }

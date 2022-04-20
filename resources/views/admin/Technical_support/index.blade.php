@@ -33,19 +33,10 @@
                                   <td>{{_('translation.options')}}</td>     
                                 </tr>
                             </thead>
-                                
-                            
-                            
                             <tbody>
-                                    
                                     @forelse ($allTicket as $i => $data )
-                                    
-                                
                              <tbody>
-                                
-                               
                                 <tr>
-                                   
                                     <td>{{$i}}</td>
                                     <td>{{$data->subject}}</td>
                                     <td>{{($data->Topic->topicname) ?? ' - '}}</td>
@@ -58,25 +49,13 @@
                                     
                                     <form action="{{route('ticket.create' )}}" method="post" style="display:inline">
                                         @csrf
-                                        {{-- @method('DELETE') --}}
-      
-                                    </form>
-                                    
-                                    {{-- <a href="{{route('' , $data->id)}}" class="btn btn-info btn-icon-split"> --}}
-
-                                            
+                                    </form>   
                                 </tr>
                                 
                              </tbody>
                              @empty
                              <p>No users</p>
-
                              @endforelse
-                       
-                       
-                       
-                       
-                       
                             </table>
                     </div>
                 </div>

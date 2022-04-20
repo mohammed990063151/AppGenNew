@@ -14,12 +14,12 @@ class Ticketmassege extends Model
         'text',
         'ticket_id',
         'sender',
-        
-      
     ];
     public function Topic(){
-return $this->belongsTo(Topic::class);
+        return $this->belongsTo(Topic::class);
     }
+
+   
     
 }
 

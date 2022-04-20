@@ -8,6 +8,7 @@
                     <div class="card-header pb-0 pt-3 bg-transparent">
                         <div class="row">
                             <h6 class="text-capitalize col-4"> add ticket</h6>
+
                             <div class="col-6"></div>
                             <div class="col-2">
                        
@@ -15,16 +16,17 @@
                         </div>
                         <div class="col-md-12">
                             <div class="mt-3">
+                                
                                 @include('clients.alerts.success')
                                 @include('clients.alerts.errors')
                                 <form action="{{route('ticket.store')}}" method="post" enctype="multipart/form-data">
                                     @csrf
-                                  
+                        
                                     <div class="row col-md-12">
                                         <div class="form-group row">
 
-                                            <div class="form-group col-md-6">
-                                                <label for="">{{_('translation.subject')}}</label>
+                                            <div class="form-group col-md-6" >
+                                                <label for="" style="text-align:left;">{{_('translation.subject')}}</label>
                                                 <input type="text" class="form-control" name="subject" id="subject"
                                                      placeholder="">
                                                 @error('subject')
@@ -37,8 +39,7 @@
                                             <select class="form-control" id="" name="topic_selected" >
                                          <option value="1" >network</option>        
                                          <option value="2" >windows</option>        
-                                         <option value="3" >tibaaaaz</option>     
-                                          {{-- <option value="{{$topic->id}}">{{ $topic->topic1}}</option> --}}
+                                         <option value="3" >alhakmabe</option>     
                                          </select>
                                             @error('topic')
                                             <small id="helpId" class="form-text text-danger text-muted">{{$message}}</small>
@@ -60,7 +61,7 @@
                                     </div></div></div>
 
 
-                                <button class="btn m-4 btn-primary"> {{_('translation.Save')}} </button>
+                                <button class="btn m-4 btn-primary" style="text-align:left; "> {{_('translation.Save')}} </button>
                                 </form>
                             </div>
                         </div>
@@ -71,3 +72,12 @@
         </footer>
     </div>
     @endsection
+
+
+
+{{--     
+    <select class="form-control" name="topic_selected" id="">
+        <option value=""></option>
+         @foreach($topic_selected as $topic_selected)
+        <option value="{{$topic->topicname}}" {{$topic_selected->topicname == $topic->topicname  ? 'topicname' : ''}}></option>
+        @endforeach</select> --}}

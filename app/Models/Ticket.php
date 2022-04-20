@@ -56,7 +56,11 @@ class Ticket extends Model
     public function Topic(){
         return $this->belongsTo(Topic::class,'topic_id');
             }
-    
+            #acsseson............................
+            public function getCreatedAtAttribute($key)
+            {
+                return Carbon::parse($key)->diffForHumans();
+            }
             
     }
     

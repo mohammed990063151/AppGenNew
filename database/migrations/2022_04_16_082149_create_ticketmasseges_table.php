@@ -15,14 +15,10 @@ class CreateTicketmassegesTable extends Migration
     {
         Schema::create('ticketmasseges', function (Blueprint $table) {
             $table->id();
-            
-            
             $table->string('text');
-            
             $table->integer('ticket_id');
-           
-            $table->integer('sender')->default(0);
-            $table->integer('admin_id')->default(0);
+            $table->integer('sender')->nullable();
+            $table->integer('admin_id')->nullable();
             $table->timestamps();
         });
     }

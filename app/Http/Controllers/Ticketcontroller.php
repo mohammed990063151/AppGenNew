@@ -10,8 +10,8 @@ use Illuminate\Support\Facades\Auth;
 
 class TicketController extends Controller
 {
-    public function index(){  
-        // return 'iam comming from add';
+    public function index(){
+        // return 'ia   m comming from add';
         $allTicket = null;
         if(Auth::guard('admin')->check()){
             $allTicket = Ticket::with('User' , 'Topic')->get();
@@ -23,7 +23,7 @@ class TicketController extends Controller
     }
     public function create()
     {
-        
+
         return view('clients.Technical_support.create');
     }
 
@@ -34,16 +34,16 @@ public function store(Request $request)
         'status'=>'Pending',
         'subject' =>$request->subject,
         'sender'=>Auth::user()->id,
-        'topic_id' => $request->topic_selected,  
-   ]);  
+        'topic_id' => $request->topic_selected,
+   ]);
    return redirect()->route((Auth::guard('admin')->check() ?'admin.':'').'ticket.index');
 }
 public function show($id){
-    
+
 }
 
 // public function massege(Request $request){
-    
+
 
 //
    // DB::rollback();
@@ -74,7 +74,7 @@ public function show($id){
 //              $data->titel=$request->titel;
 //              $data->atatus=$request->atatus;
 //              $data->topic=$request->topic;
-             
+
 
 //              $data->save();
 //             //  DB::commit();
@@ -94,12 +94,12 @@ public function show($id){
 //             $id = $request->id;
 //             Ticket::find($id)->delete();
 //             return redirect('/ticket');
-        
+
 //             return redirect('/ticket') ->route('ticket.index');
 //         }
 
-            
-            
+
+
 
 //             public function Dashboard( ){
 
@@ -114,8 +114,7 @@ public function show($id){
 
                 // return redirect()-> route('ticket.index');
                 // DB::commit();
-           
+
                 // return redirect('/ticket') -> route('ticket.index');
-            
-    
-    
+
+

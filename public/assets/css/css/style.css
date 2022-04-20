@@ -344,6 +344,8 @@
     display: none;
     transform-origin: top;
     animation: animate 0.5s;
+    overflow:scroll;
+    height: 350px;
   }
 
   .form-step-active {

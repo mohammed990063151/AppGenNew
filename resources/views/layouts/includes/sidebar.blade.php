@@ -32,7 +32,7 @@
                     <span class="nav-link-text ms-1">{{ __('translation.Application') }}</span>
                 </a>
             </li>
-            <li class="nav-item">
+            {{-- <li class="nav-item">
                 <a class="nav-link  {{ request()->is('profile.index') ? 'active' : '' }} "
                     href="{{ route('profile.index') }}">
 
@@ -41,8 +41,8 @@
                         <i class="ni ni-tv-2 text-primary text-sm opacity-10"></i>
                     </div>
                     <span class="nav-link-text ms-1">{{ __('translation.App_profile') }}</span>
-                </a>
-            </li>
+                </a> --}}
+            {{-- </li> --}}
             <li class="nav-item">
 
                 <a class="nav-link  {{ request()->is('notification') ? 'active' : '' }}  "
@@ -104,7 +104,7 @@
                     </div>
                     <span class="nav-link-text ms-1">Sign Up</span>
                 </a>
-            </li> --}} 
+            </li> --}}
         </ul>
     </div>
 </aside>

@@ -37,8 +37,9 @@ class FirebaseNotification extends Model
     }
     public function app()
     {
-    return $this->belongsTo(app::class);
+    return $this->belongsTo(User::class);
     }
+
 
 }
 

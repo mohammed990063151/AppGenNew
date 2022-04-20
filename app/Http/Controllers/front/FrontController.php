@@ -1,6 +1,9 @@
 <?php
 
 namespace App\Http\Controllers\front;
+use App\Models\app;
+use App\Models\FirebaseNotification;
+use App\Models\Ticketmassege;
 
 use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
 use Illuminate\Foundation\Bus\DispatchesJobs;
@@ -15,9 +18,43 @@ class FrontController extends BaseController
 
     public function index()
     {
+        $chartjs = app()->chartjs
+        ->name('lineChartTest')
+        ->type('line')
+        ->size(['width' => 400, 'height' => 200])
+        ->labels(['January', 'February', 'March', 'April', 'May', 'June', 'July'])
+        ->datasets([
+            [
+                "label" => "My First dataset",
+                'backgroundColor' => "rgba(38, 185, 154, 0.31)",
+                'borderColor' => "rgba(38, 185, 154, 0.7)",
+                "pointBorderColor" => "rgba(38, 185, 154, 0.7)",
+                "pointBackgroundColor" => "rgba(38, 185, 154, 0.7)",
+                "pointHoverBackgroundColor" => "#fff",
+                "pointHoverBorderColor" => "rgba(220,220,220,1)",
+                'data' => [65, 59, 80, 81, 56, 55, 40],
+            ],
+            [
+                "label" => "My Second dataset",
+                'backgroundColor' => "rgba(38, 185, 154, 0.31)",
+                'borderColor' => "rgba(38, 185, 154, 0.7)",
+                "pointBorderColor" => "rgba(38, 185, 154, 0.7)",
+                "pointBackgroundColor" => "rgba(38, 185, 154, 0.7)",
+                "pointHoverBackgroundColor" => "#fff",
+                "pointHoverBorderColor" => "rgba(220,220,220,1)",
+                'data' => [12, 33, 44, 44, 55, 23, 40],
+            ]
+        ])
+        ->options([]);
 
-        return view('clients.dashboard');
-    }
+return view('clients.dashboard', compact('chartjs'));
+
+        
+
+      }
+
+        // return view('clients.dashboard');
+    // }
 
     /**
      * Show the form for creating a new resource.
@@ -29,16 +66,5 @@ class FrontController extends BaseController
         return view('packages.create');
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store(Request $request)
-    {
 
-
-
-    }
 }

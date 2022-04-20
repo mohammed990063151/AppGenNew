@@ -44,14 +44,15 @@
                                 <div class="col-8">
                                     <div class="numbers">
                                         <p class="text-sm mb-0 text-uppercase font-weight-bold">
-                                            {{ __('translation.Today\'s_Money') }}</p>
+                                            {{-- {{ __('translation.Today\'s_Money') }}</p> --}}
+                                             All Applcation</p>
                                         <h5 class="font-weight-bolder">
-                                            $53,000
+                                            {{ \App\Models\app::count() }}
                                         </h5>
-                                        <p class="mb-0">
+                                        {{-- <p class="mb-0">
                                             <span class="text-success text-sm font-weight-bolder">+55%</span>
                                             {{ __('translation.since_yesterday') }}
-                                        </p>
+                                        </p> --}}
                                     </div>
                                 </div>
                                 <div class="col-4 text-end">
@@ -71,14 +72,15 @@
                                 <div class="col-8">
                                     <div class="numbers">
                                         <p class="text-sm mb-0 text-uppercase font-weight-bold">
-                                            {{ __('translation.Today\'s Users') }}</p>
+                                            {{-- {{ __('translation.Today\'s Users') }}</p> --}}
+                                            Notification</p>
                                         <h5 class="font-weight-bolder">
-                                            2,300
+                                            {{ \App\Models\FirebaseNotification::count() }}
                                         </h5>
-                                        <p class="mb-0">
+                                        {{-- <p class="mb-0">
                                             <span class="text-success text-sm font-weight-bolder">+3%</span>
                                             {{ __('translation.since_last_week') }}
-                                        </p>
+                                        </p> --}}
                                     </div>
                                 </div>
                                 <div class="col-4 text-end">
@@ -98,14 +100,15 @@
                                 <div class="col-8">
                                     <div class="numbers">
                                         <p class="text-sm mb-0 text-uppercase font-weight-bold">
-                                            {{ __('translation.New_Clients') }}</p>
+                                            {{-- {{ __('translation.New_Clients') }}</p> --}}
+                                            Ticket Massege
                                         <h5 class="font-weight-bolder">
-                                            +3,462
+                                            {{-- {{ \App\Models\Ticketmassege::count() }} --}}
                                         </h5>
-                                        <p class="mb-0">
+                                        {{-- <p class="mb-0">
                                             <span class="text-danger text-sm font-weight-bolder">-2%</span>
                                             {{ __('translation.since_last_quarter') }}
-                                        </p>
+                                        </p> --}}
                                     </div>
                                 </div>
                                 <div class="col-4 text-end">
@@ -125,14 +128,15 @@
                                 <div class="col-8">
                                     <div class="numbers">
                                         <p class="text-sm mb-0 text-uppercase font-weight-bold">
-                                            {{ __('translation.Sales') }}</p>
+                                            {{-- {{ __('translation.Sales') }}</p> --}}
+                                            Download Applaction </P>
                                         <h5 class="font-weight-bolder">
-                                            $103,430
+                                            {{ \App\Models\app_profile::count() }}
                                         </h5>
-                                        <p class="mb-0">
+                                        {{-- <p class="mb-0">
                                             <span class="text-success text-sm font-weight-bolder">+5%</span>
                                             {{ __('translation.than_last_month') }}
-                                        </p>
+                                        </p> --}}
                                     </div>
                                 </div>
                                 <div class="col-4 text-end">
@@ -364,120 +368,25 @@
                             <h6 class="mb-0">{{ __('translation.Categories') }}</h6>
                         </div>
                         <div class="card-body p-3">
-                            <ul class="list-group">
-                                <li
-                                    class="list-group-item border-0 d-flex justify-content-between ps-0 mb-2 border-radius-lg">
-                                    <div class="d-flex align-items-center">
-                                        <div class="icon icon-shape icon-sm me-3 bg-gradient-dark shadow text-center">
-                                            <i class="ni ni-mobile-button text-white opacity-10"></i>
-                                        </div>
-                                        <div class="d-flex flex-column">
-                                            <h6 class="mb-1 text-dark text-sm">Devices</h6>
-                                            <span class="text-xs">250 in stock, <span class="font-weight-bold">346+
-                                                    sold</span></span>
-                                        </div>
+                            <div class="card-body" style="width: 70%">
+                                <div class="card-header bg-transparent pd-b-0 pd-t-20 bd-b-0">
+                                    <div class="d-flex justify-content-between">
+                                        <h4 class="card-title mb-0">  smsar kbonony</h4>
+                                        <i class="mdi mdi-dots-horizontal text-gray"></i>
                                     </div>
-                                    <div class="d-flex">
-                                        <button
-                                            class="btn btn-link btn-icon-only btn-rounded btn-sm text-dark icon-move-right my-auto"><i
-                                                class="ni ni-bold-right" aria-hidden="true"></i></button>
-                                    </div>
-                                </li>
-                                <li
-                                    class="list-group-item border-0 d-flex justify-content-between ps-0 mb-2 border-radius-lg">
-                                    <div class="d-flex align-items-center">
-                                        <div class="icon icon-shape icon-sm me-3 bg-gradient-dark shadow text-center">
-                                            <i class="ni ni-tag text-white opacity-10"></i>
-                                        </div>
-                                        <div class="d-flex flex-column">
-                                            <h6 class="mb-1 text-dark text-sm">Tickets</h6>
-                                            <span class="text-xs">123 closed, <span class="font-weight-bold">15
-                                                    open</span></span>
-                                        </div>
-                                    </div>
-                                    <div class="d-flex">
-                                        <button
-                                            class="btn btn-link btn-icon-only btn-rounded btn-sm text-dark icon-move-right my-auto"><i
-                                                class="ni ni-bold-right" aria-hidden="true"></i></button>
-                                    </div>
-                                </li>
-                                <li
-                                    class="list-group-item border-0 d-flex justify-content-between ps-0 mb-2 border-radius-lg">
-                                    <div class="d-flex align-items-center">
-                                        <div class="icon icon-shape icon-sm me-3 bg-gradient-dark shadow text-center">
-                                            <i class="ni ni-box-2 text-white opacity-10"></i>
-                                        </div>
-                                        <div class="d-flex flex-column">
-                                            <h6 class="mb-1 text-dark text-sm">Error logs</h6>
-                                            <span class="text-xs">1 is active, <span class="font-weight-bold">40
-                                                    closed</span></span>
-                                        </div>
-                                    </div>
-                                    <div class="d-flex">
-                                        <button
-                                            class="btn btn-link btn-icon-only btn-rounded btn-sm text-dark icon-move-right my-auto"><i
-                                                class="ni ni-bold-right" aria-hidden="true"></i></button>
-                                    </div>
-                                </li>
-                                <li class="list-group-item border-0 d-flex justify-content-between ps-0 border-radius-lg">
-                                    <div class="d-flex align-items-center">
-                                        <div class="icon icon-shape icon-sm me-3 bg-gradient-dark shadow text-center">
-                                            <i class="ni ni-satisfied text-white opacity-10"></i>
-                                        </div>
-                                        <div class="d-flex flex-column">
-                                            <h6 class="mb-1 text-dark text-sm">Happy users</h6>
-                                            <span class="text-xs font-weight-bold">+ 430</span>
-                                        </div>
-                                    </div>
-                                    <div class="d-flex">
-                                        <button
-                                            class="btn btn-link btn-icon-only btn-rounded btn-sm text-dark icon-move-right my-auto"><i
-                                                class="ni ni-bold-right" aria-hidden="true"></i></button>
-                                    </div>
-                                </li>
-                            </ul>
+
+                                </div>
+                                <div class="card-body" style="width: 70%">
+                                    {!! $chartjs->render() !!}
+
+                                </div>
+
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
-            <footer class="footer pt-3  ">
-                <div class="container-fluid">
-                    <div class="row align-items-center justify-content-lg-between">
-                        <div class="col-lg-6 mb-lg-0 mb-4">
-                            <div class="copyright text-center text-sm text-muted text-lg-start">
-                                ©
-                                <script>
-                                    document.write(new Date().getFullYear())
-                                </script>,
-                                made with <i class="fa fa-heart"></i> by
-                                <a href="https://www.creative-tim.com" class="font-weight-bold" target="_blank">Creative
-                                    Tim</a>
-                                for a better web.
-                            </div>
-                        </div>
-                        <div class="col-lg-6">
-                            <ul class="nav nav-footer justify-content-center justify-content-lg-end">
-                                <li class="nav-item">
-                                    <a href="https://www.creative-tim.com" class="nav-link text-muted"
-                                        target="_blank">Creative Tim</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a href="https://www.creative-tim.com/presentation" class="nav-link text-muted"
-                                        target="_blank">About Us</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a href="https://www.creative-tim.com/blog" class="nav-link text-muted"
-                                        target="_blank">Blog</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a href="https://www.creative-tim.com/license" class="nav-link pe-0 text-muted"
-                                        target="_blank">License</a>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </footer>
+         
         </div>
     </main>
     <div class="fixed-plugin">

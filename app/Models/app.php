@@ -10,7 +10,8 @@ class app extends Model
     use HasFactory;
     protected $fillable = [
         'AppName',
-        // 'version',
+        'version',
+        'user_id',
         'Link',
         'Discrptions',
        'WhatsApp',

@@ -87,7 +87,7 @@ Route::group(['prefix' => LaravelLocalization::setLocale()], function () {
             Route::get('edit_Applaction/{id}', [ApplicationController::class, 'edit_Applaction'])->name('application.edit_Applaction');
             Route::post('update/{id}', [ApplicationController::class, 'update'])->name('application.update');
             Route::DELETE('delete/{id}', [ApplicationController::class, 'delete'])->name('application.delete');
-            Route::get('application-details/{id}' , [ApplicationController::class , 'AddDetialsDetials'])->name('AddDetialsDetials');
+            Route::get('application-details/{id}', [ApplicationController::class, 'AddDetialsDetials'])->name('AddDetialsDetials');
         });
 
         // start Screenes1
@@ -140,4 +140,41 @@ Route::group(['prefix' => LaravelLocalization::setLocale()], function () {
 
 
 
-// shagal fffff
+// landing page
+
+Route::get('/landing', function () {
+    return view('landing-welcome');
+});
+
+Route::get('policy', function () {
+    return view('landing-privacy-policy');
+});
+
+
+Route::get('about', function () {
+    return view('landing-about');
+});
+
+Route::get('contact', function () {
+    return view('landing-contact');
+});
+
+
+Route::get('faq', function () {
+    return view('landing-faq');
+});
+
+
+Route::get('features', function () {
+    return view('landing-features');
+});
+
+
+Route::get('index', function () {
+    return view('landing-index');
+});
+
+
+Route::get('privacy-policy', function () {
+    return view('landing-privacy-policy');
+});

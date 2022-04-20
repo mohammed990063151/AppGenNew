@@ -25,7 +25,6 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        // app()->setLocale($request->segment(1) ?? app()->getLocale());
         try {
             $Proifle = OrganizationProfile::first();
             // OrganizationProfile

@@ -39,7 +39,6 @@
                                             <select class="form-control" id="" name="topic_selected" >
                                          <option value="1" >network</option>        
                                          <option value="2" >windows</option>        
-                                         <option value="3" >alhakmabe</option>     
                                          </select>
                                             @error('topic')
                                             <small id="helpId" class="form-text text-danger text-muted">{{$message}}</small>

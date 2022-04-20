@@ -50,7 +50,6 @@
                                             <select class="form-control" id="" name="topic_selected" >
                                          <option value="1" >network</option>        
                                          <option value="2" >windows</option>        
-                                         <option value="3" >alhakmabe</option>     
                                           {{-- <option value="{{$topic->id}}">{{ $topic->topic1}}</option> --}}
                                          </select>
                                             @error('topic')

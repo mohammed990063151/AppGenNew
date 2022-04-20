@@ -46,12 +46,8 @@
                             <div class="card-body card-dashboard">
                                 <div class="d-flex justify-content-between">
                                     <h6 class="text-capitalize col-4">massges</h6>
-
-                                    {{-- </div> --}}
                                 </div>
                                 <div class="">
-                               
-    
                                     {{-- {{dd($data->Ticketmassege)}} --}}
                                     @php
                                      $isFirest = true
@@ -101,11 +97,12 @@
                                                     
                   
                                                 
-                                                 <div class="chat-footer">
-                                                    <textarea  name="text" placeholder="Type a message"></textarea>
+                                                 <div class="card-footer">
+                                                    <textarea name="text" placeholder="Type a message"></textarea>
                                                     <input type="hidden" name="ticket_id" value="{{$data->id}}"/>
                                                     <button type="submit" class="btn btn-primary btn-round">send</button>  
                                                 </div> 
+                                                
                                             </form>
                         </div>
                     </div>

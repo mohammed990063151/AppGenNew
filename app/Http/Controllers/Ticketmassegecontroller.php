@@ -57,9 +57,6 @@ class TicketMassegeController extends Controller
      */
     public function show($id)
     {
-        //
-
-        
 
         $data= Ticket::with("Ticketmassege")->find($id);
         return view('clients.Technical_support.massege' , compact('data' ));

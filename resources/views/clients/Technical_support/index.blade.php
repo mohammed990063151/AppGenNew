@@ -36,23 +36,14 @@
                                     <td>{{_('translation.sender')}}</td>
                                     <td>{{_('translation.status')}}</td>
                                     <td>{{_('translation.date')}}</td>
-                                    
                                   <td>{{_('translation.options')}}</td>     
                                 </tr>
                             </thead>
-                                
-                            
-                            
-                            <tbody>
-                                    
+                            <tbody>                                    
                                     @forelse ($allTicket as $i => $data )
-                                    
-                                
                              <tbody>
-                                
-                               
                                 <tr>
-                                   
+
                                     <td>{{$i}}</td>
                                     <td>{{$data->subject}}</td>
                                     <td>{{($data->Topic->topicname) ?? ' - '}}</td>
@@ -66,39 +57,24 @@
                                     <form action="{{route((Auth::guard('admin')->check()?'admin.':'').'ticket.create' )}}" method="post" style="display:inline">
                                         @csrf
                                         {{-- @method('DELETE') --}}
-      
                                     </form>
-                                    
-
-                                            
                                 </tr>
-                                
                              </tbody>
                              @empty
                              <p>No users</p>
-
                              @endforelse
-                       
-                       
-                       
-                       
-                       
                             </table>
-                    </div>
-                </div>
-
-            </div>
-        </div>
-
-    </div>
-
-</div>
-
-</div>
-</div>
-</div>
-</div>
-</div>
+                            </div>
+                            </div>
+                         </div>
+                         </div>
+                             </div>
+                        </div>
+                            </div>
+                            </div>
+                            </div>
+                            </div>
+                            </div>
 
 
 

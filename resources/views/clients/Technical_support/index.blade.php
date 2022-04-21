@@ -17,11 +17,11 @@
             <div class="card z-index-2 h-100">
                 <div class="card-header pb-0 pt-3 bg-transparent">
                     <div class="d-flex justify-content-between">
-                        <h6 class="text-capitalize col-4">{{_('translation.ticket')}}</h6>
+                        <h6 class="text-capitalize col-4">{{__('translation.ticket')}}</h6>
 
                             <span><a href="{{route((Auth::guard('admin')->check()?'admin.':'').'ticket.create')}}" class="btn btn-primary btn-sm"
                                 {{--  --}}
-                                    type="button">{{_('translation.open-ticket')}}</a></span>
+                                    type="button">{{__('translation.open-ticket')}}</a></span>
 
                     </div>
                     <div class="table-responsive mt-5">
@@ -31,12 +31,12 @@
                             <thead>
                                 <tr>
                                     <td>#</td>
-                                    <td>{{_('translation.subject')}}</td>
-                                    <td>{{_('translation.topic')}}</td>
-                                    <td>{{_('translation.sender')}}</td>
-                                    <td>{{_('translation.status')}}</td>
-                                    <td>{{_('translation.date')}}</td>
-                                  <td>{{_('translation.options')}}</td>     
+                                    <td>{{__('translation.subject')}}</td>
+                                    <td>{{__('translation.topic')}}</td>
+                                    <td>{{__('translation.sender')}}</td>
+                                    <td>{{__('translation.status')}}</td>
+                                    <td>{{__('translation.date')}}</td>
+                                  <td>{{__('translation.options')}}</td>     
                                 </tr>
                             </thead>
                             <tbody>                                    
@@ -52,7 +52,7 @@
                                     <td>{{$data->created_at}}</td>
                                    <td><a href="{{route( (Auth::guard('admin')->check()?'admin.':'').'ticket.show', $data->id)}}" class="btn btn-primary btn-sm"
                                     {{--  --}}
-                                        type="button">{{_('translation.view')}}</a></span> </td>
+                                        type="button">{{__('translation.view')}}</a></span> </td>
                                     
                                     <form action="{{route((Auth::guard('admin')->check()?'admin.':'').'ticket.create' )}}" method="post" style="display:inline">
                                         @csrf

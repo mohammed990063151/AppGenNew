@@ -14,7 +14,7 @@
 
                             <span><a href="{{route('ticket.create')}}" class="btn btn-primary btn-sm"
                                 {{--  --}}
-                                    type="button">{{_('translation.open-ticket')}}</a></span>
+                                    type="button">{{__('translation.open-ticket')}}</a></span>
 
                     </div>
                     <div class="table-responsive mt-5">
@@ -24,13 +24,13 @@
                             <thead>
                                 <tr>
                                     <td>#</td>
-                                    <td>{{_('translation.subject')}}</td>
-                                    <td>{{_('translation.topic')}}</td>
-                                    <td>{{_('translation.sender')}}</td>
-                                    <td>{{_('translation.status')}}</td>
-                                    <td>{{_('translation.date')}}</td>
+                                    <td>{{__('translation.subject')}}</td>
+                                    <td>{{__('translation.topic')}}</td>
+                                    <td>{{__('translation.sender')}}</td>
+                                    <td>{{__('translation.status')}}</td>
+                                    <td>{{__('translation.date')}}</td>
                                     
-                                  <td>{{_('translation.options')}}</td>     
+                                  <td>{{__('translation.options')}}</td>     
                                 </tr>
                             </thead>
                             <tbody>
@@ -45,7 +45,7 @@
                                     <td>{{$data->created_at}}</td>
                                    <td><a href="{{route('ticket.show', $data->id)}}" class="btn btn-primary btn-sm"
                                     {{--  --}}
-                                        type="button">{{_('translation.view')}}</a></span> </td>
+                                        type="button">{{__('translation.view')}}</a></span> </td>
                                     
                                     <form action="{{route('ticket.create' )}}" method="post" style="display:inline">
                                         @csrf

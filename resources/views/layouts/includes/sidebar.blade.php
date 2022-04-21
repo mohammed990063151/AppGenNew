@@ -41,8 +41,8 @@
                         <i class="ni ni-tv-2 text-primary text-sm opacity-10"></i>
                     </div>
                     <span class="nav-link-text ms-1">{{ __('translation.App_profile') }}</span>
-                </a> --}}
-            {{-- </li> --}}
+                </a>
+            </li> --}}
             <li class="nav-item">
 
                 <a class="nav-link  {{ request()->is('notification') ? 'active' : '' }}  "
@@ -70,9 +70,9 @@
 
                     <div
                         class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
-                        <i class="fa fa-credit-card-alt text-primary text-sm opacity-10"></i>
+                        <i class="ni ni-tv-2 text-primary text-sm opacity-10"></i>
                     </div>
-                    <span class="nav-link-text ms-1">Technical support</span>
+                    <span class="nav-link-text ms-1">{{__('translation.Technical support')}}</span>
                 </a>
                 </li>
             {{-- </li>      <li class="nav-item mt-3">
@@ -104,7 +104,7 @@
                     </div>
                     <span class="nav-link-text ms-1">Sign Up</span>
                 </a>
-            </li> --}}
+            </li> --}} 
         </ul>
     </div>
 </aside>

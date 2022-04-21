@@ -7,7 +7,7 @@
                 <div class="card z-index-2 h-100">
                     <div class="card-header pb-0 pt-3 bg-transparent">
                         <div class="row">
-                            <h6 class="text-capitalize col-4"> add ticket</h6>
+                            <h6 class="text-capitalize col-4"> {{__('translation.add ticket')}}</h6>
 
                             <div class="col-6"></div>
                             <div class="col-2">
@@ -34,11 +34,11 @@
                                                 @enderror
                                             </div>    
                                             <div class="col-sm-6">
-                                                <label for="">topic</label>
+                                                <label for="">{{__('translation.topic')}}</label>
 
                                             <select class="form-control" id="" name="topic_selected" >
-                                         <option value="1" >network</option>        
-                                         <option value="2" >windows</option>        
+                                         <option value="1" >{{__('translation.network')}}</option>        
+                                         <option value="2" >{{__('translation.windows')}}</option>        
                                          </select>
                                             @error('topic')
                                             <small id="helpId" class="form-text text-danger text-muted">{{$message}}</small>

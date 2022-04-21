@@ -38,23 +38,24 @@ class ApplicationController extends BaseController
     {
 // return  $request;
         try {
+// return $request;
 
             $Applction = new app;
 
 
             $Logo = $request->Logo;
-            if($Logo){
+           
             $imagename = time() . '.' . $Logo->getClientOriginalExtension();
             $request->Logo->move('app', $imagename);
             $Applction->Logo = $imagename;
-            }
+           
             $image = $request->Splash_Screen;
-            if( $image){
+           
             $imagename = time() . '.' . $image->getClientOriginalExtension();
             $request->Splash_Screen->move('app', $imagename);
             $Applction->Splash_Screen = $imagename;
 
-            }
+            
             $Applction->AppName = $request->AppName;
             $Applction->Link = $request->Link;
             $Applction->Discrptions = $request->Discrptions;

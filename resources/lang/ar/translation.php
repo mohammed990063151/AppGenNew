@@ -167,6 +167,24 @@ return [
     'App Profile whatsapp' => '  ',
     'App Profile email' => '  ',
 
+    'subject' => 'موضوع التذكره',
+    'topic' => 'عنوان التذكره',
+    'sender' => 'المرسل',
+    'status' => ' حاله التذكره',
+    'date' => 'التاريخ',
+    'content' => 'المحتوي',
+    'options' => 'الخيارات',
+    'view' => 'عرض الرساله',
+    'Ticket' => ' التذكره',
+    'ticket' => ' التذكره',
+    'open-ticket' => ' فتح تذكره جديده ',
+    'Add ticket' => ' اضافه تذكره',
+    'network' => ' انترنت',
+    'windows' => ' ويندوز',
+    'Technical support' => ' الدعم الفني',
+    'massges' => ' الرسائل ',
+    'send' => ' ارسال ',
+    'go-back' => ' رجوع ',
 
 
 

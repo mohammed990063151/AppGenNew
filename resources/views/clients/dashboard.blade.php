@@ -377,7 +377,7 @@
 
                                 </div>
                                 <div class="card-body" style="width: 70%">
-                                    {!! $chartjs->render() !!}
+                                    {{-- {!! $chartjs->render() !!} --}}
 
                                 </div>
 

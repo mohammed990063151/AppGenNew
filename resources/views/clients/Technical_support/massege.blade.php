@@ -44,7 +44,7 @@
                         <div class="card-content collapse show">
                             <div class="card-body card-dashboard">
                                 <div class="d-flex justify-content-between">
-                                    <h6 class="text-capitalize col-4">massges</h6>
+                                    <h6 class="text-capitalize col-4">{{__('translation.massges')}}</h6>
 
                                     {{-- </div> --}}
                                 </div>
@@ -104,7 +104,7 @@
                                                     <div class="card">
                                                         <input id="" placeholder="type your massege" name="text" required>
                                                         <input type="hidden" name="ticket_id" value="{{$data->id}}"/>
-                                                        <button type="submit" class="btn btn-primary btn-round">send</button>
+                                                        <button type="submit" class="btn btn-primary btn-round">{{__('translation.send')}}</button>
                                                           
                                                     </div> 
                                                     

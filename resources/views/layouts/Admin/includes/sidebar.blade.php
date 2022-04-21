@@ -88,11 +88,6 @@
                         <a href="{{ route('ticket.index')}}" class='sidebar-link'>
                             {{-- <i class="fa fa-assistive-listening-sys
                             
-                            
-                            
-                            
-                            
-                            
                             tems"></i> --}}
                             <i class="bi bi-bricks"></i>
                             <span>{{_('translation.Technical support')}}</span>                            

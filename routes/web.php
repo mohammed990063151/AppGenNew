@@ -3,12 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\FeatureController;
 use App\Http\Controllers\FirebaseNotificationController;
-use App\Http\Controllers\PackageController;
 use App\Http\Controllers\PaymentController;
-use App\Http\Controllers\SubscriptionController;
-// use App\Models\ReportController;
-use App\Http\Controllers\ReportController;
-use App\Models\Package;
 use App\Http\Controllers\front\FrontController;
 use App\Http\Controllers\front\ProfileController;
 use App\Http\Controllers\front\ApplicationController;
@@ -16,10 +11,7 @@ use App\Http\Controllers\InvoiceController;
 use App\Http\Controllers\front\ScreenController;
 use App\Http\Controllers\TicketController;
 use App\Http\Controllers\TicketMassegeController;
-use App\Models\FirebaseNotification;
-use App\Models\screen;
 use Illuminate\Support\Facades\Auth;
-use Illuminate\Support\Facades\View;
 
 /*
 |--------------------------------------------------------------------------
@@ -54,8 +46,6 @@ Auth::routes();
 
 Route::group(['prefix' => LaravelLocalization::setLocale()], function () {
     /** ADD ALL LOCALIZED ROUTES INSIDE THIS GROUP **/
-
-
 
     Route::middleware('auth:web')->group(function () {
 
@@ -110,7 +100,6 @@ Route::group(['prefix' => LaravelLocalization::setLocale()], function () {
             Route::post('store2', [ScreenController::class, 'store2'])->name('Screen.store2');
         });
 
-
         Route::resource('features', FeatureController::class);
         Route::post('destroy/{id}', [ApplicationController::class, 'update'])->name('application.destroy');
 
@@ -124,8 +113,6 @@ Route::group(['prefix' => LaravelLocalization::setLocale()], function () {
         });
     });
 
-
-
     Route::get('get-price', [PaymentController::class, 'getPrice'])->name('getPrice');
     Route::post('get-price', [PaymentController::class, 'ChosePrice'])->name('ChosePrice');
 
@@ -138,10 +125,6 @@ Route::group(['prefix' => LaravelLocalization::setLocale()], function () {
     Route::post('pay-invoice', [InvoiceController::class, 'PayInvoice'])->name('PayInvoice');
 });
 
-
-
-// landing page
-
 Route::get('/landing', function () {
     return view('landing-welcome');
 });
@@ -149,7 +132,6 @@ Route::get('/landing', function () {
 Route::get('policy', function () {
     return view('landing-privacy-policy');
 });
-
 
 Route::get('about', function () {
     return view('landing-about');
@@ -159,21 +141,17 @@ Route::get('contact', function () {
     return view('landing-contact');
 });
 
-
 Route::get('faq', function () {
     return view('landing-faq');
 });
-
 
 Route::get('features', function () {
     return view('landing-features');
 });
 
-
 Route::get('index', function () {
     return view('landing-index');
 });
-
 
 Route::get('privacy-policy', function () {
     return view('landing-privacy-policy');

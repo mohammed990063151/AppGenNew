@@ -1,5 +1,5 @@
 <nav class="navbar navbar-expand-lg navbar-light foi-navbar">
-    <a class="navbar-brand" href="index.html">
+    <a class="navbar-brand" href="index">
         <img src="{{ asset('landing-assets/images/logo.svg') }}" alt="FOI">
     </a>
     <button class="navbar-toggler d-lg-none" type="button" data-toggle="collapse" data-target="#collapsibleNavId"
@@ -37,10 +37,10 @@
         </ul>
         <ul class="navbar-nav mt-2 mt-lg-0">
             <li class="nav-item mr-2 mb-3 mb-lg-0">
-                <a class="btn btn-secondary" href="register.html">Sign up</a>
+                <a class="btn btn-secondary" href="register">Sign up</a>
             </li>
             <li class="nav-item">
-                <a class="btn btn-secondary" href="login.html">Login</a>
+                <a class="btn btn-secondary" href="login">Login</a>
             </li>
         </ul>
     </div>

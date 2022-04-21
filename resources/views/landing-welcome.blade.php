@@ -1,33 +1,30 @@
-@include('landing-layouts.head')
-
-
-<body>
+@extends('app')
+@section('containt')
     <header class="foi-header landing-header">
-        <div class="container">
-            @include('landing-layouts.nav')
-            <div class="header-content">
-                <div class="row">
-                    <div class="col-md-6">
-                        <h1>Great app that makes your life awesome</h1>
-                        <p class="text-dark">He has led a remarkable campaign, defying the traditional mainstream
-                            parties courtesy of his En Marche! movement.</p>
-                        <button class="btn btn-primary mb-4">Get Started</button>
-                        <div class="my-2">
-                            <p class="header-app-download-title">GET OUR MOBILE APP</p>
-                        </div>
-                        <div>
-                            <button class="btn btn-app-download mr-2"><img
-                                    src="{{ asset('landing-assets/images/ios.svg') }}" alt="App store"></button>
-                            <button class="btn btn-app-download"><img
-                                    src="{{ asset('landing-assets/images/android.svg') }}" alt="play store"></button>
-                        </div>
+
+        <div class="header-content">
+            <div class="row">
+                <div class="col-md-6">
+                    <h1>Great app that makes your life awesome</h1>
+                    <p class="text-dark">He has led a remarkable campaign, defying the traditional mainstream
+                        parties courtesy of his En Marche! movement.</p>
+                    <button class="btn btn-primary mb-4">Get Started</button>
+                    <div class="my-2">
+                        <p class="header-app-download-title">GET OUR MOBILE APP</p>
                     </div>
-                    <div class="col-md-6">
-                        <img src="{{ asset('landing-assets/images/app_1.png') }}" alt="app" width="388px"
-                            class="img-fluid">
+                    <div>
+                        <button class="btn btn-app-download mr-2"><img src="{{ asset('landing-assets/images/ios.svg') }}"
+                                alt="App store"></button>
+                        <button class="btn btn-app-download"><img src="{{ asset('landing-assets/images/android.svg') }}"
+                                alt="play store"></button>
                     </div>
                 </div>
+                <div class="col-md-6">
+                    <img src="{{ asset('landing-assets/images/app_1.png') }}" alt="app" width="388px"
+                        class="img-fluid">
+                </div>
             </div>
+        </div>
         </div>
     </header>
     <section class="py-5 mb-5">
@@ -65,24 +62,24 @@
                                             class="img-fluid">
                                     </div>
                                     <div class="clients-logo">
-                                        <img src="{{ asset('landing-assets/images/clients/spotify.svg') }}"
-                                            alt="Spotify" class="img-fluid">
+                                        <img src="{{ asset('landing-assets/images/clients/spotify.svg') }}" alt="Spotify"
+                                            class="img-fluid">
                                     </div>
                                     <div class="clients-logo">
-                                        <img src="{{ asset('landing-assets/images/clients/paypal.svg') }}"
-                                            alt="Paypal" class="img-fluid">
+                                        <img src="{{ asset('landing-assets/images/clients/paypal.svg') }}" alt="Paypal"
+                                            class="img-fluid">
                                     </div>
                                     <div class="clients-logo">
-                                        <img src="{{ asset('landing-assets/images/clients/amazon.svg') }}"
-                                            alt="Amazon" class="img-fluid">
+                                        <img src="{{ asset('landing-assets/images/clients/amazon.svg') }}" alt="Amazon"
+                                            class="img-fluid">
                                     </div>
                                     <div class="clients-logo">
-                                        <img src="{{ asset('landing-assets/images/clients/google.svg') }}"
-                                            alt="Google" class="img-fluid">
+                                        <img src="{{ asset('landing-assets/images/clients/google.svg') }}" alt="Google"
+                                            class="img-fluid">
                                     </div>
                                     <div class="clients-logo">
-                                        <img src="{{ asset('landing-assets/images/clients/samsung.svg') }}"
-                                            alt="Samsung" class="img-fluid">
+                                        <img src="{{ asset('landing-assets/images/clients/samsung.svg') }}" alt="Samsung"
+                                            class="img-fluid">
                                     </div>
                                 </div>
                             </div>
@@ -93,24 +90,24 @@
                                             class="img-fluid">
                                     </div>
                                     <div class="clients-logo">
-                                        <img src="{{ asset('landing-assets/images/clients/spotify.svg') }}"
-                                            alt="Spotify" class="img-fluid">
+                                        <img src="{{ asset('landing-assets/images/clients/spotify.svg') }}" alt="Spotify"
+                                            class="img-fluid">
                                     </div>
                                     <div class="clients-logo">
-                                        <img src="{{ asset('landing-assets/images/clients/paypal.svg') }}"
-                                            alt="Paypal" class="img-fluid">
+                                        <img src="{{ asset('landing-assets/images/clients/paypal.svg') }}" alt="Paypal"
+                                            class="img-fluid">
                                     </div>
                                     <div class="clients-logo">
-                                        <img src="{{ asset('landing-assets/images/clients/amazon.svg') }}"
-                                            alt="Amazon" class="img-fluid">
+                                        <img src="{{ asset('landing-assets/images/clients/amazon.svg') }}" alt="Amazon"
+                                            class="img-fluid">
                                     </div>
                                     <div class="clients-logo">
-                                        <img src="{{ asset('landing-assets/images/clients/google.svg') }}"
-                                            alt="Google" class="img-fluid">
+                                        <img src="{{ asset('landing-assets/images/clients/google.svg') }}" alt="Google"
+                                            class="img-fluid">
                                     </div>
                                     <div class="clients-logo">
-                                        <img src="{{ asset('landing-assets/images/clients/samsung.svg') }}"
-                                            alt="Samsung" class="img-fluid">
+                                        <img src="{{ asset('landing-assets/images/clients/samsung.svg') }}" alt="Samsung"
+                                            class="img-fluid">
                                     </div>
                                 </div>
                             </div>
@@ -121,24 +118,24 @@
                                             class="img-fluid">
                                     </div>
                                     <div class="clients-logo">
-                                        <img src="{{ asset('landing-assets/images/clients/spotify.svg') }}"
-                                            alt="Spotify" class="img-fluid">
+                                        <img src="{{ asset('landing-assets/images/clients/spotify.svg') }}" alt="Spotify"
+                                            class="img-fluid">
                                     </div>
                                     <div class="clients-logo">
-                                        <img src="{{ asset('landing-assets/images/clients/paypal.svg') }}"
-                                            alt="Paypal" class="img-fluid">
+                                        <img src="{{ asset('landing-assets/images/clients/paypal.svg') }}" alt="Paypal"
+                                            class="img-fluid">
                                     </div>
                                     <div class="clients-logo">
-                                        <img src="{{ asset('landing-assets/images/clients/amazon.svg') }}"
-                                            alt="Amazon" class="img-fluid">
+                                        <img src="{{ asset('landing-assets/images/clients/amazon.svg') }}" alt="Amazon"
+                                            class="img-fluid">
                                     </div>
                                     <div class="clients-logo">
-                                        <img src="{{ asset('landing-assets/images/clients/google.svg') }}"
-                                            alt="Google" class="img-fluid">
+                                        <img src="{{ asset('landing-assets/images/clients/google.svg') }}" alt="Google"
+                                            class="img-fluid">
                                     </div>
                                     <div class="clients-logo">
-                                        <img src="{{ asset('landing-assets/images/clients/samsung.svg') }}"
-                                            alt="Samsung" class="img-fluid">
+                                        <img src="{{ asset('landing-assets/images/clients/samsung.svg') }}" alt="Samsung"
+                                            class="img-fluid">
                                     </div>
                                 </div>
                             </div>
@@ -157,8 +154,8 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-6 mb-5 mb-md-0">
-                    <img src="{{ asset('landing-assets/images/app_2.png') }}" alt="special offers"
-                        class="img-fluid" width="492px">
+                    <img src="{{ asset('landing-assets/images/app_2.png') }}" alt="special offers" class="img-fluid"
+                        width="492px">
                 </div>
                 <div class="col-md-6">
                     <h2 class="section-title">Get special offers on the things you love</h2>
@@ -414,8 +411,4 @@
             </div>
         </div>
     </section>
-    @include('landing-layouts.footer')
-
-</body>
-
-</html>
+@endsection

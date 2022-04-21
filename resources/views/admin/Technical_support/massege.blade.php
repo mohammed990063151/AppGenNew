@@ -97,8 +97,8 @@
                                                     
                   
                                                 
-                                                 <div class="card-footer">
-                                                    <textarea name="text" placeholder="Type a message"></textarea>
+                                                 <div class="card">
+                                                    <input id="" placeholder="type your massege" name="text" required>
                                                     <input type="hidden" name="ticket_id" value="{{$data->id}}"/>
                                                     <button type="submit" class="btn btn-primary btn-round">send</button>  
                                                 </div> 

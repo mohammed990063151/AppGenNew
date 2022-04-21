@@ -45,8 +45,6 @@
                                             @enderror
                                         </div>
                                 </div>
-
-
                                 <div class="form-group row">
                                     <div class="form-group col-md-12">
                                         <label for="w3review">{{_('translation.content')}}</label>

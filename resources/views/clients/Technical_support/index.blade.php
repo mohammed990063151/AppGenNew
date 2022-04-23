@@ -1,8 +1,8 @@
 @extends('layouts.master')
 @section('breadceumbs')
 {{-- <x-bread-crumps> --}}
-    @component('components.bread-crumps' , ['head' => 'ticket ' ,
-    'links' => [ 'ticket']
+    @component('components.bread-crumps' , ['head' => __('translation.ticket'), 
+    'links' => [ __('translation.Add_screen'),]
     ])
     @endcomponent
     @endsection

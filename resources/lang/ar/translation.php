@@ -166,7 +166,7 @@ return [
     'App Profile color' => '  ',
     'App Profile whatsapp' => '  ',
     'App Profile email' => '  ',
-
+###################ticket translation###.................................
     'subject' => 'موضوع التذكره',
     'topic' => 'عنوان التذكره',
     'sender' => 'المرسل',
@@ -185,7 +185,7 @@ return [
     'massges' => ' الرسائل ',
     'send' => ' ارسال ',
     'go-back' => ' رجوع ',
-
+#;;;;;;;;;;;;;;;...............33333.......#######end ticket translation
 
 
 

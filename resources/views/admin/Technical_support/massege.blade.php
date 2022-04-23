@@ -97,11 +97,19 @@
                                                     
                   
                                                 
-                                                 <div class="card">
-                                                    <input id="" placeholder="type your massege" name="text" required>
+                                                 {{-- <div class="card">
+                                                    <input id="" placeholder="type your massege" name="text" required />
                                                     <input type="hidden" name="ticket_id" value="{{$data->id}}"/>
                                                     <button type="submit" class="btn btn-primary btn-round">{{__('translation.send')}}</button>  
                                                 </div> 
+                                                < class="chat-footer"> --}}
+                                                  
+                                                    <input placeholder="Type a message" name="text"></input>
+                                                    <input type="hidden" name="ticket_id" value="{{$data->id}}"/>
+                                                    <button type="submit" class="btn btn-primary btn-round">{{__('translation.send')}}</button>  
+                                                   
+                                                
+                                                
                                                 
                                             </form>
                         </div>

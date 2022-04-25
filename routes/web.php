@@ -156,3 +156,26 @@ Route::get('index', function () {
 Route::get('privacy-policy', function () {
     return view('landing-privacy-policy');
 });
+
+// Route::get('privacy-policy', function () {
+//     return view('layouts3.navbars.navs.auth');
+// });
+
+// Route::get('content', function () {
+//     return view('layouts3.navbars.navs.guest');
+// });
+// Route::get('about', function () {
+//     return view('layouts3.navbar.navbar');
+// });
+// Route::get('auth', function () {
+//     return view('layouts3.navbar.sidebar');
+// });
+// Route::get('home', function () {
+//     return view('layouts3.app');
+// });
+// Route::get('index', function () {
+//     return view('layouts3.footer');
+// });
+// Route::get('layou', function () {
+//     return view('layouts3.guest');
+// });

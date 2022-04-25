@@ -55,7 +55,7 @@ return [
     'New_Application' => 'New Application',
     'add_apps' => 'Add Apps',
     'notifiaction_table' => 'notifiaction table',
-    'add_notifiaction_table' => 'add notifiaction',
+    'add_notifiaction' => 'add notifiaction',
 
 
 
@@ -65,7 +65,7 @@ return [
     'New_Application' => 'New Application',
     'add_apps' => 'Add App',
     'notifiaction_table' => 'Notification Table',
-    'add_notifiaction_table' => 'Add Notification Table',
+    'add_notifiaction_table' => ' Notification Table',
     'No' => 'No',
     'name' => 'Name',
     'note' => 'Note',
@@ -108,7 +108,7 @@ return [
     'No_data_Right_Now' => 'No Data Right Now',
 
     'Profile' => 'Profile',
-    'applction_table ' => 'جدول applction_table',
+    'applction_table ' => ' applction_table',
     'Add applction' => 'Add applction',
     'Applction_details' => 'Applction_details',
     'Name' => 'Name',
@@ -199,4 +199,27 @@ return [
     'address' => 'Address',
     'fiexed_price' => 'Fiexed Price',
     'app_domain' => 'App Domain',
+
+
+
+
+    #ticket.............
+    'subject' => 'subject',
+    'topic' => 'topic',
+    'sender' => 'sender',
+    'status' => ' status',
+    'date' => 'date',
+    'content' => 'content',
+    'options' => 'options',
+    'view' => 'view',
+    'Ticket' => ' Ticket',
+    'ticket' => ' ticket',
+    'open-ticket' => ' openticket ',
+    'Add ticket' => ' Add ticket',
+    'network' => ' network',
+    'windows' => ' windows',
+    'Technical support' => ' Technical support',
+    'massges' => ' massges ',
+    'send' => ' send ',
+    'go-back' => 'go back',
 ];

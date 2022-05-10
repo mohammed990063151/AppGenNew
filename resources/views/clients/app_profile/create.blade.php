@@ -36,7 +36,7 @@
                                             <div class="progress" id="progress"></div>
                                             <div class="progress-step progress-step-active" data-title="Intro"></div>
                                             <div class="progress-step" data-title="Link Social Media"></div>
-                                            <div class="progress-step" data-title="Follow"></div>
+                                            {{-- <div class="progress-step" data-title="Follow"></div> --}}
                                             <div class="progress-step" data-title="Color"></div>
                                         </div>
                                         <!-- Steps -->
@@ -68,19 +68,6 @@
                                                 @enderror
                                             </div>
                                             <div class="input-group">
-                                                <label for="Snapchat">Snapchat</label>
-                                                <input type="text" name="Snapchat" id="Snapchat" />
-                                                @error('Snapchat')
-                                                    <span class="text-danger error">{{ $message }}</span>
-                                                @enderror
-                                            </div>
-                                            <div class="btns-group">
-                                                <a href="#" class="btn btn-prev">Previous</a>
-                                                <a href="#" class="btn btn-next">Next</a>
-                                            </div>
-                                        </div>
-                                        <div class="form-step">
-                                            <div class="input-group">
                                                 <label for="Instgram"> Instgram</label>
                                                 <input type="text" name="Instgram" id="Instgram"
                                                     aria-describedby="helpId" />
@@ -102,16 +89,31 @@
                                                     <span class="text-danger error">{{ $message }}</span>
                                                 @enderror
                                             </div>
+                                            <div class="input-group">
+                                                <label for="Snapchat">Snapchat</label>
+                                                <input type="text" name="Snapchat" id="Snapchat" />
+                                                @error('Snapchat')
+                                                    <span class="text-danger error">{{ $message }}</span>
+                                                @enderror
+                                            </div>
                                             <div class="btns-group">
                                                 <a href="#" class="btn btn-prev">Previous</a>
                                                 <a href="#" class="btn btn-next">Next</a>
                                             </div>
                                         </div>
+                                        {{-- <div class="form-step">
+
+                                            <div class="btns-group">
+                                                <a href="#" class="btn btn-prev">Previous</a>
+                                                <a href="#" class="btn btn-next">Next</a>
+                                            </div>
+                                        </div> --}}
                                         <div class="form-step">
                                             <div class="input-group">
                                                 <label for="Social Media botton Color">Social Media botton Color</label>
                                                 <input type="color" name="Social_Media_Icons_Color"
-                                                    id="Social_Media_Icons_Color" aria-describedby="helpId" />
+                                                    id="Social_Media_Icons_Color" aria-describedby="helpId"  id="color-range" class="color-range" value="#f5f5f5"
+                                                    onchange="this.style.background = this.value; console.log('done')"  />
                                                 @error('Social_Media_Icons_Color')
                                                     <span class="text-danger error">{{ $message }}</span>
                                                 @enderror

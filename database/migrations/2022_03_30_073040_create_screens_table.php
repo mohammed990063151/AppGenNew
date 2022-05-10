@@ -22,10 +22,10 @@ class CreateScreensTable extends Migration
             $table->string('ContainarButtonBarColor');
             $table->string('IconsBackgroundColor');
             $table->string('IconsColor');
+            $table->integer('profile_id')->nullable();
             //$table->unsignedBigInteger('profile_id')->nullable();
-            $table->foreignId('profile_id')->references('id')->on('app_profiles')->nullable();
+            // $table->foreignId('profile_id')->references('id')->on('app_profiles');
             $table->foreignId('app_id')->references('id')->on('apps')->onDelete('cascade');
-
             //$table->foreign('profile_id')->references('id')->on('app_profiles')->onDelete('cascade');
             $table->timestamps();
         });

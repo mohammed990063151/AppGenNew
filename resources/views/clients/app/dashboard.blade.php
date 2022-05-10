@@ -52,8 +52,11 @@
                                             </div>
                                         </div>
                                         <div class="card_apps">
+                                            @foreach ($Applction->screen as $screen )
                                             <a
-                                                            href="{{ route('AddDetialsDetials', $Applction->AppProfile->id) }}">
+                                                href="{{ route('AddDetialsDetials', $Applction->AppProfile->id) }}">  @endforeach
+
+
                                             <div class="img-box">
                                                 <img src="{{ asset("app/{$Applction->Logo}") }}">
                                             </div>

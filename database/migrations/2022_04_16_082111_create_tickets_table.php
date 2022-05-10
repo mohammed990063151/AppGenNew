@@ -15,13 +15,9 @@ class CreateTicketsTable extends Migration
     {
         Schema::create('tickets', function (Blueprint $table) {
             $table->id();
-            
                         // $table->enum('firends', ['eslam' , 'hitem', 'jksa'])->default('jksa');
-
             $table->string('subject');
             $table->enum('status',['pending','inprogress','copmplated']);
-            
-           
             $table->string('sender');
             $table->integer('topic_id');
             $table->timestamps();

@@ -92,5 +92,6 @@ class ProfileController extends Controller
         if ($Profile) {
             return $this->apiResponse(new ProfileResource($Profile), 'The Profile update', 201);
         }
+        
     }
 }

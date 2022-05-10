@@ -7,7 +7,7 @@
                         document.write(new Date().getFullYear())
                     </script>, --}}
                    Copyright © 2022  <i class="fa fa-heart"></i> by
-                    <a href="https://www.creative-tim.com" class="font-weight-bold" target="_blank">MSC </a>
+                    <a href="https://themsc.net" class="font-weight-bold" target="_blank">MSC </a>
                     Hand-crafted &amp; Made with
                 </div>
             </div>

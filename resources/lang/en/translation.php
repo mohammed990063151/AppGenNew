@@ -51,7 +51,7 @@ return [
     /********Application **********/
 
     'Add_Newapplction' => 'Add New Application',
-    'applcation' => '... Application',
+    'applcation' => ' Application',
     'New_Application' => 'New Application',
     'add_apps' => 'Add Apps',
     'notifiaction_table' => 'notifiaction table',
@@ -78,7 +78,7 @@ return [
 
     'Add_screen' => 'Dashboard',
     'screen' => 'HOME',
-    'subpage' => 'Application',
+    'subpage' => 'Dashboard',
 
     /*********notifiaction_table */
     'notifiaction_tabl' => 'Notifiaction Manger',
@@ -88,6 +88,8 @@ return [
     'photo' => 'Add photo',
     'cancel' => 'Cancel',
     'send' => 'Send',
+    'Profile' => 'Profile',
+
 
 
 
@@ -115,7 +117,13 @@ return [
     //'Name' => 'الاسم',
     'Link' => 'link',
     'logo' => 'logo',
+    'no' => 'no',
     'Save' => 'Save',
+    'profile' => 'profile',
+    'Notification' => 'Notification',
+    'Technical support-ticket' => 'Technical support-ticket',
+    'Notification mangement' => 'Notification mangement',
+    
 
 
 
@@ -222,4 +230,14 @@ return [
     'massges' => ' massges ',
     'send' => ' send ',
     'go-back' => 'go back',
+    ' All Applcation' => ' All Applcation ',
+    'NOTIFCATION' => ' NOTIFCATION',
+    ' TICKET MASSEGE' => 'TICKET MASSEGE',
+    ' Download Applaction' =>'Download Applaction',
+    'home'=>'home',
+    'notifcation'=>'notifcation',
+    'pending' => ' pending ',
+    'inprogress' => ' inprogress ',
+    'copmplated' => 'copmplated',
+    
 ];

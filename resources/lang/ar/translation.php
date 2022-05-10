@@ -86,10 +86,10 @@ return [
 
 
 
-    /*************application */
+  
 
     'Add_Newapplction' => 'إنشاء تطبيق',
-    'applcation' => '... ',
+    'applcation' => 'التطبيق ',
     'applction_table' => 'إنشاء تطبيق',
     'Applction_details' => 'بيانات التطبيق',
     'Discrptions' => 'التفاصيل ',
@@ -132,6 +132,7 @@ return [
     ' No data Right Now' => 'لايوجد بيانات لعرضها الان ',
     'note' => 'الملاحظه',
     'No' => 'رقم الاشعار',
+    'no' => 'رقم التذكره',  
     'notify_image' => 'صوره الاشعار',
     'date' => 'التاريخ',
     'action' => 'خيارات',
@@ -185,6 +186,17 @@ return [
     'massges' => ' الرسائل ',
     'send' => ' ارسال ',
     'go-back' => ' رجوع ',
+    ' All Applcation' => ' جميع التطبيقات ',
+    'NOTIFCATION' => ' الاشعارات ',
+    ' TICKET MASSEGE' => ' رسائل التذاكر ',
+    ' Download Applaction' => 'تحميل التطبيقات ',
+    'home'=>'الرئسيه',
+    'notifcation'=>'الاشعارات',
+    'Notification'=>'الاشعارات',
+    'Notification mangement'=>'اداره الاشعارات  ',
+    'Technical support-ticket'=>'الدعم الفني -التذكره  ',
+
+
 #;;;;;;;;;;;;;;;...............33333.......#######end ticket translation
 
 
@@ -193,7 +205,7 @@ return [
     /********head ********/
 
     'screen' => 'الرئيسية',
-    'subpage' => 'التطبيق',
+    'subpage' => 'الرئسيه',
 
 
 
@@ -272,5 +284,8 @@ return [
     'fiexed_price' => 'السعر النهائي',
     'address' => 'العنوان',
     'app_domain' => ' عنوان التطبيق',
+    'pending' => ' جديده ',
+    'inprogress' => ' في تقدم ',
+    'copmplated' => ' منتهيه  ',
 
 ];

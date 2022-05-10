@@ -1,10 +1,13 @@
 @extends('layouts.master')
 @section('breadceumbs')
 {{-- <x-bread-crumps> --}}
-    @component('components.bread-crumps' , ['head' => __('translation.ticket'), 
-    'links' => [ __('translation.Add_screen'),]
-    ])
-    @endcomponent
+    @component('components.bread-crumps', [
+        'head' => __('translation.Technical support'),
+         'links' => [
+            BredCrumpLinks( route('clients.dashboard')  ,  __('translation.Dashboard')), 
+             BredCrumpLinks( route('ticket.index')  , __('translation.Technical support-ticket')), 
+          ]])
+@endcomponent
     @endsection
     @section('title')
 
@@ -27,21 +30,61 @@
                     <div class="table-responsive mt-5">
                         @include('clients.alerts.success')
                         @include('clients.alerts.errors')
-                        <table class="table align-items-center table-bordered  ">
-                            <thead>
+                      
+                        <div class="table-responsive">
+                            <table class="table table-striped table-bordered ">
+                                <thead>
                                 <tr>
-                                    <td>#</td>
+                                    <td>{{__('translation.no')}}</td>
                                     <td>{{__('translation.subject')}}</td>
                                     <td>{{__('translation.topic')}}</td>
                                     <td>{{__('translation.sender')}}</td>
                                     <td>{{__('translation.status')}}</td>
                                     <td>{{__('translation.date')}}</td>
-                                  <td>{{__('translation.options')}}</td>     
+                                  <td>{{__('translation.action')}}</td>     
                                 </tr>
                             </thead>
-                            <tbody>                                    
-                                    @forelse ($allTicket as $i => $data )
-                             <tbody>
+                        <tbody>
+                               @forelse ($allTicket as $i => $data )
+                        
+                                <tr>
+
+                                    <td>{{$i}}</td>
+                                    <td>{{$data->subject}}</td>
+                                    <td>{{($data->Topic->topicname) ?? ' - '}}</td>
+                                    <td>{{($data->user->name) ?? ' - '}}</td>
+                                    <td>{{__('translation.' . $data->status);}}</td>
+                                    <td>{{$data->created_at}}</td>
+                                   <td><a href="{{route( (Auth::guard('admin')->check()?'admin.':'').'ticket.show', $data->id)}}" class="btn btn-primary btn-sm"
+                                    {{--  --}}
+                                         type="button">{{__('translation.view')}}</a></span> </td>
+                                    
+                                    <form action="{{route((Auth::guard('admin')->check()?'admin.':'').'ticket.create' )}}" method="post" style="display:inline">
+                                        @csrf 
+                                        {{-- @method('DELETE') --}}
+                                     </form>
+                                </tr>
+                             {{-- </tbody> --}}
+                             @empty
+                             <p>No users</p>
+                             @endforelse 
+
+
+        </tbody>
+        <tfoot>
+            <tr>
+                <th>{{ __('translation.No') }}</th>
+                <th>{{ __('translation.subject') }}</th>
+                <th>{{ __('translation.topic') }}</th>
+                {{-- <th>{{__('translation.area')}}</th> --}}
+                <th>{{ __('translation.sender') }}</th>
+                <th>{{ __('translation.status') }}</th>
+                <th>{{ __('translation.date') }}</th>
+                <th>{{ __('translation.action') }}</th>
+            </tr>
+        </tfoot>                                   
+                                    {{-- @forelse ($allTicket as $i => $data )
+                        
                                 <tr>
 
                                     <td>{{$i}}</td>
@@ -52,18 +95,18 @@
                                     <td>{{$data->created_at}}</td>
                                    <td><a href="{{route( (Auth::guard('admin')->check()?'admin.':'').'ticket.show', $data->id)}}" class="btn btn-primary btn-sm"
                                     {{--  --}}
-                                        type="button">{{__('translation.view')}}</a></span> </td>
+                                        {{-- type="button">{{__('translation.view')}}</a></span> </td>
                                     
                                     <form action="{{route((Auth::guard('admin')->check()?'admin.':'').'ticket.create' )}}" method="post" style="display:inline">
-                                        @csrf
+                                        @csrf --}}
                                         {{-- @method('DELETE') --}}
-                                    </form>
+                                    {{-- </form>
                                 </tr>
                              </tbody>
                              @empty
                              <p>No users</p>
-                             @endforelse
-                            </table>
+                             @endforelse --}}
+                            </table> 
                             </div>
                             </div>
                          </div>

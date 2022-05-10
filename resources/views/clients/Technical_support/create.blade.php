@@ -1,11 +1,13 @@
 @extends('layouts.master')
 @section('breadceumbs')
 {{-- <x-bread-crumps> --}}
-    @component('components.bread-crumps' , ['head' =>  __('translation.ticket'), 
-    'links' => [__('translation.ticket'),  __('translation.ticket'),]
-    ])
-
-    @endcomponent
+    @component('components.bread-crumps', [
+        'head' => __('translation.Technical support'),
+         'links' => [
+            BredCrumpLinks( route('clients.dashboard')  ,  __('translation.Dashboard')), 
+             BredCrumpLinks( route('ticket.create')  , __('translation.Technical support-ticket')), 
+          ]])
+@endcomponent
     @endsection
     @section('title')
     {{__('translation.Add ticket')}}

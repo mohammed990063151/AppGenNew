@@ -1,8 +1,12 @@
 @extends('layouts.master')
 @section('breadceumbs')
     {{-- <x-bread-crumps> --}}
-    @component('components.bread-crumps', ['head' => __('translation.applcation'), 'links' =>
-        [__('translation.applcation')]])
+        @component('components.bread-crumps', [
+            'head' => __('translation.Application'),
+             'links' => [
+                BredCrumpLinks( route('clients.dashboard')  ,  __('translation.Dashboard')), 
+                 BredCrumpLinks( route('application.index')  , __('translation.Application')), 
+              ]])
     @endcomponent
 @endsection
 

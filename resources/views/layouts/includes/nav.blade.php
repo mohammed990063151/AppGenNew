@@ -16,7 +16,7 @@
                 <li class="nav-item dropdown pe-2 d-flex align-items-center">
                     <a href="javascript:;" class="nav-link text-white p-0" id="dropdownMenuButton"
                         data-bs-toggle="dropdown" aria-expanded="false">
-                        <i class="fa fa-bell cursor-pointer"></i>
+                        {{-- <i class="fa fa-bell cursor-pointer"></i> --}}
                     </a>
                     <ul class="dropdown-menu  dropdown-menu-end  px-2 py-3 me-sm-n4"
                         aria-labelledby="dropdownMenuButton">
@@ -202,7 +202,7 @@
                         <li>
                             <a rel="alternate" class="dropdown-item border-radius-md">
                                 <span class="m-2"><i class="fa  fa-user"></i></span>
-                                <span>{{ __('translation.profile') }}</span>
+                                <span>{{__('translation.profile')}}</span>
                             </a>
                             <hr style="padding:0;margin:3px 0" />
                             <a href="{{ route('logout') }}" wire: onclick="event.preventDefault();

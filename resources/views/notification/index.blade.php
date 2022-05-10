@@ -1,5 +1,19 @@
 @extends('layouts.master')
 @section('content')
+@section('breadceumbs')
+@component('components.bread-crumps', [
+    'head' => __('translation.Notification mangement'),
+     'links' => [
+        BredCrumpLinks( route('clients.dashboard')  ,  __('translation.Dashboard')), 
+         BredCrumpLinks( route('notification.index')  , __('translation.Notification')), 
+      ]])
+@endcomponent
+@endsection
+@section('content')
+
+
+
+
     <div class="content-wrapper">
         <div class="container-fluid py-4">
             <div class="row mt-4">

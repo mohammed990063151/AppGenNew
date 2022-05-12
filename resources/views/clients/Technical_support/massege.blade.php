@@ -95,10 +95,10 @@
                                                          
                                                             type="button">send</a>  
                                                  </div> --}}
+                                                 
                                                  <form action="{{route((Auth::guard('admin')->check()?'admin.':'').'ticket.send')}}" method="post" >
                                                     @csrf
                                                     
-                                                    {{$ticket = ticket::find($id)->update(['status' => 'inprogress']);}}
                                                 
                                                
                                                     {{-- <div class="card">

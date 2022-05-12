@@ -61,8 +61,10 @@ class Ticket extends Model
             {
                 return Carbon::parse($key)->diffForHumans();
             }
+        }  
+          
             
-    }
+   
     
 
 

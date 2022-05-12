@@ -5,7 +5,7 @@
         'head' => __('translation.Technical support'),
          'links' => [
             BredCrumpLinks( route('clients.dashboard')  ,  __('translation.Dashboard')), 
-             BredCrumpLinks( route('ticket.index')  , __('translation.Technical support-ticket')), 
+             BredCrumpLinks( route('ticket.index')  , __('translation.Technical support')), 
           ]])
 @endcomponent
     @endsection
@@ -20,7 +20,7 @@
             <div class="card z-index-2 h-100">
                 <div class="card-header pb-0 pt-3 bg-transparent">
                     <div class="d-flex justify-content-between">
-                        <h6 class="text-capitalize col-4">{{__('translation.ticket')}}</h6>
+                        <h6 class="text-capitalize col-4">{{__('translation.Technicalsupport tickets')}}</h6>
 
                             <span><a href="{{route((Auth::guard('admin')->check()?'admin.':'').'ticket.create')}}" class="btn btn-primary btn-sm"
                                 {{--  --}}

@@ -285,7 +285,10 @@ return [
     'address' => 'العنوان',
     'app_domain' => ' عنوان التطبيق',
     'pending' => ' جديده ',
-    'inprogress' => ' في تقدم ',
+    'inprogress' => '  قيد التنفيذ ',
     'copmplated' => ' منتهيه  ',
+    'Technicalsupport tickets' => 'تذاكر الدعم الفني    ',
+    'Notificationmangement notifiaction' => ' 
+     الاشعارات  ',
 
 ];

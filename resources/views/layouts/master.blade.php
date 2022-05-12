@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" dir="rtl">
+<html lang="en">             
 
 <head>
     <meta charset="utf-8" />
@@ -20,7 +20,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@200&display=swap" rel="stylesheet">
 </head>
 
-<body class="g-sidenav-show  rtl bg-gray-100"  style="font-family: system:ui">
+<body class="g-sidenav-show   bg-gray-100"  style="font-family: system:ui">
 
     <div class="min-height-300 bg-primary position-absolute w-100"></div>
     @include('layouts.includes.sidebar')
@@ -36,3 +36,4 @@
 </body>
 
 </html>
+{{-- dir="rtl" --}}

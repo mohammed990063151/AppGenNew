@@ -1,5 +1,5 @@
 <div>
-    @dd($rows['edit'=>'ticket.create']);
+    @dd($rows['edit'[]]);
     {{-- @dd($model , $rows) --}}
     <table class="table table-striped  table-responsive">
         <thead class="thead-inverse">

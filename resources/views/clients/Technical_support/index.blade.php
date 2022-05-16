@@ -41,7 +41,7 @@
                             'name' => 'user->name',
                             'status' => 'status', 
                             'option' => [
-                                'edit' => 'name.edit', 
+                                'edit' => 'ticket.create', 
                             ]];
                         @endphp
                         <x-table-components :model="$allTicket" :rows="$row"/>

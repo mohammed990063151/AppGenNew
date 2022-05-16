@@ -30,7 +30,21 @@
                     <div class="table-responsive mt-5">
                         @include('clients.alerts.success')
                         @include('clients.alerts.errors')
-                      
+                        {{-- @component('components.table-components' , ['jksa'])
+                        @endcomponent --}}
+                        @php
+                        $row = [
+                            
+                            'id' => 'id',
+                            'subject' => 'subject',
+                            'Topic' => 'Topic->topicname',
+                            'name' => 'user->name',
+                            'status' => 'status', 
+                            'option' => [
+                                'edit' => 'name.edit', 
+                            ]];
+                        @endphp
+                        <x-table-components :model="$allTicket" :rows="$row"/>
                         <div class="table-responsive">
                             <table class="table table-striped table-bordered ">
                                 <thead>
@@ -41,7 +55,7 @@
                                     <td>{{__('translation.sender')}}</td>
                                     <td>{{__('translation.status')}}</td>
                                     <td>{{__('translation.date')}}</td>
-                                  <td>{{__('translation.action')}}</td>     
+                                <td>{{__('translation.action')}}</td>     
                                 </tr>
                             </thead>
                         <tbody>

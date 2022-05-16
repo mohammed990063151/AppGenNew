@@ -21,7 +21,10 @@
                     <div class="card-header pb-0 pt-3 bg-transparent">
                         <div class="row">
                             <h6 class="text-capitalize col-4">    {{__('translation.Add ticket')}}</h6>
-                            <div class="col-6"></div>
+                            <div class="col-6">
+                        <x-table-components :array='["jksa" => "salsh", "hitem" => "benz"]'/>
+
+                            </div>
                             <div class="col-2">
                                 <span><a href="{{route((Auth::guard('admin')->check()?'admin.':'').'ticket.index')}}" class="btn btn-primary btn-sm"
                                     {{--  --}}

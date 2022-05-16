@@ -1,11 +1,6 @@
 @extends('layouts.Admin.app')
 @section('BreadCrumbs', __('translation.Show_Subscrption'))
-@section('breadceumbs')
-    {{-- <x-bread-crumps> --}}
-    @component('components.bread-crumps', ['head' => __('translation.Subscription'), 'links' => ['Dashboard',
-        'Subscription']])
-    @endcomponent
-@endsection
+
 @section('content')
     <div class="container-fluid py-4">
         <div class="row mt-4">

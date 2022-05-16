@@ -6,7 +6,6 @@
    @continue 
    @endif
    <li class="breadcrumb-item text-sm {{ $key != 0 ? ' text-white active' : '' }}" aria-current="page" ><a class="opacity-5 text-white" href="{{$link["url"]}}">{{$link["text"]}} </a></li>
-   
    @endforeach
     
   </ol>

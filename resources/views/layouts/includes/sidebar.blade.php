@@ -2,11 +2,16 @@
         
 id="sidenav-main">
     <div class="sidenav-header">
-        <i class="fas fa-times p-3 cursor-pointer text-secondary opacity-5 position-absolute end-0 top-0 d-none d-xl-none"
-            aria-hidden="true" id="iconSidenav"></i>
-        <a class="navbar-brand m-0" target="_blank">
+        <div class="d-flex justify-content-between">
+            <div class="logo">
+ <div style=" margin: 10px">
+                                        <img src="{{ $OrganizationProfile->logo }}" alt=""
+                                            style="width: 43px; height: 43px">                <span class="ms-1 font-weight-bold">{{ $OrganizationProfile->name}}</span>
+
+            </div>
+            </div>
             {{-- <img src="{{ $OrganizationProfile->logo }}" class="navbar-brand-img h-100" alt="main_logo"> --}}
-            <span class="ms-1 font-weight-bold">{{ __('translation.Dashboard') }}</span>
+
         </a>
     </div>
     <hr class="horizontal dark mt-0">

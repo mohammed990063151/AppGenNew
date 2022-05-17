@@ -22,7 +22,7 @@
                     <div class="d-flex justify-content-between">
                         <h6 class="text-capitalize col-4">{{__('translation.Technicalsupport tickets')}}</h6>
 
-                            <span><a href="{{route((Auth::guard('admin')->check()?'admin.':'').'ticket.create')}}" class="btn btn-primary btn-sm"
+                            <span><a href="{{route((Auth::guard('admin')->check()?'admin.':'').'ticket.create')}}" class="btn btn-outline-primary btn-sm"
                                 {{--  --}}
                                     type="button">{{__('translation.open-ticket')}}</a></span>
 
@@ -32,19 +32,22 @@
                         @include('clients.alerts.errors')
                         {{-- @component('components.table-components' , ['jksa'])
                         @endcomponent --}}
-                        @php
-                        $row = [
+                        {{-- @php --}}
+                        // $row = [
                             
-                            'id' => 'id',
-                            'subject' => 'subject',
-                            'Topic' => 'Topic->topicname',
-                            'name' => 'user->name',
-                            'status' => 'status', 
-                            'option' => [
-                                'edit' => 'ticket.create', 
-                            ]];
-                        @endphp
-                        <x-table-components :model="$allTicket" :rows="$row"/>
+                        //     'id' => 'id',
+                        //     'subject' => 'subject',
+                        //     'Topic' => 'Topic->topicname',
+                        //     'name' => 'user->name',
+                        //     'status' => 'status', 
+                        //     'option' => [
+                        //         'edit' => ['icon'=>'bi bi-apple', 'class'=>'bg-danger','route'=>''], 
+                        //         'delete' => ['icon'=>'bi bi-archive', 'class'=>'bg-warning','route'=>''], 
+                        //         'status' =>  ['icon'=>'bi bi-arrow-up', 'class'=>'bg-success','route'=>''], 
+                        {{-- //     ]];
+                        // @endphp
+                        // <x-table-components :model="$allTicket" :rows="$row"/>
+                         --}}
                         <div class="table-responsive">
                             <table class="table table-striped table-bordered ">
                                 <thead>
@@ -69,7 +72,7 @@
                                     <td>{{($data->user->name) ?? ' - '}}</td>
                                     <td>{{__('translation.' . $data->status);}}</td>
                                     <td>{{$data->created_at}}</td>
-                                   <td><a href="{{route( (Auth::guard('admin')->check()?'admin.':'').'ticket.show', $data->id)}}" class="btn btn-primary btn-sm"
+                                   <td><a href="{{route( (Auth::guard('admin')->check()?'admin.':'').'ticket.show', $data->id)}}" class="btn btn-outline-primary btn-sm"
                                     {{--  --}}
                                          type="button">{{__('translation.view')}}</a></span> </td>
                                     

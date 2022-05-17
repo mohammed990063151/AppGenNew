@@ -1,7 +1,6 @@
-<div>
-    @dd($rows['edit'[]]);
+{{-- <div>
     {{-- @dd($model , $rows) --}}
-    <table class="table table-striped  table-responsive">
+    {{-- <table class="table table-striped  table-responsive">
         <thead class="thead-inverse">
             <tr>
                 @foreach ($rows as $key => $value)
@@ -15,16 +14,18 @@
         <tr>
             @foreach ($rows as $key => $value)
                 @if ($key == 'option')
-                    @if (array_key_exists('edit', $value))
-                        <td> <a href="{{$edit[0]}}" class="btn btn-primary btn-sm" type="button">{{ 'edit' }}</a></span></td>
-                    @endif
-
+                    <td>
+                        @forelse ($value as $key2213132 => $value2 )
+                        <a href="{{ $value2['route'] }}"
+                            class="btn btn-sm {{ $value2['class']  ?? '-'}} "> 
+                            <i class="{{ $value2['icon']  ?? 'bi bi-apple'}} "></i>
+                        </a>
+                        @empty
+                        @endforelse
+                        
+                    </td>
                     @continue
                 @endif
-
-
-
-
 
                 @if (str_contains($value, '->'))
                     @php
@@ -51,4 +52,4 @@
 
     </tr>
     </>
-</div>
+</div>  --}}

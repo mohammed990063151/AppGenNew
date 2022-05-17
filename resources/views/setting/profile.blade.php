@@ -29,7 +29,7 @@
                                             <div class="insights px-2 ">
                                                 <fieldset>
                                                     <label for="">{{ __('translation.logo_images') }}</label>
-                                                    <input type="file" name="logoo" class="form-control" accept=".svg" />
+                                                    <input type="file" name="logoo" class="form-control"  />
                                                     @error('logo')
                                                         <small class="text-danger">
                                                             {{ $message }}

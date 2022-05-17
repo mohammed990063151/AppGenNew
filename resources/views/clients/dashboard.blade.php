@@ -471,7 +471,7 @@
 
 <script src="https://code.highcharts.com/highcharts.js"></script>
 
-<script type="text/javascript">
+{{-- <script type="text/javascript">
     var Notification = <?php echo json_encode($Notification)?>;
     Highcharts.chart('container', {
         title: {
@@ -517,5 +517,5 @@
             }]
         }
     });
-</script>
+</script> --}}
 @endsection

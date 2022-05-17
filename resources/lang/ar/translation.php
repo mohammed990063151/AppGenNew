@@ -292,5 +292,7 @@ return [
     'Technicalsupport tickets' => 'تذاكر الدعم الفني    ',
     'Notificationmangement notifiaction' => '  الاشعارات  ',
     'Add Package'=>'hjk',
+    'AppGen'=>'',
+    'no.image'=>'لاتوجد صوره',
 
 ];

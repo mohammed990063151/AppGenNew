@@ -21,7 +21,7 @@
                                                 {{-- <div class="col-2"> --}}
                                                 <span><a href="{{ route('notification.index') }}"
                                                         class="
-                                                        btn btn-warning mr-1"
+                                                        btn btn-outline-danger btn-sm"
                                                         type="button">{{ __('translation.go_back') }}</a></span>
                                                 {{-- </div> --}}
                                             </div>
@@ -97,12 +97,12 @@
                                                     <div class=" m-1 mt-3">
                                                         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a
                                                             href="{{ route('notification.index') }}" type="button"
-                                                            class="btn btn-warning mr-1">
+                                                            class="btn btn-outline-primary btn-sm">
                                                             <i class="la la-remove"></i>
                                                             {{ __('translation.cancel') }}
                                                         </a>
                                                         <span>&nbsp;&nbsp;&nbsp;&nbsp;</span>
-                                                        <button type="submit" class="btn btn-primary " >
+                                                        <button type="submit" class="btn btn-outline-primary btn-sm" >
                                                             <i class="la la-check"></i>
                                                             {{ __('translation.send') }}
                                                         </button>

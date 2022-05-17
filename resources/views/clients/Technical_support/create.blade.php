@@ -22,11 +22,11 @@
                         <div class="row">
                             <h6 class="text-capitalize col-4">    {{__('translation.Add ticket')}}</h6>
                             <div class="col-6">
-                        <x-table-components :array='["jksa" => "salsh", "hitem" => "benz"]'/>
+                        {{-- <x-table-components :array='["jksa" => "salsh", "hitem" => "benz"]'/> --}}
 
                             </div>
                             <div class="col-2">
-                                <span><a href="{{route((Auth::guard('admin')->check()?'admin.':'').'ticket.index')}}" class="btn btn-primary btn-sm"
+                                <span><a href="{{route((Auth::guard('admin')->check()?'admin.':'').'ticket.index')}}" class="btn btn-outline-danger btn-sm"
                                     {{--  --}}
                                         type="button">{{__('translation.go-back')}}</a></span> 
                             </div>
@@ -77,7 +77,7 @@
                                     </div></div></div>
 
 
-                                <button class="btn m-4 btn-primary" style="text-align:left;"> {{__('translation.Save')}} </button>
+                                <button class="btn btn-outline-primary btn-sm" style="text-align:left;"> {{__('translation.Save')}} </button>
                                 </form>
                             </div>
                         </div>

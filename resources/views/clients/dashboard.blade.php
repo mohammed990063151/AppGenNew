@@ -4,7 +4,7 @@
 =========================================================
 
 * Product Page: https://www.creative-tim.com/product/argon-dashboard
-* Copyright 2022 Creative Tim (https://www.creative-tim.com)    
+* Copyright 2022 Creative Tim (https://www.creative-tim.com)
 * Licensed under MIT (https://www.creative-tim.com/license)
 * Coded by Creative Tim
 
@@ -74,10 +74,10 @@
                                     <div class="numbers">
                                         <p class="text-sm mb-0 text-uppercase font-weight-bold">
                                             {{-- {{ __('translation.Today\'s Users') }}</p> --}}
-                                         
+
                                             {{__('translation.notifcation') }}
-                                           
-                                         
+
+
                                             </p>
                                         <h5 class="font-weight-bolder">
                                             {{ \App\Models\FirebaseNotification::count() }}
@@ -109,7 +109,7 @@
                                             {{__('translation. TICKET MASSEGE') }}
                                             {{-- {{__('translation. All Applcation') }}
                                             --}}
-                                            
+
                                         <h5 class="font-weight-bolder">
                                             {{ \App\Models\Ticketmassege::count() }}
                                         </h5>
@@ -468,54 +468,4 @@
 
     <!--   Core JS Files   -->
 
-
-<script src="https://code.highcharts.com/highcharts.js"></script>
-
-<script type="text/javascript">
-    var Notification = <?php echo json_encode($Notification)?>;
-    Highcharts.chart('container', {
-        title: {
-            text: 'New Notification'
-        },
-
-        xAxis: {
-            categories: ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September',
-                'October', 'November', 'December'
-            ]
-        },
-        yAxis: {
-            title: {
-                text: 'Number of New Notification'
-            }
-        },
-        legend: {
-            layout: 'vertical',
-            align: 'right',
-            verticalAlign: 'middle'
-        },
-        plotOptions: {
-            series: {
-                allowPointSelect: true
-            }
-        },
-        series: [{
-            name: 'New Notification',
-            data: Notification
-        }],
-        responsive: {
-            rules: [{
-                condition: {
-                    maxWidth: 500
-                },
-                chartOptions: {
-                    legend: {
-                        layout: 'horizontal',
-                        align: 'center',
-                        verticalAlign: 'bottom'
-                    }
-                }
-            }]
-        }
-    });
-</script>
 @endsection

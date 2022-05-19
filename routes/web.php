@@ -78,6 +78,7 @@ Route::group(['prefix' => LaravelLocalization::setLocale()], function () {
             Route::post('update/{id}', [ApplicationController::class, 'update'])->name('application.update');
             Route::DELETE('delete/{id}', [ApplicationController::class, 'delete'])->name('application.delete');
             Route::get('application-details/{id}', [ApplicationController::class, 'AddDetialsDetials'])->name('AddDetialsDetials');
+                     Route::get('Applction_Building/{id}', [ApplicationController::class, 'Applction_Building'])->name('Applction_Building');
         });
 
         // start Screenes1

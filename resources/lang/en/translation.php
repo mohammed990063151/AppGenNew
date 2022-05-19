@@ -239,7 +239,5 @@ return [
     'pending' => ' pending ',
     'inprogress' => ' inprogress ',
     'copmplated' => 'copmplated',
-    'Technicalsupport tickets' => 'Technicalsupport tickets',
-    'Notificationmangement notifiaction' => 'Notificationmangement notifiaction',
     
 ];

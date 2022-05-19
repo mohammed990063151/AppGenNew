@@ -1,5 +1,9 @@
 <!DOCTYPE html>
+<<<<<<< HEAD
 <html lang="en">
+=======
+<html lang="en" dir="rtl">
+>>>>>>> parent of f656028 (haithm)
 
 <head>
     <meta charset="utf-8" />
@@ -23,7 +27,7 @@
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"></script>
 </head>
 
-<body class="g-sidenav-show   bg-gray-100"  style="font-family: system:ui">
+<body class="g-sidenav-show  rtl bg-gray-100"  style="font-family: system:ui">
 
     <div class="min-height-300 bg-primary position-absolute w-100"></div>
     @include('layouts.includes.sidebar')
@@ -39,4 +43,7 @@
 </body>
 
 </html>
+<<<<<<< HEAD
 {{-- dir="rtl" --}}
+=======
+>>>>>>> parent of f656028 (haithm)

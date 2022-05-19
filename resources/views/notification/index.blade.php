@@ -5,7 +5,7 @@
     'head' => __('translation.Notification mangement'),
      'links' => [
         BredCrumpLinks( route('clients.dashboard')  ,  __('translation.Dashboard')), 
-         BredCrumpLinks( route('notification.index')  , __('translation.Notification mangement')), 
+         BredCrumpLinks( route('notification.index')  , __('translation.Notification')), 
       ]])
 @endcomponent
 @endsection
@@ -14,12 +14,16 @@
 
 
 
-   
+    <div class="content-wrapper">
+        <div class="container-fluid py-4">
+            <div class="row mt-4">
+                <div class="col-lg-12 mb-lg-0 mb-4">
                     {{-- <div class="content-header row">
         <div class="content-header-left col-md-6 col-12 mb-2">
             <h3 class="content-header-title mb-0">{{__('translation.notification')}}</h3>
 
         </div> --}}
+                    <div class="content-header-right text-md-right col-md-6 col-12">
                         {{-- @can('role-create') --}}
                         {{-- <div class="btn-group">
                 <a href="{{ route('notification.create') }}" class="btn btn-round btn-info" type="button"><i
@@ -27,19 +31,31 @@
                     {{__('translation.add')}}</a>
             </div> --}}
                         {{-- @endcan --}}
-                        <div class="container-fluid py-4">
-                            <div class="row mt-4">
-                                <div class="col-lg-12 mb-lg-0 mb-4">
-                                    <div class="card z-index-2 h-100">
-                                        <div class="card-header pb-0 pt-3 bg-transparent">
-                                            <div class="d-flex justify-content-between" style="font-weight: 600">
-                                        {{-- </div>
+                    </div>
+                </div>
+                <div class="content-body">
+                    <!-- Zero configuration table -->
+                    <section id="configuration">
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="card">
+                                    <div class="card-header">
+                                        <a class="heading-elements-toggle"><i
+                                                class="la la-ellipsis-v font-medium-3"></i></a>
+                                        <div class="heading-elements">
+                                            <ul class="list-inline mb-0">
+                                                <li><a data-action="collapse"><i class="ft-minus"></i></a></li>
+                                                <li><a data-action="reload"><i class="ft-rotate-cw"></i></a></li>
+                                                <li><a data-action="expand"><i class="ft-maximize"></i></a></li>
+                                                {{-- <li><a data-action="close"><i class="ft-x"></i></a></li> --}}
+                                            </ul>
+                                        </div>
                                     </div>
                                     <div class="card-content collapse show">
                                         <div class="card-body card-dashboard">
                                             <div class="d-flex justify-content-between">
-                                                <h6 class="text-capitalize col-4"> --}}
-                                                    {{ __('translation.Notificationmangement notifiaction'); }}
+                                                <h6 class="text-capitalize col-4">
+                                                    {{ __('translation.notifiaction_tabl') }}
                                                 </h6>
                                                 {{-- <div class="col-2"> --}}
                                                 <span><a href="{{ route('notification.create') }}"
@@ -47,10 +63,6 @@
                                                         type="button">{{ __('translation.add_notifiaction_table') }}</a></span>
                                                 {{-- </div> --}}
                                             </div>
-                                            <div class="table-responsive mt-5">
-                                                @include('clients.alerts.success')
-                                                @include('clients.alerts.errors')
-                                              
                                             <div class="table-responsive">
                                                 <table class="table table-striped table-bordered ">
                                                     <thead>

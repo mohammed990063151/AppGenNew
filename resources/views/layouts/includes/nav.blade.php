@@ -2,7 +2,6 @@
     data-scroll="false">
     <div class="container-fluid py-1 px-3">
         <nav aria-label="breadcrumb">
-            @yield('breadceumbs' , \View::make('layouts.bredcrumps'))
             {{-- @endSection --}}
         </nav>
         <div class="collapse navbar-collapse mt-sm-0 mt-2 me-md-0 me-sm-4" id="navbar">

@@ -4,13 +4,8 @@
 /storage/*.key
 /vendor
 /public/logo
-<<<<<<< Updated upstream
 .env
 .env.backup
-=======
-# .env
-# .env.backup
->>>>>>> Stashed changes
 .phpunit.result.cache
 Homestead.json
 Homestead.yaml

@@ -2,7 +2,7 @@
     data-scroll="false">
     <div class="container-fluid py-1 px-3">
         <nav aria-label="breadcrumb">
-            
+            @yield()
             {{-- @endSection --}}
 <div class="collapse navbar-collapse" id="navbar-mobile">
     <ul class="nav navbar-nav mr-auto float-left">

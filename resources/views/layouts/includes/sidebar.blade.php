@@ -1,10 +1,21 @@
+
 <aside class="sidenav bg-white navbar navbar-vertical navbar-expand-xs border-0 border-radius-xl my-3  {{getclass(['ar'=> ' fixed-end me-4 rotate-caret ps ps__rtl ','en'=>' fixed-start ms-4 ps' ])}}"id="sidenav-main">
     <div class="sidenav-header">
             <div class="d-flex justify-content-around align-items-center">
                 <div class="logo">
                     <div style=" margin: 10px">
                         <img src="{{ $OrganizationProfile->logo }}" alt=""
-                                style="width: 43px; height: 43px" />   
+                                style="width: 43px; height: 43px" />  
+<aside class="sidenav bg-white navbar navbar-vertical navbar-expand-xs border-0 border-radius-xl my-3 fixed-start ms-4 "
+
+id="sidenav-main">
+    <div class="sidenav-header">
+        <div class="d-flex justify-content-between">
+            <div class="logo">
+ <div style=" margin: 10px">
+                                        {{-- <img src="{{ $OrganizationProfile->logo }}" alt=""> style="width: 43px; height: 43px">
+                                           <span class="ms-1 font-weight-bold">{{ $OrganizationProfile->name}}</span> --}}
+
             </div>
         </div>
         <span class="ms-1 font-weight-bold">{{ $OrganizationProfile->name}}</span>
@@ -127,7 +138,7 @@
                     </div>
                     <span class="nav-link-text ms-1">Sign Up</span>
                 </a>
-            </li> --}} 
+            </li> --}}
         </ul>
     </>
 </div>

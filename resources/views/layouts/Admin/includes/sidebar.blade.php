@@ -37,13 +37,13 @@
                 <a href="#" class='sidebar-link'>
                     <i class="bi bi-calendar2-week"></i>
                     <span>{{ __('translation.package') }}</span>
-                </a>
+                </a>    
                 <ul class="submenu">
                     <li class="submenu-item ">
-                        <a href="{{ route('packages.create') }}">add Package</a>
+                        <a href="{{ route('packages.create') }}">{{__('translation.Add Package')}}</a>
                     </li>
                     <li class="submenu-item ">
-                        <a href="{{ route('packages.index') }}">show pacakges</a>
+                        <a href="{{ route('packages.index') }}">{{__('translation.Show_pacakges')}}</a>
                     </li>
                 </ul>
             </li>
@@ -73,14 +73,14 @@
                     <li class="sidebar-item  has-sub">
                         <a href="#" class='sidebar-link'>
                             <span class="bi bi-file-person-fill blue-color"> </span>
-                            <span>User Mangment</span>
+                            <span>{{__('translation.User Mangment')}}</span>
                         </a>
                         <ul class="submenu">
                             <li class="submenu-item ">
-                                <a href="{{route('admin.create')}}">Add User </a>
+                                <a href="{{route('admin.create')}}">{{__('translation.Add_User')}}</a>
                             </li>
                             <li class="submenu-item">
-                                <a href="{{route('admin.index')}}">Show Users</a>
+                                <a href="{{route('admin.index')}}">{{__('translation.Show_Users')}}</a>
                             </li>
                         </ul>
                     </li>

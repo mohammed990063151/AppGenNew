@@ -1,4 +1,5 @@
-<nav class="navbar navbar-main navbar-expand-lg px-0 mx-4 shadow-none border-radius-xl " id="navbarBlur"
+
+<nav class="navbar navbar-main navbar-expand-lg px-0 mx-4 shadow-none border-radius-xl me-4 {{getclass([' ar'=> 'ps ps__rtl','en'=>'' ])}} " id="navbarBlur"
     data-scroll="false">
     <div class="container-fluid py-1 px-3">
         <nav aria-label="breadcrumb">
@@ -18,7 +19,7 @@
                         data-bs-toggle="dropdown" aria-expanded="false">
                         {{-- <i class="fa fa-bell cursor-pointer"></i> --}}
                     </a>
-                    <ul class="dropdown-menu  dropdown-menu-end  px-2 py-3 me-sm-n4"
+                    <ul class="dropdown-menu    px-2 py-3 me-sm-n4 {{ getclass(['en' => 'dropdown-menu-end'])}}"
                         aria-labelledby="dropdownMenuButton">
                         {{-- <li class="mb-2">
                             <a class="dropdown-item border-radius-md" href="javascript:;">
@@ -104,7 +105,7 @@
                         data-bs-toggle="dropdown" aria-expanded="false">
                         <i class="fa fa-lg  fa-language"></i>
                     </a>
-                    <ul class="dropdown-menu  dropdown-menu-end  px-2 py-3 me-sm-n4">
+                    <ul class="dropdown-menu    px-2 py-3 me-sm-n4 {{getclass(['en'=>'dropdown-menu-end'])}}">
                         @foreach (LaravelLocalization::getSupportedLocales() as $localeCode => $properties)
                             <li>
                                 <a rel="alternate" class="dropdown-item border-radius-md" hreflang="{{ $localeCode }}"
@@ -198,11 +199,13 @@
                         data-bs-toggle="dropdown" aria-expanded="false">
                         <i class="fa fa-lg  fa-user"></i>
                     </a>
-                    <ul class="dropdown-menu  dropdown-menu-end  px-2 py-3 me-sm-n4">
+                    <ul class="dropdown-menu   px-2 py-3 me-sm-n4 {{getclass(['en'=>'dropdown-menu-end'])}}">
                         <li>
                             <a rel="alternate" class="dropdown-item border-radius-md">
-                                <span class="m-2"><i class="fa  fa-user"></i></span>
-                                <span>{{__('translation.profile')}}</span>
+                                <div class='d-flex justify-content-between align-items-center p-0'>
+                                    <span ><i class="fa  fa-user"></i></span>
+                                    <span>{{__('translation.profile')}}</span>
+                                </div>
                             </a>
                             <hr style="padding:0;margin:3px 0" />
                             <a href="{{ route('logout') }}" wire: onclick="event.preventDefault();

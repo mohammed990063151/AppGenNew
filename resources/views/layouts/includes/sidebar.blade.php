@@ -1,15 +1,29 @@
-<aside class="sidenav bg-white navbar navbar-vertical navbar-expand-xs border-0 border-radius-xl my-3 fixed-end me-4 rotate-caret ps ps__rtl ps--active-y"
+<aside class="sidenav bg-white navbar navbar-vertical navbar-expand-xs border-0 border-radius-xl my-3  {{getclass(['ar'=> ' fixed-end me-4 rotate-caret ps ps__rtl ','en'=>' fixed-start ms-4 ps' ])}}"id="sidenav-main">
+    <div class="sidenav-header">
+            <div class="d-flex justify-content-around align-items-center">
+                <div class="logo">
+                    <div style=" margin: 10px">
+                        <img src="{{ $OrganizationProfile->logo }}" alt=""
+                                style="width: 43px; height: 43px" />  
+<aside class="sidenav bg-white navbar navbar-vertical navbar-expand-xs border-0 border-radius-xl my-3 fixed-start ms-4 "
+
 id="sidenav-main">
     <div class="sidenav-header">
-        <i class="fas fa-times p-3 cursor-pointer text-secondary opacity-5 position-absolute end-0 top-0 d-none d-xl-none"
-            aria-hidden="true" id="iconSidenav"></i>
-        <a class="navbar-brand m-0" target="_blank">
-            {{-- <img src="{{ $OrganizationProfile->logo }}" class="navbar-brand-img h-100" alt="main_logo"> --}}
-            <span class="ms-1 font-weight-bold">{{ __('translation.Admin_Control') }}</span>
-        </a>
+        <div class="d-flex justify-content-between">
+            <div class="logo">
+ <div style=" margin: 10px">
+                                        {{-- <img src="{{ $OrganizationProfile->logo }}" alt=""> style="width: 43px; height: 43px">
+                                           <span class="ms-1 font-weight-bold">{{ $OrganizationProfile->name}}</span> --}}
+
+            </div>
+        </div>
+        <span class="ms-1 font-weight-bold">{{ $OrganizationProfile->name}}</span>
+        <span class='w-20'></span>
+        
+
     </div>
-    <hr class="horizontal dark mt-0">
-    <div style="height: auto" class="collapse navbar-collapse  w-auto " id="sidenav-collapse-main">
+    <hr class="horizontal dark mt-">
+    <div style="height: auto"  class="collapse navbar-collapse px-0 w-auto {{getclass(['ar'=>'ps ps__rtl ps--active-y','en'=>''])}}">
         <ul class="navbar-nav">
             {{-- <li class="nav-item">
                 <a class="nav-link {{ request()->routeIs('clients.dashboard') ? 'active' : '' }}">
@@ -124,7 +138,8 @@ id="sidenav-main">
                     </div>
                     <span class="nav-link-text ms-1">Sign Up</span>
                 </a>
-            </li> --}} 
+            </li> --}}
         </ul>
-    </div>
+    </>
+</div>
 </aside>

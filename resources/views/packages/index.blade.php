@@ -8,9 +8,9 @@
                     <div class="card-header pb-0 pt-3 bg-transparent">
                         <div class="d-flex justify-content-between">
                             <h6 class="text-capitalize col-4">{{ __('translation.Packages_Table') }}</h6>
-                            <a type="button" class="btn btn-sm btn-primary" data-toggle="modal" data-target="#exampleModal">
-                                {{ __('translation.New_Package') }}
-                            </a>
+<a href="{{route('packages.create')}}" type="button" class="btn btn-sm btn-primary" data-toggle="modal" data-target="#exampleModal">
+    {{ __('translation.New_Package') }}
+</a>
                             {{-- <span><a href="{{route('packages.create')}}" class="btn btn-primary btn-sm"
                                         type="button">add New</a></span> --}}
                         </div>
@@ -81,3 +81,8 @@
     </div>
     </div>
 @endsection
+
+
+
+
+

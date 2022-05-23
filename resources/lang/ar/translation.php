@@ -263,6 +263,7 @@ return [
     'status' => 'الحالة',
     'Add_Packages_Futrue' => 'خدمات جديدة',
     'new_packge' => 'اضافة خدمة جديدة',
+    'Show_pacakges' => 'اظهار الخدمه',
     'Package_details' => 'تفاصيل الخدمة الجديدة',
     'Package_Name' => 'اسم الخدمة',
     'Package_Price' => 'سعر الخدمة',
@@ -273,6 +274,7 @@ return [
     'Package_Text' => 'إسم الخدمة',
     'Package_icon' => 'صورة الخدمة',
     'Admins_Mangement' => 'إدارة المسؤولين',
+    'Admins Mangement'=>'إدارة المشرفين',
     'Subscription_Package_table' => 'تقرير الاشترااكات ',
     'amount' => 'الكمية',
     'Package_report_table' => 'تفرير الخدمات',
@@ -287,5 +289,12 @@ return [
     'pending' => ' جديده ',
     'inprogress' => ' في تقدم ',
     'copmplated' => ' منتهيه  ',
+
+    'Technicalsupport tickets' => 'تذاكر الدعم الفني    ',
+    'Notificationmangement notifiaction' => '  الاشعارات  ',
+    'Add Package'=>'hjk',
+    'AppGen'=>'',
+    'no.image'=>'لاتوجد صوره',
+
 
 ];

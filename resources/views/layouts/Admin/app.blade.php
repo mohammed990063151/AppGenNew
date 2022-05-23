@@ -21,6 +21,10 @@
             @include('layouts.Admin.includes.sidebar')
         </div>
         <div id="main">
+            <div id="app">
+                <div id="nav" class="active">
+                    @include('layouts.Admin.includes.nav')
+                </div>
             <header class="mb-3">
                 <a href="#" class="burger-btn d-block d-xl-none">
                     <i class="bi bi-justify fs-3"></i>
@@ -31,6 +35,9 @@
     </div>
     <div class="page-content">
         @yield('content')
+    </div>
+
+       
     </div>
             <footer>
                 @include('layouts.Admin.includes.footer')

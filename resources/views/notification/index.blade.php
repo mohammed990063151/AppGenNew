@@ -59,7 +59,7 @@
                                                 </h6>
                                                 {{-- <div class="col-2"> --}}
                                                 <span><a href="{{ route('notification.create') }}"
-                                                        class="btn btn-primary btn-sm"
+                                                        class="btn btn-outline-primary btn-sm"
                                                         type="button">{{ __('translation.add_notifiaction_table') }}</a></span>
                                                 {{-- </div> --}}
                                             </div>
@@ -98,14 +98,14 @@
                                             <th>{{ $notification->notification_date }}</th>
                                             {{-- <th>{{__('translation.')}}</th> --}}
                                             <td>
-                                                <a class="btn btn-circle  btn-xs btn-success"
+                                                <a class="btn btn-outline-success btn-sm"
                                                     href="{{ route('notification.edit', $notification->id) }}">
                                                     <i class="fa fa-refresh"></i> </a>
                                                 <form style='display:inline' id='deleteform{{ $key }}'
                                                     action='{{ route('notification.destroy', $notification->id) }}'>
                                                     <button
                                                         onclick="event.preventDefault();deleteConfirmation({{ $key }})"
-                                                        class="btn btn-xs btn-circle  btn-danger" type="submit"
+                                                        class="btn btn-outline-danger btn-sm" type="submit"
                                                         value="Delete">
                                                         <i class="fa fa-trash"></i>
                                                         </i></button>

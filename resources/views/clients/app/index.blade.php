@@ -27,7 +27,7 @@
 
 
                             {{-- <div class="col-12"> --}}
-                            <span><a href="{{ route('application.create') }}" class="btn btn-primary btn-sm"
+                            <span><a href="{{ route('application.create') }}" class="btn btn-outline-primary btn-sm"
                                     {{--  --}} type="button">{{ __('translation.add_apps') }}</a></span>
                             {{-- </div> --}}
                         </div>

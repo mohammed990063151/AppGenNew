@@ -165,6 +165,10 @@ return [
     'Start_Conversation' => 'Start Conversation',
     'Feature_table' => 'Feature Table',
     'new_Feature' => 'New Feature',
+    'User Mangment' => 'User Mangment',
+    'Add_User' => 'Add_User',
+    'Show_Users' => 'Show_Users',
+    'Show pacakges' => 'Show_pacakges',
 
     'id' => 'id ',
     'option' => 'Option ',
@@ -193,7 +197,9 @@ return [
     'Package_Name' => ' Package Name',
     'Package_Text' => ' Package Text',
     'Package_icon' => ' Package Icon',
-    'Admins_Mangement' => 'Admins Mangement',
+    'Admins_Mangements' => 'Admins_Mangement',
+    'Admins Mangement' => 'Admins Mangement',
+    
     'Subscription_Package_table' => 'Subscription Report Table',
     'amount' => 'Amount',
     'Package_report_table' => 'Package Report Table',
@@ -235,9 +241,16 @@ return [
     ' TICKET MASSEGE' => 'TICKET MASSEGE',
     ' Download Applaction' =>'Download Applaction',
     'home'=>'home',
+    'Add Package'=>'Add Package',
     'notifcation'=>'notifcation',
     'pending' => ' pending ',
     'inprogress' => ' inprogress ',
     'copmplated' => 'copmplated',
+
+    'no.image' => 'no.image',
+    'Technicalsupport tickets' => 'Technicalsupport tickets',
+    'Notificationmangement notifiaction' => 'Notificationmangement notifiaction',
+
+
     
 ];

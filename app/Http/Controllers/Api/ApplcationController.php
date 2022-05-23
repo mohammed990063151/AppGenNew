@@ -5,7 +5,8 @@ namespace App\Http\Controllers\Api;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Http\Resources\ApplctionResource;
-
+use App\Http\Resources\Applction_BuildingResource;
+use App\Models\Applction_Building;
 use App\Models\app;
 use Illuminate\Support\Facades\Validator;
 
@@ -107,5 +108,13 @@ $array =[
                 return $this->apiResponse(new ApplctionResource($applction),'The applction update',201);
             }
         }
+        public function countryList($id){
 
-}
+            $MyApp = Applction_Building::find($id);
+
+            if($MyApp){
+                return $this->apiResponse(new Applction_BuildingResource($MyApp,$id),'ok',200);
+            }
+            return $this->apiResponse(null,'The apps Not Found',404);
+               }
+            }

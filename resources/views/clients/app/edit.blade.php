@@ -1,7 +1,12 @@
 @extends('layouts.master')
 @section('breadceumbs')
     {{-- <x-bread-crumps> --}}
-    @component('components.bread-crumps', ['head' => ' Updata My app', 'links' => [' My app', 'Updata applction']])
+        @component('components.bread-crumps', [
+            'head' => __('translation.Technical support'),
+             'links' => [
+                BredCrumpLinks( route('clients.dashboard')  ,  __('translation.Dashboard')),
+                 BredCrumpLinks( route('ticket.index')  , __('translation.Technical support')),
+              ]])
     @endcomponent
 @endsection
 @section('title')
@@ -113,7 +118,7 @@
                                                     aria-describedby="helpId" value="{{ $Applction->Logo }}" />
                                                 @error('Logo')
                                                     <span
-                                                        class="text-danger error">{{$message }}</span>                                                        
+                                                        class="text-danger error">{{$message }}</span>
                                                 @enderror
                                             </div>
                                             <div class="btns-group">

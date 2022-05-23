@@ -2,7 +2,6 @@
 
 namespace App\Models;
 
-use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
@@ -20,10 +19,7 @@ class Ticketmassege extends Model
         return $this->belongsTo(Topic::class);
     }
 
-    public function getupdatedAtAttribute($key)
-    {
-        return Carbon::parse($key)->diffForHumans();
-    }
+   
     
 }
 

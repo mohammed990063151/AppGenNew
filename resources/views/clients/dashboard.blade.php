@@ -4,7 +4,7 @@
 =========================================================
 
 * Product Page: https://www.creative-tim.com/product/argon-dashboard
-* Copyright 2022 Creative Tim (https://www.creative-tim.com)    
+* Copyright 2022 Creative Tim (https://www.creative-tim.com)
 * Licensed under MIT (https://www.creative-tim.com/license)
 * Coded by Creative Tim
 
@@ -74,10 +74,10 @@
                                     <div class="numbers">
                                         <p class="text-sm mb-0 text-uppercase font-weight-bold">
                                             {{-- {{ __('translation.Today\'s Users') }}</p> --}}
-                                         
+
                                             {{__('translation.notifcation') }}
-                                           
-                                         
+
+
                                             </p>
                                         <h5 class="font-weight-bolder">
                                             {{ \App\Models\FirebaseNotification::count() }}
@@ -109,7 +109,7 @@
                                             {{__('translation. TICKET MASSEGE') }}
                                             {{-- {{__('translation. All Applcation') }}
                                             --}}
-                                            
+
                                         <h5 class="font-weight-bolder">
                                             {{ \App\Models\Ticketmassege::count() }}
                                         </h5>
@@ -518,4 +518,5 @@
         }
     });
 </script> --}}
+
 @endsection

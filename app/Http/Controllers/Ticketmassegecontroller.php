@@ -44,9 +44,6 @@ class TicketMassegeController extends Controller
             (Auth::guard('admin')->check()?'admin_id':'sender') => Auth::user()->id,
             
         ]);
-
-        
-     ticket::find($request->ticket_id)->update(['status' => 'inprogress']);
         return redirect()->route((Auth::guard('admin')->check()?'admin.':''). 'ticket.show',$request->ticket_id);
 
         //clinetmassage

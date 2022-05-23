@@ -287,12 +287,14 @@ return [
     'address' => 'العنوان',
     'app_domain' => ' عنوان التطبيق',
     'pending' => ' جديده ',
-    'inprogress' => '  قيد التنفيذ ',
+    'inprogress' => ' في تقدم ',
     'copmplated' => ' منتهيه  ',
+
     'Technicalsupport tickets' => 'تذاكر الدعم الفني    ',
     'Notificationmangement notifiaction' => '  الاشعارات  ',
     'Add Package'=>'hjk',
     'AppGen'=>'',
     'no.image'=>'لاتوجد صوره',
+
 
 ];

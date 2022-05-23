@@ -3,8 +3,10 @@
 <link href="{{ asset('asset/vendor/fontawesome-free/css/all.min.css') }}" rel="stylesheet" type="text/css">
 <link href="{{ asset('assets/css/nucleo-icons.css') }} " rel="stylesheet" />
 <link href="{{ asset('assets/css/nucleo-svg.css') }}" rel="stylesheet" />
-{{-- <link href="{{ asset('assets/css/css/style.css') }}" rel="stylesheet" /> --}}
-<!-- Font Awesome Icons --> 
+
+<link href="{{ asset('assets/css/css/style.css') }}" rel="stylesheet" />
+<!-- Font Awesome Icons -->
+
 <script src="https://kit.fontawesome.com/42d5adcbca.js" crossorigin="anonymous"></script>
 <link href="{{ asset('assets/css/nucleo-svg.css') }}" rel="stylesheet" />
 <!-- CSS Files -->

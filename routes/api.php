@@ -25,7 +25,31 @@ Route::get('/', [ApplcationController::class, 'index']);
 Route::get('/show/{id}', [ApplcationController::class, 'show']);
 Route::post('/post', [ApplcationController::class, 'store']);
 Route::post('/update/{id}', [ApplcationController::class, 'update']);
+Route::get('/save/{id}', [ApplcationController::class, 'countryList']);
 });
+
+Route::group(['prefix' => 'Applction_Building'], function () {
+
+    Route::get('/', [\App\Http\Controllers\api\Applction_BuildingController::class, 'index']);
+    Route::get('/Applction_Building/{Applction}', [\App\Http\Controllers\api\Applction_BuildingController::class, 'show']);
+    Route::get('/Applction_Building', [\App\Http\Controllers\api\Applction_BuildingController::class, 'index']);
+
+    Route::post('/get', [\App\Http\Controllers\api\Applction_BuildingController::class, 'getApplication']);
+
+
+
+});
+
+
+
+
+
+
+
+
+
+
+
 
 Route::group(['prefix' => 'profiles'], function () {
     Route::get('/', [ProfileController::class, 'index']);

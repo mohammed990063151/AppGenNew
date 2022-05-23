@@ -4,7 +4,18 @@
                 <div class="logo">
                     <div style=" margin: 10px">
                         <img src="{{ $OrganizationProfile->logo }}" alt=""
-                                style="width: 43px; height: 43px" />   
+                                style="
+                                background-size: 32px 32px;
+                                border: 0;
+                                -webkit-border-radius: 50%;
+                                border-radius: 50%;
+                                display: block;
+                                margin: 0px;
+                                position: relative;
+                                height: 32px;
+                                width: 32px;
+                                z-index: 0;
+                            " />   
             </div>
         </div>
         <span class="ms-1 font-weight-bold">{{ $OrganizationProfile->name}}</span>

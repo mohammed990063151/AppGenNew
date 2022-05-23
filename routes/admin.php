@@ -67,7 +67,7 @@ Route::middleware('auth:admin')->group(function () {
     Route::post('orgnaization-profile' ,[OrganizationProfile::class , 'storeFrom'])->name('storeOrganizationProfile');
 });
 
-
+   
 ############ticket......
 Route::get('create-ticket', [TicketController::class, 'create'])->name('admin.ticket.create')->middleware('auth:admin');
 Route::post('store-ticket', [TicketController::class, 'store'])->name('admin.ticket.store')->middleware('auth:admin');
@@ -76,4 +76,5 @@ Route::get('ticket', [TicketController::class, 'index'])->name('admin.ticket.ind
 Route::get('ticket/massege/{id}', [TicketMassegeController::class, 'show'])->name('admin.ticket.show')->middleware('auth:admin');
 Route::post('ticket/massege/', [TicketMassegeController::class, 'store'])->name('admin.ticket.send')->middleware('auth:admin');
 
-
+   
+    

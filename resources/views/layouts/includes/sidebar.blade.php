@@ -4,17 +4,18 @@
                 <div class="logo">
                     <div style=" margin: 10px">
                         <img src="{{ $OrganizationProfile->logo }}" alt=""
-                                style="width: 43px; height: 43px" />  
-<aside class="sidenav bg-white navbar navbar-vertical navbar-expand-xs border-0 border-radius-xl my-3 fixed-start ms-4 "
-
-id="sidenav-main">
-    <div class="sidenav-header">
-        <div class="d-flex justify-content-between">
-            <div class="logo">
- <div style=" margin: 10px">
-                                        {{-- <img src="{{ $OrganizationProfile->logo }}" alt=""> style="width: 43px; height: 43px">
-                                           <span class="ms-1 font-weight-bold">{{ $OrganizationProfile->name}}</span> --}}
-
+                                style="
+                                background-size: 32px 32px;
+                                border: 0;
+                                -webkit-border-radius: 50%;
+                                border-radius: 50%;
+                                display: block;
+                                margin: 0px;
+                                position: relative;
+                                height: 32px;
+                                width: 32px;
+                                z-index: 0;
+                            " />   
             </div>
         </div>
         <span class="ms-1 font-weight-bold">{{ $OrganizationProfile->name}}</span>

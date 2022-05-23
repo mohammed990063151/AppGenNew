@@ -103,11 +103,11 @@ Route::group(['prefix' => LaravelLocalization::setLocale()], function () {
 
         Route::resource('features', FeatureController::class);
         Route::post('destroy/{id}', [ApplicationController::class, 'update'])->name('application.destroy');
-
+        Route::group(['prefix' => 'ticket'], function () {
         Route::get('create-ticket', [TicketController::class, 'create'])->name('ticket.create');
         Route::post('store-ticket', [TicketController::class, 'store'])->name('ticket.store');
 
-        Route::group(['prefix' => 'ticket'], function () {
+
             Route::get('/', [TicketController::class, 'index'])->name('ticket.index');
             Route::get('/massege/{id}', [TicketMassegeController::class, 'show'])->name('ticket.show');
             Route::post('massege/', [TicketMassegeController::class, 'store'])->name('ticket.send');

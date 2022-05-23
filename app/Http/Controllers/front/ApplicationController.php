@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\front;
 use App\Models\User;
 use App\Models\app;
+use App\Models\Applction_Building;
 use App\Models\app_profile;
 use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
 use Illuminate\Foundation\Bus\DispatchesJobs;
@@ -44,18 +45,18 @@ class ApplicationController extends BaseController
 
 
             $Logo = $request->Logo;
-           
+
             $imagename = time() . '.' . $Logo->getClientOriginalExtension();
             $request->Logo->move('app', $imagename);
             $Applction->Logo = $imagename;
-           
+
             $image = $request->Splash_Screen;
-           
+
             $imagename = time() . '.' . $image->getClientOriginalExtension();
             $request->Splash_Screen->move('app', $imagename);
             $Applction->Splash_Screen = $imagename;
 
-            
+
             $Applction->AppName = $request->AppName;
             $Applction->Link = $request->Link;
             $Applction->Discrptions = $request->Discrptions;
@@ -157,4 +158,27 @@ class ApplicationController extends BaseController
 
         return view('clients.app_profile.edit', compact('profile'));
     }
+
+    public function Applction_Building(request $request, $id)
+    {
+        try {
+            $Applctiones = app::with('Screen', 'AppProfile')->find($id);
+                    $DATA  =  [
+                            'id_Applction'=>$Applctiones["id"],
+                            'id_prfile'=>$Applctiones["AppProfile"]->id,
+                            'APK'=>$Applctiones->APK,
+                        ];
+                        // dd($DATA);
+                        Applction_Building::create($DATA);
+                        $MyApp = app::find($id);
+                        $Applction = app::with('Screen', 'AppProfile')->find($id);
+                } catch (\Exception $ex) {
+                    return $ex;
+                    session()->flash('errors', 'TAn error occurred, please try again later');
+                    return view('clients.app.dashboard', compact('id', 'Applction', 'MyApp'));
+
+                }
+                session()->flash('Add', 'The operation was successful');
+                return view('clients.app.dashboard', compact('id', 'Applction', 'MyApp'));
+            }
 }

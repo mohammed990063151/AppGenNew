@@ -90,7 +90,7 @@
                             
                             tems"></i> --}}
                             <i class="bi bi-bricks"></i>
-                            <span>{{__('translation.Technical support')}}</span>                            
+                            <span>{{_('translation.Technical support')}}</span>                            
                         </a>
                     </li>
                     

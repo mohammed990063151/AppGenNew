@@ -21,6 +21,7 @@
         <span class="ms-1 font-weight-bold">{{ $OrganizationProfile->name}}</span>
         <span class='w-20'></span>
         
+
     </div>
     <hr class="horizontal dark mt-">
     <div style="height: auto"  class="collapse navbar-collapse px-0 w-auto {{getclass(['ar'=>'ps ps__rtl ps--active-y','en'=>''])}}">
@@ -39,7 +40,7 @@
 
                     <div
                         class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
-                        <i class="ni ni-credit-card text-success text-sm opacity-10"></i>
+                        <i class="ni ni-tv-2 text-primary text-sm opacity-10"></i>
                     </div>
                     <span class="nav-link-text ms-1">{{__('translation.Dashboard')}}</span>
                 </a>
@@ -83,7 +84,7 @@
 
                     <div
                         class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
-                        <i class="ni ni-bell-55 text-success text-sm opacity-10"></i>
+                        <i class="ni ni-tv-2 text-primary text-sm opacity-10"></i>
                     </div>
                     <span class="nav-link-text ms-1">{{__('translation.Notification_Mangement')}}</span>
                 </a>
@@ -138,7 +139,7 @@
                     </div>
                     <span class="nav-link-text ms-1">Sign Up</span>
                 </a>
-            </li> --}} 
+            </li> --}}
         </ul>
     </>
 </div>

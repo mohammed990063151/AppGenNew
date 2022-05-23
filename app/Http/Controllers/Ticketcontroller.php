@@ -37,7 +37,6 @@ public function store(Request $request)
         'subject' =>$request->subject,
         'sender'=>Auth::user()->id,
         'topic_id' => $request->topic_selected,
-        
    ]);
    return redirect()->route((Auth::guard('admin')->check() ?'admin.':'').'ticket.index');
 }

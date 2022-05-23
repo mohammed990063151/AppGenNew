@@ -102,7 +102,9 @@
                                                             {{ __('translation.cancel') }}
                                                         </a>
                                                         <span>&nbsp;&nbsp;&nbsp;&nbsp;</span>
+
                                                         <button type="submit" class="btn btn-outline-primary btn-sm" >
+
                                                             <i class="la la-check"></i>
                                                             {{ __('translation.send') }}
                                                         </button>

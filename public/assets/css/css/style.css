@@ -164,7 +164,7 @@
     opacity: 0.5;
 }
 .container .card_apps .img-box img{
-    width: 200%;
+    width: 220%;
 }
 .container .card_apps .content_apps{
     position: absolute;
@@ -481,9 +481,40 @@
     text-align: center;
     box-shadow:0px 1px 8px 3px rgb(0 0 0 / 20%);
   }
-  
-  
-  
+
+
+  .close_success {
+    float: right;
+    font-size: 1.5rem;
+    font-weight: 700;
+    line-height: 1;
+    color: #14132B;
+    text-shadow: 22 5px 0 #141313;
+    opacity: .5;
+}
+
+button.close_success {
+    padding: 0;
+    background-color: transparent;
+    border: 0;
+    border-top-color: initial;
+    border-top-style: initial;
+    border-top-width: 0px;
+    border-right-color: initial;
+    border-right-style: initial;
+    border-right-width: 0px;
+    border-bottom-color: initial;
+    border-bottom-style: initial;
+    border-bottom-width: 0px;
+    border-left-color: initial;
+    border-left-style: initial;
+    border-left-width: 0px;
+    border-image-source: initial;
+    border-image-slice: initial;
+    border-image-width: initial;
+    border-image-outset: initial;
+    border-image-repeat: initial;
+}
 
 
 

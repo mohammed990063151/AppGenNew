@@ -1,12 +1,11 @@
 @extends('layouts.master')
 @section('breadceumbs')
     {{-- <x-bread-crumps> --}}
-        @component('components.bread-crumps', [
+    @component('components.bread-crumps',
+        [
             'head' => __('translation.Application'),
-             'links' => [
-                BredCrumpLinks( route('clients.dashboard')  ,  __('translation.Dashboard')), 
-                 BredCrumpLinks( route('application.index')  , __('translation.Application')), 
-              ]])
+            'links' => [BredCrumpLinks(route('clients.dashboard'), __('translation.Dashboard')), BredCrumpLinks(route('application.index'), __('translation.Application'))],
+        ])
     @endcomponent
 @endsection
 
@@ -15,14 +14,17 @@
 @stop
 @section('content')
 
-
-    <div class="container-fluid py-4">
+    <div class= "container-fluid py-4">
         <div class="row mt-4">
             <div class="col-lg-12 mb-lg-0 mb-4">
                 <div class="card z-index-2 h-100">
+
                     <div class="card-header pb-0 pt-3 bg-transparent">
                         <div class="d-flex justify-content-between">
                             <h6 class="text-capitalize col-4"> {{ __('translation.New_Application') }}</h6>
+
+
+
 
                             {{-- <div class="col-12"> --}}
                             <span><a href="{{ route('application.create') }}" class="btn btn-outline-primary btn-sm"
@@ -30,12 +32,12 @@
                             {{-- </div> --}}
                         </div>
                         <div class="table-responsive mt-5" style="display: flex;">
-                            @include('clients.alerts.success')
-                            @include('clients.alerts.errors')
+
                             <section class="projects" id="projects">
+
                                 {{-- <h2 class="title">how are you feeling</h2> --}}
                                 <div class="content row">
-                                    @foreach ($Applction as $Applction)
+                                    @foreach($Applction as $Applction) 
                                         <div class="col-sm-3">
                                             <div>
                                                 <a href="{{ route('application.edit', $Applction->id) }}"

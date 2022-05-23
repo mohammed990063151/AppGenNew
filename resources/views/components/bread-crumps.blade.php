@@ -3,10 +3,9 @@
    @foreach ($links as $key =>  $link)
    @if ($key + 1 == count($links))
    <li class="breadcrumb-item text-sm text-white active font-weight-bold" aria-current="page">{{$link["text"]}}</li>
-   @continue 
+   @continue
    @endif
    <li class="breadcrumb-item text-sm {{ $key != 0 ? ' text-white active' : '' }}" aria-current="page" ><a class="opacity-5 text-white" href="{{$link["url"]}}">{{$link["text"]}} </a></li>
    @endforeach
-    
   </ol>
-  
+

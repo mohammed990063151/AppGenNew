@@ -39,7 +39,7 @@
     
     </html>
     {{-- dir="rtl" --}}
-
+{{-- 
 <html lang="en" dir="rtl">
 
 
@@ -80,4 +80,4 @@
 
 </body>
 
-</html>
+</html> --}}

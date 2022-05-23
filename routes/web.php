@@ -52,6 +52,17 @@ Route::group(['prefix' => LaravelLocalization::setLocale()], function () {
         Route::get('/', function () {
             return view('clients.dashboard');
         });
+        Route::group(['prefix' => 'ticket'], function () {
+
+            Route::get('create/', [TicketController::class, 'create'])->name('ticket.create');
+            Route::post('store/', [TicketController::class, 'store'])->name('ticket.store');
+    
+                Route::get('/', [TicketController::class, 'index'])->name('ticket.index');
+                Route::get('/massege/{id}', [TicketMassegeController::class, 'show'])->name('ticket.show');
+                Route::post('massege/', [TicketMassegeController::class, 'store'])->name('ticket.send');
+            });
+           
+        
 
         Route::get('paywithpaypal', array('as' => 'paywithpaypal', 'uses' => 'App\Http\Controllers\PaypalController@payWithPaypal',));
         Route::post('paypal', array('as' => 'paypal', 'uses' => 'App\Http\Controllers\PaypalController@postPaymentWithpaypal',));
@@ -78,7 +89,6 @@ Route::group(['prefix' => LaravelLocalization::setLocale()], function () {
             Route::post('update/{id}', [ApplicationController::class, 'update'])->name('application.update');
             Route::DELETE('delete/{id}', [ApplicationController::class, 'delete'])->name('application.delete');
             Route::get('application-details/{id}', [ApplicationController::class, 'AddDetialsDetials'])->name('AddDetialsDetials');
-                     Route::get('Applction_Building/{id}', [ApplicationController::class, 'Applction_Building'])->name('Applction_Building');
         });
 
         // start Screenes1
@@ -103,16 +113,7 @@ Route::group(['prefix' => LaravelLocalization::setLocale()], function () {
 
         Route::resource('features', FeatureController::class);
         Route::post('destroy/{id}', [ApplicationController::class, 'update'])->name('application.destroy');
-        Route::group(['prefix' => 'ticket'], function () {
-        Route::get('create-ticket', [TicketController::class, 'create'])->name('ticket.create');
-        Route::post('store-ticket', [TicketController::class, 'store'])->name('ticket.store');
-
-
-            Route::get('/', [TicketController::class, 'index'])->name('ticket.index');
-            Route::get('/massege/{id}', [TicketMassegeController::class, 'show'])->name('ticket.show');
-            Route::post('massege/', [TicketMassegeController::class, 'store'])->name('ticket.send');
-        });
-    });
+     
 
     Route::get('get-price', [PaymentController::class, 'getPrice'])->name('getPrice');
     Route::post('get-price', [PaymentController::class, 'ChosePrice'])->name('ChosePrice');
@@ -156,6 +157,7 @@ Route::get('index', function () {
 
 Route::get('privacy-policy', function () {
     return view('landing-privacy-policy');
+});
 });
 
 // Route::get('privacy-policy', function () {

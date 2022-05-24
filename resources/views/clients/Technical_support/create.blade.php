@@ -20,15 +20,18 @@
                 <div class="card z-index-2 h-100">
                     <div class="card-header pb-0 pt-3 bg-transparent">
                         <div class="row">
+                            <div class="d-flex justify-content-between">
                             <h6 class="text-capitalize col-4">    {{__('translation.Add ticket')}}</h6>
+                            
+
                             <div class="col-6">
                         {{-- <x-table-components :array='["jksa" => "salsh", "hitem" => "benz"]'/> --}}
 
                             </div>
-                            <div class="col-2">
-                                <span><a href="{{route((Auth::guard('admin')->check()?'admin .':'').'ticket.index')}}" class="btn btn-outline-danger btn-sm  btn-icon-only"
+                            
+                                <span><a href="{{route((Auth::guard('admin')->check()?'admin .':'').'ticket.index')}}" class="btn btn-outline-danger btn-icon-only "
                                     {{--  --}}
-                                        type=""><i class="bi bi-arrow-right " style="height:30px;width:30px;"></i></a></span> 
+                                        type=""><i class="bi bi-arrow-right"></i></a></span> 
                             </div>
                         </div>
                         <div class="col-md-12">
@@ -77,7 +80,7 @@
                                     </div></div></div>
 
 
-                                <button class="btn btn-outline-primary btn-sm  " style="text-align:left;"> {{__('translation.Save')}} </button>
+                                <button class="btn btn-outline-primary btn-sm" style="text-align:left;"> {{__('translation.Save')}} </button>
                                 </form>
                             </div>
                         </div>

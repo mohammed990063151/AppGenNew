@@ -19,7 +19,8 @@
                 <div class="card z-index-2 h-100">
                     <div class="card-header pb-0 pt-3 bg-transparent">
                         <div class="col-md-12" style="text-align: end;">
-                            <span><a href="{{ route('application.index') }}" class=" " type="">
+                            <span><a href="{{ route('application.index') }}" class="btn btn-outline-primary btn-icon-only " type="">
+                                <i class="bi bi-arrow-right"></i>
                                 </a></span>
                         </div>
                         <div class="row no-gutters">

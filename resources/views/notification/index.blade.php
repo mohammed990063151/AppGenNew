@@ -98,14 +98,14 @@
                                             <th>{{ $notification->notification_date }}</th>
                                             {{-- <th>{{__('translation.')}}</th> --}}
                                             <td>
-                                                <a class="btn btn-outline-success btn-sm"
+                                                <a class="btn btn-outline-success btn-sm  btn-icon-only"
                                                     href="{{ route('notification.edit', $notification->id) }}">
                                                     <i class="fa fa-refresh"></i> </a>
                                                 <form style='display:inline' id='deleteform{{ $key }}'
                                                     action='{{ route('notification.destroy', $notification->id) }}'>
                                                     <button
                                                         onclick="event.preventDefault();deleteConfirmation({{ $key }})"
-                                                        class="btn btn-outline-danger btn-sm" type="submit"
+                                                        class="btn btn-outline-danger btn-sm  btn-icon-only" type="submit"
                                                         value="Delete">
                                                         <i class="fa fa-trash"></i>
                                                         </i></button>

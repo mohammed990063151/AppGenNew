@@ -22,7 +22,7 @@
                     <div class="d-flex justify-content-between">
                         <h6 class="text-capitalize col-4">{{__('translation.ticket')}}</h6>
 
-                            <span><a href="{{route((Auth::guard('admin')->check()?'admin.':'').'ticket.create')}}" class="btn btn-outline-primary btn-sm"
+                            <span><a href="{{route((Auth::guard('admin')->check()?'admin.':'').'ticket.create')}}" class="btn btn-outline-primary btn-sm  btn-icon-only"
                                 {{--  --}}
                                     type="button">{{__('translation.open-ticket')}}</a></span>
 

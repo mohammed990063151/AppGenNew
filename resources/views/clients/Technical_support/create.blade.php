@@ -26,9 +26,9 @@
 
                             </div>
                             <div class="col-2">
-                                <span><a href="{{route((Auth::guard('admin')->check()?'admin.':'').'ticket.index')}}" class="btn btn-outline-danger btn-sm"
+                                <span><a href="{{route((Auth::guard('admin')->check()?'admin .':'').'ticket.index')}}" class="btn btn-outline-danger btn-sm  btn-icon-only"
                                     {{--  --}}
-                                        type="button">{{__('translation.go-back')}}</a></span> 
+                                        type=""><i class="bi bi-arrow-right " style="height:30px;width:30px;"></i></a></span> 
                             </div>
                         </div>
                         <div class="col-md-12">
@@ -77,7 +77,7 @@
                                     </div></div></div>
 
 
-                                <button class="btn btn-outline-primary btn-sm" style="text-align:left;"> {{__('translation.Save')}} </button>
+                                <button class="btn btn-outline-primary btn-sm  " style="text-align:left;"> {{__('translation.Save')}} </button>
                                 </form>
                             </div>
                         </div>

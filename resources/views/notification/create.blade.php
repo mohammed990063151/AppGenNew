@@ -21,8 +21,8 @@
                                                 {{-- <div class="col-2"> --}}
                                                 <span><a href="{{ route('notification.index') }}"
                                                         class="
-                                                        btn btn-outline-danger btn-sm"
-                                                        type="button">{{ __('translation.go_back') }}</a></span>
+                                                        btn btn-outline-danger btn-sm  btn-icon-only"
+                                                        type=""><i class="bi bi-arrow-right "></i></a></span>
                                                 {{-- </div> --}}
                                             </div>
 

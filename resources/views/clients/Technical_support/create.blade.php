@@ -20,7 +20,7 @@
                 <div class="card z-index-2 h-100">
                     <div class="card-header pb-0 pt-3 bg-transparent">
                         <div class="row">
-                            <div class="d-flex justify-content-between">
+                            <div class="d-flex justify-content-between"> 
                             <h6 class="text-capitalize col-4">    {{__('translation.Add ticket')}}</h6>
                             
 

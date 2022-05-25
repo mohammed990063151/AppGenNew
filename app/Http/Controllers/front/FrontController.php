@@ -35,8 +35,7 @@ class FrontController extends BaseController
 
 
 //       }
-
-        // return view('clients.dashboard');
+        return view('clients.dashboard');
     }
 
     /**

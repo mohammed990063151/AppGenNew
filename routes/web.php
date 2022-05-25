@@ -126,6 +126,9 @@ Route::group(['prefix' => LaravelLocalization::setLocale()], function () {
     Route::get('get-invoice', [InvoiceController::class, 'getInvoice'])->name('getInvoice');
     Route::post('pay-invoice', [InvoiceController::class, 'PayInvoice'])->name('PayInvoice');
 });
+Route::get('/landing', function () {
+    return view('landing-welcome');
+});
 
 Route::get('/landing', function () {
     return view('landing-welcome');

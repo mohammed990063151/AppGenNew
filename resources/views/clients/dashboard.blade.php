@@ -38,50 +38,53 @@
         <div class="container-fluid py-4">
             <div class="row">
                 <div class="col-xl-3 col-sm-6 mb-xl-0 mb-4">
-                    <div class="card" style="height: 150px;overflow: hidden;">
-                        <div class="card-body p-3">
+                    <div class="card" style="height: 100px;overflow: hidden;">
+                        <div class="card-body p-4">
                             <div class="row">
                                 <div class="col-8">
                                     <div class="numbers">
-                                        <p class="text-sm mb-0 text-uppercase font-weight-bold">
-                                            {{-- {{ __('translation.Today\'s_Money') }}</p> --}}
-                                            {{__('translation. All Applcation') }}
-                                            </p>
                                         <h5 class="font-weight-bolder">
                                             {{ \App\Models\app::count() }}
                                         </h5>
+                                        
+                                     
                                         {{-- <p class="mb-0">
                                             <span class="text-success text-sm font-weight-bolder">+55%</span>
                                             {{ __('translation.since_yesterday') }}
                                         </p> --}}
                                     </div>
                                 </div>
-                                <div class="col-4 text-end">
-                                    <div
-                                        class="icon icon-shape bg-gradient-primary shadow-primary text-center rounded-circle">
-                                        <i class="ni ni-money-coins text-lg opacity-10" aria-hidden="true"></i>
-                                    </div>
+                                <div class="col-4 text-end ">
+                                    <span class="text-success ">
+                                    <svg style="width:30px;height:30px;" viewBox= "0 0 24 24">
+                                        <path fill="currentColor" d="M10.5 15.5C10.5 15.87 10.4 16.2 10.22 16.5C9.88 15.91 9.24 15.5 8.5 15.5S7.12 15.91 6.78 16.5C6.61 16.2 6.5 15.87 6.5 15.5C6.5 14.4 7.4 13.5 8.5 13.5S10.5 14.4 10.5 15.5M23 15V18C23 18.55 22.55 19 22 19H21V20C21 21.11 20.11 22 19 22H5C3.9 22 3 21.11 3 20V19H2C1.45 19 1 18.55 1 18V15C1 14.45 1.45 14 2 14H3C3 10.13 6.13 7 10 7H11V5.73C10.4 5.39 10 4.74 10 4C10 2.9 10.9 2 12 2S14 2.9 14 4C14 4.74 13.6 5.39 13 5.73V7H14C17.87 7 21 10.13 21 14H22C22.55 14 23 14.45 23 15M21 16H19V14C19 11.24 16.76 9 14 9H10C7.24 9 5 11.24 5 14V16H3V17H5V20H19V17H21V16M15.5 13.5C14.4 13.5 13.5 14.4 13.5 15.5C13.5 15.87 13.61 16.2 13.78 16.5C14.12 15.91 14.76 15.5 15.5 15.5S16.88 15.91 17.22 16.5C17.4 16.2 17.5 15.87 17.5 15.5C17.5 14.4 16.61 13.5 15.5 13.5Z" />
+                                    </svg>
+                                    </span>
+                                    {{-- <div class="btn btn-primary">
+                                    <i class="bi bi-app"></i>                                        <i class="ni ni-money-coins text-lg opacity-10" aria-hidden="true"></i>
+                                    </div> --}}
+                                
                                 </div>
                             </div>
+                            <div class="row">
+                                <p class="text-sm mb-0 text-uppercase font-weight-bold">
+                                    {{-- {{ __('translation.Today\'s_Money') }}</p> --}}
+                                    {{__('translation. All Applcation') }}
+                                    </p>
+                               </div>
                         </div>
                     </div>
                 </div>
                 <div class="col-xl-3 col-sm-6 mb-xl-0 mb-4">
-                    <div class="card" style="height: 150px;overflow: hidden;">
-                        <div class="card-body p-3">
+                    <div class="card" style="height: 100px;overflow: hidden;">
+                        <div class="card-body p-4">
                             <div class="row">
                                 <div class="col-8">
                                     <div class="numbers">
-                                        <p class="text-sm mb-0 text-uppercase font-weight-bold">
-                                            {{-- {{ __('translation.Today\'s Users') }}</p> --}}
-
-                                            {{__('translation.notifcation') }}
-
-
-                                            </p>
                                         <h5 class="font-weight-bolder">
                                             {{ \App\Models\FirebaseNotification::count() }}
                                         </h5>
+                                       
                                         {{-- <p class="mb-0">
                                             <span class="text-success text-sm font-weight-bolder">+3%</span>
                                             {{ __('translation.since_last_week') }}
@@ -89,30 +92,33 @@
                                     </div>
                                 </div>
                                 <div class="col-4 text-end">
-                                    <div
-                                        class="icon icon-shape bg-gradient-danger shadow-danger text-center rounded-circle">
-                                        <i class="ni ni-world text-lg opacity-10" aria-hidden="true"></i>
-                                    </div>
+                                    <span class="text-danger">
+                                    <svg style="width:30px;height:30px" viewBox="0 0 24 24">
+                                        <path fill="currentColor" d="M21,19V20H3V19L5,17V11C5,7.9 7.03,5.17 10,4.29C10,4.19 10,4.1 10,4A2,2 0 0,1 12,2A2,2 0 0,1 14,4C14,4.1 14,4.19 14,4.29C16.97,5.17 19,7.9 19,11V17L21,19M14,21A2,2 0 0,1 12,23A2,2 0 0,1 10,21" />
+                                    </svg>
+                                    </span>
                                 </div>
                             </div>
+                            <div class="row">
+                                <p class="text-sm mb-0 text-uppercase font-weight-bold">
+                                    {{-- {{ __('translation.Today\'s Users') }}</p> --}}
+                                    {{__('translation.notifcation') }}
+                                    </p>
+                                </div>
                         </div>
                     </div>
                 </div>
                 <div class="col-xl-3 col-sm-6 mb-xl-0 mb-4">
-                    <div class="card" style="height: 150px;overflow: hidden;">
-                        <div class="card-body p-3">
+                    <div class="card" style="height: 100px;overflow: hidden;">
+                        <div class="card-body p-4">
                             <div class="row">
                                 <div class="col-8">
                                     <div class="numbers">
-                                        <p class="text-sm mb-0 text-uppercase font-weight-bold">
-                                            {{-- {{ __('translation.New_Clients') }}</p> --}}
-                                            {{__('translation. TICKET MASSEGE') }}
-                                            {{-- {{__('translation. All Applcation') }}
-                                            --}}
-
                                         <h5 class="font-weight-bolder">
                                             {{ \App\Models\Ticketmassege::count() }}
                                         </h5>
+           
+                                       
                                         {{-- <p class="mb-0">
                                             <span class="text-danger text-sm font-weight-bolder">-2%</span>
                                             {{ __('translation.since_last_quarter') }}
@@ -120,27 +126,34 @@
                                     </div>
                                 </div>
                                 <div class="col-4 text-end">
-                                    <div
-                                        class="icon icon-shape bg-gradient-success shadow-success text-center rounded-circle">
-                                        <i class="ni ni-paper-diploma text-lg opacity-10" aria-hidden="true"></i>
-                                    </div>
+                                    <span class="text-primary">
+                                    <svg style="width:30px;height:30px;" viewBox="0 0 24 24">
+                                        <path fill="currentColor" d="M20,12A2,2 0 0,0 22,14V18A2,2 0 0,1 20,20H4A2,2 0 0,1 2,18V14C3.11,14 4,13.1 4,12A2,2 0 0,0 2,10V6C2,4.89 2.9,4 4,4H20A2,2 0 0,1 22,6V10A2,2 0 0,0 20,12M16.5,16.25C16.5,14.75 13.5,14 12,14C10.5,14 7.5,14.75 7.5,16.25V17H16.5V16.25M12,12.25A2.25,2.25 0 0,0 14.25,10A2.25,2.25 0 0,0 12,7.75A2.25,2.25 0 0,0 9.75,10A2.25,2.25 0 0,0 12,12.25Z" />
+                                    </svg>
+                                  </span>
                                 </div>
                             </div>
+                            <div class="row">
+                                <p class="text-sm mb-0 text-uppercase font-weight-bold">
+                                    {{-- {{ __('translation.New_Clients') }}</p> --}}
+                                    {{__('translation. TICKET MASSEGE') }}
+                                    {{-- {{__('translation. All Applcation') }}
+                                    --}}
+</p>
+</div>
                         </div>
                     </div>
                 </div>
                 <div class="col-xl-3 col-sm-6">
-                    <div class="card" style="height: 150px;overflow: hidden;">
-                        <div class="card-body p-3">
+                    <div class="card" style="height: 100px;overflow: hidden;">
+                        <div class="card-body p-4">
                             <div class="row">
                                 <div class="col-8">
                                     <div class="numbers">
-                                        <p class="text-sm mb-0 text-uppercase font-weight-bold">
-                                            {{-- {{ __('translation.Sales') }}</p> --}}
-                                            {{__('translation. Download Applaction') }} </P>
                                         <h5 class="font-weight-bolder">
                                             {{ \App\Models\app_profile::count() }}
                                         </h5>
+                                        
                                         {{-- <p class="mb-0">
                                             <span class="text-success text-sm font-weight-bolder">+5%</span>
                                             {{ __('translation.than_last_month') }}
@@ -148,12 +161,18 @@
                                     </div>
                                 </div>
                                 <div class="col-4 text-end">
-                                    <div
-                                        class="icon icon-shape bg-gradient-warning shadow-warning text-center rounded-circle">
-                                        <i class="ni ni-cart text-lg opacity-10" aria-hidden="true"></i>
-                                    </div>
+                                    <span class="text-info">
+                                    <svg style="width:30px;height:30px;" viewBox="0 0 24 24">
+                                        <path fill="currentColor" d="M18 14L23 9L21.6 7.6L19 10.2V3H17V10.2L14.4 7.6L13 9L18 14M19 16V21C19 22.1 18.1 23 17 23H7C5.9 23 5 22.1 5 21V3C5 1.9 5.9 1 7 1H14V5H7V19H17V16H19Z" />
+                                    </svg>
+                                    </span>
                                 </div>
                             </div>
+                            <div class="row">
+                                <p class="text-sm mb-0 text-uppercase font-weight-bold">
+                                    {{-- {{ __('translation.Sales') }}</p> --}}
+                                    {{__('translation. Download Applaction') }} </P>
+                                </div>
                         </div>
                     </div>
                 </div>

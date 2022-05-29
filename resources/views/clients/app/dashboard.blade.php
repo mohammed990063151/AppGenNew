@@ -1,12 +1,12 @@
 @extends('layouts.master')
 @section('breadceumbs')
     {{-- <x-bread-crumps> --}}
-    @component('components.bread-crumps',
+    {{-- @component('components.bread-crumps',
         [
-            'head' => __('translation.Technical support'),
+            'head' => __('translation.'),
             'links' => [BredCrumpLinks(route('clients.dashboard'), __('translation.Dashboard')), BredCrumpLinks(route('ticket.index'), __('translation.Technical support'))],
         ])
-    @endcomponent
+    @endcomponent --}}
 @endsection
 @section('title')
     Updata Applction
@@ -57,7 +57,7 @@ max-width: 350px;">
                                     <i class="bi bi-building"></i>
                                 </a></span></div>
                                 <div class="col">
-                                <span><a href="{{ route('application.index') }}" class="btn btn-outline-primary btn-icon-only " type="">
+                                <span><a href="{{ route('application.index') }}" class="btn btn-outline-danger btn-icon-only " >
                                     <i class="bi bi-arrow-left"></i></a></span></div>
                                     <div class="col">
                                  <form action="{{ route('application.delete', $MyApp->id) }}" method="post" id='delteForm'
@@ -111,12 +111,12 @@ max-width: 350px;">
                                         <img class="rounded float-start" src="{{ asset("app/5.jpg") }}">
                                     </div>
                                     <div class="content_apps">
-                                        <h2 style="color: #000000;">main screen<br><span></span></h2>
+                                        <h2 style=";">main screen<br><span></span></h2>
                                         <p></p>
                                         <ul>
                                             @foreach ($Applction->screen as $screen)
                                                 <li><a href="{{ route('Screen.edit', $screen->id) }}"><i
-                                                            class="fa fa-desktop" aria-hidden="true" style="color: #000000;"></i></a></li>
+                                                            class="fa fa-desktop" aria-hidden="true" style=""></i></a></li>
                                             @endforeach
                                         </ul>
                                     </div>
@@ -136,7 +136,7 @@ max-width: 350px;">
                                                 >
                                                 @csrf
                                                 @method('DELETE')
-                                            <p>Are sure of the deleting process ?</p><br>
+                                            <p>{{ __('translation.do_you_want_Delete_item') }}</p><br>
                                             <input type="hidden" name="id" id="id" value="{{ $Applction->Name }}">
                                             <input type="text" class="form-control" name="Name" id="Name" value="{{ $Applction->Name }}"  readonly>
                                         </div>

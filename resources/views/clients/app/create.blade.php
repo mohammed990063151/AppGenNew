@@ -19,7 +19,7 @@
                     <div class="card-header pb-0 pt-3 bg-transparent">
                         <div class="col-md-12" style="text-align: end;">
                             <div class="col">
-                                <span><a href="{{ route('application.index') }}" class="btn btn-outline-primary btn-icon-only " type="">
+                                <span><a href="{{ route('application.index') }}" class="btn btn-outline-danger btn-icon-only " type="">
                                     <i class="bi bi-arrow-left"></i>
                                     </a></span></div>
                         </div>

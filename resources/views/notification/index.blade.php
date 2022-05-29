@@ -145,7 +145,7 @@
                                             {!! $Notification->links() !!}
                                         @endif
                                     </div>
-                                </div>
+                                </div> 
                             </div>
                         </div>
                 </div>

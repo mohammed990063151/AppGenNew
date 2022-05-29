@@ -23,8 +23,8 @@
                         <div class="col-md-12" style="text-align: end;">
                             <div class="col">
                                 <span>
-                                    <a href="{{ route('application.index') }}"  class="btn btn-primary btn-sm" type="" style="display: -webkit-inline-box;background-color: #5b6478; border-color: #5b6478;">
-                                        {{ __('translation.go back') }}
+                                    <a href="{{ route('application.index') }}"  class="btn btn-outline-danger btn-icon-only" type=""  >
+                                        <i class="bi bi-arrow-left"></i>
                                     </a></span></div>
                         </div>
                         <div class="row no-gutters">

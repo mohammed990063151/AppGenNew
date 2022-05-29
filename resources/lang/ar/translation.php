@@ -58,8 +58,14 @@ return [
     'Add_screen' => 'الرئيسية',
     'Building' => 'تثبيت',
     'Update_My_App' => 'تحديث التطبيق',
-
-
+    'Are_you_sure?' =>  'هل أنت واثق؟',
+    'You_wont_be_able_to_revert_this!'=>'لن تتمكن من التراجع عن هذا!',
+    'Yes,_delete_it!'=>'نعم ، احذفها!',
+    'cancel_'=> 'إلغاء',
+    'Deleted'=> 'تم الحذف',
+    'Your_file_has_been_deleted.'=>'تم حذف ملفك.',
+    'success'=>'النجاح',
+    'Choose_the_name_of_the_application'=>'اختيار اسم التطبيق',
     /******* Notification Table ********/
 
     'notifiaction_table' => 'سجل الاشعارات',

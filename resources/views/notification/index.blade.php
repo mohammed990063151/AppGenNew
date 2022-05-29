@@ -102,16 +102,17 @@
                                                 <a class="btn btn-outline-success btn-sm  btn-icon-only"
                                                     href="{{ route('notification.edit', $notification->id) }}">
                                                     <i class="fa fa-refresh"></i> </a>
-                                                <form style='display:inline' id='deleteform{{ $key }}'
+                                                <form style='display:inline' id='deleteform'
                                                     action='{{ route('notification.destroy', $notification->id) }}' method="post">
                                                     @csrf
                                                     @method('DELETE')
                                                     <button
-                                                        onclick="event.preventDefault();deleteConfirmation({{ $key }})"
+                                                        onclick="event.preventDefault();deleteConfirmation('deleteform')"
                                                         class="btn btn-outline-danger btn-sm  btn-icon-only" type="submit"
                                                         value="Delete">
                                                         <i class="fa fa-trash"></i>
-                                                        </i></button>
+                                                        </i>
+                                                    </button>
                                                     {{-- {!! Form::close() !!}
                                             </from>
                                             {{-- @endcan --}}
@@ -159,26 +160,26 @@
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
     <script type="text/javascript">
-        function deleteConfirmation(iteration) {
-            swal.fire({
-                title: "{{ __('translation.delete') . __('translation.?') }} ",
-                
-                text: '{{ __('translation.do_you_want_Delete_item') }}',
-                type: "warning",
-                showCancelButton: !0,
-                confirmButtonText: '{{ __('translation.delete') }}',
-                cancelButtonText: '{{ __('translation.cancel') }}',
-                reverseButtons: !0
-            }).then(function(e) {
-                if (e.value === true) {
-                    console.log('delted');
-                    $('#deleteform' + iteration).submit();
-                } else {
-                    e.dismiss;
+        function deleteConfirmation(val) {
+            Swal.fire({
+                title:" {{__('translation.Are_you_sure?')}}",
+                text: " {{__('translation.You_wont_be_able_to_revert_this!')}}",
+                icon: 'warning',
+                showCancelButton: true,
+                confirmButtonColor: '#3085d6',
+                cancelButtonColor: '#d33',
+                confirmButtonText: " {{__('translation.Yes,_delete_it!')}}", 
+                cancelButtonText: " {{__('translation.cancel_')}}"
+                }).then((result) => {
+                if (result.isConfirmed) {
+                    Swal.fire(
+                        " {{__('translation.Deleted')}}",
+                        " {{__('translation.Your_file_has_been_deleted.')}}",
+                        " {{__('translation.success')}}"
+                    );
+                    document.getElementById(val).submit();
                 }
-            }, function(dismiss) {
-                return false;
-            })
+});
         }
     </script>
 

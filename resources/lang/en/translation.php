@@ -60,8 +60,14 @@ return [
     'add_notifiaction' => 'add notifiaction',
     'Building' => 'Building',
     'Update_My_App' => ' Update My App',
-
-
+    'Are_you_sure?' =>  'Are you sure?',
+    'You_wont_be_able_to_revert_this!'=>"You won not be able to revert this!",
+    'Yes,_delete_it!'=>'Yes,_delete_it!',
+    'cancel_'=> 'cancel',
+    'Deleted'=> 'Deleted',
+    'Your_file_has_been_deleted.'=>'Your file has been deleted.',
+    'success'=>'success',
+    'Choose_the_name_of_the_application'=>'Choose the name of the application',
 
     /**********Notification Table *********/
 

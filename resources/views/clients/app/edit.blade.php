@@ -9,7 +9,7 @@
               ]])
     @endcomponent --}}
     @component('components.bread-crumps', [
-        'head' => __('translation.Technical support'),
+        'head' => __('edite.Technical support'),
          'links' => [
             BredCrumpLinks( route('clients.dashboard')  ,  __('translation.Dashboard')),
              BredCrumpLinks( route('ticket.index')  , __('translation.Technical support')),

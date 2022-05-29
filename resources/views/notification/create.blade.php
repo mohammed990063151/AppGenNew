@@ -58,8 +58,7 @@
                                                         </div>
                                                     </div>
                                                     <div class="col-md-6">
-                                                        <label class="my-1 mr-2"
-                                                            for="inlineFormCustomSelectPref"></label>
+                                                        <label for="">{{ __('translation.Choose_the_name_of_the_application') }}</label>
                                                         <select name="app_id" id="app_id" class="form-control" required>
 
                                                             @foreach ($applcation as $applcation)
@@ -97,13 +96,13 @@
                                                     <div class=" m-1 mt-3">
                                                         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a
                                                             href="{{ route('notification.index') }}" type="button"
-                                                            class="btn btn-outline-primary btn-sm">
+                                                            class="btn btn-outline-danger btn-sm">
                                                             <i class="la la-remove"></i>
                                                             {{ __('translation.cancel') }}
                                                         </a>
                                                         <span>&nbsp;&nbsp;&nbsp;&nbsp;</span>
 
-                                                        <button type="submit" class="btn btn-outline-primary btn-sm" >
+                                                        <button type="submit" class="btn btn-outline-success btn-sm" >
 
                                                             <i class="la la-check"></i>
                                                             {{ __('translation.send')}}

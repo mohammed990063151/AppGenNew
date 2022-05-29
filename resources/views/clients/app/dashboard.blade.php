@@ -3,8 +3,8 @@
     {{-- <x-bread-crumps> --}}
     @component('components.bread-crumps',
         [
-            'head' => __('translation.Technical support'),
-            'links' => [BredCrumpLinks(route('clients.dashboard'), __('translation.Dashboard')), BredCrumpLinks(route('ticket.index'), __('translation.Technical support'))],
+            'head' => __('translation.Update_My_App'),
+            'links' => [BredCrumpLinks(route('application.index'), __('translation.Application')), BredCrumpLinks(route('application.index'), __('translation.Update_My_App'))],
         ])
     @endcomponent
 @endsection
@@ -164,19 +164,20 @@ max-width: 350px;">
 
              console.log();
             Swal.fire({
-                title: 'Are you sure?',
-                text: "You won't be able to revert this!",
+                title:" {{__('translation.Are_you_sure?')}}",
+                text: " {{__('translation.You_wont_be_able_to_revert_this!')}}",
                 icon: 'warning',
                 showCancelButton: true,
                 confirmButtonColor: '#3085d6',
                 cancelButtonColor: '#d33',
-                confirmButtonText: 'Yes, delete it!'
+                confirmButtonText: " {{__('translation.Yes,_delete_it!')}}", 
+                cancelButtonText: " {{__('translation.cancel_')}}"
                 }).then((result) => {
                 if (result.isConfirmed) {
                     Swal.fire(
-                    'Deleted!',
-                    'Your file has been deleted.',
-                    'success'
+                        " {{__('translation.Deleted')}}",
+                        " {{__('translation.Your_file_has_been_deleted.')}}",
+                        " {{__('translation.success')}}"
                     );
                     document.getElementById(val).submit();
                 }

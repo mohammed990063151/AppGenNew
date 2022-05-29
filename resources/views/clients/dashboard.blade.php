@@ -23,6 +23,11 @@
     {{-- <x-bread-crumps> --}}
     {{-- @component('components.bread-crumps', ['head' => __('translation.Dashboard'), 'links' => [BredCrumpLinks('Dashboard', 'Dashboard'), BredCrumpLinks('Dashboard', 'Dashboard')]])
     @endcomponent --}}
+    @component('components.bread-crumps', [
+        'head' => __('translation.Dashboard'),
+         'links' => [BredCrumpLinks('dashboard', 'dashboard')  , BredCrumpLinks('dashboard', 'dashboard')]])
+          
+@endcomponent
 @endsection
 @section('title')
     {{ __('translation.Dashboard') }}
@@ -35,7 +40,7 @@
         <!-- Navbar -->
 
         <!-- End Navbar -->
-        <div class="container-fluid py-4">
+        <div class="container-fluid py-4" style="padding-top: 0px !important;">
             <div class="row">
                 <div class="col-xl-3 col-sm-6 mb-xl-0 mb-4">
                     <div class="card" style="height: 100px;overflow: hidden;">
@@ -324,7 +329,7 @@
                 </div>
               </div>
 
-            
+
     </main>
     <div class="fixed-plugin">
         <a class="fixed-plugin-button text-dark position-fixed px-3 py-2">

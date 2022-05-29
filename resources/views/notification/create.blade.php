@@ -20,9 +20,9 @@
                                                 </h6>
                                                 {{-- <div class="col-2"> --}}
                                                 <span><a href="{{ route('notification.index') }}"
-                                                    class="btn btn-outline-primary btn-sm"
-                                                        type=""style="background-color:#67748e;color: #fff;border-color: #67748e;"> {{ __('translation.go back')}}
-                                                        </a></span>
+                                                        class="
+                                                        btn btn-outline-danger   btn-icon-only"
+                                                        type=""><i class="bi bi-arrow-left "></i></a></span>
                                                 {{-- </div> --}}
                                             </div>
 
@@ -58,7 +58,8 @@
                                                         </div>
                                                     </div>
                                                     <div class="col-md-6">
-                                                        <label for="">{{ __('translation.title') }}</label>
+                                                        <label class="my-1 mr-2"
+                                                            for="inlineFormCustomSelectPref"></label>
                                                         <select name="app_id" id="app_id" class="form-control" required>
 
                                                             @foreach ($applcation as $applcation)
@@ -70,8 +71,8 @@
                                                                     class="form-text text-danger text-muted">{{ $message }}</small>
                                                             @enderror
                                                         </select>
-                                                    </div></div>
-<div class="row">
+                                                    </div>
+
 
                                                     <div class="col-md-6">
                                                         <label> {{ __('translation.content') }}</label>
@@ -96,18 +97,16 @@
                                                     <div class=" m-1 mt-3">
                                                         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a
                                                             href="{{ route('notification.index') }}" type="button"
-                                                            class="btn btn-outline-primary btn-sm" style="background-color: red;color: #f8f9fa; border-color: red;">
+                                                            class="btn btn-outline-primary btn-sm">
                                                             <i class="la la-remove"></i>
                                                             {{ __('translation.cancel') }}
                                                         </a>
                                                         <span>&nbsp;&nbsp;&nbsp;&nbsp;</span>
 
-                                                        <button type="submit" class="btn btn-outline-primary btn-sm"  style="display: -webkit-inline-box;
-                                                        background-color: #66d432 !important ;border-color: #66d432;
-                                                        color: #f8f9fa;">
+                                                        <button type="submit" class="btn btn-outline-primary btn-sm" >
 
                                                             <i class="la la-check"></i>
-                                                            {{ __('translation.send') }}
+                                                            {{ __('translation.send')}}
                                                         </button>
                                                     </div>
                                                 </div>

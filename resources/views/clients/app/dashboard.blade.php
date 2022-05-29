@@ -53,26 +53,25 @@ max-width: 350px;">
                             </div>
                             <div class="row">
                                 <div class="col">
-                                <span><a href="{{ route('Applction_Building', $MyApp->id) }}" class="btn btn-primary btn-sm"
-                                    type="button" style="background-color: #6eec13;  border-color: #6eec13;">
-                                    {{ __('translation.Building') }}
+                                <span><a href="{{ route('Applction_Building', $MyApp->id) }}" class="btn btn-outline-success btn-icon-only">
+                                    <i class="bi bi-building"></i>
                                 </a></span></div>
                                 <div class="col">
-                                <span><a href="{{ route('application.index') }}" class="btn btn-primary btn-sm"
-                                        type="button"  style="width: 109%;background-color: #67748e;  border-color: #67748e;">
-                                        {{ __('translation.go back') }}
-                                    </a></span></div>
+                                <span><a href="{{ route('application.index') }}" class="btn btn-outline-primary btn-icon-only " type="">
+                                    <i class="bi bi-arrow-left"></i></a></span></div>
                                     <div class="col">
                                  <form action="{{ route('application.delete', $MyApp->id) }}" method="post" id='delteForm'
                                     style="display:inline">
                                     @csrf
                                     @method('DELETE') 
-                                    <a href='#' class="btn btn-primary btn-sm"
+                                    <a href='#' class=" btn btn-outline-danger btn-icon-only"
+
                                      {{-- data-bs-toggle="modal" data-bs-target="#exampleModal"  --}}
-                                      style="background-color: #ea153d;  border-color: #ea153d;"
+                                      style=""
                                       onclick="event.preventDefault();
                                       DeleteApp('delteForm')"
-                                      > {{ __('translation.Delete') }}
+                                      > 
+                                      <i class="fa fa-trash"></i>
                                     </a>
                                 </form>
                             </div>

@@ -29,9 +29,9 @@
 
                             </div>
                             
-                                <span><a href="{{route((Auth::guard('admin')->check()?'admin .':'').'ticket.index')}}"  class="btn btn-primary btn-sm" 
-                                    {{--  --}}
-                                        type=""  style="display: -webkit-inline-box;background-color: #5b6478; border-color: #5b6478;">{{ __('translation.go back') }}</a></span> 
+                            <span><a href="{{route((Auth::guard('admin')->check()?'admin .':'').'ticket.index')}}" class="btn btn-outline-danger btn-icon-only "
+                                {{--  --}}
+                                    type=""><i class="bi bi-arrow-left"></i></a></span> 
                             </div>
                         </div>
                         <div class="col-md-12">
@@ -80,7 +80,7 @@
                                     </div></div></div>
 
 
-                                <button class="btn btn-outline-primary btn-sm" style="text-align:left;color: #f8f9fa;background-color: #66d432; border-color: #66d432;"> {{__('translation.Save')}} </button>
+                                    <button class="btn btn-outline-primary btn-sm" style="text-align:left;"> {{__('translation.Save')}} </button>
                                 </form>
                             </div>
                         </div>

@@ -29,8 +29,7 @@
                             <div class="col">
                                 <span>
                                     <a href="{{ route('application.index') }}" class="btn btn-primary btn-sm"  type="" style="display: -webkit-inline-box;background-color: #5b6478; border-color: #5b6478;">
-                                    Go Back
-                                    </a></span></div>
+                                        <i class="bi bi-arrow-left"></i></a>                                    </a></span></div>
                         </div>
                         <div class="row no-gutters">
                             <div class="col no-gutters" style="text-align: center;">
@@ -83,9 +82,9 @@
                                                         class="text-danger error">{{$message }}</span>
                                                 @enderror
                                             </div>
-                                            <div class="">
-                                                <a href="#" class="btn btn-next width-50 ml-auto" id="app">Next</a>
-                                            </div>
+                                          
+                                                <a href="#" class="btn btn-next  width-50 ml-auto" id="app">Next</a>
+                                           
                                         </div>
                                         <div class="form-step">
                                             <div class="input-group">

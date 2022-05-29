@@ -301,6 +301,7 @@ return [
     'Add Package'=>'hjk',
     'AppGen'=>'',
     'no.image'=>'لاتوجد صوره',
+    'add notifiaction'=>' اضافه اشعار',
 
 
 ];

@@ -31,8 +31,8 @@
                             <div class="card-header">
                                 <div class="col" style="text-align: end;">
                                     <span>
-                                        <a href="{{ route('ticket.index') }}" class="btn btn-primary btn-sm"  type="" style="display: -webkit-inline-box;background-color: #5b6478;border-color: #5b6478;">
-                                        Go Back
+                                        <a href="{{ route('ticket.index') }}" class="btn btn-outline-danger btn-icon-only">
+                                            <i class="bi bi-arrow-left "></i></a>
                                         </a></span></div>
                             <a class="heading-elements-toggle"><i class="la la-ellipsis-v font-medium-3"></i></a>
                             <div class="heading-elements">
@@ -115,7 +115,7 @@
                                                     border: 1px solid #ccc;
                                                     border-radius: 54.25rem; " />
                                                     <input type="hidden" name="ticket_id" value="{{$data->id}}" />
-                                                    <button type="submit" class="btn btn-outline-primary btn-round" style="color: #fff;display: flex;padding: 7px 23px -1px 42px;background-color: #66d432; border-color: #66d432;">{{__('translation.send')}}</button>  
+                                                    <button type="submit" class="btn btn-outline-primary btn-round">{{__('translation.send')}}</button>  
                                                    
                                                 
                                                 </form>

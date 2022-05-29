@@ -1,12 +1,11 @@
 @extends('layouts.master')
 @section('breadceumbs')
     {{-- <x-bread-crumps> --}}
-        @component('components.bread-crumps', [
-            'head' => __('translation.Technical support'),
-             'links' => [
-                BredCrumpLinks( route('clients.dashboard')  ,  __('translation.Dashboard')),
-                 BredCrumpLinks( route('ticket.index')  , __('translation.Technical support')),
-              ]])
+        @component('components.bread-crumps',
+        [
+            'head' => __('translation.Application'),
+            'links' => [BredCrumpLinks(route('clients.dashboard'), __('translation.Dashboard')), BredCrumpLinks(route('application.index'), __('translation.Application'))],
+        ])
     @endcomponent
 @endsection
 @section('title')
@@ -20,11 +19,9 @@
                     <div class="card-header pb-0 pt-3 bg-transparent">
                         <div class="col-md-12" style="text-align: end;">
                             <div class="col">
-                            <span>
-                                <a href="{{ route('application.index') }}" class="btn btn-primary btn-sm"  type="" style="display: -webkit-inline-box;background-color: #5b6478; border-color: #5b647867748e;">
-                                    {{ __('translation.go back') }}
-
-                                </a></span></div>
+                                <span><a href="{{ route('application.index') }}" class="btn btn-outline-primary btn-icon-only " type="">
+                                    <i class="bi bi-arrow-left"></i>
+                                    </a></span></div>
                         </div>
                         <div class="row no-gutters">
                             <div class="col no-gutters" style="text-align: center;">

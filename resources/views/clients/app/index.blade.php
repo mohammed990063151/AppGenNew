@@ -26,11 +26,8 @@
 
 
 
-                            {{-- <div class="col-12"> --}}
-                            <span><a href="{{ route('application.create') }}" class="btn btn-outline-primary btn-sm" id="app"
-                                style="display: -webkit-inline-box;
-    background-color: #66d432 !important; border-color: #66d432;" type="button">{{ __('translation.add_apps') }}</a></span>
-                            {{-- </div> --}}
+                            <span><a href="{{ route('application.create') }}" class="btn btn-outline-primary btn-sm"
+                                {{--  --}} type="button">{{ __('translation.add_apps') }}</a></span>
                         </div>
                         <div class="table-responsive mt-5" style="display: flex;">
 

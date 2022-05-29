@@ -22,9 +22,9 @@
                     <div class="d-flex justify-content-between">
                         <h6 class="text-capitalize col-4">{{__('translation.ticket')}}</h6>
 
-                            <span><a href="{{route((Auth::guard('admin')->check()?'admin.':'').'ticket.create')}}" class="btn btn-outline-primary btn-sm"
-                                {{--  --}}
-                                    type="button" style="text-align:left;color: #f8f9fa;background-color: #66d432;border-color: #66d432;" >{{__('translation.open-ticket')}}</a></span>
+                        <span><a href="{{route((Auth::guard('admin')->check()?'admin.':'').'ticket.create')}}" class="btn btn-outline-primary btn-sm"
+                            {{--  --}}
+                                type="button">{{__('translation.open-ticket')}}</a></span>
 
                     </div>
                     <div class="table-responsive mt-5">
@@ -72,10 +72,11 @@
                                     <td>{{($data->user->name) ?? ' - '}}</td>
                                     <td>{{__('translation.' . $data->status);}}</td>
                                     <td>{{$data->created_at}}</td>
-                                   <td><a href="{{route( (Auth::guard('admin')->check()?'admin.':'').'ticket.show', $data->id)}}" class="btn btn-outline-primary btn-sm"
-                                    {{--  --}}
-                                         type="button"  style="text-align:left;color: #f8f9fa;background-color: #2dce89;border-color: #2dce89;">{{__('translation.view')}}</a></span> </td>
-                                    
+                                    <td><a href="{{route( (Auth::guard('admin')->check()?'admin.':'').'ticket.show', $data->id)}}" class="btn btn-outline-primary btn-icon-only"
+                                        {{--  --}}
+                                             type="button"><i class="bi bi-view-list"></i>
+                                            </a></span> </td>
+                                        
                                     <form action="{{route((Auth::guard('admin')->check()?'admin.':'').'ticket.create' )}}" method="post" style="display:inline">
                                         @csrf 
                                         {{-- @method('DELETE') --}}

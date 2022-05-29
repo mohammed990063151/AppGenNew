@@ -133,6 +133,8 @@ class FirebaseNotificationController extends Controller
      */
     public function destroy($id)
     {
+        
+        
         $FireBase =  FirebaseNotification::find($id)->delete();
         return redirect()->back();
     }

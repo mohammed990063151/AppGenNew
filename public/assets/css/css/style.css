@@ -153,12 +153,12 @@
     box-shadow: 0 20px 2px rgba(0,0,0,0.2);
 }
 .container .card_apps .img-box{
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    transition: 0.5s;
+  position: absolute;
+  top: 0px;
+  left: 10px;
+  width: 43%;
+  height: 150%;
+  transition: 1.5s;
 }
 .container .card_apps:hover .img-box{
     opacity: 0.5;
@@ -181,13 +181,13 @@
     bottom: 0;
 }
 .container .card_apps:nth-child(1) .content_apps{
-    background: linear-gradient(0deg,rgb(72, 0, 255), transparent);
+    background: linear-gradient(0deg,rgb(152 11 26), transparent);
 }
 .container .card_apps:nth-child(2) .content_apps{
-    background: linear-gradient(0deg,purple, transparent);
+    background: linear-gradient(0deg,rgb(152 11 26), transparent);
 }
 .container .card_apps:nth-child(3) .content_apps{
-    background: linear-gradient(0deg,rgb(0, 250, 250), transparent);
+    background: linear-gradient(0deg,rgb(152 11 26), transparent);
 }
 .container .card_apps .content_apps h2{
     margin: 0 0 10px;
@@ -368,13 +368,15 @@
   }
 
   /* Button */
-  .btns-group {
+  /* .btns-group { */
+    #app-group {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 1.5rem;
   }
 
-  .btn {
+  /* .btn { */
+    #app {
     padding: 0.75rem !important;
     display: block;
     text-decoration: none;
@@ -385,8 +387,16 @@
     cursor: pointer !important;
     transition: 0.3s;
   }
-  .btn:hover {
+  /* .btn:hover { */
+    #app:hover {
     box-shadow: 0 0 0 2px #fff, 0 0 0 3px var(--primary-color) !important;
+  }
+  #input{
+
+    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid #ccc;
+    border-radius: 54.25rem;
   }
 
 

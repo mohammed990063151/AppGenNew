@@ -19,9 +19,12 @@
                 <div class="card z-index-2 h-100">
                     <div class="card-header pb-0 pt-3 bg-transparent">
                         <div class="col-md-12" style="text-align: end;">
-                            <span><a href="{{ route('application.index') }}" class="btn btn-outline-primary btn-icon-only " type="">
-                                <i class="bi bi-arrow-right"></i>
-                                </a></span>
+                            <div class="col">
+                            <span>
+                                <a href="{{ route('application.index') }}" class="btn btn-primary btn-sm"  type="" style="display: -webkit-inline-box;background-color: #5b6478; border-color: #5b647867748e;">
+                                    {{ __('translation.go back') }}
+
+                                </a></span></div>
                         </div>
                         <div class="row no-gutters">
                             <div class="col no-gutters" style="text-align: center;">
@@ -78,7 +81,7 @@
                                                 @enderror
                                             </div>
                                             <div class="">
-                                                <a href="#" class="btn btn-next width-50 ml-auto">Next</a>
+                                                <a href="#" class="btn btn-next width-50 ml-auto" id="app">Next</a>
                                             </div>
                                         </div>
                                         <div class="form-step">
@@ -98,9 +101,9 @@
                                                         class="text-danger error">{{$message }}</span>
                                                 @enderror
                                             </div>
-                                            <div class="btns-group">
-                                                <a href="#" class="btn btn-prev">Previous</a>
-                                                <a href="#" class="btn btn-next">Next</a>
+                                            <div class="btns-group" id="app-group">
+                                                <a href="#" class="btn btn-prev" id="app">Previous</a>
+                                                <a href="#" class="btn btn-next" id="app">Next</a>
                                             </div>
                                         </div>
                                         <div class="form-step">
@@ -127,9 +130,9 @@
                                                     <span class="text-danger error">{{ $message }}</span>
                                                 @enderror
                                             </div>
-                                            <div class="btns-group">
-                                                <a href="#" class="btn btn-prev">Previous</a>
-                                                <input type="submit" value="submit" class="btn" />
+                                            <div class="btns-group" id="app-group">
+                                                <a href="#" class="btn btn-prev" id="app">Previous</a>
+                                                <input type="submit" value="submit" class="btn" id="app" />
                                             </div>
                                         </div>
                                     </form>

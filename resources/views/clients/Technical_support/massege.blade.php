@@ -29,12 +29,16 @@
                     <div class="card">
                         <div class="card">
                             <div class="card-header">
-                                    
+                                <div class="col" style="text-align: end;">
+                                    <span>
+                                        <a href="{{ route('ticket.index') }}" class="btn btn-primary btn-sm"  type="" style="display: -webkit-inline-box;background-color: #5b6478;border-color: #5b6478;">
+                                        Go Back
+                                        </a></span></div>
                             <a class="heading-elements-toggle"><i class="la la-ellipsis-v font-medium-3"></i></a>
                             <div class="heading-elements">
                                 <ul class="list-inline mb-0">
                                     <li><a data-action="collapse"><i class="ft-minus"></i></a></li>
-<li><a data-action="reload"><i class="ft-rotate-cw"></i></a></li>
+                                    <li><a data-action="reload"><i class="ft-rotate-cw"></i></a></li>
                                     <li><a data-action="expand"><i class="ft-maximize"></i></a></li>
                                     {{-- <li><a data-action="close"><i class="ft-x"></i></a></li> --}}
                                 </ul>
@@ -95,10 +99,9 @@
                                                          
                                                             type="button">send</a>  
                                                  </div> --}}
-                                                 <form action="{{route((Auth::guard('admin')->check()?'admin.':'').'ticket.send')}}" method="post" >
+                                                 <form action="{{route((Auth::guard('admin')->check()?'admin.':'').'ticket.send')}}" method="post" style="display: flex;flex-direction: row;align-items: flex-start;flex-wrap: nowrap;padding: -0.88rem;" >
                                                     @csrf
                                                     
-                                                    {{$ticket = ticket::find($id)->update(['status' => 'inprogress']);}}
                                                 
                                                
                                                     {{-- <div class="card">
@@ -107,9 +110,12 @@
                                                         <button type="submit" class="btn btn-primary btn-round">{{__('translation.send')}}</button>
                                                           
                                                     </div>  --}}
-                                                    <input placeholder="Type a message" name="text"></input>
-                                                    <input type="hidden" name="ticket_id" value="{{$data->id}}"/>
-                                                    <button type="submit" class="btn btn-outline-primary btn-round">{{__('translation.send')}}</button>  
+                                                    <input placeholder="Type a message" name="text" style="width: 100%;
+                                                    padding: 0.75rem;
+                                                    border: 1px solid #ccc;
+                                                    border-radius: 54.25rem; " />
+                                                    <input type="hidden" name="ticket_id" value="{{$data->id}}" />
+                                                    <button type="submit" class="btn btn-outline-primary btn-round" style="color: #fff;display: flex;padding: 7px 23px -1px 42px;background-color: #66d432; border-color: #66d432;">{{__('translation.send')}}</button>  
                                                    
                                                 
                                                 </form>

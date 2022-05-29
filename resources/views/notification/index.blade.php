@@ -60,7 +60,9 @@
                                                 {{-- <div class="col-2"> --}}
                                                 <span><a href="{{ route('notification.create') }}"
                                                         class="btn btn-outline-primary btn-sm"
-                                                        type="button">{{ __('translation.add_notifiaction_table') }}</a></span>
+                                                        type="button" style="display: -webkit-inline-box;
+                                                        background-color: #66d432 !important;
+                                                        color: #fff;border-color: #66d432;" >{{ __('translation.add_notifiaction_table') }}</a></span>
                                                 {{-- </div> --}}
                                             </div>
                                             <div class="table-responsive">
@@ -98,17 +100,21 @@
                                             <th>{{ $notification->notification_date }}</th>
                                             {{-- <th>{{__('translation.')}}</th> --}}
                                             <td>
-                                                <a class="btn btn-outline-success btn-sm  btn-icon-only"
-                                                    href="{{ route('notification.edit', $notification->id) }}">
-                                                    <i class="fa fa-refresh"></i> </a>
-                                                <form style='display:inline' id='deleteform{{ $key }}'
+                                            <a class="btn btn-outline-primary btn-sm"
+                                                    href="{{ route('notification.edit', $notification->id) }}" style="background-color: #2dce89;color: #fff; border-color: #2dce89;">
+                                                    {{ __('translation.Edit') }}
+                                                     </a>
+                                                <form style='display:inline' id='deleteform' method="post"
                                                     action='{{ route('notification.destroy', $notification->id) }}'>
-                                                    <button
-                                                        onclick="event.preventDefault();deleteConfirmation({{ $key }})"
-                                                        class="btn btn-outline-danger btn-sm  btn-icon-only" type="submit"
-                                                        value="Delete">
-                                                        <i class="fa fa-trash"></i>
-                                                        </i></button>
+                                                    @csrf
+                                                    @method('DELETE') 
+                                                    <a href="#"
+                                                    class="btn btn-outline-primary btn-sm" type="submit"
+                                                        value="Delete"   onclick="event.preventDefault();
+                                                        deltenotification('deleteform')" style="background-color:red;color: #fff;border-color: red;">
+                                                         {{ __('translation.Delete') }}
+                                                        </a> 
+                                                     </form>
                                                     {{-- {!! Form::close() !!}
                                             </from>
                                             {{-- @endcan --}}
@@ -153,6 +159,33 @@
         <!--/ Zero configuration table -->
     </div>
     </div>
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script>
+        
+        function deltenotification(val) {
+
+             console.log();
+            Swal.fire({
+                title: 'Are you sure?',
+                text: "You won't be able to revert this!",
+                icon: 'warning',
+                showCancelButton: true,
+                confirmButtonColor: '#3085d6',
+                cancelButtonColor: '#d33',
+                confirmButtonText: 'Yes, delete it!'
+                }).then((result) => {
+                if (result.isConfirmed) {
+                    Swal.fire(
+                    'Deleted!',
+                    'Your file has been deleted.',
+                    'success'
+                    );
+                    document.getElementById(val).submit();
+                }
+});
+        }
+
+    </script>
 @endsection
 
 

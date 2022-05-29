@@ -20,22 +20,18 @@ class FrontController extends BaseController
 
     public function index()
     {
-        // $Notification = FirebaseNotification::select(DB::raw("COUNT(*) as count"))
-        // ->whereYear('created_at', date('Y'))
-        // ->groupBy(DB::raw("Month(created_at)"))
-        // ->pluck('count'); compact('Notification');
+        $Notification = FirebaseNotification::select(DB::raw("COUNT(*) as count"))
+        ->whereYear('created_at', date('Y'))
+        ->groupBy(DB::raw("Month(created_at)"))
+        ->pluck('count'); compact('Notification');
+
+        $User = User::select(DB::raw("COUNT(*) as count"))
+        ->whereYear('created_at', date('Y'))
+        ->groupBy(DB::raw("Month(created_at)"))
+        ->pluck('count'); compact('User');
+return view('clients.dashboard', compact('Notification','User'));
 
 
-// return view('/home', compact('userData'));
-
-
-        // return view('clients.dashboard');
-// return view('clients.dashboard', compact('chartjs','Notification'));
-
-
-
-//       }
-        return view('clients.dashboard');
     }
 
     /**

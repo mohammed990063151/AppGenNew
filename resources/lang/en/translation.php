@@ -15,6 +15,8 @@ return [
     'Type_here' => 'Type Here',
     'Profile' => 'Profile',
     'Logout' => 'Logout',
+    'Delete' => 'Delete',
+    'Edit' => 'Refrech', 
 
 
 
@@ -56,7 +58,8 @@ return [
     'add_apps' => 'Add Apps',
     'notifiaction_table' => 'notifiaction table',
     'add_notifiaction' => 'add notifiaction',
-
+    'Building' => 'Building',
+    'Update_My_App' => ' Update My App',
 
 
 
@@ -82,7 +85,7 @@ return [
 
     /*********notifiaction_table */
     'notifiaction_tabl' => 'Notifiaction Manger',
-    'go_back' => 'Go Back',
+    'go back' => 'Go Back',
     'title' => 'Notification title',
     'content' => 'Notification content',
     'photo' => 'Add photo',

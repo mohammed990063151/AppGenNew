@@ -1,11 +1,18 @@
 @extends('layouts.master')
 @section('breadceumbs')
     {{-- <x-bread-crumps> --}}
-    @component('components.bread-crumps', ['head' => 'Updata Scrren Tow', 'links' => ['profile', 'Updata Scrren Tow']])
+    {{-- @component('components.bread-crumps', ['head' => 'Updata Scrren Tow', 'links' => ['profile', 'Updata Scrren Tow']])
         @section('title')
         Updata Scrren Tow
         @stop
-    @endcomponent
+    @endcomponent --}}
+    @component('components.bread-crumps', [
+        'head' => __('translation.Technical support'),
+         'links' => [
+            BredCrumpLinks( route('clients.dashboard')  ,  __('translation.Dashboard')),
+             BredCrumpLinks( route('ticket.index')  , __('translation.Technical support')),
+          ]])
+@endcomponent
 @endsection
 @section('content')
     <div class="container-fluid py-4">
@@ -14,9 +21,11 @@
                 <div class="card z-index-2 h-100">
                     <div class="card-header pb-0 pt-3 bg-transparent">
                         <div class="col-md-12" style="text-align: end;">
-                            <span><a href="{{ route('application.index') }}" class="btn btn-primary" type="button">
-                                    Go Back
-                                </a></span>
+                            <div class="col">
+                                <span>
+                                    <a href="{{ route('application.index') }}"  class="btn btn-primary btn-sm" type=""  style="display: -webkit-inline-box;background-color: #5b6478;border-color: #5b6478;">
+                                        {{ __('translation.go back') }}
+                                    </a></span></div>
                             </div>
                         <div class="row no-gutters">
                             <div class="col no-gutters" style="text-align: center;">
@@ -78,9 +87,9 @@
                                                     class="text-danger error">{{$message }}</span>
                                             @enderror
                                         </div>
-                                        <div class="btns-group">
-                                            <a href="#" class="btn btn-prev">Previous</a>
-                                            <a href="#" class="btn btn-next">Next</a>
+                                        <div class="btns-group" id="app-group">
+                                            <a href="#" class="btn btn-prev" id="app">Previous</a>
+                                            <a href="#" class="btn btn-next" id="app">Next</a>
                                         </div>
                                     </div>
                                     <div class="form-step">
@@ -102,9 +111,9 @@
                                                     class="text-danger error">{{$message }}</span>
                                             @enderror
                                         </div>
-                                        <div class="btns-group">
-                                            <a href="#" class="btn btn-prev">Previous</a>
-                                            <input type="submit" value="Submit" class="btn" />
+                                        <div class="btns-group" id="app-group">
+                                            <a href="#" class="btn btn-prev" id="app">Previous</a>
+                                            <input type="submit" value="Submit" class="btn" id="app" />
                                         </div>
                                     </div>
                                 </form>

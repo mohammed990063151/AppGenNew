@@ -19,9 +19,9 @@
 
 @extends('layouts.master')
 @section('breadceumbs')
-{{-- @dd(BredCrumpLinks('jksa' , 'hitem')) --}}
+    {{-- @dd(BredCrumpLinks('jksa' , 'hitem')) --}}
     {{-- <x-bread-crumps> --}}
-    {{-- @component('components.bread-crumps', ['head' => __('translation.Dashboard'), 'links' => [BredCrumpLinks('Dashboard' , 'Dashboard') , BredCrumpLinks('Dashboard' , 'Dashboard'),  ]])
+    {{-- @component('components.bread-crumps', ['head' => __('translation.Dashboard'), 'links' => [BredCrumpLinks('Dashboard', 'Dashboard'), BredCrumpLinks('Dashboard', 'Dashboard')]])
     @endcomponent --}}
 @endsection
 @section('title')
@@ -46,8 +46,8 @@
                                         <h5 class="font-weight-bolder">
                                             {{ \App\Models\app::count() }}
                                         </h5>
-                                        
-                                     
+
+
                                         {{-- <p class="mb-0">
                                             <span class="text-success text-sm font-weight-bolder">+55%</span>
                                             {{ __('translation.since_yesterday') }}
@@ -56,22 +56,23 @@
                                 </div>
                                 <div class="col-4 text-end ">
                                     <span class="text-success ">
-                                    <svg style="width:30px;height:30px;" viewBox= "0 0 24 24">
-                                        <path fill="currentColor" d="M10.5 15.5C10.5 15.87 10.4 16.2 10.22 16.5C9.88 15.91 9.24 15.5 8.5 15.5S7.12 15.91 6.78 16.5C6.61 16.2 6.5 15.87 6.5 15.5C6.5 14.4 7.4 13.5 8.5 13.5S10.5 14.4 10.5 15.5M23 15V18C23 18.55 22.55 19 22 19H21V20C21 21.11 20.11 22 19 22H5C3.9 22 3 21.11 3 20V19H2C1.45 19 1 18.55 1 18V15C1 14.45 1.45 14 2 14H3C3 10.13 6.13 7 10 7H11V5.73C10.4 5.39 10 4.74 10 4C10 2.9 10.9 2 12 2S14 2.9 14 4C14 4.74 13.6 5.39 13 5.73V7H14C17.87 7 21 10.13 21 14H22C22.55 14 23 14.45 23 15M21 16H19V14C19 11.24 16.76 9 14 9H10C7.24 9 5 11.24 5 14V16H3V17H5V20H19V17H21V16M15.5 13.5C14.4 13.5 13.5 14.4 13.5 15.5C13.5 15.87 13.61 16.2 13.78 16.5C14.12 15.91 14.76 15.5 15.5 15.5S16.88 15.91 17.22 16.5C17.4 16.2 17.5 15.87 17.5 15.5C17.5 14.4 16.61 13.5 15.5 13.5Z" />
-                                    </svg>
+                                        <svg style="width:30px;height:30px;" viewBox="0 0 24 24">
+                                            <path fill="currentColor"
+                                                d="M10.5 15.5C10.5 15.87 10.4 16.2 10.22 16.5C9.88 15.91 9.24 15.5 8.5 15.5S7.12 15.91 6.78 16.5C6.61 16.2 6.5 15.87 6.5 15.5C6.5 14.4 7.4 13.5 8.5 13.5S10.5 14.4 10.5 15.5M23 15V18C23 18.55 22.55 19 22 19H21V20C21 21.11 20.11 22 19 22H5C3.9 22 3 21.11 3 20V19H2C1.45 19 1 18.55 1 18V15C1 14.45 1.45 14 2 14H3C3 10.13 6.13 7 10 7H11V5.73C10.4 5.39 10 4.74 10 4C10 2.9 10.9 2 12 2S14 2.9 14 4C14 4.74 13.6 5.39 13 5.73V7H14C17.87 7 21 10.13 21 14H22C22.55 14 23 14.45 23 15M21 16H19V14C19 11.24 16.76 9 14 9H10C7.24 9 5 11.24 5 14V16H3V17H5V20H19V17H21V16M15.5 13.5C14.4 13.5 13.5 14.4 13.5 15.5C13.5 15.87 13.61 16.2 13.78 16.5C14.12 15.91 14.76 15.5 15.5 15.5S16.88 15.91 17.22 16.5C17.4 16.2 17.5 15.87 17.5 15.5C17.5 14.4 16.61 13.5 15.5 13.5Z" />
+                                        </svg>
                                     </span>
                                     {{-- <div class="btn btn-primary">
                                     <i class="bi bi-app"></i>                                        <i class="ni ni-money-coins text-lg opacity-10" aria-hidden="true"></i>
                                     </div> --}}
-                                
+
                                 </div>
                             </div>
                             <div class="row">
                                 <p class="text-sm mb-0 text-uppercase font-weight-bold">
                                     {{-- {{ __('translation.Today\'s_Money') }}</p> --}}
-                                    {{__('translation. All Applcation') }}
-                                    </p>
-                               </div>
+                                    {{ __('translation. All Applcation') }}
+                                </p>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -84,7 +85,7 @@
                                         <h5 class="font-weight-bolder">
                                             {{ \App\Models\FirebaseNotification::count() }}
                                         </h5>
-                                       
+
                                         {{-- <p class="mb-0">
                                             <span class="text-success text-sm font-weight-bolder">+3%</span>
                                             {{ __('translation.since_last_week') }}
@@ -93,18 +94,19 @@
                                 </div>
                                 <div class="col-4 text-end">
                                     <span class="text-danger">
-                                    <svg style="width:30px;height:30px" viewBox="0 0 24 24">
-                                        <path fill="currentColor" d="M21,19V20H3V19L5,17V11C5,7.9 7.03,5.17 10,4.29C10,4.19 10,4.1 10,4A2,2 0 0,1 12,2A2,2 0 0,1 14,4C14,4.1 14,4.19 14,4.29C16.97,5.17 19,7.9 19,11V17L21,19M14,21A2,2 0 0,1 12,23A2,2 0 0,1 10,21" />
-                                    </svg>
+                                        <svg style="width:30px;height:30px" viewBox="0 0 24 24">
+                                            <path fill="currentColor"
+                                                d="M21,19V20H3V19L5,17V11C5,7.9 7.03,5.17 10,4.29C10,4.19 10,4.1 10,4A2,2 0 0,1 12,2A2,2 0 0,1 14,4C14,4.1 14,4.19 14,4.29C16.97,5.17 19,7.9 19,11V17L21,19M14,21A2,2 0 0,1 12,23A2,2 0 0,1 10,21" />
+                                        </svg>
                                     </span>
                                 </div>
                             </div>
                             <div class="row">
                                 <p class="text-sm mb-0 text-uppercase font-weight-bold">
                                     {{-- {{ __('translation.Today\'s Users') }}</p> --}}
-                                    {{__('translation.notifcation') }}
-                                    </p>
-                                </div>
+                                    {{ __('translation.notifcation') }}
+                                </p>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -117,8 +119,8 @@
                                         <h5 class="font-weight-bolder">
                                             {{ \App\Models\Ticketmassege::count() }}
                                         </h5>
-           
-                                       
+
+
                                         {{-- <p class="mb-0">
                                             <span class="text-danger text-sm font-weight-bolder">-2%</span>
                                             {{ __('translation.since_last_quarter') }}
@@ -127,20 +129,20 @@
                                 </div>
                                 <div class="col-4 text-end">
                                     <span class="text-primary">
-                                    <svg style="width:30px;height:30px;" viewBox="0 0 24 24">
-                                        <path fill="currentColor" d="M20,12A2,2 0 0,0 22,14V18A2,2 0 0,1 20,20H4A2,2 0 0,1 2,18V14C3.11,14 4,13.1 4,12A2,2 0 0,0 2,10V6C2,4.89 2.9,4 4,4H20A2,2 0 0,1 22,6V10A2,2 0 0,0 20,12M16.5,16.25C16.5,14.75 13.5,14 12,14C10.5,14 7.5,14.75 7.5,16.25V17H16.5V16.25M12,12.25A2.25,2.25 0 0,0 14.25,10A2.25,2.25 0 0,0 12,7.75A2.25,2.25 0 0,0 9.75,10A2.25,2.25 0 0,0 12,12.25Z" />
-                                    </svg>
-                                  </span>
+                                        <svg style="width:30px;height:30px;" viewBox="0 0 24 24">
+                                            <path fill="currentColor"
+                                                d="M20,12A2,2 0 0,0 22,14V18A2,2 0 0,1 20,20H4A2,2 0 0,1 2,18V14C3.11,14 4,13.1 4,12A2,2 0 0,0 2,10V6C2,4.89 2.9,4 4,4H20A2,2 0 0,1 22,6V10A2,2 0 0,0 20,12M16.5,16.25C16.5,14.75 13.5,14 12,14C10.5,14 7.5,14.75 7.5,16.25V17H16.5V16.25M12,12.25A2.25,2.25 0 0,0 14.25,10A2.25,2.25 0 0,0 12,7.75A2.25,2.25 0 0,0 9.75,10A2.25,2.25 0 0,0 12,12.25Z" />
+                                        </svg>
+                                    </span>
                                 </div>
                             </div>
                             <div class="row">
                                 <p class="text-sm mb-0 text-uppercase font-weight-bold">
                                     {{-- {{ __('translation.New_Clients') }}</p> --}}
-                                    {{__('translation. TICKET MASSEGE') }}
-                                    {{-- {{__('translation. All Applcation') }}
-                                    --}}
-</p>
-</div>
+                                    {{ __('translation. TICKET MASSEGE') }}
+                                    {{-- {{__('translation. All Applcation') }} --}}
+                                </p>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -153,7 +155,7 @@
                                         <h5 class="font-weight-bolder">
                                             {{ \App\Models\app_profile::count() }}
                                         </h5>
-                                        
+
                                         {{-- <p class="mb-0">
                                             <span class="text-success text-sm font-weight-bolder">+5%</span>
                                             {{ __('translation.than_last_month') }}
@@ -162,238 +164,167 @@
                                 </div>
                                 <div class="col-4 text-end">
                                     <span class="text-info">
-                                    <svg style="width:30px;height:30px;" viewBox="0 0 24 24">
-                                        <path fill="currentColor" d="M18 14L23 9L21.6 7.6L19 10.2V3H17V10.2L14.4 7.6L13 9L18 14M19 16V21C19 22.1 18.1 23 17 23H7C5.9 23 5 22.1 5 21V3C5 1.9 5.9 1 7 1H14V5H7V19H17V16H19Z" />
-                                    </svg>
+                                        <svg style="width:30px;height:30px;" viewBox="0 0 24 24">
+                                            <path fill="currentColor"
+                                                d="M18 14L23 9L21.6 7.6L19 10.2V3H17V10.2L14.4 7.6L13 9L18 14M19 16V21C19 22.1 18.1 23 17 23H7C5.9 23 5 22.1 5 21V3C5 1.9 5.9 1 7 1H14V5H7V19H17V16H19Z" />
+                                        </svg>
                                     </span>
                                 </div>
                             </div>
                             <div class="row">
                                 <p class="text-sm mb-0 text-uppercase font-weight-bold">
                                     {{-- {{ __('translation.Sales') }}</p> --}}
-                                    {{__('translation. Download Applaction') }} </P>
-                                </div>
+                                    {{ __('translation. Download Applaction') }} </P>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
             <div class="row mt-4">
                 <div class="col-lg-7 mb-lg-0 mb-4">
-
-                <div id="container"></div></div>
-                <div class="col-lg-5">
-                    <div class="card card-carousel overflow-hidden h-100 p-0">
-                      <div id="carouselExampleCaptions" class="carousel slide h-100" data-bs-ride="carousel">
-                        <div class="carousel-inner border-radius-lg h-100">
-                          <div class="carousel-item h-100 active" style="background-image: url('../assets/img/carousel-1.jpg');
-                background-size: cover;">
-                            <div class="carousel-caption d-none d-md-block bottom-0 text-start start-0 ms-5">
-                              <div class="icon icon-shape icon-sm bg-white text-center border-radius-md mb-3">
-                                <i class="ni ni-camera-compact text-dark opacity-10"></i>
-                              </div>
-                              <h5 class="text-white mb-1">Get started with Argon</h5>
-                              <p>There’s nothing I really wanted to do in life that I wasn’t able to get good at.</p>
-                            </div>
-                          </div>
-                          <div class="carousel-item h-100" style="background-image: url('../assets/img/carousel-2.jpg');
-                background-size: cover;">
-                            <div class="carousel-caption d-none d-md-block bottom-0 text-start start-0 ms-5">
-                              <div class="icon icon-shape icon-sm bg-white text-center border-radius-md mb-3">
-                                <i class="ni ni-bulb-61 text-dark opacity-10"></i>
-                              </div>
-                              <h5 class="text-white mb-1">Faster way to create web pages</h5>
-                              <p>That’s my skill. I’m not really specifically talented at anything except for the ability to learn.</p>
-                            </div>
-                          </div>
-                          <div class="carousel-item h-100" style="background-image: url('../assets/img/carousel-3.jpg');
-                background-size: cover;">
-                            <div class="carousel-caption d-none d-md-block bottom-0 text-start start-0 ms-5">
-                              <div class="icon icon-shape icon-sm bg-white text-center border-radius-md mb-3">
-                                <i class="ni ni-trophy text-dark opacity-10"></i>
-                              </div>
-                              <h5 class="text-white mb-1">Share with us your design tips!</h5>
-                              <p>Don’t be afraid to be wrong because you can’t learn anything from a compliment.</p>
-                            </div>
-                          </div>
-                        </div>
-                        <button class="carousel-control-prev w-5 me-3" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
-                          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                          <span class="visually-hidden">Previous</span>
-                        </button>
-                        <button class="carousel-control-next w-5 me-3" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
-                          <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                          <span class="visually-hidden">Next</span>
-                        </button>
+                  <div class="card z-index-2 h-100">
+                    <div class="card-header pb-0 pt-3 bg-transparent">
+                      <h6 class="text-capitalize">Sales overview</h6>
+                      <p class="text-sm mb-0">
+                        <i class="fa fa-arrow-up text-success"></i>
+                        <span class="font-weight-bold">4% more</span> in 2021
+                      </p>
+                    </div>
+                    <div class="card-body p-3">
+                      <div id="Notification">
+                        {{-- <canvas id="chart-line" class="chart-canvas" height="300"></canvas> --}}
                       </div>
                     </div>
                   </div>
-            </div>
-            <div class="row mt-4">
-                <div class="col-lg-7 mb-lg-0 mb-4">
-                    <div class="card ">
-                        <div class="card-header pb-0 p-3">
-                            <div class="d-flex justify-content-between">
-                                <h6 class="mb-2">{{ __('translation.Sales_by_Country') }}</h6>
-                            </div>
-                        </div>
-                        <div class="table-responsive">
-                            <table class="table align-items-center ">
-                                <tbody>
-                                    <tr>
-                                        <td class="w-30">
-                                            <div class="d-flex px-2 py-1 align-items-center">
-                                                <div>
-                                                    <img src="../assets/img/icons/flags/US.png" alt="Country flag">
-                                                </div>
-                                                <div class="ms-4">
-                                                    <p class="text-xs font-weight-bold mb-0">Country:</p>
-                                                    <h6 class="text-sm mb-0">United States</h6>
-                                                </div>
-                                            </div>
-                                        </td>
-                                        <td>
-                                            <div class="text-center">
-                                                <p class="text-xs font-weight-bold mb-0">Sales:</p>
-                                                <h6 class="text-sm mb-0">2500</h6>
-                                            </div>
-                                        </td>
-                                        <td>
-                                            <div class="text-center">
-                                                <p class="text-xs font-weight-bold mb-0">Value:</p>
-                                                <h6 class="text-sm mb-0">$230,900</h6>
-                                            </div>
-                                        </td>
-                                        <td class="align-middle text-sm">
-                                            <div class="col text-center">
-                                                <p class="text-xs font-weight-bold mb-0">Bounce:</p>
-                                                <h6 class="text-sm mb-0">29.9%</h6>
-                                            </div>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td class="w-30">
-                                            <div class="d-flex px-2 py-1 align-items-center">
-                                                <div>
-                                                    <img src="../assets/img/icons/flags/DE.png" alt="Country flag">
-                                                </div>
-                                                <div class="ms-4">
-                                                    <p class="text-xs font-weight-bold mb-0">Country:</p>
-                                                    <h6 class="text-sm mb-0">Germany</h6>
-                                                </div>
-                                            </div>
-                                        </td>
-                                        <td>
-                                            <div class="text-center">
-                                                <p class="text-xs font-weight-bold mb-0">Sales:</p>
-                                                <h6 class="text-sm mb-0">3.900</h6>
-                                            </div>
-                                        </td>
-                                        <td>
-                                            <div class="text-center">
-                                                <p class="text-xs font-weight-bold mb-0">Value:</p>
-                                                <h6 class="text-sm mb-0">$440,000</h6>
-                                            </div>
-                                        </td>
-                                        <td class="align-middle text-sm">
-                                            <div class="col text-center">
-                                                <p class="text-xs font-weight-bold mb-0">Bounce:</p>
-                                                <h6 class="text-sm mb-0">40.22%</h6>
-                                            </div>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td class="w-30">
-                                            <div class="d-flex px-2 py-1 align-items-center">
-                                                <div>
-                                                    <img src="../assets/img/icons/flags/GB.png" alt="Country flag">
-                                                </div>
-                                                <div class="ms-4">
-                                                    <p class="text-xs font-weight-bold mb-0">Country:</p>
-                                                    <h6 class="text-sm mb-0">Great Britain</h6>
-                                                </div>
-                                            </div>
-                                        </td>
-                                        <td>
-                                            <div class="text-center">
-                                                <p class="text-xs font-weight-bold mb-0">Sales:</p>
-                                                <h6 class="text-sm mb-0">1.400</h6>
-                                            </div>
-                                        </td>
-                                        <td>
-                                            <div class="text-center">
-                                                <p class="text-xs font-weight-bold mb-0">Value:</p>
-                                                <h6 class="text-sm mb-0">$190,700</h6>
-                                            </div>
-                                        </td>
-                                        <td class="align-middle text-sm">
-                                            <div class="col text-center">
-                                                <p class="text-xs font-weight-bold mb-0">Bounce:</p>
-                                                <h6 class="text-sm mb-0">23.44%</h6>
-                                            </div>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td class="w-30">
-                                            <div class="d-flex px-2 py-1 align-items-center">
-                                                <div>
-                                                    <img src="../assets/img/icons/flags/BR.png" alt="Country flag">
-                                                </div>
-                                                <div class="ms-4">
-                                                    <p class="text-xs font-weight-bold mb-0">Country:</p>
-                                                    <h6 class="text-sm mb-0">Brasil</h6>
-                                                </div>
-                                            </div>
-                                        </td>
-                                        <td>
-                                            <div class="text-center">
-                                                <p class="text-xs font-weight-bold mb-0">Sales:</p>
-                                                <h6 class="text-sm mb-0">562</h6>
-                                            </div>
-                                        </td>
-                                        <td>
-                                            <div class="text-center">
-                                                <p class="text-xs font-weight-bold mb-0">Value:</p>
-                                                <h6 class="text-sm mb-0">$143,960</h6>
-                                            </div>
-                                        </td>
-                                        <td class="align-middle text-sm">
-                                            <div class="col text-center">
-                                                <p class="text-xs font-weight-bold mb-0">Bounce:</p>
-                                                <h6 class="text-sm mb-0">32.14%</h6>
-                                            </div>
-                                        </td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                        </div>
-                    </div>
                 </div>
                 <div class="col-lg-5">
-                    <div class="card">
-                        <div class="card-header pb-0 p-3">
-                            <h6 class="mb-0">{{ __('translation.Categories') }}</h6>
-                        </div>
-                        <div class="card-body p-3">
-                            <div class="card-body" style="width: 70%">
-                                <div class="card-header bg-transparent pd-b-0 pd-t-20 bd-b-0">
-                                    <div class="d-flex justify-content-between">
-                                        <h4 class="card-title mb-0">  smsar kbonony</h4>
-                                        <i class="mdi mdi-dots-horizontal text-gray"></i>
-                                    </div>
-
-                                </div>
-                                <div class="card-body" style="width: 70%">
-                                    {{-- {!! $chartjs->render() !!} --}}
-
-                                </div>
-
+                  <div class="card card-carousel overflow-hidden h-100 p-0">
+                    <div id="carouselExampleCaptions" class="carousel slide h-100" data-bs-ride="carousel">
+                      <div class="carousel-inner border-radius-lg h-100">
+                        <div class="carousel-item h-100 active" style="background-image: url('../app/5.jpg');
+              background-size: cover;">
+                          <div class="carousel-caption d-none d-md-block bottom-0 text-start start-0 ms-5">
+                            <div class="icon icon-shape icon-sm bg-white text-center border-radius-md mb-3" style="display: none;">
+                              <i class="ni ni-camera-compact text-dark opacity-10"></i>
                             </div>
+                            {{-- <h5 class="text-white mb-1">Get started with Argon</h5>
+                            <p>There’s nothing I really wanted to do in life that I wasn’t able to get good at.</p> --}}
+                          </div>
                         </div>
+                        <div class="carousel-item h-100" style="background-image: url('../app/6.jpg');
+              background-size: cover;">
+                          <div class="carousel-caption d-none d-md-block bottom-0 text-start start-0 ms-5">
+                            <div class="icon icon-shape icon-sm bg-white text-center border-radius-md mb-3" style="display: none;">
+                              <i class="ni ni-bulb-61 text-dark opacity-10"></i>
+                            </div>
+                            {{-- <h5 class="text-white mb-1">Faster way to create web pages</h5>
+                            <p>That’s my skill. I’m not really specifically talented at anything except for the ability to learn.</p> --}}
+                          </div>
+                        </div>
+                        <div class="carousel-item h-100" style="background-image: url('../app/6.jpg');
+              background-size: cover;">
+                          <div class="carousel-caption d-none d-md-block bottom-0 text-start start-0 ms-5">
+                            <div class="icon icon-shape icon-sm bg-white text-center border-radius-md mb-3"style="display: none;">
+                              <i class="ni ni-trophy text-dark opacity-10"></i>
+                            </div>
+                            {{-- <h5 class="text-white mb-1">Share with us your design tips!</h5>
+                            <p>Don’t be afraid to be wrong because you can’t learn anything from a compliment.</p> --}}
+                          </div>
+                        </div>
+                      </div>
+                      <button class="carousel-control-prev w-5 me-3" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Previous</span>
+                      </button>
+                      <button class="carousel-control-next w-5 me-3" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Next</span>
+                      </button>
                     </div>
+                  </div>
                 </div>
-            </div>
+              </div>
+              <div class="row mt-4">
+                <div class="col-lg-7 mb-lg-0 mb-4">
+                  <div class="card ">
+                    <div class="card-header pb-0 p-3">
+                      <div class="d-flex justify-content-between">
+                        <h6 class="mb-2">Sales by Country</h6>
+                      </div>
+                    </div>
+                    <div id="User"></div>
+                  </div>
+                </div>
+                <div class="col-lg-5">
+                  <div class="card">
+                    <div class="card-header pb-0 p-3">
+                      <h6 class="mb-0">Categories</h6>
+                    </div>
+                    <div class="card-body p-3">
+                      <ul class="list-group">
+                        <li class="list-group-item border-0 d-flex justify-content-between ps-0 mb-2 border-radius-lg">
+                          <div class="d-flex align-items-center">
+                            <div class="icon icon-shape icon-sm me-3 bg-gradient-dark shadow text-center">
+                              <i class="ni ni-mobile-button text-white opacity-10"></i>
+                            </div>
+                            <div class="d-flex flex-column">
+                              <h6 class="mb-1 text-dark text-sm">Devices</h6>
+                              <span class="text-xs">250 in stock, <span class="font-weight-bold">346+ sold</span></span>
+                            </div>
+                          </div>
+                          <div class="d-flex">
+                            <button class="btn btn-link btn-icon-only btn-rounded btn-sm text-dark icon-move-right my-auto"><i class="ni ni-bold-right" aria-hidden="true"></i></button>
+                          </div>
+                        </li>
+                        <li class="list-group-item border-0 d-flex justify-content-between ps-0 mb-2 border-radius-lg">
+                          <div class="d-flex align-items-center">
+                            <div class="icon icon-shape icon-sm me-3 bg-gradient-dark shadow text-center">
+                              <i class="ni ni-tag text-white opacity-10"></i>
+                            </div>
+                            <div class="d-flex flex-column">
+                              <h6 class="mb-1 text-dark text-sm">Tickets</h6>
+                              <span class="text-xs">123 closed, <span class="font-weight-bold">15 open</span></span>
+                            </div>
+                          </div>
+                          <div class="d-flex">
+                            <button class="btn btn-link btn-icon-only btn-rounded btn-sm text-dark icon-move-right my-auto"><i class="ni ni-bold-right" aria-hidden="true"></i></button>
+                          </div>
+                        </li>
+                        <li class="list-group-item border-0 d-flex justify-content-between ps-0 mb-2 border-radius-lg">
+                          <div class="d-flex align-items-center">
+                            <div class="icon icon-shape icon-sm me-3 bg-gradient-dark shadow text-center">
+                              <i class="ni ni-box-2 text-white opacity-10"></i>
+                            </div>
+                            <div class="d-flex flex-column">
+                              <h6 class="mb-1 text-dark text-sm">Error logs</h6>
+                              <span class="text-xs">1 is active, <span class="font-weight-bold">40 closed</span></span>
+                            </div>
+                          </div>
+                          <div class="d-flex">
+                            <button class="btn btn-link btn-icon-only btn-rounded btn-sm text-dark icon-move-right my-auto"><i class="ni ni-bold-right" aria-hidden="true"></i></button>
+                          </div>
+                        </li>
+                        <li class="list-group-item border-0 d-flex justify-content-between ps-0 border-radius-lg">
+                          <div class="d-flex align-items-center">
+                            <div class="icon icon-shape icon-sm me-3 bg-gradient-dark shadow text-center">
+                              <i class="ni ni-satisfied text-white opacity-10"></i>
+                            </div>
+                            <div class="d-flex flex-column">
+                              <h6 class="mb-1 text-dark text-sm">Happy users</h6>
+                              <span class="text-xs font-weight-bold">+ 430</span>
+                            </div>
+                          </div>
+                          <div class="d-flex">
+                            <button class="btn btn-link btn-icon-only btn-rounded btn-sm text-dark icon-move-right my-auto"><i class="ni ni-bold-right" aria-hidden="true"></i></button>
+                          </div>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
 
-        </div>
+            
     </main>
     <div class="fixed-plugin">
         <a class="fixed-plugin-button text-dark position-fixed px-3 py-2">
@@ -488,54 +419,115 @@
     <!--   Core JS Files   -->
 
 
-<script src="https://code.highcharts.com/highcharts.js"></script>
-
-{{-- <script type="text/javascript">
-    var Notification = <?php echo json_encode($Notification)?>;
-    Highcharts.chart('container', {
-        title: {
-            text: 'New Notification'
-        },
-
-        xAxis: {
-            categories: ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September',
-                'October', 'November', 'December'
-            ]
-        },
-        yAxis: {
+    <script src="https://code.highcharts.com/highcharts.js"></script>
+    <script src="https://code.highcharts.com/highcharts.js"></script>
+    <script src="https://code.highcharts.com/modules/data.js"></script>
+    <script src="https://code.highcharts.com/modules/drilldown.js"></script>
+    <script src="https://code.highcharts.com/modules/exporting.js"></script>
+    <script src="https://code.highcharts.com/modules/export-data.js"></script>
+    <script src="https://code.highcharts.com/modules/accessibility.js"></script>
+    <script type="text/javascript">
+        var Notification = <?php echo json_encode($Notification); ?>;
+        // Create the chart
+        Highcharts.chart('Notification', {
+            chart: {
+                type: 'column'
+            },
             title: {
-                text: 'Number of New Notification'
-            }
-        },
-        legend: {
-            layout: 'vertical',
-            align: 'right',
-            verticalAlign: 'middle'
-        },
-        plotOptions: {
-            series: {
-                allowPointSelect: true
-            }
-        },
-        series: [{
-            name: 'New Notification',
-            data: Notification
-        }],
-        responsive: {
-            rules: [{
-                condition: {
-                    maxWidth: 500
-                },
-                chartOptions: {
-                    legend: {
-                        layout: 'horizontal',
-                        align: 'center',
-                        verticalAlign: 'bottom'
-                    }
+                text: 'New Notification'
+            },
+
+            xAxis: {
+                categories: ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September',
+                    'October', 'November', 'December'
+                ]
+            },
+            yAxis: {
+                title: {
+                    text: 'Number of New Notification'
                 }
-            }]
-        }
-    });
-</script> --}}
+            },
+            legend: {
+                layout: 'vertical',
+                align: 'right',
+                verticalAlign: 'middle'
+            },
+            plotOptions: {
+                series: {
+                    allowPointSelect: true
+                }
+            },
+            series: [{
+                name: 'New Notification',
+                data: Notification
+            }],
+            responsive: {
+                rules: [{
+                    condition: {
+                        maxWidth: 500
+                    },
+                    chartOptions: {
+                        legend: {
+                            layout: 'horizontal',
+                            align: 'center',
+                            verticalAlign: 'bottom'
+                        }
+                    }
+                }]
+            }
+        });
+    </script>
+    <script type="text/javascript">
+        var User = <?php echo json_encode($User); ?>;
+        // Create the chart
+        Highcharts.chart('User', {
+            chart: {
+                type: 'column'
+            },
+            title: {
+                text: 'New User'
+            },
+
+            xAxis: {
+                categories: ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September',
+                    'October', 'November', 'December'
+                ]
+            },
+            yAxis: {
+                title: {
+                    text: 'Number of New User'
+                }
+            },
+            legend: {
+                layout: 'vertical',
+                align: 'right',
+                verticalAlign: 'middle'
+            },
+            plotOptions: {
+                series: {
+                    allowPointSelect: true
+                }
+            },
+            series: [{
+                name: 'New User',
+                data: User
+            }],
+            responsive: {
+                rules: [{
+                    condition: {
+                        maxWidth: 500
+                    },
+                    chartOptions: {
+                        legend: {
+                            layout: 'horizontal',
+                            align: 'center',
+                            verticalAlign: 'bottom'
+                        }
+                    }
+                }]
+            }
+        });
+    </script>
+
 
 @endsection

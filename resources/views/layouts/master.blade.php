@@ -7,7 +7,8 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         <link rel="apple-touch-icon" sizes="76x76" href="{{ asset('img/apple-icon.png') }}">
         <link rel="icon" type="image/png" href="{{ asset('img/favicon.png') }}">
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css">    
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css"> 
+           
     
         <title>
             @yield('title')
@@ -19,6 +20,9 @@
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@200&display=swap" rel="stylesheet">
+        <link href="{{ asset('assets/css/css/style.css') }}" rel="stylesheet" />
+        <link href="{{ asset('/dist/css/sweetalert.css') }}" rel="stylesheet">
+        
     </head>
     
     <body class="g-sidenav-show bg-gray-100 {{getclass(['ar'=>'rtl','en'=>''])}} "  style="font-family: system:ui">
@@ -34,7 +38,7 @@
             @include('layouts.includes.scripts')
             </div>
         </main>
-    
+        <script src="{{ asset('/dist/js/sweetalert.min.js') }}"></script>
     </body>
     
     </html>

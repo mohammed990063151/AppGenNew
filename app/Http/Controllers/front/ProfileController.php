@@ -31,12 +31,12 @@ class ProfileController extends BaseController
     public function create($id)
     {
         $profile = app_profile::all();
-        $applcation = app::find(1);
+        $applcation = app::find($id);
         return view('clients.app_profile.create', compact('profile', 'applcation'));
     }
 
 
-    public function store(ProfileappRequest  $request)
+    public function store(ProfileappRequest  $request )
     {
 
         try {

@@ -56,6 +56,9 @@ return [
     'action' => 'خيارات',
     'table_empty' => 'لا يوجد بيانات لعرضها',
     'Add_screen' => 'الرئيسية',
+    'Building' => 'تثبيت',
+    'Update_My_App' => 'تحديث التطبيق',
+
 
     /******* Notification Table ********/
 
@@ -80,6 +83,9 @@ return [
     'photo' => 'إرفاق صورة',
     'cancel' => 'إلغاء',
     'send' => 'إرسال',
+    'Delete' => 'حذف',
+    'Edit' => 'تحديث',
+    
 
 
 

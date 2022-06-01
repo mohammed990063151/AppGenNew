@@ -3,8 +3,8 @@
     {{-- <x-bread-crumps> --}}
         @component('components.bread-crumps',
         [
-            'head' => __('translation.Application'),
-            'links' => [BredCrumpLinks(route('clients.dashboard'), __('translation.Dashboard')), BredCrumpLinks(route('application.index'), __('translation.Application'))],
+            'head' => __('translation.create_a_new_Application'),
+            'links' => [BredCrumpLinks(route('application.index'), __('translation.Home')), BredCrumpLinks(route('application.index'), __('translation.add_Application'))],
         ])
     @endcomponent
 @endsection
@@ -34,13 +34,13 @@
                                     <form action="{{ route('application.store') }}" method="post"
                                         enctype="multipart/form-data" class="form">
                                         @csrf
-                                        <h1 class="text-center">My App</h1>
+                                        <h1 class="text-center"> {{__('translation.my_App')}}</h1>
                                         <!-- Progress bar -->
                                         <div class="progressbar">
                                             <div class="progress" id="progress"></div>
-                                            <div class="progress-step progress-step-active" data-title="Intro"></div>
-                                            <div class="progress-step" data-title="Discrptions"></div>
-                                            <div class="progress-step" data-title="Logo"></div>
+                                            <div class="progress-step progress-step-active" data-title="{{__('translation.Intro')}}"></div>
+                                            <div class="progress-step" data-title="{{__('translation.Discrptions')}}"></div>
+                                            <div class="progress-step" data-title="{{__('translation.Logo')}}"></div>
                                         </div>
                                         <!-- Steps -->
                                         {{-- <div class="form-step form-step-active">
@@ -54,7 +54,7 @@
                                             </div> --}}
                                         <div class="form-step form-step-active">
                                             <div class="input-group">
-                                                <label for="username">Name</label>
+                                                <label for="username">{{__('translation.Name')}}</label>
                                                 <input type="text" name="AppName" id="username" />
                                                 @error('AppName')
                                                     <span
@@ -62,7 +62,7 @@
                                                 @enderror
                                             </div>
                                             <div class="input-group">
-                                                <label for="position">Phone</label>
+                                                <label for="position">{{__('translation.Phone')}}</label>
                                                 <input type="text" name="Phone" id="position" />
                                                 @error('Phone')
                                                     <span
@@ -70,7 +70,7 @@
                                                 @enderror
                                             </div>
                                             <div class="input-group">
-                                                <label for="WhatsApp">WhatsApp</label>
+                                                <label for="WhatsApp">{{__('translation.WhatsApp')}}</label>
                                                 <input type="text" name="WhatsApp" id="WhatsApp" />
                                                 @error('WhatsApp')
                                                     <span
@@ -78,12 +78,12 @@
                                                 @enderror
                                             </div>
                                             <div class="">
-                                                <a href="#" class="btn btn-next width-50 ml-auto" id="app">Next</a>
+                                                <a href="#" class="btn btn-next width-50 ml-auto" id="app">{{__('translation.Next_')}}</a>
                                             </div>
                                         </div>
                                         <div class="form-step">
                                             <div class="input-group">
-                                                <label for="phone">Link</label>
+                                                <label for="phone">{{__('translation.Link_')}}</label>
                                                 <input type="text" name="Link" id="phone" />
                                                 @error('Link')
                                                     <span
@@ -91,7 +91,7 @@
                                                 @enderror
                                             </div>
                                             <div class="input-group">
-                                                <label for="email">Discrptions</label>
+                                                <label for="email">{{__('translation.Discrptions')}}</label>
                                                 <input type="text" name="Discrptions" id="email" />
                                                 @error('Discrptions')
                                                     <span
@@ -99,13 +99,13 @@
                                                 @enderror
                                             </div>
                                             <div class="btns-group" id="app-group">
-                                                <a href="#" class="btn btn-prev" id="app">Previous</a>
-                                                <a href="#" class="btn btn-next" id="app">Next</a>
+                                                <a href="#" class="btn btn-prev" id="app">{{__('translation.Previous')}}</a>
+                                                <a href="#" class="btn btn-next" id="app">{{__('translation.Next_')}}</a>
                                             </div>
                                         </div>
                                         <div class="form-step">
                                             <div class="input-group">
-                                                <label for="password">Splash Screen</label>
+                                                <label for="password">{{__('translation.Splash_Screen')}}</label>
                                                 <input type="file" name="Splash_Screen" id="phone"
                                                     aria-describedby="helpId" />
                                                 @error('Splash_Screen')
@@ -114,7 +114,7 @@
                                                 @enderror
                                             </div>
                                             <div class="input-group">
-                                                <label for="confirmPassword">Logo</label>
+                                                <label for="confirmPassword">{{__('translation.Logo')}}</label>
                                                 <input type="file" name="Logo" id="confirmPassword"
                                                     aria-describedby="helpId" />
                                                 @error('Logo')
@@ -128,8 +128,8 @@
                                                 @enderror
                                             </div>
                                             <div class="btns-group" id="app-group">
-                                                <a href="#" class="btn btn-prev" id="app">Previous</a>
-                                                <input type="submit" value="submit" class="btn" id="app" />
+                                                <a href="#" class="btn btn-prev" id="app">{{__('translation.Previous')}}</a>
+                                                <input type="submit" value="{{__('translation.submit')}}" class="btn" id="app" />
                                             </div>
                                         </div>
                                     </form>

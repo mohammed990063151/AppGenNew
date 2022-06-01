@@ -1,17 +1,10 @@
 @extends('layouts.master')
 @section('breadceumbs')
-    {{-- <x-bread-crumps> --}}
-    {{-- @component('components.bread-crumps', ['head' => 'Add New Scrren one', 'links' => ['profile', 'Add New Scrren one']])
-        @section('title')
-            Add New Scrren one
-        @stop
-    @endcomponent --}}
-    @component('components.bread-crumps', [
-        'head' => __('translation.Technical support'),
-         'links' => [
-            BredCrumpLinks( route('clients.dashboard')  ,  __('translation.Dashboard')),
-             BredCrumpLinks( route('ticket.index')  , __('translation.Technical support')),
-          ]])
+@component('components.bread-crumps',
+[
+    'head' => __('translation.create_a_new_Scrren_one'),
+    'links' => [BredCrumpLinks(route('application.index'), __('translation.Home')), BredCrumpLinks(route('application.index'), __('translation.add_Scrren_one'))],
+])
 @endcomponent
 @endsection
 @section('content')
@@ -38,37 +31,37 @@
                                     <form action="{{ route('Screen.store') }}" method="post" enctype="multipart/form-data"
                                         class="form">
                                         @csrf
-                                        <h1 class="text-center">My Screen One </h1>
+                                        <h1 class="text-center">{{__('translation.My_Screen_One')}}</h1>
                                         <!-- Progress bar -->
                                         <div class="progressbar">
                                             <div class="progress" id="progress"></div>
-                                            <div class="progress-step progress-step-active" data-title="Intro"></div>
-                                            <div class="progress-step" data-title="Colors"></div>
-                                            <div class="progress-step" data-title="Follow"></div>
+                                            <div class="progress-step progress-step-active" data-title="{{__('translation.Intro')}}"></div>
+                                            <div class="progress-step" data-title="{{__('translation.Color')}}"></div>
+                                            <div class="progress-step" data-title="{{__('translation.Discrptions')}}"></div>
                                         </div>
                                         <!-- Steps -->
                                         <div class="form-step form-step-active">
                                             <div class="input-group">
-                                                <label for="image">image</label>
+                                                <label for="image">{{__('translation.image')}}</label>
                                                 <input type="file" name="image" id="image" aria-describedby="helpId" />
                                                 @error('image')
                                                     <span class="text-danger error">{{ $message }}</span>
                                                 @enderror
                                             </div>
                                             <div class="input-group">
-                                                <label for="Discrption1st">Discrption</label>
+                                                <label for="Discrption1st">{{__('translation.Discrptions')}}</label>
                                                 <input type="text" name="Discrption1st" id="Discrption1st" />
                                                 @error('Discrption1st')
                                                     <span class="text-danger error">{{ $message }}</span>
                                                 @enderror
                                             </div>
                                             <div class="">
-                                                <a href="#" class="btn btn-next width-50 ml-auto" id="app">Next</a>
+                                                <a href="#" class="btn btn-next width-50 ml-auto" id="app">{{__('translation.Next_')}}</a>
                                             </div>
                                         </div>
                                         <div class="form-step">
                                             <div class="input-group">
-                                                <label for="Color">Color</label>
+                                                <label for="Color">{{__('translation.Color')}}</label>
                                                 <input type="color" name="Color" id="color-range" class="color-range"
                                                     value="#f5f5f5"
                                                     onchange="this.style.background = this.value; console.log('done')" />
@@ -77,7 +70,7 @@
                                                 @enderror
                                             </div>
                                             <div class="input-group">
-                                                <label for="ContainarButtonBarColor">Containar ButtonBar Color</label>
+                                                <label for="ContainarButtonBarColor">{{__('translation.Containar_ButtonBar_Color')}}</label>
                                                 <input type="color" name="ContainarButtonBarColor" id="color-range"
                                                     class="color-range" value="#f5f5f5"
                                                     onchange="this.style.background = this.value; console.log('done')"
@@ -87,13 +80,13 @@
                                                 @enderror
                                             </div>
                                             <div class="btns-group" id="app-group">
-                                                <a href="#" class="btn btn-prev" id="app">Previous</a>
-                                                <a href="#" class="btn btn-next" id="app">Next</a>
+                                                <a href="#" class="btn btn-prev" id="app">{{__('translation.Previous')}}</a>
+                                                <a href="#" class="btn btn-next" id="app">{{__('translation.Next_')}}</a>
                                             </div>
                                         </div>
                                         <div class="form-step">
                                             <div class="input-group">
-                                                <label for="IconsBackgroundColor"> Icons Background Color</label>
+                                                <label for="IconsBackgroundColor"> {{__('translation.Icons_Background_Color')}}</label>
                                                 <input type="color" name="IconsBackgroundColor" id="color-range"
                                                     class="color-range" value="#f5f5f5"
                                                     onchange="this.style.background = this.value; console.log('done')" />
@@ -102,7 +95,7 @@
                                                 @enderror
                                             </div>
                                             <div class="input-group">
-                                                <label for="IconsColor">Icons Color</label>
+                                                <label for="IconsColor">{{__('translation.Icons_Color')}}</label>
                                                 <input type="color" name="IconsColor" id="color-range"
                                                     class="color-range" value="#f5f5f5"
                                                     onchange="this.style.background = this.value; console.log('done')" />
@@ -122,8 +115,8 @@
                                                 @enderror
                                             </div>
                                             <div class="btns-group" id="app-group">
-                                                <a href="#" class="btn btn-prev" id="app">Previous</a>
-                                                <input type="submit" value="Submit" class="btn" id="app" />
+                                                <a href="#" class="btn btn-prev" id="app">{{__('translation.Previous')}}</a>
+                                                <input type="submit" value="{{__('translation.submit')}}" class="btn" id="app" />
                                             </div>
                                         </div>
                                     </form>

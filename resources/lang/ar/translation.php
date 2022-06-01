@@ -66,6 +66,50 @@ return [
     'Your_file_has_been_deleted.'=>'تم حذف ملفك.',
     'success'=>'النجاح',
     'Choose_the_name_of_the_application'=>'اختيار اسم التطبيق',
+    'create_a_new_Application'=> 'انشاء التطبيق جديد',
+    'add_Application'=>'اضافة التطبيق ',
+    'create_a_new_profile'=> 'انشاء الملف الشخصي جديد',
+    'add_profile'=>'اضافة الملف الشخصي ',
+    'add_Scrren_one'=>'أضف الشاشة الأولى',
+    'create_a_new_Scrren_one'=> 'إنشاء شاشة جديد',
+    'add_Scrren_Two'=>'أضف الشاشة الثانية',
+    'create_a_new_Scrren_Two'=> 'إنشاء شاشة جديد',
+    'add_Scrren_Three'=>'أضف الشاشة الثالثة',
+    'create_a_new_Scrren_Three'=> 'إنشاء شاشة جديد',
+
+    'Updata_my_App' => 'تحديث تطبيقي',
+    'my_App'=>'تطبيقي',
+    'Intro'=>'البداية',
+    'Logo'=>'شعارالتطبيق',
+    'Next_'=>'التالي',
+    'Link_'=>'الرابط',
+    'Previous'=>'السابق',
+    'Splash_Screen'=>'اشعار التحميل',
+    'submit' => 'حفظ',
+
+'Home'=>'الرئسية',
+
+'Updata_My_Profile' => 'تحديث ملفي الشخصي',
+'My_Profile'=>'ملفي الشخصي',
+    'Link_Social_Media'=>'رابط وسائل التواصل الاجتماعي',
+    'Color' => 'الوان',
+    'Facebook' => 'فيسبوك',
+    'Instgram' => 'انستغرام',
+    'Twitter' => 'تويتر',
+    'TikTok' => 'تك توك' ,
+    'Snapchat' => 'سناب شات',
+    'Social_Media_botton_Color' => 'الوان زر الوسائط الاجتماعية ',
+
+
+    'My_Screen' => 'شاشتي ',
+    'My_Screen_Two' => 'شاشتي الثانية',
+    'My_Screen_Three' => 'شاشتي الثالث',
+    'image'=>'الصورة',
+    'Containar_ButtonBar_Color' => 'لون الزر',
+    'Icons_Background_Color' => 'لون خلفية الأيقونات',
+    'Icons_Color' => 'لون الأيقونات',
+    
+    
     /******* Notification Table ********/
 
     'notifiaction_table' => 'سجل الاشعارات',

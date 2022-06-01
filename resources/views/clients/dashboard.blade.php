@@ -23,11 +23,12 @@
     {{-- <x-bread-crumps> --}}
     {{-- @component('components.bread-crumps', ['head' => __('translation.Dashboard'), 'links' => [BredCrumpLinks('Dashboard', 'Dashboard'), BredCrumpLinks('Dashboard', 'Dashboard')]])
     @endcomponent --}}
-    @component('components.bread-crumps', [
-        'head' => __('translation.Dashboard'),
-         'links' => [BredCrumpLinks('dashboard', 'dashboard')  , BredCrumpLinks('dashboard', 'dashboard')]])
-          
-@endcomponent
+    @component('components.bread-crumps',
+        [
+            'head' => __('translation.Dashboard'),
+            'links' => [BredCrumpLinks('dashboard', 'dashboard'), BredCrumpLinks('dashboard', 'dashboard')],
+        ])
+    @endcomponent
 @endsection
 @section('title')
     {{ __('translation.Dashboard') }}
@@ -135,9 +136,10 @@
                                 <div class="col-4 text-end">
                                     <span class="text-primary">
                                         <svg style="width:30px;height:30px" viewBox="0 0 24 24">
-                                            <path fill="currentColor" d="M9,22A1,1 0 0,1 8,21V18H4A2,2 0 0,1 2,16V4C2,2.89 2.9,2 4,2H20A2,2 0 0,1 22,4V16A2,2 0 0,1 20,18H13.9L10.2,21.71C10,21.9 9.75,22 9.5,22V22H9M10,16V19.08L13.08,16H20V4H4V16H10M6,7H18V9H6V7M6,11H15V13H6V11Z" />
+                                            <path fill="currentColor"
+                                                d="M9,22A1,1 0 0,1 8,21V18H4A2,2 0 0,1 2,16V4C2,2.89 2.9,2 4,2H20A2,2 0 0,1 22,4V16A2,2 0 0,1 20,18H13.9L10.2,21.71C10,21.9 9.75,22 9.5,22V22H9M10,16V19.08L13.08,16H20V4H4V16H10M6,7H18V9H6V7M6,11H15V13H6V11Z" />
                                         </svg>
-                                  </span>
+                                    </span>
                                 </div>
                             </div>
                             <div class="row">
@@ -186,150 +188,170 @@
             </div>
             <div class="row mt-4">
                 <div class="col-lg-7 mb-lg-0 mb-4">
-                  <div class="card z-index-2 h-100">
-                    <div class="card-header pb-0 pt-3 bg-transparent">
-                      <h6 class="text-capitalize">Sales overview</h6>
-                      <p class="text-sm mb-0">
-                        <i class="fa fa-arrow-up text-success"></i>
-                        <span class="font-weight-bold">4% more</span> in 2021
-                      </p>
+                    <div class="card z-index-2 h-100">
+                        <div class="card-header pb-0 pt-3 bg-transparent">
+                            <h6 class="text-capitalize">Sales overview</h6>
+                            <p class="text-sm mb-0">
+                                <i class="fa fa-arrow-up text-success"></i>
+                                <span class="font-weight-bold">4% more</span> in 2021
+                            </p>
+                        </div>
+                        <div class="card-body p-3">
+                            <div id="Notification">
+                                {{-- <canvas id="chart-line" class="chart-canvas" height="300"></canvas> --}}
+                            </div>
+                        </div>
                     </div>
-                    <div class="card-body p-3">
-                      <div id="Notification">
-                        {{-- <canvas id="chart-line" class="chart-canvas" height="300"></canvas> --}}
-                      </div>
-                    </div>
-                  </div>
                 </div>
                 <div class="col-lg-5">
-                  <div class="card card-carousel overflow-hidden h-100 p-0">
-                    <div id="carouselExampleCaptions" class="carousel slide h-100" data-bs-ride="carousel">
-                      <div class="carousel-inner border-radius-lg h-100">
-                        <div class="carousel-item h-100 active" style="background-image: url('../app/5.jpg');
-              background-size: cover;">
-                          <div class="carousel-caption d-none d-md-block bottom-0 text-start start-0 ms-5">
-                            <div class="icon icon-shape icon-sm bg-white text-center border-radius-md mb-3" style="display: none;">
-                              <i class="ni ni-camera-compact text-dark opacity-10"></i>
-                            </div>
-                            {{-- <h5 class="text-white mb-1">Get started with Argon</h5>
+                    <div class="card card-carousel overflow-hidden h-100 p-0">
+                        <div id="carouselExampleCaptions" class="carousel slide h-100" data-bs-ride="carousel">
+                            <div class="carousel-inner border-radius-lg h-100">
+                                <div class="carousel-item h-100 active" style="background-image: url('../app/5.jpg');
+                  background-size: cover;">
+                                    <div class="carousel-caption d-none d-md-block bottom-0 text-start start-0 ms-5">
+                                        <div class="icon icon-shape icon-sm bg-white text-center border-radius-md mb-3"
+                                            style="display: none;">
+                                            <i class="ni ni-camera-compact text-dark opacity-10"></i>
+                                        </div>
+                                        {{-- <h5 class="text-white mb-1">Get started with Argon</h5>
                             <p>There’s nothing I really wanted to do in life that I wasn’t able to get good at.</p> --}}
-                          </div>
-                        </div>
-                        <div class="carousel-item h-100" style="background-image: url('../app/6.jpg');
-              background-size: cover;">
-                          <div class="carousel-caption d-none d-md-block bottom-0 text-start start-0 ms-5">
-                            <div class="icon icon-shape icon-sm bg-white text-center border-radius-md mb-3" style="display: none;">
-                              <i class="ni ni-bulb-61 text-dark opacity-10"></i>
-                            </div>
-                            {{-- <h5 class="text-white mb-1">Faster way to create web pages</h5>
+                                    </div>
+                                </div>
+                                <div class="carousel-item h-100" style="background-image: url('../app/6.jpg');
+                  background-size: cover;">
+                                    <div class="carousel-caption d-none d-md-block bottom-0 text-start start-0 ms-5">
+                                        <div class="icon icon-shape icon-sm bg-white text-center border-radius-md mb-3"
+                                            style="display: none;">
+                                            <i class="ni ni-bulb-61 text-dark opacity-10"></i>
+                                        </div>
+                                        {{-- <h5 class="text-white mb-1">Faster way to create web pages</h5>
                             <p>That’s my skill. I’m not really specifically talented at anything except for the ability to learn.</p> --}}
-                          </div>
-                        </div>
-                        <div class="carousel-item h-100" style="background-image: url('../app/6.jpg');
-              background-size: cover;">
-                          <div class="carousel-caption d-none d-md-block bottom-0 text-start start-0 ms-5">
-                            <div class="icon icon-shape icon-sm bg-white text-center border-radius-md mb-3"style="display: none;">
-                              <i class="ni ni-trophy text-dark opacity-10"></i>
-                            </div>
-                            {{-- <h5 class="text-white mb-1">Share with us your design tips!</h5>
+                                    </div>
+                                </div>
+                                <div class="carousel-item h-100" style="background-image: url('../app/6.jpg');
+                  background-size: cover;">
+                                    <div class="carousel-caption d-none d-md-block bottom-0 text-start start-0 ms-5">
+                                        <div class="icon icon-shape icon-sm bg-white text-center border-radius-md mb-3"
+                                            style="display: none;">
+                                            <i class="ni ni-trophy text-dark opacity-10"></i>
+                                        </div>
+                                        {{-- <h5 class="text-white mb-1">Share with us your design tips!</h5>
                             <p>Don’t be afraid to be wrong because you can’t learn anything from a compliment.</p> --}}
-                          </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <button class="carousel-control-prev w-5 me-3" type="button"
+                                data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+                                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                <span class="visually-hidden">Previous</span>
+                            </button>
+                            <button class="carousel-control-next w-5 me-3" type="button"
+                                data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
+                                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                <span class="visually-hidden">Next</span>
+                            </button>
                         </div>
-                      </div>
-                      <button class="carousel-control-prev w-5 me-3" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
-                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                        <span class="visually-hidden">Previous</span>
-                      </button>
-                      <button class="carousel-control-next w-5 me-3" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
-                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                        <span class="visually-hidden">Next</span>
-                      </button>
                     </div>
-                  </div>
                 </div>
-              </div>
-              <div class="row mt-4">
+            </div>
+            <div class="row mt-4">
                 <div class="col-lg-7 mb-lg-0 mb-4">
-                  <div class="card ">
-                    <div class="card-header pb-0 p-3">
-                      <div class="d-flex justify-content-between">
-                        <h6 class="mb-2">Sales by Country</h6>
-                      </div>
+                    <div class="card ">
+                        <div class="card-header pb-0 p-3">
+                            <div class="d-flex justify-content-between">
+                                <h6 class="mb-2">Sales by Country</h6>
+                            </div>
+                        </div>
+                        <div id="User"></div>
                     </div>
-                    <div id="User"></div>
-                  </div>
                 </div>
                 <div class="col-lg-5">
-                  <div class="card">
-                    <div class="card-header pb-0 p-3">
-                      <h6 class="mb-0">Categories</h6>
+                    <div class="card">
+                        <div class="card-header pb-0 p-3">
+                            <h6 class="mb-0">Categories</h6>
+                        </div>
+                        <div class="card-body p-3">
+                            <ul class="list-group">
+                                <li
+                                    class="list-group-item border-0 d-flex justify-content-between ps-0 mb-2 border-radius-lg">
+                                    <div class="d-flex align-items-center">
+                                        <div class="icon icon-shape icon-sm me-3 bg-gradient-dark shadow text-center">
+                                            <i class="ni ni-mobile-button text-white opacity-10"></i>
+                                        </div>
+                                        <div class="d-flex flex-column">
+                                            <h6 class="mb-1 text-dark text-sm">Devices</h6>
+                                            <span class="text-xs">250 in stock, <span class="font-weight-bold">346+
+                                                    sold</span></span>
+                                        </div>
+                                    </div>
+                                    <div class="d-flex">
+                                        <button
+                                            class="btn btn-link btn-icon-only btn-rounded btn-sm text-dark icon-move-right my-auto"><i
+                                                class="ni ni-bold-right" aria-hidden="true"></i></button>
+                                    </div>
+                                </li>
+                                <li
+                                    class="list-group-item border-0 d-flex justify-content-between ps-0 mb-2 border-radius-lg">
+                                    <div class="d-flex align-items-center">
+                                        <div class="icon icon-shape icon-sm me-3 bg-gradient-dark shadow text-center">
+                                            <i class="ni ni-tag text-white opacity-10"></i>
+                                        </div>
+                                        <div class="d-flex flex-column">
+                                            <h6 class="mb-1 text-dark text-sm">Tickets</h6>
+                                            <span class="text-xs">123 closed, <span class="font-weight-bold">15
+                                                    open</span></span>
+                                        </div>
+                                    </div>
+                                    <div class="d-flex">
+                                        <button
+                                            class="btn btn-link btn-icon-only btn-rounded btn-sm text-dark icon-move-right my-auto"><i
+                                                class="ni ni-bold-right" aria-hidden="true"></i></button>
+                                    </div>
+                                </li>
+                                <li
+                                    class="list-group-item border-0 d-flex justify-content-between ps-0 mb-2 border-radius-lg">
+                                    <div class="d-flex align-items-center">
+                                        <div class="icon icon-shape icon-sm me-3 bg-gradient-dark shadow text-center">
+                                            <i class="ni ni-box-2 text-white opacity-10"></i>
+                                        </div>
+                                        <div class="d-flex flex-column">
+                                            <h6 class="mb-1 text-dark text-sm">Error logs</h6>
+                                            <span class="text-xs">1 is active, <span class="font-weight-bold">40
+                                                    closed</span></span>
+                                        </div>
+                                    </div>
+                                    <div class="d-flex">
+                                        <button
+                                            class="btn btn-link btn-icon-only btn-rounded btn-sm text-dark icon-move-right my-auto"><i
+                                                class="ni ni-bold-right" aria-hidden="true"></i></button>
+                                    </div>
+                                </li>
+                                <li class="list-group-item border-0 d-flex justify-content-between ps-0 border-radius-lg">
+                                    <div class="d-flex align-items-center">
+                                        <div class="icon icon-shape icon-sm me-3 bg-gradient-dark shadow text-center">
+                                            <i class="ni ni-satisfied text-white opacity-10"></i>
+                                        </div>
+                                        <div class="d-flex flex-column">
+                                            <h6 class="mb-1 text-dark text-sm">Happy users</h6>
+                                            <span class="text-xs font-weight-bold">+ 430</span>
+                                        </div>
+                                    </div>
+                                    <div class="d-flex">
+                                        <button
+                                            class="btn btn-link btn-icon-only btn-rounded btn-sm text-dark icon-move-right my-auto"><i
+                                                class="ni ni-bold-right" aria-hidden="true"></i></button>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
                     </div>
-                    <div class="card-body p-3">
-                      <ul class="list-group">
-                        <li class="list-group-item border-0 d-flex justify-content-between ps-0 mb-2 border-radius-lg">
-                          <div class="d-flex align-items-center">
-                            <div class="icon icon-shape icon-sm me-3 bg-gradient-dark shadow text-center">
-                              <i class="ni ni-mobile-button text-white opacity-10"></i>
-                            </div>
-                            <div class="d-flex flex-column">
-                              <h6 class="mb-1 text-dark text-sm">Devices</h6>
-                              <span class="text-xs">250 in stock, <span class="font-weight-bold">346+ sold</span></span>
-                            </div>
-                          </div>
-                          <div class="d-flex">
-                            <button class="btn btn-link btn-icon-only btn-rounded btn-sm text-dark icon-move-right my-auto"><i class="ni ni-bold-right" aria-hidden="true"></i></button>
-                          </div>
-                        </li>
-                        <li class="list-group-item border-0 d-flex justify-content-between ps-0 mb-2 border-radius-lg">
-                          <div class="d-flex align-items-center">
-                            <div class="icon icon-shape icon-sm me-3 bg-gradient-dark shadow text-center">
-                              <i class="ni ni-tag text-white opacity-10"></i>
-                            </div>
-                            <div class="d-flex flex-column">
-                              <h6 class="mb-1 text-dark text-sm">Tickets</h6>
-                              <span class="text-xs">123 closed, <span class="font-weight-bold">15 open</span></span>
-                            </div>
-                          </div>
-                          <div class="d-flex">
-                            <button class="btn btn-link btn-icon-only btn-rounded btn-sm text-dark icon-move-right my-auto"><i class="ni ni-bold-right" aria-hidden="true"></i></button>
-                          </div>
-                        </li>
-                        <li class="list-group-item border-0 d-flex justify-content-between ps-0 mb-2 border-radius-lg">
-                          <div class="d-flex align-items-center">
-                            <div class="icon icon-shape icon-sm me-3 bg-gradient-dark shadow text-center">
-                              <i class="ni ni-box-2 text-white opacity-10"></i>
-                            </div>
-                            <div class="d-flex flex-column">
-                              <h6 class="mb-1 text-dark text-sm">Error logs</h6>
-                              <span class="text-xs">1 is active, <span class="font-weight-bold">40 closed</span></span>
-                            </div>
-                          </div>
-                          <div class="d-flex">
-                            <button class="btn btn-link btn-icon-only btn-rounded btn-sm text-dark icon-move-right my-auto"><i class="ni ni-bold-right" aria-hidden="true"></i></button>
-                          </div>
-                        </li>
-                        <li class="list-group-item border-0 d-flex justify-content-between ps-0 border-radius-lg">
-                          <div class="d-flex align-items-center">
-                            <div class="icon icon-shape icon-sm me-3 bg-gradient-dark shadow text-center">
-                              <i class="ni ni-satisfied text-white opacity-10"></i>
-                            </div>
-                            <div class="d-flex flex-column">
-                              <h6 class="mb-1 text-dark text-sm">Happy users</h6>
-                              <span class="text-xs font-weight-bold">+ 430</span>
-                            </div>
-                          </div>
-                          <div class="d-flex">
-                            <button class="btn btn-link btn-icon-only btn-rounded btn-sm text-dark icon-move-right my-auto"><i class="ni ni-bold-right" aria-hidden="true"></i></button>
-                          </div>
-                        </li>
-                      </ul>
-                    </div>
-                  </div>
                 </div>
-              </div>
+            </div>
 
 
     </main>
+    <section>
     <div class="fixed-plugin">
         <a class="fixed-plugin-button text-dark position-fixed px-3 py-2">
             <i class="fa fa-cog py-2"> </i>
@@ -418,12 +440,11 @@
         </div>
     </div>
 
-
+</section>
 
     <!--   Core JS Files   -->
 
 
-    <script src="https://code.highcharts.com/highcharts.js"></script>
     <script src="https://code.highcharts.com/highcharts.js"></script>
     <script src="https://code.highcharts.com/modules/data.js"></script>
     <script src="https://code.highcharts.com/modules/drilldown.js"></script>
@@ -432,7 +453,7 @@
     <script src="https://code.highcharts.com/modules/accessibility.js"></script>
     <script type="text/javascript">
         var Notification = <?php echo json_encode($Notification); ?>;
-        // Create the chart
+        
         Highcharts.chart('Notification', {
             chart: {
                 type: 'column'
@@ -483,7 +504,7 @@
     </script>
     <script type="text/javascript">
         var User = <?php echo json_encode($User); ?>;
-        // Create the chart
+
         Highcharts.chart('User', {
             chart: {
                 type: 'column'

@@ -50,7 +50,7 @@ Route::group(['prefix' => LaravelLocalization::setLocale()], function () {
     Route::middleware('auth:web')->group(function () {
 
         Route::get('/', function () {
-            return view('clients.dashboard');
+            return redirect('/clients/dashboard');
         });
         Route::group(['prefix' => 'ticket'], function () {
 

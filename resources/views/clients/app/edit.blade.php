@@ -42,13 +42,13 @@
                                     <form action="{{ route('application.update', $Applction->id) }}" method="POST"
                                         enctype="multipart/form-data" class="form">
                                         @csrf
-                                        <h1 class="text-center">My App</h1>
+                                        <h2 class="text-center">{{__('translation.Updata_my_App')}}</h2>
                                         <!-- Progress bar -->
                                         <div class="progressbar">
                                             <div class="progress" id="progress"></div>
-                                            <div class="progress-step progress-step-active" data-title="Intro"></div>
-                                            <div class="progress-step" data-title="Discrptions"></div>
-                                            <div class="progress-step" data-title="Logo"></div>
+                                            <div class="progress-step progress-step-active" data-title="{{__('translation.Intro')}}"></div>
+                                            <div class="progress-step" data-title="{{__('translation.Discrptions')}}"></div>
+                                            <div class="progress-step" data-title="{{__('translation.Logo')}}"></div>
                                             {{-- <div class="progress-step" data-title="Logo"></div> --}}
                                         </div>
                                         <!-- Steps -->
@@ -56,7 +56,7 @@
                                             <div class="input-group">
                                                 <input type="hidden" value="{{ $Applction->id }}" name="id"
                                                     aria-describedby="helpId" placeholder="">
-                                                <label for="username">Name</label>
+                                                <label for="username">{{__('translation.Name')}}</label>
                                                 <input type="text" name="AppName" id="username"
                                                     value="{{ $Applction->AppName }}" />
                                                 @error('AppName')
@@ -65,7 +65,7 @@
                                                 @enderror
                                             </div>
                                             <div class="input-group">
-                                                <label for="position">Phone</label>
+                                                <label for="position">{{__('translation.Phone')}}</label>
                                                 <input type="text" name="Phone" id="position"
                                                     value="{{ $Applction->Phone }}" />
                                                 @error('Phone')
@@ -74,7 +74,7 @@
                                                 @enderror
                                             </div>
                                             <div class="input-group">
-                                                <label for="WhatsApp">WhatsApp</label>
+                                                <label for="WhatsApp">{{__('translation.WhatsApp')}}</label>
                                                 <input type="text" name="WhatsApp" id="WhatsApp"
                                                     value="{{ $Applction->WhatsApp }}" />
                                                 @error('WhatsApp')
@@ -83,12 +83,12 @@
                                                 @enderror
                                             </div>
                                           
-                                                <a href="#" class="btn btn-next  width-50 ml-auto" id="app">Next</a>
+                                                <a href="#" class="btn btn-next  width-50 ml-auto" id="app">{{__('translation.Next_')}}</a>
                                            
                                         </div>
                                         <div class="form-step">
                                             <div class="input-group">
-                                                <label for="phone">Link</label>
+                                                <label for="phone">{{__('translation.Link_')}}</label>
                                                 <input type="text" name="Link" id="phone"
                                                     value="{{ $Applction->Link }}" />
                                                 @error('Link')
@@ -97,7 +97,7 @@
                                                 @enderror
                                             </div>
                                             <div class="input-group">
-                                                <label for="email">Discrptions</label>
+                                                <label for="email">{{__('translation.Discrptions')}}</label>
                                                 <input type="text" name="Discrptions" id="email"
                                                     value="{{ $Applction->Discrptions }}" />
                                                 @error('Discrptions')
@@ -106,13 +106,13 @@
                                                 @enderror
                                             </div>
                                             <div class="btns-group" id="app-group">
-                                                <a href="#" class="btn btn-prev" id="app">Previous</a>
-                                                <a href="#" class="btn btn-next" id="app">Next</a>
+                                                <a href="#" class="btn btn-prev" id="app">{{__('translation.Previous')}}</a>
+                                                <a href="#" class="btn btn-next" id="app">{{__('translation.Next_')}}</a>
                                             </div>
                                         </div>
                                         <div class="form-step">
                                             <div class="input-group">
-                                                <label for="password">Splash Screen</label>
+                                                <label for="password">{{__('translation.Splash_Screen')}}</label>
                                                 <input type="file" name="Splash_Screen" id="phone" aria-describedby="helpId"
                                                     value="{{ $Applction->Splash_Screen }}" />
                                                 @error('Splash_Screen')
@@ -121,7 +121,7 @@
                                                 @enderror
                                             </div>
                                             <div class="input-group">
-                                                <label for="confirmPassword">Logo</label>
+                                                <label for="confirmPassword">{{__('translation.Logo')}}</label>
                                                 <input type="file" name="Logo" id="confirmPassword"
                                                     aria-describedby="helpId" value="{{ $Applction->Logo }}" />
                                                 @error('Logo')
@@ -130,8 +130,8 @@
                                                 @enderror
                                             </div>
                                             <div class="btns-group" id="app-group">
-                                                <a href="#" class="btn btn-prev" id="app">Previous</a>
-                                                <input type="submit" value="submit" class="btn" id="app"/>
+                                                <a href="#" class="btn btn-prev" id="app">{{__('translation.Previous')}}</a>
+                                                <input type="submit" value="{{__('translation.submit')}}" class="btn" id="app"/>
                                             </div>
                                     </div>
                                 </div>

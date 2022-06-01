@@ -6,12 +6,11 @@
             Add New profile
         @stop
     @endcomponent --}}
-    @component('components.bread-crumps', [
-        'head' => __('translation.Technical support'),
-         'links' => [
-            BredCrumpLinks( route('clients.dashboard')  ,  __('translation.Dashboard')),
-             BredCrumpLinks( route('ticket.index')  , __('translation.Technical support')),
-          ]])
+    @component('components.bread-crumps',
+    [
+        'head' => __('translation.create_a_new_profile'),
+        'links' => [BredCrumpLinks(route('application.index'), __('translation.Home')), BredCrumpLinks(route('application.index'), __('translation.add_profile'))],
+    ])
 @endcomponent
 
     @endsection
@@ -25,8 +24,8 @@
                         <div class="col-md-12" style="text-align: end;">
                             <div class="col">
                                 <span>
-                                    <a href="{{ route('application.index') }}" class="btn btn-primary btn-sm"   type="" style="display: -webkit-inline-box;background-color: #5b6478; border-color: #5b6478;">
-                                        {{ __('translation.go back') }}
+                                    <a href="{{ route('application.index') }}"  class="btn btn-outline-primary btn-icon-only " type="">
+                                        <i class="bi bi-arrow-left"></i>
                                     </a></span></div>
                         </div>
                         <div class="row no-gutters">
@@ -40,45 +39,45 @@
                                     <form action="{{ route('profile.store') }}" method="POST"
                                         enctype="multipart/form-data" class="form">
                                         @csrf
-                                        <h1 class="text-center">My Profile</h1>
+                                        <h1 class="text-center"> {{__('translation.My_Profile')}}</h1>
                                         <!-- Progress bar -->
                                         <div class="progressbar">
                                             <div class="progress" id="progress"></div>
-                                            <div class="progress-step progress-step-active" data-title="Intro"></div>
-                                            <div class="progress-step" data-title="Link Social Media"></div>
+                                            <div class="progress-step progress-step-active" data-title="{{__('translation.Intro')}}"></div>
+                                            <div class="progress-step" data-title="{{__('translation.Link_Social_Media')}}"></div>
                                             {{-- <div class="progress-step" data-title="Follow"></div> --}}
-                                            <div class="progress-step" data-title="Color"></div>
+                                            <div class="progress-step" data-title="{{__('translation.Color')}}"></div>
                                         </div>
                                         <!-- Steps -->
                                         <div class="form-step form-step-active">
                                             <div class="input-group">
-                                                <label for="Name">Name</label>
+                                                <label for="Name">{{__('translation.Name')}}</label>
                                                 <input type="text" name="Name" id="Name" />
                                                 @error('Name')
                                                     <span class="text-danger error">{{ $message }}</span>
                                                 @enderror
                                             </div>
                                             <div class="input-group">
-                                                <label for="Email">Email</label>
+                                                <label for="Email">{{__('translation.Email')}}</label>
                                                 <input type="email" name="Email" id="Email" />
                                                 @error('Email')
                                                     <span class="text-danger error">{{ $message }}</span>
                                                 @enderror
                                             </div>
                                             <div class="">
-                                                <a href="#" class="btn btn-next width-50 ml-auto" id="app">Next</a>
+                                                <a href="#" class="btn btn-next width-50 ml-auto" id="app">{{__('translation.Next_')}}</a>
                                             </div>
                                         </div>
                                         <div class="form-step">
                                             <div class="input-group">
-                                                <label for="Facebook">Facebook</label>
+                                                <label for="Facebook">{{__('translation.Facebook')}}</label>
                                                 <input type="text" name="Facebook" id="Facebook" />
                                                 @error('Facebook')
                                                     <span class="text-danger error">{{ $message }}</span>
                                                 @enderror
                                             </div>
                                             <div class="input-group">
-                                                <label for="Instgram"> Instgram</label>
+                                                <label for="Instgram"> {{__('translation.Instgram')}}</label>
                                                 <input type="text" name="Instgram" id="Instgram"
                                                     aria-describedby="helpId" />
                                                 @error('Instgram')
@@ -86,29 +85,29 @@
                                                 @enderror
                                             </div>
                                             <div class="input-group">
-                                                <label for="Twitter">Twitter</label>
+                                                <label for="Twitter">{{__('translation.Twitter')}}</label>
                                                 <input type="text" name="Twitter" id="Twitter" aria-describedby="helpId" />
                                                 @error('Twitter')
                                                     <span class="text-danger error">{{ $message }}</span>
                                                 @enderror
                                             </div>
                                             <div class="input-group">
-                                                <label for="TikTok">TikTok </label>
+                                                <label for="TikTok">{{__('translation.TikTok')}} </label>
                                                 <input type="text" name="TikTok" id="TikTok" aria-describedby="helpId" />
                                                 @error('TikTok')
                                                     <span class="text-danger error">{{ $message }}</span>
                                                 @enderror
                                             </div>
                                             <div class="input-group">
-                                                <label for="Snapchat">Snapchat</label>
+                                                <label for="Snapchat">{{__('translation.Snapchat')}}</label>
                                                 <input type="text" name="Snapchat" id="Snapchat" />
                                                 @error('Snapchat')
                                                     <span class="text-danger error">{{ $message }}</span>
                                                 @enderror
                                             </div>
                                             <div class="btns-group" id="app-group">
-                                                <a href="#" class="btn btn-prev" id="app">Previous</a>
-                                                <a href="#" class="btn btn-next" id="app">Next</a>
+                                                <a href="#" class="btn btn-prev" id="app">{{__('translation.Previous')}}</a>
+                                                <a href="#" class="btn btn-next" id="app">{{__('translation.Next_')}}</a>
                                             </div>
                                         </div>
                                         {{-- <div class="form-step">
@@ -120,7 +119,7 @@
                                         </div> --}}
                                         <div class="form-step">
                                             <div class="input-group">
-                                                <label for="Social Media botton Color">Social Media botton Color</label>
+                                                <label for="Social Media botton Color">{{__('translation.Social_Media_botton_Color')}}</label>
                                                 <input type="color" name="Social_Media_Icons_Color"
                                                     id="Social_Media_Icons_Color" aria-describedby="helpId"  id="color-range" class="color-range" value="#f5f5f5"
                                                     onchange="this.style.background = this.value; console.log('done')"  />
@@ -139,8 +138,8 @@
                                                 @enderror
                                             </div>
                                             <div class="btns-group" id="app-group">
-                                                <a href="#" class="btn btn-prev" id="app">Previous</a>
-                                                <input type="submit" value="Submit" class="btn" id="app" />
+                                                <a href="#" class="btn btn-prev" id="app">{{__('translation.Previous')}}</a>
+                                                <input type="submit" value="{{__('translation.submit')}}" class="btn" id="app" />
                                             </div>
                                         </div>
                                     </form>

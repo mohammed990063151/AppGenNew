@@ -115,7 +115,7 @@
                                                     border: 1px solid #ccc;
                                                     border-radius: 54.25rem; " />
                                                     <input type="hidden" name="ticket_id" value="{{$data->id}}" />
-                                                    <button type="submit" class="btn btn-outline-primary btn-round">{{__('translation.send')}}</button>  
+                                                    <button type="submit" class="btn btn-outline-success btn-round">{{__('translation.send')}}</button>  
                                                    
                                                 
                                                 </form>

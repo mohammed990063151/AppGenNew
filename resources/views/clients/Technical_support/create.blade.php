@@ -67,20 +67,10 @@
                                 </div>
 
 
-                                <div class="form-group row">
-                                    <div class="form-group col-md-12" style='text-align:left'>
-                                        <label for="w3review" style="text-align:left;">{{ __('translation.content') }}</label>
-                                        <textarea name="content" class="form-control" rows="4" cols="50">
-                                        
-                                        </textarea>
-                                        
-                                        @error('content')
-                                        <small id="helpId" class="form-text text-muted">{{$message}}</small>
-                                        @enderror
-                                    </div></div></div>
+                            </div>
 
 
-                                    <button class="btn btn-outline-primary btn-sm" style="text-align:left;"> {{__('translation.Save')}} </button>
+                                    <button class="btn btn-outline-primary btn-sm " style="text-align:left;margin-right: 869px;"> {{__('translation.Save')}} </button>
                                 </form>
                             </div>
                         </div>

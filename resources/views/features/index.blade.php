@@ -9,8 +9,7 @@
                     <div class="card-header pb-0 pt-3 bg-transparent">
                         <div class="d-flex justify-content-between">
                             <h6 class="text-capitalize col-4">{{ __('translation.Feature_table') }}</h6>
-                            <a type="button" class="btn btn-sm btn-primary" data-toggle="modal" data-target="#exampleModal">
-                                {{ __('translation.new_Feature') }}
+
                             </a>
                             {{-- <span><a href="{{route('packages.create')}}" class="btn btn-primary btn-sm"
                                         type="button">add New</a></span> --}}
@@ -19,15 +18,15 @@
                     <div class="table-responsive mt-5">
                         <table class="table align-items-center table-bordered">
                             <thead>
-                                <tr>
-                                    <td>{{ __('translation.id') }}</td>
+                                <tr style="text-align:center">
+                                    <td >{{ __('translation.id') }}</td>
                                     <td>{{ __('translation.name') }}</td>
                                     <td>{{ __('translation.option') }}</td>
                                 </tr>
                             </thead>
                             <tbody>
                                 @forelse ($Features as $key => $Feature)
-                                    <tr>
+                                    <tr style="text-align:center">
                                         <td>{{ $Feature->id }}</td>
                                         <td>{{ $Feature->name }}</td>
                                         <td>
@@ -41,15 +40,15 @@
                                             </form>
                                         </td>
                                     </tr>
-                                    <tr>
+                                    <tr style="text-align:center">
                                     </tr>
                                 @empty
-                                    <tr>
+                                    <tr style="text-align:center">
                                         <td colspan="5"> No data Right Now</td>
                                     </tr>
                                 @endforelse
                             </tbody>
-                            <tfoot>
+                            <tfoot style="text-align:center">
                                 <td>id</td>
                                 <td>name</td>
                                 <td>option</td>

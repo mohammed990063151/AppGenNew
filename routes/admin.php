@@ -79,6 +79,7 @@ Route::get('ticket', [TicketController::class, 'index'])->name('admin.ticket.ind
 Route::get('ticket/massege/{id}', [TicketMassegeController::class, 'show'])->name('admin.ticket.show')->middleware('auth:admin');
 Route::post('ticket/massege/', [TicketMassegeController::class, 'store'])->name('admin.ticket.send')->middleware('auth:admin');
 
-    }); 
-    }); 
+    });
+    });
     
+

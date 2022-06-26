@@ -4,8 +4,8 @@
 @component('components.bread-crumps', [
     'head' => __('translation.Notification mangement'),
      'links' => [
-        BredCrumpLinks( route('clients.dashboard')  ,  __('translation.Dashboard')), 
-         BredCrumpLinks( route('notification.index')  , __('translation.Notification')), 
+        BredCrumpLinks( route('clients.dashboard')  ,  __('translation.Dashboard')),
+         BredCrumpLinks( route('notification.index')  , __('translation.Notification')),
       ]])
 @endcomponent
 @endsection
@@ -33,6 +33,7 @@
                         {{-- @endcan --}}
                     </div>
                 </div>
+
                 <div class="content-body">
                     <!-- Zero configuration table -->
                     <section id="configuration">
@@ -98,7 +99,7 @@
                                             <th>{{ $notification->notification_date }}</th>
                                             {{-- <th>{{__('translation.')}}</th> --}}
                                             <td>
-                                             
+
                                                 <a class="btn btn-outline-success btn-sm  btn-icon-only"
                                                     href="{{ route('notification.edit', $notification->id) }}">
                                                     <i class="fa fa-refresh"></i> </a>
@@ -146,8 +147,9 @@
                                             {!! $Notification->links() !!}
                                         @endif
                                     </div>
-                                </div> 
+                                </div>
                             </div>
+                            @dd($eslam)
                         </div>
                 </div>
             </div>
@@ -168,7 +170,7 @@
                 showCancelButton: true,
                 confirmButtonColor: '#3085d6',
                 cancelButtonColor: '#d33',
-                confirmButtonText: " {{__('translation.Yes,_delete_it!')}}", 
+                confirmButtonText: " {{__('translation.Yes,_delete_it!')}}",
                 cancelButtonText: " {{__('translation.cancel_')}}"
                 }).then((result) => {
                 if (result.isConfirmed) {

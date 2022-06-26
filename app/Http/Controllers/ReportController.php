@@ -25,7 +25,8 @@ class ReportController extends Controller
     }
 
     public function NotificationReport(Request $request){
+        $Packages = Package::with('Subscription')->get();
         $NotificationsReprot = [];
-        return view('reports.notification' , compact('NotificationsReprot'));
+        return view('reports.notification' , compact('Packages','NotificationsReprot'));
     }
 }

@@ -8,6 +8,9 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 use App\Events\BordcastToAllRepresetitve;
 use App\Models\app;
+use App\Models\Subscription;
+use App\Models\Package;
+
 use Exception;
 use Illuminate\Support\Facades\Auth;
 
@@ -15,7 +18,12 @@ class FirebaseNotificationController extends Controller
 {
     public function index()
     {
+        // $sub =   Subscription::with('package')->where('user_id', Auth::user()->id )->first();
+//          @dd($sub);
+
+
         $Notification = FirebaseNotification::with('Area')->orderBy('created_at' , 'DESC')->paginate(10);
+
         return view('notification.index', compact('Notification'));
     }
 
@@ -133,8 +141,8 @@ class FirebaseNotificationController extends Controller
      */
     public function destroy($id)
     {
-        
-        
+
+
         $FireBase =  FirebaseNotification::find($id)->delete();
         return redirect()->back();
     }

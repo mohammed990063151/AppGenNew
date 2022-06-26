@@ -6,11 +6,14 @@ use App\Http\Controllers\FirebaseNotificationController;
 use App\Http\Controllers\PaymentController;
 use App\Http\Controllers\front\FrontController;
 use App\Http\Controllers\front\ProfileController;
+use App\Http\Controllers\userPackageController;
 use App\Http\Controllers\front\ApplicationController;
 use App\Http\Controllers\InvoiceController;
 use App\Http\Controllers\front\ScreenController;
+use App\Http\Controllers\sidbarcontroller;
 use App\Http\Controllers\TicketController;
 use App\Http\Controllers\TicketMassegeController;
+use App\Http\Controllers\UserOrganizationProfile;
 use Illuminate\Support\Facades\Auth;
 
 /*
@@ -126,6 +129,12 @@ Route::group(['prefix' => LaravelLocalization::setLocale()], function () {
     Route::get('subscribtion-status/{id}', [PaymentController::class, 'subscribtionStatus'])->name('subscribtionStatus');
     Route::get('get-invoice', [InvoiceController::class, 'getInvoice'])->name('getInvoice');
     Route::post('pay-invoice', [InvoiceController::class, 'PayInvoice'])->name('PayInvoice');
+    Route::get('profile' ,[UserOrganizationProfile::class , 'edit'])->name('OrganizationProfile');
+    Route::post('profile' ,[UserOrganizationProfile::class , 'store'])->name('OrganizationProfile');
+    Route::get('sidbar' ,[sidbarcontroller::class , 'show'])->name('sidbarcontroller');
+
+
+
 });
 Route::get('/landing', function () {
     return view('landing-welcome');

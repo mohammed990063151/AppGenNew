@@ -31,6 +31,7 @@
                                 <tbody>
                                     @forelse ($Subscriptions as $key => $Subscription)
                                         <tr>
+                                            {{-- {{dd($Subscriptions)}} --}}
                                             <td>{{ $Subscription->id }}</td>
                                             <td>{{ $Subscription->Package->name }}</td>
                                             <td>{{ $Subscription->User->name }}</td>

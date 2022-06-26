@@ -47,7 +47,7 @@
         <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
             <div class="bg-white py-2 collapse-inner rounded">
                 <a class="collapse-item" href="{{route('packages.create')}}">Add Package</a>
-                <a class="collapse-item" href="{{ route('packages.index')}}">Show Package</a>
+                <a class="collapse-item" href="{{ route('packages.index')}}">{{__('translation.Show_Package')}}</a>
             </div>
         </div>
     </li>
@@ -105,6 +105,29 @@
         </div>
     </li>
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
     <!-- Nav Item - Charts -->
     <li class="nav-item">
         <a class="nav-link" href="charts.html">

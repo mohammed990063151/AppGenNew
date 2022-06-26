@@ -201,10 +201,14 @@
                     </a>
                     <ul class="dropdown-menu   px-2 py-3 me-sm-n4 {{getclass(['en'=>'dropdown-menu-end'])}}">
                         <li>
-                            <a rel="alternate" class="dropdown-item border-radius-md">
-                                <div class='d-flex justify-content-between align-items-center p-0'>
-                                    <span ><i class="fa  fa-user"></i></span>
+                            {{-- <a rel="alternate" class="dropdown-item border-radius-md"> --}}
+                                <a href="{{route('OrganizationProfile')}}">
+                        <div class='d-flex justify-content-between align-items-center p-0'>
+
+                                    <span ><i class="fa fa-user"></i></span>
                                     <span>{{__('translation.profile')}}</span>
+                                 </a>
+
                                 </div>
                             </a>
                             <hr style="padding:0;margin:3px 0" />

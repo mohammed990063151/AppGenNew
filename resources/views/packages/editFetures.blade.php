@@ -3,10 +3,10 @@
 
 @section('breadceumbs')
 {{-- <x-bread-crumps> --}}
-    @component('components.bread-crumps' , ['head' => 'Add New Packages' ,
+    {{-- @component('components.bread-crumps' , ['head' => 'Add New Packages' ,
     'links' => ['Dashboard' , 'Packages' , 'Add New Packages']
     ])
-    @endcomponent
+    @endcomponent --}}
     @endsection
 
     @section('content')

@@ -43,9 +43,10 @@
                                 <div class="form-check form-switch">
 
                                     <input class="form-check-input" type="checkbox" id="rememberMe" name="remember">
-                                    <label class="form-check-label" for="rememberMe">{{ __('Remember me') }}</label>
+                                    <label class="form-check-label" for="rememberMe">{{ __('login') }}</label>
 
                                 </div>
+                                
 
                                 <div class="text-center">
                                     @if (Route::has('password.request'))
@@ -56,7 +57,7 @@
                                     @endif
 
                                     <button type="submit" class="btn btn-lg btn-primary btn-lg w-100 mt-4 mb-0">
-                                        {{ __('Log in') }}
+                                        {{ __('Login') }}
                                     </button>
                                 </div>
                                 </form>

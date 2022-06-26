@@ -40,7 +40,7 @@
                         </div>
                         <div class="text-center px-3">
                             <button type="submit"
-                                class="btn bg-gradient-dark w-100 mb-2">{{ __('translation.Remember_me') }}</button>
+                                class="btn bg-gradient-dark w-100 mb-2">{{ __('translation.login') }}</button>
                         </div>
                         <p class="mb-4 text-sm mx-auto">
                             {{ __('translation.No_account') }} ?

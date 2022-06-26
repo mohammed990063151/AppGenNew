@@ -4,8 +4,8 @@
     @component('components.bread-crumps', [
         'head' => __('translation.Technical support'),
          'links' => [
-            BredCrumpLinks( route('clients.dashboard')  ,  __('translation.Dashboard')), 
-             BredCrumpLinks( route('ticket.index')  , __('translation.Technical support-ticket')), 
+            BredCrumpLinks( route('clients.dashboard')  ,  __('translation.Dashboard')),
+             BredCrumpLinks( route('ticket.index')  , __('translation.Technical support-ticket')),
           ]])
 @endcomponent
     @endsection
@@ -13,6 +13,8 @@
 
 @stop
 @section('content')
+
+
 
 <div class="container-fluid py-4">
     <div class="row mt-4">
@@ -34,16 +36,16 @@
                         @endcomponent --}}
                         {{-- @php --}}
                         // $row = [
-                            
+
                         //     'id' => 'id',
                         //     'subject' => 'subject',
                         //     'Topic' => 'Topic->topicname',
                         //     'name' => 'user->name',
-                        //     'status' => 'status', 
+                        //     'status' => 'status',
                         //     'option' => [
-                        //         'edit' => ['icon'=>'bi bi-apple', 'class'=>'bg-danger','route'=>''], 
-                        //         'delete' => ['icon'=>'bi bi-archive', 'class'=>'bg-warning','route'=>''], 
-                        //         'status' =>  ['icon'=>'bi bi-arrow-up', 'class'=>'bg-success','route'=>''], 
+                        //         'edit' => ['icon'=>'bi bi-apple', 'class'=>'bg-danger','route'=>''],
+                        //         'delete' => ['icon'=>'bi bi-archive', 'class'=>'bg-warning','route'=>''],
+                        //         'status' =>  ['icon'=>'bi bi-arrow-up', 'class'=>'bg-success','route'=>''],
                         {{-- //     ]];
                         // @endphp
                         // <x-table-components :model="$allTicket" :rows="$row"/>
@@ -58,12 +60,12 @@
                                     <td>{{__('translation.sender')}}</td>
                                     <td>{{__('translation.status')}}</td>
                                     <td>{{__('translation.date')}}</td>
-                                <td>{{__('translation.action')}}</td>     
+                                <td>{{__('translation.action')}}</td>
                                 </tr>
                             </thead>
                         <tbody>
                                @forelse ($allTicket as $i => $data )
-                        
+
                                 <tr>
 
                                     <td>{{$i}}</td>
@@ -74,18 +76,20 @@
                                     <td>{{$data->created_at}}</td>
                                     <td><a href="{{route( (Auth::guard('admin')->check()?'admin.':'').'ticket.show', $data->id)}}" class="btn btn-outline-primary btn-icon-only"
                                         {{--  --}}
-                                             type="button"><i class="bi bi-view-list"></i>
+                                             type="button"><svg style="width:18px;height:18px;" viewBox="0 0 24 24">
+                                                <path fill="currentColor" d="M12 4.5C7 4.5 2.7 7.6 1 12C2.7 16.4 7 19.5 12 19.5H13.1C13 19.2 13 18.9 13 18.5C13 17.9 13.1 17.4 13.2 16.8C12.8 16.9 12.4 17 12 17C9.2 17 7 14.8 7 12S9.2 7 12 7 17 9.2 17 12C17 12.3 17 12.6 16.9 12.9C17.6 12.7 18.3 12.5 19 12.5C20.2 12.5 21.3 12.8 22.3 13.5C22.6 13 22.8 12.5 23 12C21.3 7.6 17 4.5 12 4.5M12 9C10.3 9 9 10.3 9 12S10.3 15 12 15 15 13.7 15 12 13.7 9 12 9M19 21V19H15V17H19V15L22 18L19 21" />
+                                            </svg></i>
                                             </a></span> </td>
-                                        
+
                                     <form action="{{route((Auth::guard('admin')->check()?'admin.':'').'ticket.create' )}}" method="post" style="display:inline">
-                                        @csrf 
+                                        @csrf
                                         {{-- @method('DELETE') --}}
                                      </form>
                                 </tr>
                              {{-- </tbody> --}}
                              @empty
                              <p>No users</p>
-                             @endforelse 
+                             @endforelse
 
 
         </tbody>
@@ -100,9 +104,9 @@
                 <th>{{ __('translation.date') }}</th>
                 <th>{{ __('translation.action') }}</th>
             </tr>
-        </tfoot>                                   
+        </tfoot>
                                     {{-- @forelse ($allTicket as $i => $data )
-                        
+
                                 <tr>
 
                                     <td>{{$i}}</td>
@@ -114,7 +118,7 @@
                                    <td><a href="{{route( (Auth::guard('admin')->check()?'admin.':'').'ticket.show', $data->id)}}" class="btn btn-primary btn-sm"
                                     {{--  --}}
                                         {{-- type="button">{{__('translation.view')}}</a></span> </td>
-                                    
+
                                     <form action="{{route((Auth::guard('admin')->check()?'admin.':'').'ticket.create' )}}" method="post" style="display:inline">
                                         @csrf --}}
                                         {{-- @method('DELETE') --}}
@@ -124,7 +128,7 @@
                              @empty
                              <p>No users</p>
                              @endforelse --}}
-                            </table> 
+                            </table>
                             </div>
                             </div>
                          </div>

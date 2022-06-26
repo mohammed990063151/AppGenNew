@@ -15,12 +15,13 @@
                                 height: 32px;
                                 width: 32px;
                                 z-index: 0;
-                            " />   
+                            " />
             </div>
         </div>
         <span class="ms-1 font-weight-bold">{{ $OrganizationProfile->name}}</span>
+          {{-- {{dd($orx1)}} --}}
         <span class='w-20'></span>
-        
+
 
     </div>
     <hr class="horizontal dark mt-">
@@ -111,6 +112,7 @@
                     <span class="nav-link-text ms-1 font-weight-bold">{{__('translation.Technical support')}}</span>
                 </a>
                 </li>
+
             {{-- </li>      <li class="nav-item mt-3">
                 <h6 class="ps-4 ms-2 text-uppercase text-xs font-weight-bolder opacity-6">Account pages</h6>
             </li> --}}
@@ -141,6 +143,9 @@
                     <span class="nav-link-text ms-1">Sign Up</span>
                 </a>
             </li> --}}
+            <li class="nav-item">
+                <span class="ms-1 font-weight-bold"></span>
+            </li>
         </ul>
     </>
 </div>

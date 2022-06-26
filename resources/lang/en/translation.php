@@ -16,7 +16,7 @@ return [
     'Profile' => 'Profile',
     'Logout' => 'Logout',
     'Delete' => 'Delete',
-    'Edit' => 'Refrech', 
+    'Edit' => 'Refrech',
 
 
 
@@ -87,7 +87,7 @@ return [
     'Name'=>'Name',
     'Phone'=>'Phone',
     'WhatsApp'=> 'WhatsApp',
-    'Link_' => 'Link', 
+    'Link_' => 'Link',
     'Previous'=>'Previous',
     'Next_'=>'Next',
     'Splash_Screen'=>'Splash Screen',
@@ -104,7 +104,7 @@ return [
     'Snapchat' => 'Snapchat',
     'Social_Media_botton_Color' => 'Social_Media_botton_Color',
 
-    
+
     'My_Screen' => 'My Screen',
     'My_Screen_Two' => 'My Screen Two',
     'My_Screen_Three' => 'My Screen Three',
@@ -175,7 +175,7 @@ return [
     'Notification' => 'Notification',
     'Technical support-ticket' => 'Technical support-ticket',
     'Notification mangement' => 'Notification mangement',
-    
+
 
 
 
@@ -220,9 +220,10 @@ return [
     'User Mangment' => 'User Mangment',
     'Add_User' => 'Add_User',
     'Show_Users' => 'Show_Users',
-    'Show pacakges' => 'Show_pacakges',
+    'Show_pacakges' => 'Show_pacakges',
 
     'id' => 'id ',
+    'go_back' => 'go_back ',
     'option' => 'Option ',
     'Show_Fetures' => 'Show Fetures ',
     'Show_Packages' => 'Show Packages ',
@@ -245,13 +246,15 @@ return [
     'Package_Price' => 'Package Price',
     'Package_Duration' => 'Package Duration',
     'days' => 'days',
+    'App' => 'App',
+    'login' => 'login',
     'free_trial' => ' Is Free Trial',
     'Package_Name' => ' Package Name',
     'Package_Text' => ' Package Text',
     'Package_icon' => ' Package Icon',
     'Admins_Mangements' => 'Admins_Mangement',
     'Admins Mangement' => 'Admins Mangement',
-    
+
     'Subscription_Package_table' => 'Subscription Report Table',
     'amount' => 'Amount',
     'Package_report_table' => 'Package Report Table',
@@ -305,5 +308,5 @@ return [
     'Notificationmangement notifiaction' => 'Notificationmangement notifiaction',
 
 
-    
+
 ];

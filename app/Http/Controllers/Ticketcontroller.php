@@ -12,14 +12,14 @@ class TicketController extends Controller
 {
     public function index(){
         // return 'ia   m comming from add';
-      
+
         $allTicket = null;
         if(Auth::guard('admin')->check()){
             $allTicket = Ticket::with('User' , 'Topic')->get();
         }else{
             $allTicket = Ticket::with('User' , 'Topic')->where('sender',  auth()->user()->id)->get();
         }
-      
+
         return view('clients.Technical_support.index' ,compact('allTicket'));
 
     }
@@ -37,7 +37,7 @@ public function store(Request $request)
         'subject' =>$request->subject,
         'sender'=>Auth::user()->id,
         'topic_id' => $request->topic_selected,
-        
+
    ]);
    return redirect()->route((Auth::guard('admin')->check() ?'admin.':'').'ticket.index');
 }
@@ -125,4 +125,3 @@ public function show($id){
                         // $ticket = ticket::find($id)->update(['status' => 'inprogress']);
 
                         // validate the input here, use Request to do the job or whatever you like
-                    

@@ -84,7 +84,7 @@
                         <div class="table-responsive mt-5">
                             <table class="table align-items-center table-bordered  ">
                                 <thead>
-                                    <tr>
+                                    <tr style="text-align:center">
                                         <td>id</td>
                                         <td>name</td>
                                         <td>amount</td>
@@ -106,7 +106,7 @@
                                     </tr>
                                     @endforelse
                                 </tbody>
-                                <tfoot>
+                                <tfoot style="text-align:center">
                                     <td>id</td>
                                     <td>name</td>
                                     <td>amount</td>
@@ -134,7 +134,7 @@
                         <div class="table-responsive mt-5">
                             <table class="table align-items-center table-bordered  ">
                                 <thead>
-                                    <tr>
+                                    <tr style="text-align:center">
                                         <td>id</td>
                                         <td>name</td>
                                         <td>amount</td>
@@ -156,7 +156,7 @@
                                     </tr>
                                     @endforelse
                                 </tbody>
-                                <tfoot>
+                                <tfoot style="text-align:center">
                                     <td>id</td>
                                     <td>name</td>
                                     <td>amount</td>

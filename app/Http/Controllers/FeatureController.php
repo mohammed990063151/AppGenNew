@@ -40,7 +40,9 @@ class FeatureController extends Controller
     public function store(Request $request)
     {
         //
+       
     }
+
 
     /**
      * Display the specified resource.

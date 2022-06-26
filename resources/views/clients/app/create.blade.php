@@ -3,8 +3,8 @@
     {{-- <x-bread-crumps> --}}
         @component('components.bread-crumps',
         [
-            'head' => __('translation.create_a_new_Application'),
-            'links' => [BredCrumpLinks(route('application.index'), __('translation.Home')), BredCrumpLinks(route('application.index'), __('translation.add_Application'))],
+            'head' => __('translation.Application'),
+            'links' => [BredCrumpLinks(route('application.index'), __('translation.Dashboard')), BredCrumpLinks(route('application.index'), __('translation.add_Application'))],
         ])
     @endcomponent
 @endsection

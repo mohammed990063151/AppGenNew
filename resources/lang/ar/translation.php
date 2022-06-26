@@ -108,8 +108,8 @@ return [
     'Containar_ButtonBar_Color' => 'لون الزر',
     'Icons_Background_Color' => 'لون خلفية الأيقونات',
     'Icons_Color' => 'لون الأيقونات',
-    
-    
+
+
     /******* Notification Table ********/
 
     'notifiaction_table' => 'سجل الاشعارات',
@@ -135,14 +135,14 @@ return [
     'send' => 'إرسال',
     'Delete' => 'حذف',
     'Edit' => 'تحديث',
-    
 
 
 
 
 
 
-  
+
+
 
     'Add_Newapplction' => 'إنشاء تطبيق',
     'applcation' => 'التطبيق ',
@@ -161,14 +161,17 @@ return [
     'Show_Pacakage_Feture' => 'اعدادات الطلب',
     'No_data_Right_Now' => 'لا توجد بيانات لعرضها حاليا',
     'Sign_Up' => 'تسجيل الخروج',
+    'Technical support' => 'تسجيل الخروج',
 
     'Profile' => 'حساب تعريفي',
+    'Show_Package' => 'حساب تعريفي',
     'applction_table ' => 'جدول التطبيقات',
     'Add applction' => 'اضافه',
     'Applction_details' => 'تفاصيل التطبيق',
     'Name' => 'الاسم',
     'Link' => 'زر الوصول',
     'logo' => 'اشعار',
+    'App' => 'تطبيق',
     'Save' => 'حفظ',
     'version' => 'الإصدار',
     'Go Back' => 'رجوع',
@@ -188,7 +191,7 @@ return [
     ' No data Right Now' => 'لايوجد بيانات لعرضها الان ',
     'note' => 'الملاحظه',
     'No' => 'رقم الاشعار',
-    'no' => 'رقم التذكره',  
+    'no' => 'رقم التذكره',
     'notify_image' => 'صوره الاشعار',
     'date' => 'التاريخ',
     'action' => 'خيارات',
@@ -303,6 +306,8 @@ return [
     'Start_Conversation' => ' بدء المحادثة',
     'Feature_table' => 'مميزات الموقع',
     'new_Feature' => 'إضافة ميزة',
+    'login' => 'تسجيل الدخول',
+
 
     'Show_Fetures' => 'صفحة المميزات ',
     'Subscription' => 'الاشتراكات ',

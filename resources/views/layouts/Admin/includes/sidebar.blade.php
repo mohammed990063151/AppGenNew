@@ -37,7 +37,7 @@
                 <a href="#" class='sidebar-link'>
                     <i class="bi bi-calendar2-week"></i>
                     <span>{{ __('translation.package') }}</span>
-                </a>    
+                </a>
                 <ul class="submenu">
                     <li class="submenu-item ">
                         <a href="{{ route('packages.create') }}">{{__('translation.Add Package')}}</a>
@@ -68,6 +68,25 @@
             </li>
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
             <li class="sidebar-title">{{ __('translation.clients_Mangement') }}</li>
 
                     <li class="sidebar-item  has-sub">
@@ -84,17 +103,15 @@
                             </li>
                         </ul>
                     </li>
-                    <li class="sidebar-item {{ request()->routeIs('ticket.index') ? 'active' : ''}} ">
+                    {{-- <li class="sidebar-item {{ request()->routeIs('ticket.index') ? 'active' : ''}} ">
                         <a href="{{ route('ticket.index')}}" class='sidebar-link'>
-                            {{-- <i class="fa fa-assistive-listening-sys
-                            
-                            tems"></i> --}}
+
                             <i class="bi bi-bricks"></i>
-                            <span>{{_('translation.Technical support')}}</span>                            
+                            <span>{{_('translation.Technical support')}}</span>
                         </a>
-                    </li>
-                    
-                     
+                    </li> --}}
+
+
 
             <li class="sidebar-item  has-sub">
                 <a href="#" class='sidebar-link'>
@@ -121,7 +138,13 @@
                             {{ __('translation.orgnazation_profile') }}</a>
                     </li>
                     <li class="submenu-item ">
-                        <a href="{{ route('client.index') }}">{{ __('translation.Logout') }}</a>
+                        <a class="dropdown-item" href="{{ route('logout') }}"
+                                     onclick="event.preventDefault();document.getElementById('logout-form').submit();"><i
+                                     class="bx bx-log-out"></i>{{ __('translation.Logout') }}</a>
+                                     <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                     @csrf
+                                     </form>
+                        <a href="{{ route('admin.login') }}"></a>
                     </li>
                 </ul>
             </li>

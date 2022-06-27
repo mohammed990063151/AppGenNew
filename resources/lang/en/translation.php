@@ -268,16 +268,23 @@ return [
     'address' => 'Address',
     'fiexed_price' => 'Fiexed Price',
     'app_domain' => 'App Domain',
+    'open new ticket' => 'open new ticket',
 
 
 
 
     #ticket.............
     'subject' => 'subject',
+    'Subject' => 'Subject',
     'topic' => 'topic',
+    'Topic' => 'Topic',
     'sender' => 'sender',
+    'Sender' => 'Sender',
+    'status' => ' status',
+    'Status' => ' Status',
     'status' => ' status',
     'date' => 'date',
+    'Date' => 'Date',
     'content' => 'content',
     'options' => 'options',
     'view' => 'view',

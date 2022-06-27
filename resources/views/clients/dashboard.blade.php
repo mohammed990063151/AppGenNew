@@ -280,7 +280,7 @@
                                             <i class="ni ni-mobile-button text-white opacity-10"></i>
                                         </div>
                                         <div class="d-flex flex-column">
-                                            <h6 class="mb-1 text-dark text-sm">Devices</h6>
+                                            <h6 class="mb-1 text-dark text-sm">All Applcation</h6>
                                             <span class="text-xs">250 in stock, <span class="font-weight-bold">346+
                                                     sold</span></span>
                                         </div>
@@ -316,7 +316,7 @@
                                             <i class="ni ni-box-2 text-white opacity-10"></i>
                                         </div>
                                         <div class="d-flex flex-column">
-                                            <h6 class="mb-1 text-dark text-sm">Error logs</h6>
+                                            <h6 class="mb-1 text-dark text-sm">Notification</h6>
                                             <span class="text-xs">1 is active, <span class="font-weight-bold">40
                                                     closed</span></span>
                                         </div>
@@ -333,7 +333,7 @@
                                             <i class="ni ni-satisfied text-white opacity-10"></i>
                                         </div>
                                         <div class="d-flex flex-column">
-                                            <h6 class="mb-1 text-dark text-sm">Happy users</h6>
+                                            <h6 class="mb-1 text-dark text-sm">All Applcation</h6>
                                             <span class="text-xs font-weight-bold">+ 430</span>
                                         </div>
                                     </div>
@@ -452,8 +452,9 @@
     <script src="https://code.highcharts.com/modules/export-data.js"></script>
     <script src="https://code.highcharts.com/modules/accessibility.js"></script>
     <script type="text/javascript">
-        var Notification = <?php echo json_encode($Notification); ?>;
-        
+        var Notification = <?php echo json_encode($Notification
+        ); ?>;
+
         Highcharts.chart('Notification', {
             chart: {
                 type: 'column'

@@ -21,12 +21,14 @@
         <div class="col-lg-12 mb-lg-0 mb-4">
             <div class="card z-index-2 h-100">
                 <div class="card-header pb-0 pt-3 bg-transparent">
-                    <div class="d-flex justify-content-between">
-                        <h6 class="text-capitalize col-4">{{__('translation.ticket')}}</h6>
+                    <div class="d-flex justify-content-between" style="    margin-bottom: -4rem";>
+                        <h6 class="text-capitalize col-4" style="margin-bottom: ;margin: revert;"
+                        >{{__('translation.ticket')}}</h6>
 
                         <span><a href="{{route((Auth::guard('admin')->check()?'admin.':'').'ticket.create')}}" class="btn btn-outline-primary btn-sm"
                             {{--  --}}
-                                type="button">{{__('translation.open-ticket')}}</a></span>
+                                type="button" style="    margin-bottom: -4rem;
+                                ">{{__('translation.open new ticket')}}</a></span>
 
                     </div>
                     <div class="table-responsive mt-5">
@@ -53,22 +55,24 @@
                         <div class="table-responsive">
                             <table class="table table-striped table-bordered ">
                                 <thead>
-                                <tr>
-                                    <td>{{__('translation.no')}}</td>
-                                    <td>{{__('translation.subject')}}</td>
-                                    <td>{{__('translation.topic')}}</td>
-                                    <td>{{__('translation.sender')}}</td>
-                                    <td>{{__('translation.status')}}</td>
-                                    <td>{{__('translation.date')}}</td>
+                                <tr style="font-weight: 600;text-align:center" >
+                                    <td>{{__('translation.No')}}</td>
+                                    <td>{{__('translation.Subject')}}</td>
+                                    <td>{{__('translation.Topic')}}</td>
+                                    <td>{{__('translation.Sender')}}</td>
+                                    <td>{{__('translation.Status')}}</td>
+                                    <td>{{__('translation.Date')}}</td>
                                 <td>{{__('translation.action')}}</td>
                                 </tr>
                             </thead>
                         <tbody>
+
+
                                @forelse ($allTicket as $i => $data )
 
-                                <tr>
+                                <tr style="text-align:center">
 
-                                    <td>{{$i}}</td>
+                                    <td>{{$i+1}}</td>
                                     <td>{{$data->subject}}</td>
                                     <td>{{($data->Topic->topicname) ?? ' - '}}</td>
                                     <td>{{($data->user->name) ?? ' - '}}</td>
@@ -88,20 +92,20 @@
                                 </tr>
                              {{-- </tbody> --}}
                              @empty
-                             <p>No users</p>
+                             <p></p>
                              @endforelse
 
 
         </tbody>
         <tfoot>
-            <tr>
+            <tr style="text-align:center">
                 <th>{{ __('translation.No') }}</th>
-                <th>{{ __('translation.subject') }}</th>
-                <th>{{ __('translation.topic') }}</th>
+                <th>{{ __('translation.Subject') }}</th>
+                <th>{{ __('translation.Topic') }}</th>
                 {{-- <th>{{__('translation.area')}}</th> --}}
-                <th>{{ __('translation.sender') }}</th>
-                <th>{{ __('translation.status') }}</th>
-                <th>{{ __('translation.date') }}</th>
+                <th>{{ __('translation.Sender') }}</th>
+                <th>{{ __('translation.Status') }}</th>
+                <th>{{ __('translation.Date') }}</th>
                 <th>{{ __('translation.action') }}</th>
             </tr>
         </tfoot>

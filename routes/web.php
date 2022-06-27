@@ -116,7 +116,7 @@ Route::group(['prefix' => LaravelLocalization::setLocale()], function () {
         });
 
         Route::resource('features', FeatureController::class);
-        Route::post('destroy/{id}', [ApplicationController::class, 'update'])->name('application.destroy');
+    Route::post('destroy/{id}', [ApplicationController::class, 'update'])->name('application.destroy');
 
 
     Route::get('get-price', [PaymentController::class, 'getPrice'])->name('getPrice');

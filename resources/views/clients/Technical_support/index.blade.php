@@ -52,7 +52,7 @@
                         // @endphp
                         // <x-table-components :model="$allTicket" :rows="$row"/>
                          --}}
-                        <div class="table-responsive">
+                        <div class="table-responsive" style="margin-bottom: 18px;">
                             <table class="table table-striped table-bordered ">
                                 <thead>
                                 <tr style="font-weight: 600;text-align:center" >

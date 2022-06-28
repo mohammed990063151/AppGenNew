@@ -18,7 +18,7 @@
                             <h6 class="text-capitalize col-4"> add new package</h6>
                             <div class="col-6"></div>
                             <div class="col-2">
-                                <span><a href="{{route('packages.index')}}" class="btn btn-danger btn-sm"
+                                <span><a href="{{route('packages.index')}}" class="btn btn-outline-danger btn-sm"
                                         type="button">Go Back</a></span>
                             </div>
                         </div>

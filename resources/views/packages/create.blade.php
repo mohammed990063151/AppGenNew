@@ -9,8 +9,8 @@
                         <div class="row">
                             <h6 class="text-capitalize col-4">{{ __('translation.new_packge') }}</h6>
                             <div class="col-6"></div>
-                            <div class="col-2">
-                                <span><a href="{{ route('packages.index') }}" class="btn btn-danger btn-sm"
+                            <div class="col-2" style="margin-left: 847px;margin-top: -26px;"
+                                <span><a href="{{ route('packages.index') }}" class="btn btn-outline-danger btn-sm"
                                         type="button">{{ __('translation.go_back') }}
                                     </a></span>
                             </div>
@@ -87,7 +87,7 @@
                                             @enderror
                                         </div>
                                     </div>
-                                    <button class="btn m-1 btn-primary">{{ __('translation.Save') }} </button>
+                                    <button class="btn m-1 btn btn-outline-primary btn-sm ">{{ __('translation.Save') }} </button>
                                 </form>
                             </div>
                         </div>

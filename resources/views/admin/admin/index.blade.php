@@ -15,7 +15,7 @@
                     <div class="card-header pb-0 pt-3 bg-transparent">
                         <div class="d-flex justify-content-between">
                             <h6 class="text-capitalize col-4">{{ __('translation.Admin_Table') }}</h6>
-                            <a type="button" class="btn btn-sm btn-primary" href='{{ route('admin.create') }}'
+                            <a type="button" class="btn btn-sm btn btn-outline-primary" href='{{ route('admin.create') }}'
                                 data-toggle="modal" data-target="#exampleModal">
                                 {{ __('translation.New_admin') }}
                             </a>
@@ -26,7 +26,7 @@
                     <div class="table-responsive mt-5">
                         <table class="table align-items-center table-bordered  ">
                             <thead>
-                                <tr>
+                                <tr style="text-align: center">
                                     <td>{{ __('translation.id') }}</td>
                                     <td>{{ __('translation.name') }}</td>
                                     <td>{{ __('translation.emial') }}</td>
@@ -36,7 +36,7 @@
                             </thead>
                             <tbody>
                                 @forelse ($Admins as $key => $Admin)
-                                    <tr>
+                                    <tr style="text-align: center">
                                         <td>{{ $Admin->id }}</td>
                                         <td>{{ $Admin->name }}</td>
                                         <td>{{ $Admin->email }}</td>
@@ -61,7 +61,7 @@
                                     </tr>
                                 @endforelse
                             </tbody>
-                            <tfoot>
+                            <tfoot style="text-align: center">
                                 <td>{{ __('translation.id') }}</td>
                                 <td>{{ __('translation.name') }}</td>
                                 <td>{{ __('translation.emial') }}</td>

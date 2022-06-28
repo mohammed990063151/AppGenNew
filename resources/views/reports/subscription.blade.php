@@ -138,7 +138,7 @@
                     <div class="table-responsive mt-5">
                         <table class="table align-items-center table-bordered  ">
                             <thead>
-                                <tr>
+                                <tr style="text-align: center">
                                     <td>{{ __('translation.id') }}</td>
                                     <td>{{ __('translation.name') }}</td>
                                     <td>{{ __('translation.amount') }}</td>
@@ -147,7 +147,7 @@
                             </thead>
                             <tbody>
                                 @forelse ($Packages as $key => $Package)
-                                    <tr>
+                                    <tr style="text-align: center">
                                         <td>{{ $Package->id }}</td>
                                         <td>{{ $Package->name }}</td>
                                         <td>{{ $Package->price * $Package->subscription->count() }}</td>
@@ -160,7 +160,7 @@
                                     </tr>
                                 @endforelse
                             </tbody>
-                            <tfoot>
+                            <tfoot style="text-align: center">
                                 <td>{{ __('translation.id') }}</td>
                                 <td>{{ __('translation.name') }}</td>
                                 <td>{{ __('translation.amount') }}</td>

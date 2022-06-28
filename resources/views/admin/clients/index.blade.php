@@ -8,7 +8,7 @@
                     <div class="card-header pb-0 pt-3 bg-transparent">
                         <div class="d-flex justify-content-between">
                             <h6 class="text-capitalize col-4">Clients table</h6>
-                                <button type="button" class="btn btn-primary" data-toggle="modal"
+                                <button type="button" class="btn btn-outline-primary btn-sm" data-toggle="modal"
                                     data-target="#exampleModal">
                                     new Client
                                 </button>
@@ -16,23 +16,23 @@
                         <div class="table-responsive mt-5">
                             <table class="table align-items-center table-bordered  ">
                                 <thead>
-                                    <tr>
+                                    <tr style="text-align:center">
                                         <td>id</td>
-                                        <td>name</td>
-                                        <td>emial</td>
+                                        <td>Name</td>
+                                        <td>Emial</td>
                                         <td>Applications</td>
-                                        <td>subscribtions</td>
-                                        <td>package</td>
-                                        <td>status</td>
-                                        <td>option</td>
+                                        <td>Subscribtions</td>
+                                        <td>Package</td>
+                                        <td>Status</td>
+                                        <td>Option</td>
                                     </tr>
                                 </thead>
                                 <tbody>
                                     @forelse ($Clients as $key => $Client )
-                                    <tr>
+                                    <tr style="text-align:center">
                                         <td>{{$Client->id}}</td>
-                                        <td>{{$Client->name}}</td>
-                                        <td>{{$Client->email}}</td>
+                                        <td>{{$Client->Name}}</td>
+                                        <td>{{$Client->Email}}</td>
                                         <td>{{$Client->Applications->count()}}</td>
                                         <td>{{$Client->Subscription->count() ?? ''}}</td>
                                         <td>{{$Client->Package->name ?? ''}}</td>
@@ -61,15 +61,15 @@
                                     </tr>
                                     @endforelse
                                 </tbody>
-                                <tfoot>
+                                <tfoot style="text-align:center">
                                     <td>id</td>
-                                    <td>name</td>
-                                    <td>email</td>
+                                    <td>Name</td>
+                                    <td>Email</td>
                                     <td>Applications</td>
-                                    <td>subscribtions</td>
-                                    <td>package</td>
-                                    <td>status</td>
-                                    <td>option</td>
+                                    <td>Subscribtions</td>
+                                    <td>Package</td>
+                                    <td>Status</td>
+                                    <td>Option</td>
                                 </tfoot>
                             </table>
                         </div>

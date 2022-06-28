@@ -17,9 +17,9 @@
                             <thead>
                                 <tr style="text-align:center">
                                     <td>id</td>
-                                    <td>name</td>
-                                    <td> subscription </td>
-                                    <td> application</td>
+                                    <td>Name</td>
+                                    <td> Subscription </td>
+                                    <td> Application</td>
                                 </tr>
                             </thead>
                             <tbody>
@@ -37,11 +37,11 @@
                                 </tr>
                                 @endforelse
                             </tbody>
-                            <tfoot style="text-align-center">
+                            <tfoot style="text-align:center">
                                 <td>id</td>
-                                <td>name</td>
-                                <td>subscrption</td>
-                                <td>application</td>
+                                <td>Name</td>
+                                <td>Subscrption</td>
+                                <td>Application</td>
                             </tfoot>
                         </table>
                     </div>

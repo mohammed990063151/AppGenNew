@@ -8,7 +8,7 @@
                     <div class="card-header pb-0 pt-3 bg-transparent">
                         <div class="d-flex justify-content-between">
                             <h6 class="text-capitalize col-4">{{ __('translation.Packages_Table') }}</h6>
-<a href="{{route('packages.create')}}" type="button" class="btn btn-sm btn-primary" data-toggle="modal" data-target="#exampleModal">
+<a href="{{route('packages.create')}}" type="button" class="btn btn-sm btn btn-outline-primary" data-toggle="modal" data-target="#exampleModal">
     {{ __('translation.New_Package') }}
 </a>
                             {{-- <span><a href="{{route('packages.create')}}" class="btn btn-primary btn-sm"
@@ -18,18 +18,18 @@
                     <div class="table-responsive mt-5">
                         <table class="table align-items-center table-bordered  ">
                             <thead>
-                                <tr>
+                                <tr style="text-align: center">
                                     <td>{{ __('translation.id') }}</td>
                                     <td>{{ __('translation.name') }}</td>
                                     <td>{{ __('translation.price') }}</td>
                                     <td>{{ __('translation.duration') }}</td>
-                                    <td>{{ __('translation.status') }}</td>
+                                    <td>{{ __('translation.Status') }}</td>
                                     <td>{{ __('translation.option') }}</td>
                                 </tr>
                             </thead>
                             <tbody>
                                 @forelse ($Packages as $key => $Package)
-                                    <tr>
+                                    <tr style="text-align: center">
                                         <td>{{ $Package->id }}</td>
                                         <td>{{ $Package->name }}</td>
                                         <td>{{ $Package->price }}</td>
@@ -56,12 +56,13 @@
                                     </tr>
                                 @endforelse
                             </tbody>
-                            <tfoot>
+                            <tfoot style="text-align: center">
+
                                 <td>{{ __('translation.id') }}</td>
                                 <td>{{ __('translation.name') }}</td>
                                 <td>{{ __('translation.price') }}</td>
                                 <td>{{ __('translation.duration') }}</td>
-                                <td>{{ __('translation.status') }}</td>
+                                <td>{{ __('translation.Status') }}</td>
                                 <td>{{ __('translation.option') }}</td>
                             </tfoot>
                         </table>

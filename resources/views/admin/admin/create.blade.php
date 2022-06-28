@@ -8,7 +8,7 @@
                     <div class="card-header pb-0 pt-3 bg-transparent">
                         <div class="d-flex justify-content-between">
                             <h6 class="text-capitalize col-4">{{ __('translation.Admins_Mangements') }}</h6>
-                            <a href="{{ route('admin.index') }}" class="btn btn-sm btn-danger" data-toggle="modal"
+                            <a href="{{ route('admin.index') }}" class="btn btn-sm btn btn-outline-danger" data-toggle="modal"
                                 data-target="#exampleModal">
                                 go back
                             </a>
@@ -63,7 +63,7 @@
                                         </div>
                                     </div>
                                 </div>
-                                <button class="btn btn-primary">
+                                <button class="btn btn-outline-primary btn-sm">
                                     save
                                 </button>
                         </div>

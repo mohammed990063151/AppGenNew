@@ -18,25 +18,25 @@
                         <div class="table-responsive mt-5">
                             <table class="table align-items-center table-bordered  ">
                                 <thead>
-                                    <tr>
+                                    <tr style="text-align: center">
                                         <td>{{ __('translation.id') }}</td>
                                         <td>{{ __('translation.user_name') }}</td>
                                         <td>{{ __('translation.Package_name') }}</td>
                                         <td>{{ __('translation.price') }}</td>
-                                        <td>{{ __('translation.expired_time') }}</td>
+                                        <td>{{ __('translation.Expired_time') }}</td>
                                         {{-- <td>status</td> --}}
                                         <td>{{ __('translation.option') }}</td>
                                     </tr>
                                 </thead>
                                 <tbody>
                                     @forelse ($Subscriptions as $key => $Subscription)
-                                        <tr>
+                                        <tr style="text-align: center">
                                             {{-- {{dd($Subscriptions)}} --}}
                                             <td>{{ $Subscription->id }}</td>
                                             <td>{{ $Subscription->Package->name }}</td>
                                             <td>{{ $Subscription->User->name }}</td>
                                             <td>{{ $Subscription->amount }}</td>
-                                            <td>{{ $Subscription->exporation_date }}</td>
+                                            <td>{{ $Subscription->Exporation_date }}</td>
                                             {{-- <td>{!! $Subscription->StatusWithSpan() !!}</td> --}}
                                             <td>
                                                 <!-- Modal -->
@@ -55,13 +55,13 @@
                                         </tr>
                                     @endforelse
                                 </tbody>
-                                <tfoot>
+                                <tfoot style="text-align: center">
 
                                     <td>{{ __('translation.id') }}</td>
                                     <td>{{ __('translation.user_name') }}</td>
                                     <td>{{ __('translation.Package_name') }}</td>
                                     <td>{{ __('translation.price') }}</td>
-                                    <td>{{ __('translation.expired_time') }}</td>
+                                    <td>{{ __('translation.Expired_time') }}</td>
                                     {{-- <td>status</td> --}}
                                     <td>{{ __('translation.option') }}</td>
 

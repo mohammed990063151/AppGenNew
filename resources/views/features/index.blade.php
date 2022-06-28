@@ -50,8 +50,8 @@
                             </tbody>
                             <tfoot style="text-align:center">
                                 <td>id</td>
-                                <td>name</td>
-                                <td>option</td>
+                                <td>Name</td>
+                                <td>Option</td>
                             </tfoot>
                         </table>
                     </div>

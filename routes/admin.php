@@ -41,7 +41,7 @@ Route::middleware('auth:admin')->group(function () {
     Route::prefix('user-mangement')->group( function(){
         Route::resource('admin', AdminController::class);
     });
-    Route::get('dashboard' , [DashBoardContorller::class , 'index'])->middleware('auth:admin');
+    Route::get('dashboard' , [DashBoardContorller::class , 'index'])->middleware('auth:admin')->name('dash');
 
     Route::prefix('client-mangement')->group( function(){
         Route::resource('client', ClientController::class);
@@ -81,5 +81,5 @@ Route::post('ticket/massege/', [TicketMassegeController::class, 'store'])->name(
 
     });
     });
-    
+
 

@@ -24,7 +24,7 @@
                             </thead>
                             <tbody>
                                 @forelse ($Clients as $key => $Client )
-                                <tr>
+                                <tr style="text-align:center">
                                     <td>{{$Client->id}}</td>
                                     <td>{{$Client->name}}</td>
                                     <td>{{$Client->Subscript->count()}}</td>
@@ -32,7 +32,7 @@
                                 </tr>
                                 <tr></tr>
                                 @empty
-                                <tr>
+                                <tr style="text-align:center">
                                     <td colspan="5"> No data Right Now</td>
                                 </tr>
                                 @endforelse

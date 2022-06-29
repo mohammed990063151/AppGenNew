@@ -101,7 +101,7 @@
                                     </tr>
                                     <tr></tr>
                                     @empty
-                                    <tr>
+                                    <tr style="text-align:center">
                                         <td colspan="5"> No data Right Now</td>
                                     </tr>
                                     @endforelse
@@ -143,7 +143,7 @@
                                 </thead>
                                 <tbody>
                                     @forelse ($Packages as $key => $Package )
-                                    <tr>
+                                    <tr style="text-align:center">
                                         <td>{{$Package->id}}</td>
                                         <td>{{$Package->name}}</td>
                                         <td>{{$Package->price * $Package->subscription->count()}}</td>
@@ -151,8 +151,8 @@
                                     </tr>
                                     <tr></tr>
                                     @empty
-                                    <tr>
-                                        <td colspan="5"> No data Right Now</td>
+                                    <tr style="text-align:center">
+                                        <td colspan="5" > No data Right Now</td>
                                     </tr>
                                     @endforelse
                                 </tbody>

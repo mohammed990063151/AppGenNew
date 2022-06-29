@@ -13,7 +13,7 @@
         <ul class="menu">
             <li class="sidebar-title">{{ __('translation.Menu') }}</li>
             <li class="sidebar-item {{ request()->routeIs('admin.index') ? 'active' : '' }} ">
-                <a href="index.html" class='sidebar-link'>
+                <a href="{{route('dash')}}" class='sidebar-link'>
                     <i class="bi bi-grid-fill"></i>
                     <span>{{ __('translation.Dashboard') }}</span>
                 </a>

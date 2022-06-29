@@ -92,8 +92,12 @@
                                 </tr>
                              {{-- </tbody> --}}
                              @empty
-                             <p></p>
+                             <p>
+                                <tr class="text-center">
+                                    <td colspan="10">{{ __('translation.table_empty') }}</td>
+                                </tr></p>
                              @endforelse
+
 
 
         </tbody>

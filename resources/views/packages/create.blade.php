@@ -11,7 +11,7 @@
                             <div class="col-6"></div>
                             <div class="col-2" style="margin-left: 847px;margin-top: -26px;"
                                 <span><a href="{{ route('packages.index') }}" class="btn btn-outline-danger btn-sm"
-                                        type="button">{{ __('translation.go_back') }}
+                                        type="button">{{ __('translation.go back') }}
                                     </a></span>
                             </div>
                         </div>

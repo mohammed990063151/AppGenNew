@@ -1,5 +1,5 @@
 @extends('layouts.Admin.app')
-@section('BreadCrumbs', __('translation.Show_Packages'))
+@section('BreadCrumbs', __('translation.Show pacakges'))
 @section('content')
     <div class="container-fluid py-4">
         <div class="row mt-4">
@@ -44,9 +44,11 @@
                                                 <button class="btn btn-sm btn-circle  btn btn-outline-danger btn-icon-only"> <i
                                                         class="bi bi-trash2-fill"></i> </button>
                                             </form>
-                                            <a href="{{ route('packages.status', $Package->id) }}"
+                                            <a href="{{ route('packages.create', $Package->id) }}"
                                                 class="btn  btn-sm btn-circle  {{ $Package->status ? 'btn-warning' : 'btn btn-outline-success btn-icon-only' }}"><i
                                                     class="bi bi-toggle-on"></i></a>
+                                                    <a href="{{route('packages.create' , $Package->id)}}" class="btn btn-sm btn-circle btn-primary "><i class="bi bi-pen"></i></a>
+
                                         </td>
                                     </tr>
                                     <tr></tr>

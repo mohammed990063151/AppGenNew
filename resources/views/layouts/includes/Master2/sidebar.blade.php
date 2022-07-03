@@ -1,4 +1,4 @@
-<ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
+<ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion {{getclass(['ar'=> ' fixed-end me-4 rotate-caret ps ps__rtl ','en'=>' fixed-start ms-4 ps' ])}}" id="accordionSidebar">
 
     <!-- Sidebar - Brand -->
     <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
@@ -12,7 +12,7 @@
     <hr class="sidebar-divider my-0">
 
     <!-- Nav Item - Dashboard -->
-    <li class="nav-item ">
+    <li class="nav-item  {{getclass(['ar'=>'ps ps__rtl ps--active-y','en'=>''])}}">
         <a class="nav-link" href="/dashboard">
             <i class="fas fa-fw fa-tachometer-alt"></i>
             <span>Dashboard</span></a>
@@ -46,8 +46,8 @@
         </a>
         <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
             <div class="bg-white py-2 collapse-inner rounded">
-                <a class="collapse-item" href="{{route('packages.create')}}">Add Package</a>
-                <a class="collapse-item" href="{{ route('packages.index')}}">{{__('translation.Show_Package')}}</a>
+                <a class="collapse-item" href="{{route('packages.create')}}">'{{__('translation.Add Package')}}</a>
+                <a class="collapse-item" href="{{ route('packages.index')}}">{{__('translation.Show Packages')}}</a>
             </div>
         </div>
     </li>
@@ -96,7 +96,7 @@
         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#UserMangment"
             aria-expanded="true" aria-controls="collapsePages">
             <i class="fa fa-solid fa-users"></i>
-            <span>User Mangment</span>
+            <span>{{__('translation.User Mangment')}}</span>
         </a>
         <div id="UserMangment" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
             <div class="bg-white py-2 collapse-inner rounded">
@@ -127,7 +127,7 @@
 
 
 
-    
+
     <!-- Nav Item - Charts -->
     <li class="nav-item">
         <a class="nav-link" href="charts.html">

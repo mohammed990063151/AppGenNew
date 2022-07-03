@@ -1,5 +1,5 @@
 @extends('layouts.Admin.app')
-@section('BreadCrumbs', __('translation.Show_Fetures'))
+@section('BreadCrumbs', __('translation.Fetures'))
 {{-- <x-bread-crumps> --}}
 @section('content')
     <div class="container-fluid py-4">
@@ -11,8 +11,8 @@
                             <h6 class="text-capitalize col-4">{{ __('translation.Feature_table') }}</h6>
 
                             </a>
-                            {{-- <span><a href="{{route('packages.create')}}" class="btn btn-primary btn-sm"
-                                        type="button">add New</a></span> --}}
+                            {{-- <span><a href="{{route('packages.create')}}" class="btn btn-primary btn-sm" --}}
+                                        {{-- type="button">{{__('translation.add New features')}}</a></span> --}}
                         </div>
                     </div>
                     <div class="table-responsive mt-5">

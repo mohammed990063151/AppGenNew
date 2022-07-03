@@ -43,7 +43,7 @@
                         <a href="{{ route('packages.create') }}">{{__('translation.Add Package')}}</a>
                     </li>
                     <li class="submenu-item ">
-                        <a href="{{ route('packages.index') }}">{{__('translation.Show_pacakges')}}</a>
+                        <a href="{{ route('packages.index') }}">{{__('translation.Show pacakges')}}</a>
                     </li>
                 </ul>
             </li>
@@ -96,10 +96,10 @@
                         </a>
                         <ul class="submenu">
                             <li class="submenu-item ">
-                                <a href="{{route('admin.create')}}">{{__('translation.Add_User')}}</a>
+                                <a href="{{route('admin.create')}}">{{__('translation.Add User')}}</a>
                             </li>
                             <li class="submenu-item">
-                                <a href="{{route('admin.index')}}">{{__('translation.Show_Users')}}</a>
+                                <a href="{{route('admin.index')}}">{{__('translation.Show Users')}}</a>
                             </li>
                         </ul>
                     </li>

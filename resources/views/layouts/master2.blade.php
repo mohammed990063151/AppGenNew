@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" dir='{{getclass(['ar'=>'rtl','en'=>'ltr'])}}'>
 
 <head>
 
@@ -21,7 +21,7 @@
     </style>
 </head>
 
-<body id="page-top">
+<body id="page-top" {{getclass(['ar'=>'rtl','en'=>''])}}>
 
     <!-- Page Wrapper -->
     <div id="wrapper">

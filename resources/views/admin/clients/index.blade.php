@@ -1,5 +1,5 @@
 @extends('layouts.Admin.app')
-@section('BreadCrumbs', 'CLient Mangement')
+@section('BreadCrumbs', __('translation.Show clients'))
     @section('content')
     <div class="container-fluid py-4">
         <div class="row mt-4">
@@ -7,10 +7,10 @@
                 <div class="card z-index-2 h-100">
                     <div class="card-header pb-0 pt-3 bg-transparent">
                         <div class="d-flex justify-content-between">
-                            <h6 class="text-capitalize col-4">Clients table</h6>
+                            <h6 class="text-capitalize col-4">{{__('translation.Clients table')}}</h6>
                                 <button type="button" class="btn btn-outline-primary btn-sm" data-toggle="modal"
                                     data-target="#exampleModal">
-                                    new Client
+                                    {{__('translation.new Client')}}
                                 </button>
                         </div>
                         <div class="table-responsive mt-5">

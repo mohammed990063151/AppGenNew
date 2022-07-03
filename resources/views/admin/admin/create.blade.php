@@ -1,5 +1,5 @@
 @extends('layouts.Admin.app')
-@section('BreadCrumbs', __('translation.Admins Mangement'))
+@section('BreadCrumbs', __('translation.Add_User'))
 @section('content')
     <div class="container-fluid py-4">
         <div class="row mt-4">

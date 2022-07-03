@@ -1,5 +1,5 @@
 @extends('layouts.Admin.app')
-@section('BreadCrumbs', __('translation.Show_Subscrption'))
+@section('BreadCrumbs', __('translation.Subscrption'))
 
 @section('content')
     <div class="container-fluid py-4">
@@ -20,8 +20,9 @@
                                 <thead>
                                     <tr style="text-align: center">
                                         <td>{{ __('translation.id') }}</td>
-                                        <td>{{ __('translation.user_name') }}</td>
+
                                         <td>{{ __('translation.Package_name') }}</td>
+                                        <td>{{ __('translation.user_name') }}</td>
                                         <td>{{ __('translation.price') }}</td>
                                         <td>{{ __('translation.Expired_time') }}</td>
                                         {{-- <td>status</td> --}}
@@ -58,8 +59,9 @@
                                 <tfoot style="text-align: center">
 
                                     <td>{{ __('translation.id') }}</td>
-                                    <td>{{ __('translation.user_name') }}</td>
+
                                     <td>{{ __('translation.Package_name') }}</td>
+                                    <td>{{ __('translation.user_name') }}</td>
                                     <td>{{ __('translation.price') }}</td>
                                     <td>{{ __('translation.Expired_time') }}</td>
                                     {{-- <td>status</td> --}}

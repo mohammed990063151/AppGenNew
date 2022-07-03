@@ -37,7 +37,7 @@
         @yield('content')
     </div>
 
-       
+
     </div>
             <footer>
                 @include('layouts.Admin.includes.footer')
@@ -45,5 +45,6 @@
         </div>
     </div>
     @include('layouts.Admin.includes.scripts')
+    @stack('script')
 </body>
 </html>

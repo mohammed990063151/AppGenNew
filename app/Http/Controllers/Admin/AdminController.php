@@ -2,15 +2,17 @@
 
 namespace App\Http\Controllers\Admin;
 
-use App\Http\Requests\CreateUser;
 use App\Models\Admin;
-use App\Traits\StatusAndDelete;
-use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
-use Illuminate\Foundation\Bus\DispatchesJobs;
-use Illuminate\Foundation\Validation\ValidatesRequests;
+use App\Models\Subscription;
 use Illuminate\Http\Request;
-use Illuminate\Routing\Controller as BaseController;
 use App\Traits\UserMangements;
+use App\Traits\StatusAndDelete;
+use App\Http\Requests\CreateUser;
+use Illuminate\Support\Facades\DB;
+use Illuminate\Foundation\Bus\DispatchesJobs;
+use Illuminate\Routing\Controller as BaseController;
+use Illuminate\Foundation\Validation\ValidatesRequests;
+use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
 
 
 class AdminController extends BaseController
@@ -61,5 +63,14 @@ class AdminController extends BaseController
         $Admin->save();
         // return $request;
         return redirect()->route('admin.index');
+    }
+    public function show(){
+
+        $Sub  = Subscription::select(DB::raw("COUNT(*) as count"))
+        ->whereYear('created_at', date('m'))
+        ->groupBy(DB::raw("Month(created_at)"))
+        ->pluck('count'); compact('data');
+        dd($Sub);
+        return view('Admin.Dashboard', $Sub);
     }
 }

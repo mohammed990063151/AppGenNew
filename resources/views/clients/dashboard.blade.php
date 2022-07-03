@@ -255,7 +255,7 @@
                     </div>
                 </div>
             </div>
-            <div class="row mt-4">
+            {{-- <div class="row mt-4">
                 <div class="col-lg-7 mb-lg-0 mb-4">
                     <div class="card ">
                         <div class="card-header pb-0 p-3">
@@ -269,7 +269,7 @@
                 <div class="col-lg-5">
                     <div class="card">
                         <div class="card-header pb-0 p-3">
-                            <h6 class="mb-0">Categories</h6>
+                            <h6 class="mb-0">sammry</h6>
                         </div>
                         <div class="card-body p-3">
                             <ul class="list-group">
@@ -281,8 +281,8 @@
                                         </div>
                                         <div class="d-flex flex-column">
                                             <h6 class="mb-1 text-dark text-sm">All Applcation</h6>
-                                            <span class="text-xs">250 in stock, <span class="font-weight-bold">346+
-                                                    sold</span></span>
+                                            <span class="text-xs">3 in stock, <span class="font-weight-bold">
+                                                    </span></span>
                                         </div>
                                     </div>
                                     <div class="d-flex">
@@ -299,7 +299,7 @@
                                         </div>
                                         <div class="d-flex flex-column">
                                             <h6 class="mb-1 text-dark text-sm">Tickets</h6>
-                                            <span class="text-xs">123 closed, <span class="font-weight-bold">15
+                                            <span class="text-xs">1 <span class="font-weight-bold">1
                                                     open</span></span>
                                         </div>
                                     </div>
@@ -317,8 +317,8 @@
                                         </div>
                                         <div class="d-flex flex-column">
                                             <h6 class="mb-1 text-dark text-sm">Notification</h6>
-                                            <span class="text-xs">1 is active, <span class="font-weight-bold">40
-                                                    closed</span></span>
+                                            <span class="text-xs"> <span class="font-weight-bold">
+                                                    </span></span>
                                         </div>
                                     </div>
                                     <div class="d-flex">
@@ -327,27 +327,27 @@
                                                 class="ni ni-bold-right" aria-hidden="true"></i></button>
                                     </div>
                                 </li>
-                                <li class="list-group-item border-0 d-flex justify-content-between ps-0 border-radius-lg">
+                                {{-- <li class="list-group-item border-0 d-flex justify-content-between ps-0 border-radius-lg">
                                     <div class="d-flex align-items-center">
                                         <div class="icon icon-shape icon-sm me-3 bg-gradient-dark shadow text-center">
                                             <i class="ni ni-satisfied text-white opacity-10"></i>
-                                        </div>
-                                        <div class="d-flex flex-column">
-                                            <h6 class="mb-1 text-dark text-sm"> Applcation</h6>
+                                        </div> --}}
+                                        {{-- <div class="d-flex flex-column">
+                                            <h6 class="mb-1 text-dark text-sm"></h6>
                                             <span class="text-xs font-weight-bold">+ 430</span>
-                                        </div>
+                                        </div> --}}
                                     </div>
                                     <div class="d-flex">
                                         <button
                                             class="btn btn-link btn-icon-only btn-rounded btn-sm text-dark icon-move-right my-auto"><i
-                                                class="ni ni-bold-right" aria-hidden="true"></i></button>
+                                                {{-- class="ni ni-bold-right" aria-hidden="true"></i></button> --}}
                                     </div>
                                 </li>
                             </ul>
                         </div>
                     </div>
                 </div>
-            </div>
+            {{-- </div> --}}
 
 
     </main>

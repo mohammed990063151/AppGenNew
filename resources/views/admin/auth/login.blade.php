@@ -46,13 +46,13 @@
                     <input class="form-check-input" type="checkbox" value="" id="form1Example3" checked />
                     <label class="form-check-label" for="form1Example3"> Remember me </label>
                   </div>
-                  <a href="#!">Forgot password?</a>
+                  {{-- <a href="#!">Forgot password?</a> --}}
                 </div>
 
                 <!-- Submit button -->
                 <button  type="submit" class="btn btn-primary btn-lg btn-block"> </a></> Sign in</button>
 
-                <div class="divider d-flex align-items-center my-4">
+                {{-- <div class="divider d-flex align-items-center my-4">
                   <p class="text-center fw-bold mx-3 mb-0 text-muted">OR</p>
                 </div>
 
@@ -62,7 +62,7 @@
                 </a>
                 <a class="btn btn-primary btn-lg btn-block" style="background-color: #55acee" href="#!"
                   role="button">
-                  <i class="fab fa-twitter me-2"></i>Continue with Twitter</a>
+                  <i class="fab fa-twitter me-2"></i>Continue with Twitter</a> --}}
 
               </form>
             </div>

@@ -1,5 +1,5 @@
 @extends('layouts.Admin.app')
-@section('BreadCrumbs', 'Subscription Report')
+@section('BreadCrumbs', __('translation.Clients Report'))
 @section('content')
 <div class="container-fluid py-4">
     <div class="row mt-4">
@@ -7,7 +7,7 @@
             <div class="card z-index-2 h-100">
                 <div class="card-header pb-0 pt-3 bg-transparent">
                     <div class="d-flex justify-content-between">
-                        <h6 class="text-capitalize col-4">clients report </h6>
+                        <h6 class="text-capitalize col-4">{{__('translation.Clients Report')}} </h6>
                         <div class="col-6"></div>
                         {{-- <div class="col-2"> --}}
                             {{-- </div> --}}

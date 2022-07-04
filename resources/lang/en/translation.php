@@ -195,6 +195,7 @@ return [
     'package' => 'Package',
     'reports' => 'Reports',
     'client_reports' => 'Client Reports',
+    'Clients Report' => 'Client Report',
     'subscription_report' => 'Subscription Report',
     'notification_reports' => 'Notification Reports',
     'clients_Mangement' => 'User & Client Mangement',

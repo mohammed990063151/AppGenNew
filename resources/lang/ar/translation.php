@@ -317,6 +317,8 @@ return [
     'Feature_table' => 'مميزات الموقع',
     'new_Feature' => 'إضافة ميزة',
     'login' => 'تسجيل الدخول',
+    'Clients Report' => ' تقارير العملاء',
+    'Clients Report' => ' تقارير العملاء',
 
 
     'Show_Fetures' => 'صفحة المميزات ',

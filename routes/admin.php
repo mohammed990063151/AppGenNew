@@ -35,6 +35,10 @@ use PayPal\Api\Webhook;
 // ->prefix('admin')
 
 
+Route::group(['prefix' => LaravelLocalization::setLocale()],
+    function(){
+        Route::group(['prefix' => 'admin'], function () {
+            // AdminController
 Route::middleware('guest:admin')->group(function () {
     Route::get('/login', [AdminAuthController::class, 'getLoginForm'])->name('get.admin.login');
     Route::post('/login', [AdminAuthController::class, 'AdminLoign'])->name('admin.login');
@@ -42,13 +46,10 @@ Route::middleware('guest:admin')->group(function () {
 
 
 
-Route::group(['prefix' => LaravelLocalization::setLocale()],
-    function(){
-        Route::group(['prefix' => 'admin'], function () {
-            // AdminController
             Route::middleware('auth:admin')->group(function () {
                 Route::prefix('user-mangement')->group(function () {
                     Route::resource('admin', AdminController::class);
+                   
                     Route::get('dashboard', [DashBoardContorller::class, 'index'])->middleware('auth:admin')->name('dash');
                 });
                
@@ -87,7 +88,6 @@ Route::group(['prefix' => LaravelLocalization::setLocale()],
                 ############ticKet massage ................................................
                 Route::get('ticket/massege/{id}', [TicketMassegeController::class, 'show'])->name('admin.ticket.show')->middleware('auth:admin');
                 Route::post('ticket/massege/', [TicketMassegeController::class, 'store'])->name('admin.ticket.send')->middleware('auth:admin');
-                Route::get('dashboard', [DashBoardContorller::class, 'index'])->middleware('auth:admin');
             });
         });
     }

@@ -132,7 +132,7 @@
             <div class="card z-index-2 h-100">
                 <div class="card-header pb-0 pt-3 bg-transparent">
                     <div class="d-flex justify-content-between">
-                        <h6 class="text-capitalize col-4">{{ __('translation.Package_report_table') }} </h6>
+                        <h6 class="text-capitalize col-4">{{ __('translation.Subscription_Package_table') }} </h6>
                         <div class="col-6"></div>
                     </div>
                     <div class="table-responsive mt-5">

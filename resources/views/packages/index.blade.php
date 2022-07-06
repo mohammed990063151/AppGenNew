@@ -41,13 +41,13 @@
                                                 style="display:inline">
                                                 @csrf
                                                 @method('DELETE')
-                                                <button class="btn btn-sm btn-circle  btn btn-outline-danger btn-icon-only"> <i
+                                                <button class="btn btn-sm btn-circle  btn btn-danger btn-icon-only"> <i
                                                         class="bi bi-trash2-fill"></i> </button>
                                             </form>
                                             <a href="{{ route('packages.create', $Package->id) }}"
-                                                class="btn  btn-sm btn-circle  {{ $Package->status ? 'btn-warning' : 'btn btn-outline-success btn-icon-only' }}"><i
+                                                class="btn  btn-sm btn-circle  {{ $Package->status ? 'btn-warning' : 'btn btn-success btn-icon-only' }}"><i
                                                     class="bi bi-toggle-on"></i></a>
-                                                    <a href="{{route('packages.create' , $Package->id)}}" class="btn btn-sm btn-circle btn-primary "><i class="bi bi-pen"></i></a>
+                                                    <a href="{{route('packages.create' , $Package->id)}}" class="btn btn-sm btn-circle btn btn-primary  btn-icon-only"><i class="bi bi-pen"></i></a>
 
                                         </td>
                                     </tr>

@@ -9,7 +9,7 @@ use Illuminate\Support\Facades\DB;
 class DashBoardContorller extends Controller
 {
     public function index(){
-        // dd('td');
+        
         $Sub = DB::select('SELECT COUNT(id) as data  , MONTHName(created_at) as name  FROM `subscriptions` GROUP By name');
 
         // dd($Sub);

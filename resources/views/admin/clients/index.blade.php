@@ -49,8 +49,8 @@
                                             </form>
                                             <a href="{{route('client.status' , $Client->id)}}" class="btn btn-sm btn-circle {{$Client->status ? 'btn-warning' :'btn-success'}}"><i class="bi bi-toggle-on"></i></a>
                                             <a href="{{route('client.edit' , $Client->id)}}" class="btn btn-sm btn-circle btn-primary "><i class="bi bi-pen"></i></a>
-                                            <a href="{{route('client.edit' , $Client->id)}}" class="btn btn-sm btn-circle btn-secondary ">
-                                                <i class="fa fa-solid fa-file"></i>
+                                            {{-- <a href="{{route('client.edit' , $Client->id)}}" class="btn btn-sm btn-circle btn-secondary "> --}}
+                                                {{-- <i class="fa fa-solid fa-file"></i> --}}
                                             </a>
                                         </td>
                                     </tr>

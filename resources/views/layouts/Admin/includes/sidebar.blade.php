@@ -137,7 +137,7 @@
                         <a href="{{ route('getOrganizationProfile') }}">
                             {{ __('translation.orgnazation_profile') }}</a>
                     </li>
-                    <li class="submenu-item ">
+                    {{-- <li class="submenu-item ">
                         <a class="dropdown-item" href="{{ route('logout') }}"
                                      onclick="event.preventDefault();document.getElementById('logout-form').submit();"><i
                                      class="bx bx-log-out"></i>{{ __('translation.Logout') }}</a>
@@ -145,7 +145,7 @@
                                      @csrf
                                      </form>
                         <a href="{{ route('admin.login') }}"></a>
-                    </li>
+                    </li> --}}
                 </ul>
             </li>
 

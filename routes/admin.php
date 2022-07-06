@@ -39,6 +39,7 @@ Route::group(['prefix' => LaravelLocalization::setLocale()],
     function(){
         Route::group(['prefix' => 'admin'], function () {
             // AdminController
+
 Route::middleware('guest:admin')->group(function () {
     Route::get('/login', [AdminAuthController::class, 'getLoginForm'])->name('get.admin.login');
     Route::post('/login', [AdminAuthController::class, 'AdminLoign'])->name('admin.login');
@@ -47,10 +48,11 @@ Route::middleware('guest:admin')->group(function () {
 
 
             Route::middleware('auth:admin')->group(function () {
+                Route::get('dashboard', [DashBoardContorller::class, 'index'])->middleware('auth:admin')->name('dash');
+
                 Route::prefix('user-mangement')->group(function () {
                     Route::resource('admin', AdminController::class);
                    
-                    Route::get('dashboard', [DashBoardContorller::class, 'index'])->middleware('auth:admin')->name('dash');
                 });
                
 

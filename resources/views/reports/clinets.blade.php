@@ -16,10 +16,10 @@
                         <table class="table align-items-center table-bordered  ">
                             <thead>
                                 <tr style="text-align:center">
-                                    <td>id</td>
-                                    <td>Name</td>
-                                    <td> Subscription </td>
-                                    <td> Application</td>
+                                    <td>{{__('translation.id')}}</td>
+                                    <td>{{__('translation.Name')}}</td>
+                                    <td>{{__('translation.Subscrption')}}</td>
+                                    <td>{{__('translation.Application')}}</td>
                                 </tr>
                             </thead>
                             <tbody>
@@ -38,10 +38,10 @@
                                 @endforelse
                             </tbody>
                             <tfoot style="text-align:center">
-                                <td>id</td>
-                                <td>Name</td>
-                                <td>Subscrption</td>
-                                <td>Application</td>
+                                <td>{{__('translation.id')}}</td>
+                                <td>{{__('translation.Name')}}</td>
+                                <td>{{__('translation.Subscrption')}}</td>
+                                <td>{{__('translation.Application')}}</td>
                             </tfoot>
                         </table>
                     </div>

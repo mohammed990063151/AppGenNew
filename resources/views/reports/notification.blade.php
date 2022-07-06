@@ -1,5 +1,5 @@
 @extends('layouts.Admin.app')
-@section('BreadCrumbs', 'Notification Report')
+@section('BreadCrumbs', __('translation.Notification Report'))
     {{-- @section(') --}}
     @section('content')
     <div class="container-fluid py-4">
@@ -15,7 +15,7 @@
                                 </div>
                             </div>
                             <div class="col-md-8">
-                                <h6 class="text-muted font-semibold">Profile Views</h6>
+                                <h6 class="text-muted font-semibold">{{__('translation.Profile Views')}}</h6>
                                 <h6 class="font-extrabold mb-0">112.000</h6>
                             </div>
                         </div>
@@ -32,7 +32,7 @@
                                 </div>
                             </div>
                             <div class="col-md-8">
-                                <h6 class="text-muted font-semibold">Followers</h6>
+                                <h6 class="text-muted font-semibold">{{__('translation.Followers')}}</h6>
                                 <h6 class="font-extrabold mb-0">183.000</h6>
                             </div>
                         </div>
@@ -49,7 +49,7 @@
                                 </div>
                             </div>
                             <div class="col-md-8">
-                                <h6 class="text-muted font-semibold">Following</h6>
+                                <h6 class="text-muted font-semibold">{{__('translation.Following')}}</h6>
                                 <h6 class="font-extrabold mb-0">80.000</h6>
                             </div>
                         </div>
@@ -66,7 +66,7 @@
                                 </div>
                             </div>
                             <div class="col-md-8">
-                                <h6 class="text-muted font-semibold">Saved Post</h6>
+                                <h6 class="text-muted font-semibold">{{__('translation.Saved Post')}}</h6>
                                 <h6 class="font-extrabold mb-0">112</h6>
                             </div>
                         </div>
@@ -78,17 +78,17 @@
                 <div class="card z-index-2 h-100">
                     <div class="card-header pb-0 pt-3 bg-transparent">
                         <div class="d-flex justify-content-between">
-                            <h6 class="text-capitalize col-4">Subscription and Package table</h6>
+                            <h6 class="text-capitalize col-4">{{__('translation.Subscription and Package table')}}</h6>
                             <div class="col-6"></div>
                         </div>
                         <div class="table-responsive mt-5">
                             <table class="table align-items-center table-bordered  ">
                                 <thead>
                                     <tr style="text-align:center">
-                                        <td>id</td>
-                                        <td>name</td>
-                                        <td>amount</td>
-                                        <td>subscription</td>
+                                        <td>{{__('translation.id')}}</td>
+                                        <td>{{__('translation.Name')}}</td>
+                                        <td>{{__('translation.amount')}}</td>
+                                        <td>{{__('translation.Subscrption')}}</td>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -107,10 +107,10 @@
                                     @endforelse
                                 </tbody>
                                 <tfoot style="text-align:center">
-                                    <td>id</td>
-                                    <td>name</td>
-                                    <td>amount</td>
-                                    <td>subscription</td>
+                                    <td>{{__('translation.id')}}</td>
+                                    <td>{{__('translation.Name')}}</td>
+                                    <td>{{__('translation.amount')}}</td>
+                                    <td>{{__('translation.Subscrption')}}</td>
                                 </tfoot>
                             </table>
                         </div>
@@ -128,17 +128,17 @@
                 <div class="card z-index-2 h-100">
                     <div class="card-header pb-0 pt-3 bg-transparent">
                         <div class="d-flex justify-content-between">
-                            <h6 class="text-capitalize col-4">Subscription and Package table</h6>
+                            <h6 class="text-capitalize col-4">{{__('translation.Subscription and Package table')}}</h6>
                             <div class="col-6"></div>
                         </div>
                         <div class="table-responsive mt-5">
                             <table class="table align-items-center table-bordered  ">
                                 <thead>
                                     <tr style="text-align:center">
-                                        <td>id</td>
-                                        <td>name</td>
-                                        <td>amount</td>
-                                        <td>subscription</td>
+                                        <td>{{__('translation.id')}}</td>
+                                        <td>{{__('translation.Name')}}</td>
+                                        <td>{{__('translation.amount')}}</td>
+                                        <td>{{__('translation.Subscrption')}}</td>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -157,10 +157,10 @@
                                     @endforelse
                                 </tbody>
                                 <tfoot style="text-align:center">
-                                    <td>id</td>
-                                    <td>name</td>
-                                    <td>amount</td>
-                                    <td>subscription</td>
+                                    <td>{{__('translation.id')}}</td>
+                                    <td>{{__('translation.Name')}}</td>
+                                    <td>{{__('translation.amount')}}</td>
+                                    <td>{{__('translation.Subscrption')}}</td>
                                 </tfoot>
                             </table>
                         </div>

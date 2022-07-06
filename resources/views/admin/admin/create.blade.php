@@ -1,5 +1,5 @@
 @extends('layouts.Admin.app')
-@section('BreadCrumbs', __('translation.Add_User'))
+@section('BreadCrumbs', __('translation.Add User'))
 @section('content')
     <div class="container-fluid py-4">
         <div class="row mt-4">
@@ -10,7 +10,7 @@
                             <h6 class="text-capitalize col-4">{{ __('translation.Admins_Mangements') }}</h6>
                             <a href="{{ route('admin.index') }}" class="btn btn-sm btn btn-outline-danger" data-toggle="modal"
                                 data-target="#exampleModal">
-                                go back
+                                {{__('translation.go back')}}
                             </a>
                         </div>
                         <div class="modal-body">
@@ -23,7 +23,7 @@
                                 <div class="row">
                                     <div class="col-md-6">
                                         <div class="form-group">
-                                            <label for="">admin name</label>
+                                            <label for="">{{__('translation.admin name')}}</label>
                                             <input type="text" class="form-control" name="admin_name" id=""
                                                 aria-describedby="helpId" value="{{ $Admin->name ?? null }}"
                                                 placeholder="">
@@ -34,7 +34,7 @@
                                     </div>
                                     <div class="col-md-6">
                                         <div class="form-group">
-                                            <label for="">admin email</label>
+                                            <label for="">{{__('translation.admin email')}}</label>
                                             <input type="text" value="{{ $Admin->email ?? null }}" name="admin_email"
                                                 id="" class="form-control" placeholder="" aria-describedby="helpId">
                                             @error('admin_email')
@@ -44,7 +44,7 @@
                                     </div>
                                     <div class="col-md-6">
                                         <div class="form-group">
-                                            <label for="">admin password</label>
+                                            <label for="">{{__('translation.admin password')}}</label>
                                             <input type="text" name="admin_password_confirm" id="" class="form-control"
                                                 placeholder="" aria-describedby="helpId">
                                             @error('admin_password_confirm')
@@ -54,7 +54,7 @@
                                     </div>
                                     <div class="col-md-6">
                                         <div class="form-group">
-                                            <label for="">admin password</label>
+                                            <label for="">{{__('translation.admin Password confirem')}}</label>
                                             <input type="text" name="admin_password" id="" class="form-control"
                                                 placeholder="" aria-describedby="helpId">
                                             @error('admin_password')

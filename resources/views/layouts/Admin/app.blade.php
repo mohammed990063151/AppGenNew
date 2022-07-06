@@ -31,7 +31,7 @@
                 </a>
             </header>
     <div class="page-heading">
-        <h3>@yield('BreadCrumbs' , 'Admin Dashboard')</h3>
+        <h3>@yield('BreadCrumbs' , __('translation.Dashboard'))</h3>
     </div>
     <div class="page-content">
         @yield('content')

@@ -6,7 +6,7 @@
         integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous">
     </script>
 @endsection
-@section('BreadCrumbs', __('translation.Show_Users'))
+@section('BreadCrumbs', __('translation.Show Users'))
 @section('content')
     <div class="container-fluid py-4">
         <div class="row mt-4">
@@ -29,7 +29,7 @@
                                 <tr style="text-align: center">
                                     <td>{{ __('translation.id') }}</td>
                                     <td>{{ __('translation.name') }}</td>
-                                    <td>{{ __('translation.emial') }}</td>
+                                    <td>{{ __('translation.email') }}</td>
                                     <td>{{ __('translation.Photo') }}</td>
                                     <td>{{ __('translation.option') }}</td>
                                 </tr>
@@ -64,7 +64,7 @@
                             <tfoot style="text-align: center">
                                 <td>{{ __('translation.id') }}</td>
                                 <td>{{ __('translation.name') }}</td>
-                                <td>{{ __('translation.emial') }}</td>
+                                <td>{{ __('translation.email') }}</td>
                                 <td>{{ __('translation.Photo') }}</td>
                                 <td>{{ __('translation.option') }}</td>
                             </tfoot>

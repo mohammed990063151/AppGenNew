@@ -1,5 +1,5 @@
 @extends('layouts.Admin.app')
-@section('BreadCrumbs', 'Subscription Report')
+@section('BreadCrumbs', __('translation.Subscription Report'))
 @section('breadceumbs')
     {{-- <x-bread-crumps> --}}
     {{-- @component('components.bread-crumps', ['head' => 'Packages', 'links' => ['Dashboard', 'Packages']])
@@ -19,7 +19,7 @@
                                     </div>
                                 </div>
                                 <div class="col-md-8">
-                                    <h6 class="text-muted font-semibold">Profile Views</h6>
+                                    <h6 class="text-muted font-semibold">{{__('translation.Profile Views')}}</h6>
                                     <h6 class="font-extrabold mb-0">112.000</h6>
                                 </div>
                             </div>
@@ -36,7 +36,7 @@
                                     </div>
                                 </div>
                                 <div class="col-md-8">
-                                    <h6 class="text-muted font-semibold">Followers</h6>
+                                    <h6 class="text-muted font-semibold">{{__('translation.Followers')}}</h6>
                                     <h6 class="font-extrabold mb-0">183.000</h6>
                                 </div>
                             </div>
@@ -53,7 +53,7 @@
                                     </div>
                                 </div>
                                 <div class="col-md-8">
-                                    <h6 class="text-muted font-semibold">Following</h6>
+                                    <h6 class="text-muted font-semibold">{{__('translation.Following')}}</h6>
                                     <h6 class="font-extrabold mb-0">80.000</h6>
                                 </div>
                             </div>
@@ -70,7 +70,7 @@
                                     </div>
                                 </div>
                                 <div class="col-md-8">
-                                    <h6 class="text-muted font-semibold">Saved Post</h6>
+                                    <h6 class="text-muted font-semibold">{{__('translation.Saved Post')}}</h6>
                                     <h6 class="font-extrabold mb-0">112</h6>
                                 </div>
                             </div>

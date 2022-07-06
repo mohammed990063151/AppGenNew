@@ -1,5 +1,5 @@
 @extends('layouts.Admin.app')
-@section('BreadCrumbs', 'Orgnaization Profile')
+@section('BreadCrumbs', __('translation.Orgnaization Profile'))
 @section('content')
     <div class="content-wrapper">
         <div class="content-body">
@@ -57,7 +57,7 @@
                                         <div class="col-lg-6 col-md-12">
                                             <div class="insights px-2">
                                                 <fieldset>
-                                                    <label for="">{{ __('translation.emial') }}</label>
+                                                    <label for="">{{ __('translation.email') }}</label>
                                                     <input name="email" type="text"
                                                         value="{{ $OrganizationProfile->email }}" class="form-control">
                                                     @error('email')
@@ -147,8 +147,9 @@
                                         <div class="row">
                                             <div class="col-12">
                                                 <div class="mt-2 col-12 px-2">
-                                                    <input type="submit" class="btn btn-block btn-info"
-                                                        value="{{ __('translation.Save') }}">
+                                                    <input type="submit" class="btn btn-block btn-outline-info"style="    width: 50px;
+                                                    "
+                                                        value="{{ __('translation.Save') }} ">
                                                 </div>
                                             </div>
                                         </div>

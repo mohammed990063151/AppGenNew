@@ -1,16 +1,12 @@
 <!DOCTYPE html>
 <html lang="en" dir='{{getclass(['ar'=>'rtl','en'=>'ltr'])}}'>
-
 <head>
-
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
     <meta name="author" content="">
-
     <title>SB Admin 2 - Dashboard</title>
-
     <!-- Custom fonts for this template-->
     @include('layouts.includes.Master2.styles')
     @yield('styles');
@@ -21,7 +17,7 @@
     </style>
 </head>
 
-<body id="page-top" {{getclass(['ar'=>'rtl','en'=>''])}}>
+<body  id="page-top" {{getclass(['ar'=>'rtl','en'=>''])}}>
 
     <!-- Page Wrapper -->
     <div id="wrapper">

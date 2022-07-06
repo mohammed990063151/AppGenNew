@@ -1,11 +1,11 @@
 @extends('layouts.Admin.app')
-@section('BreadCrumbs', 'Add Client')
+@section('BreadCrumbs', __('translation.Add Client'))
 {{-- <x-bread-crumps> --}}
-    @component('components.bread-crumps' , ['head' => 'Packages' ,
+    {{-- @component('components.bread-crumps' , ['head' => 'Packages' ,
     'links' => ['Dashboard' , 'Packages']
-    ])
+    ]) --}}
 
-    @endcomponent
+     --
     @section('content')
     <div class="container-fluid py-4">
         <div class="row mt-4">
@@ -13,11 +13,11 @@
                 <div class="card z-index-2 h-100">
                     <div class="card-header pb-0 pt-3 bg-transparent">
                         <div class="d-flex justify-content-between">
-                            <h6 class="text-capitalize col-4">Clients table</h6>
+                            <h6 class="text-capitalize col-4">{{__('translation.Clients table')}}</h6>
                             {{-- <div class="co"> --}}
-                                <a type="button" href='{{route('client.index')}}' class="btn btn-warning" data-toggle="modal"
+                                <a type="button" href='{{route('client.index')}}' class="btn btn-outline-warning" data-toggle="modal"
                                     data-target="#exampleModal">
-                                    go back
+                                    {{__('translation.go back')}}
                                 </a>
                             {{-- </div> --}}
                         </div>
@@ -25,18 +25,18 @@
                                 @csrf
                                 @method('patch')
                                 <div class="form-group">
-                                    <label for="exampleInputEmail1">name</label>
+                                    <label for="exampleInputEmail1">{{__('translation.name')}}</label>
                                     <input type="name" name='name' value="{{$Client->name}}" class="form-control" id="exampleInputEmail1"
                                         aria-describedby="emailHelp" placeholder="Enter email">
                                 </div>
                                 <div class="form-group">
-                                    <label for="exampleInputEmail1">Email address</label>
+                                    <label for="exampleInputEmail1">{{__('translation.Email address')}}</label>
                                     <input type="email" name='email'  value="{{$Client->email}}"  class="form-control" id="exampleInputEmail1"
                                         aria-describedby="emailHelp" placeholder="Enter email">
                                 </div>
                                 {{-- @dd($Client) --}}
                                 <div class="form-group">
-                                    <label for="exampleInputEmail1">Package</label>
+                                    <label for="exampleInputEmail1">{{__('translation.Package')}}</label>
                                     {{-- <input type="email" name='email' class="form-control" id="exampleInputEmail1"
                                         aria-describedby="emailHelp" placeholder="Enter email"> --}}
                                         <select name="package" id="id" class="form-control">
@@ -47,19 +47,19 @@
                                 </div>
                                 <div class="row">
                                     <div class="form-group col-md-6">
-                                        <label for="exampleInputPassword1">Password</label>
+                                        <label for="exampleInputPassword1">{{__('translation.Password')}}</label>
                                         <input type="password" name='password' class="form-control"
                                             id="exampleInputPassword1" placeholder="Password">
                                     </div>
                                     <div class="form-group col-md-6">
-                                        <label for="exampleInputPassword1">Password confirem</label>
+                                        <label for="exampleInputPassword1">{{__('translation.Password confirem')}}</label>
                                         <input type="password" name='password_confrim' class="form-control"
                                             id="exampleInputPassword1" placeholder="Password">
                                     </div>
                                 </div>
                                 <div class="m-3">
-                                    <button class="btn btn-primary">
-                                        Save
+                                    <button class="btn btn-outline-primary">
+                                        {{__('translation.Save')}}
                                     </button>
                                 </div>
                         </div>
